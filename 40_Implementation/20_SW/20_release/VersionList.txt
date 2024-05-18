@@ -1,0 +1,9 @@
+15.03.2021, S. Bannwarth
+------------------------
+
+
+Note: Every Version gets an entry, explaining their stpeciality. e.g.:
+
+15.03.2021 - working ADC , Vesion 1.0
+------------------------------------------------
+Feature: ADC is sampling, data not yet stored in array
