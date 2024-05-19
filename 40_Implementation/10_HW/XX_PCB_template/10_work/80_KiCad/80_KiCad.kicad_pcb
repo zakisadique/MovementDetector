@@ -5685,7 +5685,7 @@
 		(at 102.6 74.9)
 		(descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x01 2.54mm single row")
-		(property "Reference" "GND3"
+		(property "Reference" "GND"
 			(at 0 -3 0)
 			(layer "F.SilkS")
 			(uuid "fb287623-1ad0-43e0-a628-ce85deeaa22d")
@@ -5938,7 +5938,7 @@
 		(at 162.5 54.5)
 		(descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x01 2.54mm single row")
-		(property "Reference" "GND2"
+		(property "Reference" "GND"
 			(at 0 -2.33 0)
 			(layer "F.SilkS")
 			(uuid "d31bb4c6-ed2a-4205-b3dd-fc8d2bbca52f")
@@ -9425,7 +9425,7 @@
 		(at 102.9 59.1)
 		(descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x01 2.54mm single row")
-		(property "Reference" "GND1"
+		(property "Reference" "GND"
 			(at 0 -3 0)
 			(layer "F.SilkS")
 			(uuid "7d772599-1792-4e88-b2ac-e699783863ca")
