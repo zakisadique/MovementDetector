@@ -5,13 +5,13 @@
       "Application": "Pcbnew",
       "Version": "8.0.1"
     },
-    "CreationDate": "2024-05-23T07:44:25+02:00"
+    "CreationDate": "2024-05-26T11:57:40+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "80_KiCad",
       "GUID": "38305f4b-6943-4616-942e-6b696361645f",
-      "Revision": "v1.1"
+      "Revision": "v1.0"
     },
     "Size": {
       "X": 68.73,
