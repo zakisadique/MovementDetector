@@ -1,0 +1,4408 @@
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"WaveDAC8.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.WaveDAC8_Enable,"ax",%progbits
+  20              		.align	2
+  21              		.global	WaveDAC8_Enable
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	WaveDAC8_Enable, %function
+  25              	WaveDAC8_Enable:
+  26              	.LFB1:
+  27              		.file 1 "Generated_Source\\PSoC5\\WaveDAC8.c"
+   1:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/WaveDAC8.c **** * File Name: WaveDAC8.c
+   3:Generated_Source\PSoC5/WaveDAC8.c **** * Version 2.10
+   4:Generated_Source\PSoC5/WaveDAC8.c **** *
+   5:Generated_Source\PSoC5/WaveDAC8.c **** * Description:
+   6:Generated_Source\PSoC5/WaveDAC8.c **** *  This file provides the source code for the 8-bit Waveform DAC 
+   7:Generated_Source\PSoC5/WaveDAC8.c **** *  (WaveDAC8) Component.
+   8:Generated_Source\PSoC5/WaveDAC8.c **** *
+   9:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+  10:Generated_Source\PSoC5/WaveDAC8.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  11:Generated_Source\PSoC5/WaveDAC8.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:Generated_Source\PSoC5/WaveDAC8.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:Generated_Source\PSoC5/WaveDAC8.c **** * the software package with which this file was provided.
+  14:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+  15:Generated_Source\PSoC5/WaveDAC8.c **** 
+  16:Generated_Source\PSoC5/WaveDAC8.c **** #include "WaveDAC8.h"
+  17:Generated_Source\PSoC5/WaveDAC8.c **** 
+  18:Generated_Source\PSoC5/WaveDAC8.c **** uint8  WaveDAC8_initVar = 0u;
+  19:Generated_Source\PSoC5/WaveDAC8.c **** 
+  20:Generated_Source\PSoC5/WaveDAC8.c **** const uint8 CYCODE WaveDAC8_wave1[WaveDAC8_WAVE1_LENGTH] = { 125u,125u,126u,126u,126u,126u,127u,127
+  21:Generated_Source\PSoC5/WaveDAC8.c **** const uint8 CYCODE WaveDAC8_wave2[WaveDAC8_WAVE2_LENGTH] = { 128u,132u,138u,143u,148u,152u,158u,162
+  22:Generated_Source\PSoC5/WaveDAC8.c **** 
+  23:Generated_Source\PSoC5/WaveDAC8.c **** static uint8  WaveDAC8_Wave1Chan;
+  24:Generated_Source\PSoC5/WaveDAC8.c **** static uint8  WaveDAC8_Wave2Chan;
+  25:Generated_Source\PSoC5/WaveDAC8.c **** static uint8  WaveDAC8_Wave1TD;
+  26:Generated_Source\PSoC5/WaveDAC8.c **** static uint8  WaveDAC8_Wave2TD;
+  27:Generated_Source\PSoC5/WaveDAC8.c **** 
+  28:Generated_Source\PSoC5/WaveDAC8.c **** 
+  29:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+  30:Generated_Source\PSoC5/WaveDAC8.c **** * Function Name: WaveDAC8_Init
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 2
+
+
+  31:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+  32:Generated_Source\PSoC5/WaveDAC8.c **** *
+  33:Generated_Source\PSoC5/WaveDAC8.c **** * Summary:
+  34:Generated_Source\PSoC5/WaveDAC8.c **** *  Initializes component with parameters set in the customizer.
+  35:Generated_Source\PSoC5/WaveDAC8.c **** *
+  36:Generated_Source\PSoC5/WaveDAC8.c **** * Parameters:  
+  37:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+  38:Generated_Source\PSoC5/WaveDAC8.c **** *
+  39:Generated_Source\PSoC5/WaveDAC8.c **** * Return: 
+  40:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+  41:Generated_Source\PSoC5/WaveDAC8.c **** *
+  42:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+  43:Generated_Source\PSoC5/WaveDAC8.c **** void WaveDAC8_Init(void) 
+  44:Generated_Source\PSoC5/WaveDAC8.c **** {
+  45:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_Init();
+  46:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_SetSpeed(WaveDAC8_HIGHSPEED);
+  47:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_SetRange(WaveDAC8_DAC_RANGE);
+  48:Generated_Source\PSoC5/WaveDAC8.c **** 
+  49:Generated_Source\PSoC5/WaveDAC8.c **** 	#if(WaveDAC8_DAC_MODE == WaveDAC8_CURRENT_MODE)
+  50:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_IDAC8_SetPolarity(WaveDAC8_DAC_POL);
+  51:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* WaveDAC8_DAC_MODE == WaveDAC8_CURRENT_MODE */
+  52:Generated_Source\PSoC5/WaveDAC8.c **** 
+  53:Generated_Source\PSoC5/WaveDAC8.c **** 	#if(WaveDAC8_OUT_MODE == WaveDAC8_BUFFER_MODE)
+  54:Generated_Source\PSoC5/WaveDAC8.c **** 	   WaveDAC8_BuffAmp_Init();
+  55:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* WaveDAC8_OUT_MODE == WaveDAC8_BUFFER_MODE */
+  56:Generated_Source\PSoC5/WaveDAC8.c **** 
+  57:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Get the TD Number for the DMA channel 1 and 2   */
+  58:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave1TD = CyDmaTdAllocate();
+  59:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave2TD = CyDmaTdAllocate();
+  60:Generated_Source\PSoC5/WaveDAC8.c **** 	
+  61:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Initialize waveform pointers  */
+  62:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave1Setup(WaveDAC8_wave1, WaveDAC8_WAVE1_LENGTH) ;
+  63:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave2Setup(WaveDAC8_wave2, WaveDAC8_WAVE2_LENGTH) ;
+  64:Generated_Source\PSoC5/WaveDAC8.c **** 	
+  65:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Initialize the internal clock if one present  */
+  66:Generated_Source\PSoC5/WaveDAC8.c **** 	#if defined(WaveDAC8_DacClk_PHASE)
+  67:Generated_Source\PSoC5/WaveDAC8.c **** 	   WaveDAC8_DacClk_SetPhase(WaveDAC8_CLK_PHASE_0nS);
+  68:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* defined(WaveDAC8_DacClk_PHASE) */
+  69:Generated_Source\PSoC5/WaveDAC8.c **** }
+  70:Generated_Source\PSoC5/WaveDAC8.c **** 
+  71:Generated_Source\PSoC5/WaveDAC8.c **** 
+  72:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+  73:Generated_Source\PSoC5/WaveDAC8.c **** * Function Name: WaveDAC8_Enable
+  74:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+  75:Generated_Source\PSoC5/WaveDAC8.c **** *  
+  76:Generated_Source\PSoC5/WaveDAC8.c **** * Summary: 
+  77:Generated_Source\PSoC5/WaveDAC8.c **** *  Enables the DAC block and DMA operation.
+  78:Generated_Source\PSoC5/WaveDAC8.c **** *
+  79:Generated_Source\PSoC5/WaveDAC8.c **** * Parameters:  
+  80:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+  81:Generated_Source\PSoC5/WaveDAC8.c **** *
+  82:Generated_Source\PSoC5/WaveDAC8.c **** * Return: 
+  83:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+  84:Generated_Source\PSoC5/WaveDAC8.c **** *
+  85:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+  86:Generated_Source\PSoC5/WaveDAC8.c **** void WaveDAC8_Enable(void) 
+  87:Generated_Source\PSoC5/WaveDAC8.c **** {
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 3
+
+
+  28              		.loc 1 87 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
+  88:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_Enable();
+  36              		.loc 1 88 0
+  37 0002 FFF7FEFF 		bl	WaveDAC8_VDAC8_Enable
+  38              	.LVL0:
+  89:Generated_Source\PSoC5/WaveDAC8.c **** 
+  90:Generated_Source\PSoC5/WaveDAC8.c **** 	#if(WaveDAC8_OUT_MODE == WaveDAC8_BUFFER_MODE)
+  91:Generated_Source\PSoC5/WaveDAC8.c **** 	   WaveDAC8_BuffAmp_Enable();
+  92:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* WaveDAC8_OUT_MODE == WaveDAC8_BUFFER_MODE */
+  93:Generated_Source\PSoC5/WaveDAC8.c **** 
+  94:Generated_Source\PSoC5/WaveDAC8.c **** 	/* 
+  95:Generated_Source\PSoC5/WaveDAC8.c **** 	* Enable the channel. It is configured to remember the TD value so that
+  96:Generated_Source\PSoC5/WaveDAC8.c **** 	* it can be restored from the place where it has been stopped.
+  97:Generated_Source\PSoC5/WaveDAC8.c **** 	*/
+  98:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaChEnable(WaveDAC8_Wave1Chan, 1u);
+  39              		.loc 1 98 0
+  40 0006 074C     		ldr	r4, .L3
+  41 0008 0121     		movs	r1, #1
+  42 000a 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  43 000c FFF7FEFF 		bl	CyDmaChEnable
+  44              	.LVL1:
+  99:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaChEnable(WaveDAC8_Wave2Chan, 1u);
+  45              		.loc 1 99 0
+  46 0010 0121     		movs	r1, #1
+  47 0012 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
+  48 0014 FFF7FEFF 		bl	CyDmaChEnable
+  49              	.LVL2:
+ 100:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 101:Generated_Source\PSoC5/WaveDAC8.c **** 	/* set the initial value */
+ 102:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_SetValue(0u);
+  50              		.loc 1 102 0
+  51 0018 0020     		movs	r0, #0
+  52 001a FFF7FEFF 		bl	WaveDAC8_VDAC8_SetValue
+  53              	.LVL3:
+ 103:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 104:Generated_Source\PSoC5/WaveDAC8.c **** 	#if(WaveDAC8_CLOCK_SRC == WaveDAC8_CLOCK_INT)  	
+ 105:Generated_Source\PSoC5/WaveDAC8.c **** 	   WaveDAC8_DacClk_Start();
+  54              		.loc 1 105 0
+  55 001e FFF7FEFF 		bl	WaveDAC8_DacClk_Start
+  56              	.LVL4:
+  57 0022 10BD     		pop	{r4, pc}
+  58              	.L4:
+  59              		.align	2
+  60              	.L3:
+  61 0024 00000000 		.word	.LANCHOR0
+  62              		.cfi_endproc
+  63              	.LFE1:
+  64              		.size	WaveDAC8_Enable, .-WaveDAC8_Enable
+  65              		.section	.text.WaveDAC8_Stop,"ax",%progbits
+  66              		.align	2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 4
+
+
+  67              		.global	WaveDAC8_Stop
+  68              		.thumb
+  69              		.thumb_func
+  70              		.type	WaveDAC8_Stop, %function
+  71              	WaveDAC8_Stop:
+  72              	.LFB4:
+ 106:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* WaveDAC8_CLOCK_SRC == WaveDAC8_CLOCK_INT */
+ 107:Generated_Source\PSoC5/WaveDAC8.c **** }
+ 108:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 109:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 110:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+ 111:Generated_Source\PSoC5/WaveDAC8.c **** * Function Name: WaveDAC8_Start
+ 112:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+ 113:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 114:Generated_Source\PSoC5/WaveDAC8.c **** * Summary:
+ 115:Generated_Source\PSoC5/WaveDAC8.c **** *  The start function initializes the voltage DAC with the default values, 
+ 116:Generated_Source\PSoC5/WaveDAC8.c **** *  and sets the power to the given level.  A power level of 0, is the same as 
+ 117:Generated_Source\PSoC5/WaveDAC8.c **** *  executing the stop function.
+ 118:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 119:Generated_Source\PSoC5/WaveDAC8.c **** * Parameters:  
+ 120:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+ 121:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 122:Generated_Source\PSoC5/WaveDAC8.c **** * Return: 
+ 123:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+ 124:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 125:Generated_Source\PSoC5/WaveDAC8.c **** * Reentrant:
+ 126:Generated_Source\PSoC5/WaveDAC8.c **** *  No
+ 127:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 128:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+ 129:Generated_Source\PSoC5/WaveDAC8.c **** void WaveDAC8_Start(void) 
+ 130:Generated_Source\PSoC5/WaveDAC8.c **** {
+ 131:Generated_Source\PSoC5/WaveDAC8.c **** 	/* If not Initialized then initialize all required hardware and software */
+ 132:Generated_Source\PSoC5/WaveDAC8.c **** 	if(WaveDAC8_initVar == 0u)
+ 133:Generated_Source\PSoC5/WaveDAC8.c **** 	{
+ 134:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Init();
+ 135:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_initVar = 1u;
+ 136:Generated_Source\PSoC5/WaveDAC8.c **** 	}
+ 137:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 138:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Enable();
+ 139:Generated_Source\PSoC5/WaveDAC8.c **** }
+ 140:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 141:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 142:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+ 143:Generated_Source\PSoC5/WaveDAC8.c **** * Function Name: WaveDAC8_StartEx
+ 144:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+ 145:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 146:Generated_Source\PSoC5/WaveDAC8.c **** * Summary:
+ 147:Generated_Source\PSoC5/WaveDAC8.c **** *  The StartEx function sets pointers and sizes for both waveforms
+ 148:Generated_Source\PSoC5/WaveDAC8.c **** *  and then starts the component.
+ 149:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 150:Generated_Source\PSoC5/WaveDAC8.c **** * Parameters:  
+ 151:Generated_Source\PSoC5/WaveDAC8.c **** *   uint8 * wavePtr1:     Pointer to the waveform 1 array.
+ 152:Generated_Source\PSoC5/WaveDAC8.c **** *   uint16  sampleSize1:  The amount of samples in the waveform 1.
+ 153:Generated_Source\PSoC5/WaveDAC8.c **** *   uint8 * wavePtr2:     Pointer to the waveform 2 array.
+ 154:Generated_Source\PSoC5/WaveDAC8.c **** *   uint16  sampleSize2:  The amount of samples in the waveform 2.
+ 155:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 156:Generated_Source\PSoC5/WaveDAC8.c **** * Return: 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 5
+
+
+ 157:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+ 158:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 159:Generated_Source\PSoC5/WaveDAC8.c **** * Reentrant:
+ 160:Generated_Source\PSoC5/WaveDAC8.c **** *  No
+ 161:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 162:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+ 163:Generated_Source\PSoC5/WaveDAC8.c **** void WaveDAC8_StartEx(const uint8 * wavePtr1, uint16 sampleSize1, const uint8 * wavePtr2, uint16 sa
+ 164:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 165:Generated_Source\PSoC5/WaveDAC8.c **** {
+ 166:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave1Setup(wavePtr1, sampleSize1);
+ 167:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave2Setup(wavePtr2, sampleSize2);
+ 168:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Start();
+ 169:Generated_Source\PSoC5/WaveDAC8.c **** }
+ 170:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 171:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 172:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+ 173:Generated_Source\PSoC5/WaveDAC8.c **** * Function Name: WaveDAC8_Stop
+ 174:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+ 175:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 176:Generated_Source\PSoC5/WaveDAC8.c **** * Summary:
+ 177:Generated_Source\PSoC5/WaveDAC8.c **** *  Stops the clock (if internal), disables the DMA channels
+ 178:Generated_Source\PSoC5/WaveDAC8.c **** *  and powers down the DAC.
+ 179:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 180:Generated_Source\PSoC5/WaveDAC8.c **** * Parameters:  
+ 181:Generated_Source\PSoC5/WaveDAC8.c **** *  None  
+ 182:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 183:Generated_Source\PSoC5/WaveDAC8.c **** * Return: 
+ 184:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+ 185:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 186:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+ 187:Generated_Source\PSoC5/WaveDAC8.c **** void WaveDAC8_Stop(void) 
+ 188:Generated_Source\PSoC5/WaveDAC8.c **** {
+  73              		.loc 1 188 0
+  74              		.cfi_startproc
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 0000 10B5     		push	{r4, lr}
+  78              		.cfi_def_cfa_offset 8
+  79              		.cfi_offset 4, -8
+  80              		.cfi_offset 14, -4
+ 189:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Turn off internal clock, if one present */
+ 190:Generated_Source\PSoC5/WaveDAC8.c **** 	#if(WaveDAC8_CLOCK_SRC == WaveDAC8_CLOCK_INT)  	
+ 191:Generated_Source\PSoC5/WaveDAC8.c **** 	   WaveDAC8_DacClk_Stop();
+  81              		.loc 1 191 0
+  82 0002 FFF7FEFF 		bl	WaveDAC8_DacClk_Stop
+  83              	.LVL5:
+ 192:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* WaveDAC8_CLOCK_SRC == WaveDAC8_CLOCK_INT */
+ 193:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 194:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Disble DMA channels */
+ 195:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaChDisable(WaveDAC8_Wave1Chan);
+  84              		.loc 1 195 0
+  85 0006 054C     		ldr	r4, .L7
+  86 0008 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  87 000a FFF7FEFF 		bl	CyDmaChDisable
+  88              	.LVL6:
+ 196:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaChDisable(WaveDAC8_Wave2Chan);
+  89              		.loc 1 196 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 6
+
+
+  90 000e 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
+  91 0010 FFF7FEFF 		bl	CyDmaChDisable
+  92              	.LVL7:
+ 197:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 198:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Disable power to DAC */
+ 199:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_Stop();
+  93              		.loc 1 199 0
+  94 0014 FFF7FEFF 		bl	WaveDAC8_VDAC8_Stop
+  95              	.LVL8:
+  96 0018 10BD     		pop	{r4, pc}
+  97              	.L8:
+  98 001a 00BF     		.align	2
+  99              	.L7:
+ 100 001c 00000000 		.word	.LANCHOR0
+ 101              		.cfi_endproc
+ 102              	.LFE4:
+ 103              		.size	WaveDAC8_Stop, .-WaveDAC8_Stop
+ 104              		.section	.text.WaveDAC8_Wave1Setup,"ax",%progbits
+ 105              		.align	2
+ 106              		.global	WaveDAC8_Wave1Setup
+ 107              		.thumb
+ 108              		.thumb_func
+ 109              		.type	WaveDAC8_Wave1Setup, %function
+ 110              	WaveDAC8_Wave1Setup:
+ 111              	.LFB5:
+ 200:Generated_Source\PSoC5/WaveDAC8.c **** }
+ 201:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 202:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 203:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+ 204:Generated_Source\PSoC5/WaveDAC8.c **** * Function Name: WaveDAC8_Wave1Setup
+ 205:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+ 206:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 207:Generated_Source\PSoC5/WaveDAC8.c **** * Summary:
+ 208:Generated_Source\PSoC5/WaveDAC8.c **** *  Sets pointer and size for waveform 1.                                    
+ 209:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 210:Generated_Source\PSoC5/WaveDAC8.c **** * Parameters:  
+ 211:Generated_Source\PSoC5/WaveDAC8.c **** *  uint8 * WavePtr:     Pointer to the waveform array.
+ 212:Generated_Source\PSoC5/WaveDAC8.c **** *  uint16  SampleSize:  The amount of samples in the waveform.
+ 213:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 214:Generated_Source\PSoC5/WaveDAC8.c **** * Return: 
+ 215:Generated_Source\PSoC5/WaveDAC8.c **** *  None 
+ 216:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 217:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+ 218:Generated_Source\PSoC5/WaveDAC8.c **** void WaveDAC8_Wave1Setup(const uint8 * wavePtr, uint16 sampleSize)
+ 219:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 220:Generated_Source\PSoC5/WaveDAC8.c **** {
+ 112              		.loc 1 220 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              	.LVL9:
+ 117 0000 70B5     		push	{r4, r5, r6, lr}
+ 118              		.cfi_def_cfa_offset 16
+ 119              		.cfi_offset 4, -16
+ 120              		.cfi_offset 5, -12
+ 121              		.cfi_offset 6, -8
+ 122              		.cfi_offset 14, -4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 7
+
+
+ 123 0002 0546     		mov	r5, r0
+ 124 0004 0E46     		mov	r6, r1
+ 221:Generated_Source\PSoC5/WaveDAC8.c **** 	#if (CY_PSOC3)
+ 222:Generated_Source\PSoC5/WaveDAC8.c **** 		uint16 memoryType; /* determining the source memory type */
+ 223:Generated_Source\PSoC5/WaveDAC8.c **** 		memoryType = (WaveDAC8_HI16FLASHPTR == HI16(wavePtr)) ? HI16(CYDEV_FLS_BASE) : HI16(CYDEV_SRAM_BA
+ 224:Generated_Source\PSoC5/WaveDAC8.c **** 		
+ 225:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave1Chan = WaveDAC8_Wave1_DMA_DmaInitialize(
+ 226:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave1_DMA_BYTES_PER_BURST, WaveDAC8_Wave1_DMA_REQUEST_PER_BURST,
+ 227:Generated_Source\PSoC5/WaveDAC8.c **** 		memoryType, HI16(CYDEV_PERIPH_BASE));
+ 228:Generated_Source\PSoC5/WaveDAC8.c **** 	#else /* PSoC 5 */
+ 229:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave1Chan = WaveDAC8_Wave1_DMA_DmaInitialize(
+ 125              		.loc 1 229 0
+ 126 0006 4FF48043 		mov	r3, #16384
+ 127 000a 020C     		lsrs	r2, r0, #16
+ 128 000c 0121     		movs	r1, #1
+ 129              	.LVL10:
+ 130 000e 0846     		mov	r0, r1
+ 131              	.LVL11:
+ 132 0010 FFF7FEFF 		bl	WaveDAC8_Wave1_DMA_DmaInitialize
+ 133              	.LVL12:
+ 134 0014 094C     		ldr	r4, .L11
+ 135 0016 2070     		strb	r0, [r4]
+ 230:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave1_DMA_BYTES_PER_BURST, WaveDAC8_Wave1_DMA_REQUEST_PER_BURST,
+ 231:Generated_Source\PSoC5/WaveDAC8.c **** 		HI16(wavePtr), HI16(WaveDAC8_DAC8__D));
+ 232:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* CY_PSOC3 */
+ 233:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 234:Generated_Source\PSoC5/WaveDAC8.c **** 	/*
+ 235:Generated_Source\PSoC5/WaveDAC8.c **** 	* TD is looping on itself. 
+ 236:Generated_Source\PSoC5/WaveDAC8.c ****     * Increment the source address, but not the destination address. 
+ 237:Generated_Source\PSoC5/WaveDAC8.c **** 	*/
+ 238:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaTdSetConfiguration(WaveDAC8_Wave1TD, sampleSize, WaveDAC8_Wave1TD, 
+ 136              		.loc 1 238 0
+ 137 0018 A078     		ldrb	r0, [r4, #2]	@ zero_extendqisi2
+ 138 001a 0123     		movs	r3, #1
+ 139 001c 0246     		mov	r2, r0
+ 140 001e 3146     		mov	r1, r6
+ 141 0020 FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 142              	.LVL13:
+ 239:Generated_Source\PSoC5/WaveDAC8.c ****                                     (uint8)CY_DMA_TD_INC_SRC_ADR | (uint8)WaveDAC8_Wave1_DMA__TD_TE
+ 240:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 241:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Set the TD source and destination address */
+ 242:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaTdSetAddress(WaveDAC8_Wave1TD, LO16((uint32)wavePtr), LO16(WaveDAC8_DAC8__D));
+ 143              		.loc 1 242 0
+ 144 0024 45F68232 		movw	r2, #23426
+ 145 0028 A9B2     		uxth	r1, r5
+ 146 002a A078     		ldrb	r0, [r4, #2]	@ zero_extendqisi2
+ 147 002c FFF7FEFF 		bl	CyDmaTdSetAddress
+ 148              	.LVL14:
+ 243:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 244:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Associate the TD with the channel */
+ 245:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaChSetInitialTd(WaveDAC8_Wave1Chan, WaveDAC8_Wave1TD);
+ 149              		.loc 1 245 0
+ 150 0030 A178     		ldrb	r1, [r4, #2]	@ zero_extendqisi2
+ 151 0032 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 152 0034 FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 153              	.LVL15:
+ 154 0038 70BD     		pop	{r4, r5, r6, pc}
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 8
+
+
+ 155              	.LVL16:
+ 156              	.L12:
+ 157 003a 00BF     		.align	2
+ 158              	.L11:
+ 159 003c 00000000 		.word	.LANCHOR0
+ 160              		.cfi_endproc
+ 161              	.LFE5:
+ 162              		.size	WaveDAC8_Wave1Setup, .-WaveDAC8_Wave1Setup
+ 163              		.section	.text.WaveDAC8_Wave2Setup,"ax",%progbits
+ 164              		.align	2
+ 165              		.global	WaveDAC8_Wave2Setup
+ 166              		.thumb
+ 167              		.thumb_func
+ 168              		.type	WaveDAC8_Wave2Setup, %function
+ 169              	WaveDAC8_Wave2Setup:
+ 170              	.LFB6:
+ 246:Generated_Source\PSoC5/WaveDAC8.c **** }
+ 247:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 248:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 249:Generated_Source\PSoC5/WaveDAC8.c **** /*******************************************************************************
+ 250:Generated_Source\PSoC5/WaveDAC8.c **** * Function Name: WaveDAC8_Wave2Setup
+ 251:Generated_Source\PSoC5/WaveDAC8.c **** ********************************************************************************
+ 252:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 253:Generated_Source\PSoC5/WaveDAC8.c **** * Summary:
+ 254:Generated_Source\PSoC5/WaveDAC8.c **** *  Sets pointer and size for waveform 2.                                    
+ 255:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 256:Generated_Source\PSoC5/WaveDAC8.c **** * Parameters:  
+ 257:Generated_Source\PSoC5/WaveDAC8.c **** *  uint8 * WavePtr:     Pointer to the waveform array.
+ 258:Generated_Source\PSoC5/WaveDAC8.c **** *  uint16  SampleSize:  The amount of samples in the waveform.
+ 259:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 260:Generated_Source\PSoC5/WaveDAC8.c **** * Return: 
+ 261:Generated_Source\PSoC5/WaveDAC8.c **** *  None
+ 262:Generated_Source\PSoC5/WaveDAC8.c **** *
+ 263:Generated_Source\PSoC5/WaveDAC8.c **** *******************************************************************************/
+ 264:Generated_Source\PSoC5/WaveDAC8.c **** void WaveDAC8_Wave2Setup(const uint8 * wavePtr, uint16 sampleSize)
+ 265:Generated_Source\PSoC5/WaveDAC8.c ****  
+ 266:Generated_Source\PSoC5/WaveDAC8.c **** {
+ 171              		.loc 1 266 0
+ 172              		.cfi_startproc
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175              	.LVL17:
+ 176 0000 70B5     		push	{r4, r5, r6, lr}
+ 177              		.cfi_def_cfa_offset 16
+ 178              		.cfi_offset 4, -16
+ 179              		.cfi_offset 5, -12
+ 180              		.cfi_offset 6, -8
+ 181              		.cfi_offset 14, -4
+ 182 0002 0546     		mov	r5, r0
+ 183 0004 0E46     		mov	r6, r1
+ 267:Generated_Source\PSoC5/WaveDAC8.c **** 	#if (CY_PSOC3)
+ 268:Generated_Source\PSoC5/WaveDAC8.c **** 		uint16 memoryType; /* determining the source memory type */
+ 269:Generated_Source\PSoC5/WaveDAC8.c **** 		memoryType = (WaveDAC8_HI16FLASHPTR == HI16(wavePtr)) ? HI16(CYDEV_FLS_BASE) : HI16(CYDEV_SRAM_BA
+ 270:Generated_Source\PSoC5/WaveDAC8.c **** 			
+ 271:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave2Chan = WaveDAC8_Wave2_DMA_DmaInitialize(
+ 272:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_Wave2_DMA_REQUEST_PER_BURST,
+ 273:Generated_Source\PSoC5/WaveDAC8.c **** 		memoryType, HI16(CYDEV_PERIPH_BASE));
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 9
+
+
+ 274:Generated_Source\PSoC5/WaveDAC8.c **** 	#else /* PSoC 5 */
+ 275:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave2Chan = WaveDAC8_Wave2_DMA_DmaInitialize(
+ 184              		.loc 1 275 0
+ 185 0006 4FF48043 		mov	r3, #16384
+ 186 000a 020C     		lsrs	r2, r0, #16
+ 187 000c 0121     		movs	r1, #1
+ 188              	.LVL18:
+ 189 000e 0846     		mov	r0, r1
+ 190              	.LVL19:
+ 191 0010 FFF7FEFF 		bl	WaveDAC8_Wave2_DMA_DmaInitialize
+ 192              	.LVL20:
+ 193 0014 094C     		ldr	r4, .L15
+ 194 0016 6070     		strb	r0, [r4, #1]
+ 276:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_Wave2_DMA_REQUEST_PER_BURST,
+ 277:Generated_Source\PSoC5/WaveDAC8.c **** 		HI16(wavePtr), HI16(WaveDAC8_DAC8__D));
+ 278:Generated_Source\PSoC5/WaveDAC8.c **** 	#endif /* CY_PSOC3 */
+ 279:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 280:Generated_Source\PSoC5/WaveDAC8.c **** 	/*
+ 281:Generated_Source\PSoC5/WaveDAC8.c **** 	* TD is looping on itself. 
+ 282:Generated_Source\PSoC5/WaveDAC8.c **** 	* Increment the source address, but not the destination address. 
+ 283:Generated_Source\PSoC5/WaveDAC8.c **** 	*/
+ 284:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaTdSetConfiguration(WaveDAC8_Wave2TD, sampleSize, WaveDAC8_Wave2TD, 
+ 195              		.loc 1 284 0
+ 196 0018 E078     		ldrb	r0, [r4, #3]	@ zero_extendqisi2
+ 197 001a 0123     		movs	r3, #1
+ 198 001c 0246     		mov	r2, r0
+ 199 001e 3146     		mov	r1, r6
+ 200 0020 FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 201              	.LVL21:
+ 285:Generated_Source\PSoC5/WaveDAC8.c ****                                     (uint8)CY_DMA_TD_INC_SRC_ADR | (uint8)WaveDAC8_Wave2_DMA__TD_TE
+ 286:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 287:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Set the TD source and destination address */
+ 288:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaTdSetAddress(WaveDAC8_Wave2TD, LO16((uint32)wavePtr), LO16(WaveDAC8_DAC8__D));
+ 202              		.loc 1 288 0
+ 203 0024 45F68232 		movw	r2, #23426
+ 204 0028 A9B2     		uxth	r1, r5
+ 205 002a E078     		ldrb	r0, [r4, #3]	@ zero_extendqisi2
+ 206 002c FFF7FEFF 		bl	CyDmaTdSetAddress
+ 207              	.LVL22:
+ 289:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 290:Generated_Source\PSoC5/WaveDAC8.c **** 	/* Associate the TD with the channel */
+ 291:Generated_Source\PSoC5/WaveDAC8.c **** 	(void)CyDmaChSetInitialTd(WaveDAC8_Wave2Chan, WaveDAC8_Wave2TD);
+ 208              		.loc 1 291 0
+ 209 0030 E178     		ldrb	r1, [r4, #3]	@ zero_extendqisi2
+ 210 0032 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
+ 211 0034 FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 212              	.LVL23:
+ 213 0038 70BD     		pop	{r4, r5, r6, pc}
+ 214              	.LVL24:
+ 215              	.L16:
+ 216 003a 00BF     		.align	2
+ 217              	.L15:
+ 218 003c 00000000 		.word	.LANCHOR0
+ 219              		.cfi_endproc
+ 220              	.LFE6:
+ 221              		.size	WaveDAC8_Wave2Setup, .-WaveDAC8_Wave2Setup
+ 222              		.section	.text.WaveDAC8_Init,"ax",%progbits
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 10
+
+
+ 223              		.align	2
+ 224              		.global	WaveDAC8_Init
+ 225              		.thumb
+ 226              		.thumb_func
+ 227              		.type	WaveDAC8_Init, %function
+ 228              	WaveDAC8_Init:
+ 229              	.LFB0:
+  44:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_Init();
+ 230              		.loc 1 44 0
+ 231              		.cfi_startproc
+ 232              		@ args = 0, pretend = 0, frame = 0
+ 233              		@ frame_needed = 0, uses_anonymous_args = 0
+ 234 0000 10B5     		push	{r4, lr}
+ 235              		.cfi_def_cfa_offset 8
+ 236              		.cfi_offset 4, -8
+ 237              		.cfi_offset 14, -4
+  45:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_SetSpeed(WaveDAC8_HIGHSPEED);
+ 238              		.loc 1 45 0
+ 239 0002 FFF7FEFF 		bl	WaveDAC8_VDAC8_Init
+ 240              	.LVL25:
+  46:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_VDAC8_SetRange(WaveDAC8_DAC_RANGE);
+ 241              		.loc 1 46 0
+ 242 0006 0220     		movs	r0, #2
+ 243 0008 FFF7FEFF 		bl	WaveDAC8_VDAC8_SetSpeed
+ 244              	.LVL26:
+  47:Generated_Source\PSoC5/WaveDAC8.c **** 
+ 245              		.loc 1 47 0
+ 246 000c 0420     		movs	r0, #4
+ 247 000e FFF7FEFF 		bl	WaveDAC8_VDAC8_SetRange
+ 248              	.LVL27:
+  58:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave2TD = CyDmaTdAllocate();
+ 249              		.loc 1 58 0
+ 250 0012 FFF7FEFF 		bl	CyDmaTdAllocate
+ 251              	.LVL28:
+ 252 0016 084C     		ldr	r4, .L19
+ 253 0018 A070     		strb	r0, [r4, #2]
+  59:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 254              		.loc 1 59 0
+ 255 001a FFF7FEFF 		bl	CyDmaTdAllocate
+ 256              	.LVL29:
+ 257 001e E070     		strb	r0, [r4, #3]
+  62:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave2Setup(WaveDAC8_wave2, WaveDAC8_WAVE2_LENGTH) ;
+ 258              		.loc 1 62 0
+ 259 0020 064C     		ldr	r4, .L19+4
+ 260 0022 4FF4FA61 		mov	r1, #2000
+ 261 0026 2046     		mov	r0, r4
+ 262 0028 FFF7FEFF 		bl	WaveDAC8_Wave1Setup
+ 263              	.LVL30:
+  63:Generated_Source\PSoC5/WaveDAC8.c **** 	
+ 264              		.loc 1 63 0
+ 265 002c 6421     		movs	r1, #100
+ 266 002e 04F5FA60 		add	r0, r4, #2000
+ 267 0032 FFF7FEFF 		bl	WaveDAC8_Wave2Setup
+ 268              	.LVL31:
+ 269 0036 10BD     		pop	{r4, pc}
+ 270              	.L20:
+ 271              		.align	2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 11
+
+
+ 272              	.L19:
+ 273 0038 00000000 		.word	.LANCHOR0
+ 274 003c 00000000 		.word	.LANCHOR1
+ 275              		.cfi_endproc
+ 276              	.LFE0:
+ 277              		.size	WaveDAC8_Init, .-WaveDAC8_Init
+ 278              		.section	.text.WaveDAC8_Start,"ax",%progbits
+ 279              		.align	2
+ 280              		.global	WaveDAC8_Start
+ 281              		.thumb
+ 282              		.thumb_func
+ 283              		.type	WaveDAC8_Start, %function
+ 284              	WaveDAC8_Start:
+ 285              	.LFB2:
+ 130:Generated_Source\PSoC5/WaveDAC8.c **** 	/* If not Initialized then initialize all required hardware and software */
+ 286              		.loc 1 130 0
+ 287              		.cfi_startproc
+ 288              		@ args = 0, pretend = 0, frame = 0
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 290 0000 08B5     		push	{r3, lr}
+ 291              		.cfi_def_cfa_offset 8
+ 292              		.cfi_offset 3, -8
+ 293              		.cfi_offset 14, -4
+ 132:Generated_Source\PSoC5/WaveDAC8.c **** 	{
+ 294              		.loc 1 132 0
+ 295 0002 054B     		ldr	r3, .L24
+ 296 0004 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 297 0006 23B9     		cbnz	r3, .L22
+ 134:Generated_Source\PSoC5/WaveDAC8.c **** 		WaveDAC8_initVar = 1u;
+ 298              		.loc 1 134 0
+ 299 0008 FFF7FEFF 		bl	WaveDAC8_Init
+ 300              	.LVL32:
+ 135:Generated_Source\PSoC5/WaveDAC8.c **** 	}
+ 301              		.loc 1 135 0
+ 302 000c 0122     		movs	r2, #1
+ 303 000e 024B     		ldr	r3, .L24
+ 304 0010 1A71     		strb	r2, [r3, #4]
+ 305              	.L22:
+ 138:Generated_Source\PSoC5/WaveDAC8.c **** }
+ 306              		.loc 1 138 0
+ 307 0012 FFF7FEFF 		bl	WaveDAC8_Enable
+ 308              	.LVL33:
+ 309 0016 08BD     		pop	{r3, pc}
+ 310              	.L25:
+ 311              		.align	2
+ 312              	.L24:
+ 313 0018 00000000 		.word	.LANCHOR0
+ 314              		.cfi_endproc
+ 315              	.LFE2:
+ 316              		.size	WaveDAC8_Start, .-WaveDAC8_Start
+ 317              		.section	.text.WaveDAC8_StartEx,"ax",%progbits
+ 318              		.align	2
+ 319              		.global	WaveDAC8_StartEx
+ 320              		.thumb
+ 321              		.thumb_func
+ 322              		.type	WaveDAC8_StartEx, %function
+ 323              	WaveDAC8_StartEx:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 12
+
+
+ 324              	.LFB3:
+ 165:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave1Setup(wavePtr1, sampleSize1);
+ 325              		.loc 1 165 0
+ 326              		.cfi_startproc
+ 327              		@ args = 0, pretend = 0, frame = 0
+ 328              		@ frame_needed = 0, uses_anonymous_args = 0
+ 329              	.LVL34:
+ 330 0000 38B5     		push	{r3, r4, r5, lr}
+ 331              		.cfi_def_cfa_offset 16
+ 332              		.cfi_offset 3, -16
+ 333              		.cfi_offset 4, -12
+ 334              		.cfi_offset 5, -8
+ 335              		.cfi_offset 14, -4
+ 336 0002 1446     		mov	r4, r2
+ 337 0004 1D46     		mov	r5, r3
+ 166:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Wave2Setup(wavePtr2, sampleSize2);
+ 338              		.loc 1 166 0
+ 339 0006 FFF7FEFF 		bl	WaveDAC8_Wave1Setup
+ 340              	.LVL35:
+ 167:Generated_Source\PSoC5/WaveDAC8.c **** 	WaveDAC8_Start();
+ 341              		.loc 1 167 0
+ 342 000a 2946     		mov	r1, r5
+ 343 000c 2046     		mov	r0, r4
+ 344 000e FFF7FEFF 		bl	WaveDAC8_Wave2Setup
+ 345              	.LVL36:
+ 168:Generated_Source\PSoC5/WaveDAC8.c **** }
+ 346              		.loc 1 168 0
+ 347 0012 FFF7FEFF 		bl	WaveDAC8_Start
+ 348              	.LVL37:
+ 349 0016 38BD     		pop	{r3, r4, r5, pc}
+ 350              		.cfi_endproc
+ 351              	.LFE3:
+ 352              		.size	WaveDAC8_StartEx, .-WaveDAC8_StartEx
+ 353              		.global	WaveDAC8_wave2
+ 354              		.global	WaveDAC8_wave1
+ 355              		.global	WaveDAC8_initVar
+ 356              		.section	.rodata
+ 357              		.align	2
+ 358              		.set	.LANCHOR1,. + 0
+ 359              		.type	WaveDAC8_wave1, %object
+ 360              		.size	WaveDAC8_wave1, 2000
+ 361              	WaveDAC8_wave1:
+ 362 0000 7D       		.byte	125
+ 363 0001 7D       		.byte	125
+ 364 0002 7E       		.byte	126
+ 365 0003 7E       		.byte	126
+ 366 0004 7E       		.byte	126
+ 367 0005 7E       		.byte	126
+ 368 0006 7F       		.byte	127
+ 369 0007 7F       		.byte	127
+ 370 0008 7F       		.byte	127
+ 371 0009 80       		.byte	-128
+ 372 000a 80       		.byte	-128
+ 373 000b 80       		.byte	-128
+ 374 000c 81       		.byte	-127
+ 375 000d 81       		.byte	-127
+ 376 000e 81       		.byte	-127
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 13
+
+
+ 377 000f 81       		.byte	-127
+ 378 0010 82       		.byte	-126
+ 379 0011 82       		.byte	-126
+ 380 0012 82       		.byte	-126
+ 381 0013 83       		.byte	-125
+ 382 0014 83       		.byte	-125
+ 383 0015 83       		.byte	-125
+ 384 0016 83       		.byte	-125
+ 385 0017 84       		.byte	-124
+ 386 0018 84       		.byte	-124
+ 387 0019 84       		.byte	-124
+ 388 001a 85       		.byte	-123
+ 389 001b 85       		.byte	-123
+ 390 001c 85       		.byte	-123
+ 391 001d 86       		.byte	-122
+ 392 001e 86       		.byte	-122
+ 393 001f 86       		.byte	-122
+ 394 0020 86       		.byte	-122
+ 395 0021 87       		.byte	-121
+ 396 0022 87       		.byte	-121
+ 397 0023 87       		.byte	-121
+ 398 0024 88       		.byte	-120
+ 399 0025 88       		.byte	-120
+ 400 0026 88       		.byte	-120
+ 401 0027 88       		.byte	-120
+ 402 0028 89       		.byte	-119
+ 403 0029 89       		.byte	-119
+ 404 002a 89       		.byte	-119
+ 405 002b 8A       		.byte	-118
+ 406 002c 8A       		.byte	-118
+ 407 002d 8A       		.byte	-118
+ 408 002e 8B       		.byte	-117
+ 409 002f 8B       		.byte	-117
+ 410 0030 8B       		.byte	-117
+ 411 0031 8B       		.byte	-117
+ 412 0032 8C       		.byte	-116
+ 413 0033 8C       		.byte	-116
+ 414 0034 8C       		.byte	-116
+ 415 0035 8D       		.byte	-115
+ 416 0036 8D       		.byte	-115
+ 417 0037 8D       		.byte	-115
+ 418 0038 8D       		.byte	-115
+ 419 0039 8E       		.byte	-114
+ 420 003a 8E       		.byte	-114
+ 421 003b 8E       		.byte	-114
+ 422 003c 8F       		.byte	-113
+ 423 003d 8F       		.byte	-113
+ 424 003e 8F       		.byte	-113
+ 425 003f 8F       		.byte	-113
+ 426 0040 90       		.byte	-112
+ 427 0041 90       		.byte	-112
+ 428 0042 90       		.byte	-112
+ 429 0043 91       		.byte	-111
+ 430 0044 91       		.byte	-111
+ 431 0045 91       		.byte	-111
+ 432 0046 91       		.byte	-111
+ 433 0047 92       		.byte	-110
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 14
+
+
+ 434 0048 92       		.byte	-110
+ 435 0049 92       		.byte	-110
+ 436 004a 93       		.byte	-109
+ 437 004b 93       		.byte	-109
+ 438 004c 93       		.byte	-109
+ 439 004d 93       		.byte	-109
+ 440 004e 94       		.byte	-108
+ 441 004f 94       		.byte	-108
+ 442 0050 94       		.byte	-108
+ 443 0051 95       		.byte	-107
+ 444 0052 95       		.byte	-107
+ 445 0053 95       		.byte	-107
+ 446 0054 95       		.byte	-107
+ 447 0055 96       		.byte	-106
+ 448 0056 96       		.byte	-106
+ 449 0057 96       		.byte	-106
+ 450 0058 97       		.byte	-105
+ 451 0059 97       		.byte	-105
+ 452 005a 97       		.byte	-105
+ 453 005b 97       		.byte	-105
+ 454 005c 98       		.byte	-104
+ 455 005d 98       		.byte	-104
+ 456 005e 98       		.byte	-104
+ 457 005f 99       		.byte	-103
+ 458 0060 99       		.byte	-103
+ 459 0061 99       		.byte	-103
+ 460 0062 99       		.byte	-103
+ 461 0063 9A       		.byte	-102
+ 462 0064 9A       		.byte	-102
+ 463 0065 9A       		.byte	-102
+ 464 0066 9B       		.byte	-101
+ 465 0067 9B       		.byte	-101
+ 466 0068 9B       		.byte	-101
+ 467 0069 9B       		.byte	-101
+ 468 006a 9C       		.byte	-100
+ 469 006b 9C       		.byte	-100
+ 470 006c 9C       		.byte	-100
+ 471 006d 9C       		.byte	-100
+ 472 006e 9D       		.byte	-99
+ 473 006f 9D       		.byte	-99
+ 474 0070 9D       		.byte	-99
+ 475 0071 9E       		.byte	-98
+ 476 0072 9E       		.byte	-98
+ 477 0073 9E       		.byte	-98
+ 478 0074 9E       		.byte	-98
+ 479 0075 9F       		.byte	-97
+ 480 0076 9F       		.byte	-97
+ 481 0077 9F       		.byte	-97
+ 482 0078 A0       		.byte	-96
+ 483 0079 A0       		.byte	-96
+ 484 007a A0       		.byte	-96
+ 485 007b A0       		.byte	-96
+ 486 007c A1       		.byte	-95
+ 487 007d A1       		.byte	-95
+ 488 007e A1       		.byte	-95
+ 489 007f A1       		.byte	-95
+ 490 0080 A2       		.byte	-94
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 15
+
+
+ 491 0081 A2       		.byte	-94
+ 492 0082 A2       		.byte	-94
+ 493 0083 A3       		.byte	-93
+ 494 0084 A3       		.byte	-93
+ 495 0085 A3       		.byte	-93
+ 496 0086 A3       		.byte	-93
+ 497 0087 A4       		.byte	-92
+ 498 0088 A4       		.byte	-92
+ 499 0089 A4       		.byte	-92
+ 500 008a A4       		.byte	-92
+ 501 008b A5       		.byte	-91
+ 502 008c A5       		.byte	-91
+ 503 008d A5       		.byte	-91
+ 504 008e A5       		.byte	-91
+ 505 008f A6       		.byte	-90
+ 506 0090 A6       		.byte	-90
+ 507 0091 A6       		.byte	-90
+ 508 0092 A7       		.byte	-89
+ 509 0093 A7       		.byte	-89
+ 510 0094 A7       		.byte	-89
+ 511 0095 A7       		.byte	-89
+ 512 0096 A8       		.byte	-88
+ 513 0097 A8       		.byte	-88
+ 514 0098 A8       		.byte	-88
+ 515 0099 A8       		.byte	-88
+ 516 009a A9       		.byte	-87
+ 517 009b A9       		.byte	-87
+ 518 009c A9       		.byte	-87
+ 519 009d A9       		.byte	-87
+ 520 009e AA       		.byte	-86
+ 521 009f AA       		.byte	-86
+ 522 00a0 AA       		.byte	-86
+ 523 00a1 AA       		.byte	-86
+ 524 00a2 AB       		.byte	-85
+ 525 00a3 AB       		.byte	-85
+ 526 00a4 AB       		.byte	-85
+ 527 00a5 AB       		.byte	-85
+ 528 00a6 AC       		.byte	-84
+ 529 00a7 AC       		.byte	-84
+ 530 00a8 AC       		.byte	-84
+ 531 00a9 AC       		.byte	-84
+ 532 00aa AD       		.byte	-83
+ 533 00ab AD       		.byte	-83
+ 534 00ac AD       		.byte	-83
+ 535 00ad AD       		.byte	-83
+ 536 00ae AE       		.byte	-82
+ 537 00af AE       		.byte	-82
+ 538 00b0 AE       		.byte	-82
+ 539 00b1 AE       		.byte	-82
+ 540 00b2 AF       		.byte	-81
+ 541 00b3 AF       		.byte	-81
+ 542 00b4 AF       		.byte	-81
+ 543 00b5 AF       		.byte	-81
+ 544 00b6 B0       		.byte	-80
+ 545 00b7 B0       		.byte	-80
+ 546 00b8 B0       		.byte	-80
+ 547 00b9 B0       		.byte	-80
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 16
+
+
+ 548 00ba B1       		.byte	-79
+ 549 00bb B1       		.byte	-79
+ 550 00bc B1       		.byte	-79
+ 551 00bd B1       		.byte	-79
+ 552 00be B2       		.byte	-78
+ 553 00bf B2       		.byte	-78
+ 554 00c0 B2       		.byte	-78
+ 555 00c1 B2       		.byte	-78
+ 556 00c2 B3       		.byte	-77
+ 557 00c3 B3       		.byte	-77
+ 558 00c4 B3       		.byte	-77
+ 559 00c5 B3       		.byte	-77
+ 560 00c6 B4       		.byte	-76
+ 561 00c7 B4       		.byte	-76
+ 562 00c8 B4       		.byte	-76
+ 563 00c9 B4       		.byte	-76
+ 564 00ca B5       		.byte	-75
+ 565 00cb B5       		.byte	-75
+ 566 00cc B5       		.byte	-75
+ 567 00cd B5       		.byte	-75
+ 568 00ce B6       		.byte	-74
+ 569 00cf B6       		.byte	-74
+ 570 00d0 B6       		.byte	-74
+ 571 00d1 B6       		.byte	-74
+ 572 00d2 B6       		.byte	-74
+ 573 00d3 B7       		.byte	-73
+ 574 00d4 B7       		.byte	-73
+ 575 00d5 B7       		.byte	-73
+ 576 00d6 B7       		.byte	-73
+ 577 00d7 B8       		.byte	-72
+ 578 00d8 B8       		.byte	-72
+ 579 00d9 B8       		.byte	-72
+ 580 00da B8       		.byte	-72
+ 581 00db B9       		.byte	-71
+ 582 00dc B9       		.byte	-71
+ 583 00dd B9       		.byte	-71
+ 584 00de B9       		.byte	-71
+ 585 00df B9       		.byte	-71
+ 586 00e0 BA       		.byte	-70
+ 587 00e1 BA       		.byte	-70
+ 588 00e2 BA       		.byte	-70
+ 589 00e3 BA       		.byte	-70
+ 590 00e4 BB       		.byte	-69
+ 591 00e5 BB       		.byte	-69
+ 592 00e6 BB       		.byte	-69
+ 593 00e7 BB       		.byte	-69
+ 594 00e8 BB       		.byte	-69
+ 595 00e9 BC       		.byte	-68
+ 596 00ea BC       		.byte	-68
+ 597 00eb BC       		.byte	-68
+ 598 00ec BC       		.byte	-68
+ 599 00ed BD       		.byte	-67
+ 600 00ee BD       		.byte	-67
+ 601 00ef BD       		.byte	-67
+ 602 00f0 BD       		.byte	-67
+ 603 00f1 BD       		.byte	-67
+ 604 00f2 BE       		.byte	-66
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 17
+
+
+ 605 00f3 BE       		.byte	-66
+ 606 00f4 BE       		.byte	-66
+ 607 00f5 BE       		.byte	-66
+ 608 00f6 BE       		.byte	-66
+ 609 00f7 BF       		.byte	-65
+ 610 00f8 BF       		.byte	-65
+ 611 00f9 BF       		.byte	-65
+ 612 00fa BF       		.byte	-65
+ 613 00fb BF       		.byte	-65
+ 614 00fc C0       		.byte	-64
+ 615 00fd C0       		.byte	-64
+ 616 00fe C0       		.byte	-64
+ 617 00ff C0       		.byte	-64
+ 618 0100 C1       		.byte	-63
+ 619 0101 C1       		.byte	-63
+ 620 0102 C1       		.byte	-63
+ 621 0103 C1       		.byte	-63
+ 622 0104 C1       		.byte	-63
+ 623 0105 C2       		.byte	-62
+ 624 0106 C2       		.byte	-62
+ 625 0107 C2       		.byte	-62
+ 626 0108 C2       		.byte	-62
+ 627 0109 C2       		.byte	-62
+ 628 010a C3       		.byte	-61
+ 629 010b C3       		.byte	-61
+ 630 010c C3       		.byte	-61
+ 631 010d C3       		.byte	-61
+ 632 010e C3       		.byte	-61
+ 633 010f C4       		.byte	-60
+ 634 0110 C4       		.byte	-60
+ 635 0111 C4       		.byte	-60
+ 636 0112 C4       		.byte	-60
+ 637 0113 C4       		.byte	-60
+ 638 0114 C4       		.byte	-60
+ 639 0115 C5       		.byte	-59
+ 640 0116 C5       		.byte	-59
+ 641 0117 C5       		.byte	-59
+ 642 0118 C5       		.byte	-59
+ 643 0119 C5       		.byte	-59
+ 644 011a C6       		.byte	-58
+ 645 011b C6       		.byte	-58
+ 646 011c C6       		.byte	-58
+ 647 011d C6       		.byte	-58
+ 648 011e C6       		.byte	-58
+ 649 011f C7       		.byte	-57
+ 650 0120 C7       		.byte	-57
+ 651 0121 C7       		.byte	-57
+ 652 0122 C7       		.byte	-57
+ 653 0123 C7       		.byte	-57
+ 654 0124 C7       		.byte	-57
+ 655 0125 C8       		.byte	-56
+ 656 0126 C8       		.byte	-56
+ 657 0127 C8       		.byte	-56
+ 658 0128 C8       		.byte	-56
+ 659 0129 C8       		.byte	-56
+ 660 012a C8       		.byte	-56
+ 661 012b C9       		.byte	-55
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 18
+
+
+ 662 012c C9       		.byte	-55
+ 663 012d C9       		.byte	-55
+ 664 012e C9       		.byte	-55
+ 665 012f C9       		.byte	-55
+ 666 0130 CA       		.byte	-54
+ 667 0131 CA       		.byte	-54
+ 668 0132 CA       		.byte	-54
+ 669 0133 CA       		.byte	-54
+ 670 0134 CA       		.byte	-54
+ 671 0135 CA       		.byte	-54
+ 672 0136 CB       		.byte	-53
+ 673 0137 CB       		.byte	-53
+ 674 0138 CB       		.byte	-53
+ 675 0139 CB       		.byte	-53
+ 676 013a CB       		.byte	-53
+ 677 013b CB       		.byte	-53
+ 678 013c CC       		.byte	-52
+ 679 013d CC       		.byte	-52
+ 680 013e CC       		.byte	-52
+ 681 013f CC       		.byte	-52
+ 682 0140 CC       		.byte	-52
+ 683 0141 CC       		.byte	-52
+ 684 0142 CC       		.byte	-52
+ 685 0143 CD       		.byte	-51
+ 686 0144 CD       		.byte	-51
+ 687 0145 CD       		.byte	-51
+ 688 0146 CD       		.byte	-51
+ 689 0147 CD       		.byte	-51
+ 690 0148 CD       		.byte	-51
+ 691 0149 CE       		.byte	-50
+ 692 014a CE       		.byte	-50
+ 693 014b CE       		.byte	-50
+ 694 014c CE       		.byte	-50
+ 695 014d CE       		.byte	-50
+ 696 014e CE       		.byte	-50
+ 697 014f CE       		.byte	-50
+ 698 0150 CF       		.byte	-49
+ 699 0151 CF       		.byte	-49
+ 700 0152 CF       		.byte	-49
+ 701 0153 CF       		.byte	-49
+ 702 0154 CF       		.byte	-49
+ 703 0155 CF       		.byte	-49
+ 704 0156 CF       		.byte	-49
+ 705 0157 D0       		.byte	-48
+ 706 0158 D0       		.byte	-48
+ 707 0159 D0       		.byte	-48
+ 708 015a D0       		.byte	-48
+ 709 015b D0       		.byte	-48
+ 710 015c D0       		.byte	-48
+ 711 015d D0       		.byte	-48
+ 712 015e D1       		.byte	-47
+ 713 015f D1       		.byte	-47
+ 714 0160 D1       		.byte	-47
+ 715 0161 D1       		.byte	-47
+ 716 0162 D1       		.byte	-47
+ 717 0163 D1       		.byte	-47
+ 718 0164 D1       		.byte	-47
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 19
+
+
+ 719 0165 D1       		.byte	-47
+ 720 0166 D2       		.byte	-46
+ 721 0167 D2       		.byte	-46
+ 722 0168 D2       		.byte	-46
+ 723 0169 D2       		.byte	-46
+ 724 016a D2       		.byte	-46
+ 725 016b D2       		.byte	-46
+ 726 016c D2       		.byte	-46
+ 727 016d D2       		.byte	-46
+ 728 016e D3       		.byte	-45
+ 729 016f D3       		.byte	-45
+ 730 0170 D3       		.byte	-45
+ 731 0171 D3       		.byte	-45
+ 732 0172 D3       		.byte	-45
+ 733 0173 D3       		.byte	-45
+ 734 0174 D3       		.byte	-45
+ 735 0175 D3       		.byte	-45
+ 736 0176 D4       		.byte	-44
+ 737 0177 D4       		.byte	-44
+ 738 0178 D4       		.byte	-44
+ 739 0179 D4       		.byte	-44
+ 740 017a D4       		.byte	-44
+ 741 017b D4       		.byte	-44
+ 742 017c D4       		.byte	-44
+ 743 017d D4       		.byte	-44
+ 744 017e D4       		.byte	-44
+ 745 017f D4       		.byte	-44
+ 746 0180 D5       		.byte	-43
+ 747 0181 D5       		.byte	-43
+ 748 0182 D5       		.byte	-43
+ 749 0183 D5       		.byte	-43
+ 750 0184 D5       		.byte	-43
+ 751 0185 D5       		.byte	-43
+ 752 0186 D5       		.byte	-43
+ 753 0187 D5       		.byte	-43
+ 754 0188 D5       		.byte	-43
+ 755 0189 D6       		.byte	-42
+ 756 018a D6       		.byte	-42
+ 757 018b D6       		.byte	-42
+ 758 018c D6       		.byte	-42
+ 759 018d D6       		.byte	-42
+ 760 018e D6       		.byte	-42
+ 761 018f D6       		.byte	-42
+ 762 0190 D6       		.byte	-42
+ 763 0191 D6       		.byte	-42
+ 764 0192 D6       		.byte	-42
+ 765 0193 D6       		.byte	-42
+ 766 0194 D7       		.byte	-41
+ 767 0195 D7       		.byte	-41
+ 768 0196 D7       		.byte	-41
+ 769 0197 D7       		.byte	-41
+ 770 0198 D7       		.byte	-41
+ 771 0199 D7       		.byte	-41
+ 772 019a D7       		.byte	-41
+ 773 019b D7       		.byte	-41
+ 774 019c D7       		.byte	-41
+ 775 019d D7       		.byte	-41
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 20
+
+
+ 776 019e D7       		.byte	-41
+ 777 019f D7       		.byte	-41
+ 778 01a0 D8       		.byte	-40
+ 779 01a1 D8       		.byte	-40
+ 780 01a2 D8       		.byte	-40
+ 781 01a3 D8       		.byte	-40
+ 782 01a4 D8       		.byte	-40
+ 783 01a5 D8       		.byte	-40
+ 784 01a6 D8       		.byte	-40
+ 785 01a7 D8       		.byte	-40
+ 786 01a8 D8       		.byte	-40
+ 787 01a9 D8       		.byte	-40
+ 788 01aa D8       		.byte	-40
+ 789 01ab D8       		.byte	-40
+ 790 01ac D8       		.byte	-40
+ 791 01ad D8       		.byte	-40
+ 792 01ae D8       		.byte	-40
+ 793 01af D9       		.byte	-39
+ 794 01b0 D9       		.byte	-39
+ 795 01b1 D9       		.byte	-39
+ 796 01b2 D9       		.byte	-39
+ 797 01b3 D9       		.byte	-39
+ 798 01b4 D9       		.byte	-39
+ 799 01b5 D9       		.byte	-39
+ 800 01b6 D9       		.byte	-39
+ 801 01b7 D9       		.byte	-39
+ 802 01b8 D9       		.byte	-39
+ 803 01b9 D9       		.byte	-39
+ 804 01ba D9       		.byte	-39
+ 805 01bb D9       		.byte	-39
+ 806 01bc D9       		.byte	-39
+ 807 01bd D9       		.byte	-39
+ 808 01be D9       		.byte	-39
+ 809 01bf D9       		.byte	-39
+ 810 01c0 DA       		.byte	-38
+ 811 01c1 DA       		.byte	-38
+ 812 01c2 DA       		.byte	-38
+ 813 01c3 DA       		.byte	-38
+ 814 01c4 DA       		.byte	-38
+ 815 01c5 DA       		.byte	-38
+ 816 01c6 DA       		.byte	-38
+ 817 01c7 DA       		.byte	-38
+ 818 01c8 DA       		.byte	-38
+ 819 01c9 DA       		.byte	-38
+ 820 01ca DA       		.byte	-38
+ 821 01cb DA       		.byte	-38
+ 822 01cc DA       		.byte	-38
+ 823 01cd DA       		.byte	-38
+ 824 01ce DA       		.byte	-38
+ 825 01cf DA       		.byte	-38
+ 826 01d0 DA       		.byte	-38
+ 827 01d1 DA       		.byte	-38
+ 828 01d2 DA       		.byte	-38
+ 829 01d3 DA       		.byte	-38
+ 830 01d4 DA       		.byte	-38
+ 831 01d5 DA       		.byte	-38
+ 832 01d6 DA       		.byte	-38
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 21
+
+
+ 833 01d7 DA       		.byte	-38
+ 834 01d8 DA       		.byte	-38
+ 835 01d9 DA       		.byte	-38
+ 836 01da DA       		.byte	-38
+ 837 01db DA       		.byte	-38
+ 838 01dc DA       		.byte	-38
+ 839 01dd DB       		.byte	-37
+ 840 01de DB       		.byte	-37
+ 841 01df DB       		.byte	-37
+ 842 01e0 DB       		.byte	-37
+ 843 01e1 DB       		.byte	-37
+ 844 01e2 DB       		.byte	-37
+ 845 01e3 DB       		.byte	-37
+ 846 01e4 DB       		.byte	-37
+ 847 01e5 DB       		.byte	-37
+ 848 01e6 DB       		.byte	-37
+ 849 01e7 DB       		.byte	-37
+ 850 01e8 DB       		.byte	-37
+ 851 01e9 DB       		.byte	-37
+ 852 01ea DB       		.byte	-37
+ 853 01eb DB       		.byte	-37
+ 854 01ec DB       		.byte	-37
+ 855 01ed DB       		.byte	-37
+ 856 01ee DB       		.byte	-37
+ 857 01ef DB       		.byte	-37
+ 858 01f0 DB       		.byte	-37
+ 859 01f1 DB       		.byte	-37
+ 860 01f2 DB       		.byte	-37
+ 861 01f3 DB       		.byte	-37
+ 862 01f4 DB       		.byte	-37
+ 863 01f5 DB       		.byte	-37
+ 864 01f6 DB       		.byte	-37
+ 865 01f7 DB       		.byte	-37
+ 866 01f8 DB       		.byte	-37
+ 867 01f9 DB       		.byte	-37
+ 868 01fa DB       		.byte	-37
+ 869 01fb DB       		.byte	-37
+ 870 01fc DB       		.byte	-37
+ 871 01fd DB       		.byte	-37
+ 872 01fe DB       		.byte	-37
+ 873 01ff DB       		.byte	-37
+ 874 0200 DB       		.byte	-37
+ 875 0201 DB       		.byte	-37
+ 876 0202 DB       		.byte	-37
+ 877 0203 DB       		.byte	-37
+ 878 0204 DB       		.byte	-37
+ 879 0205 DB       		.byte	-37
+ 880 0206 DB       		.byte	-37
+ 881 0207 DB       		.byte	-37
+ 882 0208 DB       		.byte	-37
+ 883 0209 DB       		.byte	-37
+ 884 020a DB       		.byte	-37
+ 885 020b DB       		.byte	-37
+ 886 020c DA       		.byte	-38
+ 887 020d DA       		.byte	-38
+ 888 020e DA       		.byte	-38
+ 889 020f DA       		.byte	-38
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 22
+
+
+ 890 0210 DA       		.byte	-38
+ 891 0211 DA       		.byte	-38
+ 892 0212 DA       		.byte	-38
+ 893 0213 DA       		.byte	-38
+ 894 0214 DA       		.byte	-38
+ 895 0215 DA       		.byte	-38
+ 896 0216 DA       		.byte	-38
+ 897 0217 DA       		.byte	-38
+ 898 0218 DA       		.byte	-38
+ 899 0219 DA       		.byte	-38
+ 900 021a DA       		.byte	-38
+ 901 021b DA       		.byte	-38
+ 902 021c DA       		.byte	-38
+ 903 021d DA       		.byte	-38
+ 904 021e DA       		.byte	-38
+ 905 021f DA       		.byte	-38
+ 906 0220 DA       		.byte	-38
+ 907 0221 DA       		.byte	-38
+ 908 0222 DA       		.byte	-38
+ 909 0223 DA       		.byte	-38
+ 910 0224 DA       		.byte	-38
+ 911 0225 DA       		.byte	-38
+ 912 0226 DA       		.byte	-38
+ 913 0227 DA       		.byte	-38
+ 914 0228 DA       		.byte	-38
+ 915 0229 D9       		.byte	-39
+ 916 022a D9       		.byte	-39
+ 917 022b D9       		.byte	-39
+ 918 022c D9       		.byte	-39
+ 919 022d D9       		.byte	-39
+ 920 022e D9       		.byte	-39
+ 921 022f D9       		.byte	-39
+ 922 0230 D9       		.byte	-39
+ 923 0231 D9       		.byte	-39
+ 924 0232 D9       		.byte	-39
+ 925 0233 D9       		.byte	-39
+ 926 0234 D9       		.byte	-39
+ 927 0235 D9       		.byte	-39
+ 928 0236 D9       		.byte	-39
+ 929 0237 D9       		.byte	-39
+ 930 0238 D9       		.byte	-39
+ 931 0239 D9       		.byte	-39
+ 932 023a D8       		.byte	-40
+ 933 023b D8       		.byte	-40
+ 934 023c D8       		.byte	-40
+ 935 023d D8       		.byte	-40
+ 936 023e D8       		.byte	-40
+ 937 023f D8       		.byte	-40
+ 938 0240 D8       		.byte	-40
+ 939 0241 D8       		.byte	-40
+ 940 0242 D8       		.byte	-40
+ 941 0243 D8       		.byte	-40
+ 942 0244 D8       		.byte	-40
+ 943 0245 D8       		.byte	-40
+ 944 0246 D8       		.byte	-40
+ 945 0247 D8       		.byte	-40
+ 946 0248 D8       		.byte	-40
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 23
+
+
+ 947 0249 D7       		.byte	-41
+ 948 024a D7       		.byte	-41
+ 949 024b D7       		.byte	-41
+ 950 024c D7       		.byte	-41
+ 951 024d D7       		.byte	-41
+ 952 024e D7       		.byte	-41
+ 953 024f D7       		.byte	-41
+ 954 0250 D7       		.byte	-41
+ 955 0251 D7       		.byte	-41
+ 956 0252 D7       		.byte	-41
+ 957 0253 D7       		.byte	-41
+ 958 0254 D7       		.byte	-41
+ 959 0255 D6       		.byte	-42
+ 960 0256 D6       		.byte	-42
+ 961 0257 D6       		.byte	-42
+ 962 0258 D6       		.byte	-42
+ 963 0259 D6       		.byte	-42
+ 964 025a D6       		.byte	-42
+ 965 025b D6       		.byte	-42
+ 966 025c D6       		.byte	-42
+ 967 025d D6       		.byte	-42
+ 968 025e D6       		.byte	-42
+ 969 025f D6       		.byte	-42
+ 970 0260 D5       		.byte	-43
+ 971 0261 D5       		.byte	-43
+ 972 0262 D5       		.byte	-43
+ 973 0263 D5       		.byte	-43
+ 974 0264 D5       		.byte	-43
+ 975 0265 D5       		.byte	-43
+ 976 0266 D5       		.byte	-43
+ 977 0267 D5       		.byte	-43
+ 978 0268 D5       		.byte	-43
+ 979 0269 D4       		.byte	-44
+ 980 026a D4       		.byte	-44
+ 981 026b D4       		.byte	-44
+ 982 026c D4       		.byte	-44
+ 983 026d D4       		.byte	-44
+ 984 026e D4       		.byte	-44
+ 985 026f D4       		.byte	-44
+ 986 0270 D4       		.byte	-44
+ 987 0271 D4       		.byte	-44
+ 988 0272 D4       		.byte	-44
+ 989 0273 D3       		.byte	-45
+ 990 0274 D3       		.byte	-45
+ 991 0275 D3       		.byte	-45
+ 992 0276 D3       		.byte	-45
+ 993 0277 D3       		.byte	-45
+ 994 0278 D3       		.byte	-45
+ 995 0279 D3       		.byte	-45
+ 996 027a D3       		.byte	-45
+ 997 027b D2       		.byte	-46
+ 998 027c D2       		.byte	-46
+ 999 027d D2       		.byte	-46
+ 1000 027e D2       		.byte	-46
+ 1001 027f D2       		.byte	-46
+ 1002 0280 D2       		.byte	-46
+ 1003 0281 D2       		.byte	-46
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 24
+
+
+ 1004 0282 D2       		.byte	-46
+ 1005 0283 D1       		.byte	-47
+ 1006 0284 D1       		.byte	-47
+ 1007 0285 D1       		.byte	-47
+ 1008 0286 D1       		.byte	-47
+ 1009 0287 D1       		.byte	-47
+ 1010 0288 D1       		.byte	-47
+ 1011 0289 D1       		.byte	-47
+ 1012 028a D1       		.byte	-47
+ 1013 028b D0       		.byte	-48
+ 1014 028c D0       		.byte	-48
+ 1015 028d D0       		.byte	-48
+ 1016 028e D0       		.byte	-48
+ 1017 028f D0       		.byte	-48
+ 1018 0290 D0       		.byte	-48
+ 1019 0291 D0       		.byte	-48
+ 1020 0292 CF       		.byte	-49
+ 1021 0293 CF       		.byte	-49
+ 1022 0294 CF       		.byte	-49
+ 1023 0295 CF       		.byte	-49
+ 1024 0296 CF       		.byte	-49
+ 1025 0297 CF       		.byte	-49
+ 1026 0298 CF       		.byte	-49
+ 1027 0299 CE       		.byte	-50
+ 1028 029a CE       		.byte	-50
+ 1029 029b CE       		.byte	-50
+ 1030 029c CE       		.byte	-50
+ 1031 029d CE       		.byte	-50
+ 1032 029e CE       		.byte	-50
+ 1033 029f CE       		.byte	-50
+ 1034 02a0 CD       		.byte	-51
+ 1035 02a1 CD       		.byte	-51
+ 1036 02a2 CD       		.byte	-51
+ 1037 02a3 CD       		.byte	-51
+ 1038 02a4 CD       		.byte	-51
+ 1039 02a5 CD       		.byte	-51
+ 1040 02a6 CC       		.byte	-52
+ 1041 02a7 CC       		.byte	-52
+ 1042 02a8 CC       		.byte	-52
+ 1043 02a9 CC       		.byte	-52
+ 1044 02aa CC       		.byte	-52
+ 1045 02ab CC       		.byte	-52
+ 1046 02ac CC       		.byte	-52
+ 1047 02ad CB       		.byte	-53
+ 1048 02ae CB       		.byte	-53
+ 1049 02af CB       		.byte	-53
+ 1050 02b0 CB       		.byte	-53
+ 1051 02b1 CB       		.byte	-53
+ 1052 02b2 CB       		.byte	-53
+ 1053 02b3 CA       		.byte	-54
+ 1054 02b4 CA       		.byte	-54
+ 1055 02b5 CA       		.byte	-54
+ 1056 02b6 CA       		.byte	-54
+ 1057 02b7 CA       		.byte	-54
+ 1058 02b8 CA       		.byte	-54
+ 1059 02b9 C9       		.byte	-55
+ 1060 02ba C9       		.byte	-55
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 25
+
+
+ 1061 02bb C9       		.byte	-55
+ 1062 02bc C9       		.byte	-55
+ 1063 02bd C9       		.byte	-55
+ 1064 02be C8       		.byte	-56
+ 1065 02bf C8       		.byte	-56
+ 1066 02c0 C8       		.byte	-56
+ 1067 02c1 C8       		.byte	-56
+ 1068 02c2 C8       		.byte	-56
+ 1069 02c3 C8       		.byte	-56
+ 1070 02c4 C7       		.byte	-57
+ 1071 02c5 C7       		.byte	-57
+ 1072 02c6 C7       		.byte	-57
+ 1073 02c7 C7       		.byte	-57
+ 1074 02c8 C7       		.byte	-57
+ 1075 02c9 C7       		.byte	-57
+ 1076 02ca C6       		.byte	-58
+ 1077 02cb C6       		.byte	-58
+ 1078 02cc C6       		.byte	-58
+ 1079 02cd C6       		.byte	-58
+ 1080 02ce C6       		.byte	-58
+ 1081 02cf C5       		.byte	-59
+ 1082 02d0 C5       		.byte	-59
+ 1083 02d1 C5       		.byte	-59
+ 1084 02d2 C5       		.byte	-59
+ 1085 02d3 C5       		.byte	-59
+ 1086 02d4 C4       		.byte	-60
+ 1087 02d5 C4       		.byte	-60
+ 1088 02d6 C4       		.byte	-60
+ 1089 02d7 C4       		.byte	-60
+ 1090 02d8 C4       		.byte	-60
+ 1091 02d9 C4       		.byte	-60
+ 1092 02da C3       		.byte	-61
+ 1093 02db C3       		.byte	-61
+ 1094 02dc C3       		.byte	-61
+ 1095 02dd C3       		.byte	-61
+ 1096 02de C3       		.byte	-61
+ 1097 02df C2       		.byte	-62
+ 1098 02e0 C2       		.byte	-62
+ 1099 02e1 C2       		.byte	-62
+ 1100 02e2 C2       		.byte	-62
+ 1101 02e3 C2       		.byte	-62
+ 1102 02e4 C1       		.byte	-63
+ 1103 02e5 C1       		.byte	-63
+ 1104 02e6 C1       		.byte	-63
+ 1105 02e7 C1       		.byte	-63
+ 1106 02e8 C1       		.byte	-63
+ 1107 02e9 C0       		.byte	-64
+ 1108 02ea C0       		.byte	-64
+ 1109 02eb C0       		.byte	-64
+ 1110 02ec C0       		.byte	-64
+ 1111 02ed BF       		.byte	-65
+ 1112 02ee BF       		.byte	-65
+ 1113 02ef BF       		.byte	-65
+ 1114 02f0 BF       		.byte	-65
+ 1115 02f1 BF       		.byte	-65
+ 1116 02f2 BE       		.byte	-66
+ 1117 02f3 BE       		.byte	-66
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 26
+
+
+ 1118 02f4 BE       		.byte	-66
+ 1119 02f5 BE       		.byte	-66
+ 1120 02f6 BE       		.byte	-66
+ 1121 02f7 BD       		.byte	-67
+ 1122 02f8 BD       		.byte	-67
+ 1123 02f9 BD       		.byte	-67
+ 1124 02fa BD       		.byte	-67
+ 1125 02fb BD       		.byte	-67
+ 1126 02fc BC       		.byte	-68
+ 1127 02fd BC       		.byte	-68
+ 1128 02fe BC       		.byte	-68
+ 1129 02ff BC       		.byte	-68
+ 1130 0300 BB       		.byte	-69
+ 1131 0301 BB       		.byte	-69
+ 1132 0302 BB       		.byte	-69
+ 1133 0303 BB       		.byte	-69
+ 1134 0304 BB       		.byte	-69
+ 1135 0305 BA       		.byte	-70
+ 1136 0306 BA       		.byte	-70
+ 1137 0307 BA       		.byte	-70
+ 1138 0308 BA       		.byte	-70
+ 1139 0309 B9       		.byte	-71
+ 1140 030a B9       		.byte	-71
+ 1141 030b B9       		.byte	-71
+ 1142 030c B9       		.byte	-71
+ 1143 030d B9       		.byte	-71
+ 1144 030e B8       		.byte	-72
+ 1145 030f B8       		.byte	-72
+ 1146 0310 B8       		.byte	-72
+ 1147 0311 B8       		.byte	-72
+ 1148 0312 B7       		.byte	-73
+ 1149 0313 B7       		.byte	-73
+ 1150 0314 B7       		.byte	-73
+ 1151 0315 B7       		.byte	-73
+ 1152 0316 B6       		.byte	-74
+ 1153 0317 B6       		.byte	-74
+ 1154 0318 B6       		.byte	-74
+ 1155 0319 B6       		.byte	-74
+ 1156 031a B6       		.byte	-74
+ 1157 031b B5       		.byte	-75
+ 1158 031c B5       		.byte	-75
+ 1159 031d B5       		.byte	-75
+ 1160 031e B5       		.byte	-75
+ 1161 031f B4       		.byte	-76
+ 1162 0320 B4       		.byte	-76
+ 1163 0321 B4       		.byte	-76
+ 1164 0322 B4       		.byte	-76
+ 1165 0323 B3       		.byte	-77
+ 1166 0324 B3       		.byte	-77
+ 1167 0325 B3       		.byte	-77
+ 1168 0326 B3       		.byte	-77
+ 1169 0327 B2       		.byte	-78
+ 1170 0328 B2       		.byte	-78
+ 1171 0329 B2       		.byte	-78
+ 1172 032a B2       		.byte	-78
+ 1173 032b B1       		.byte	-79
+ 1174 032c B1       		.byte	-79
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 27
+
+
+ 1175 032d B1       		.byte	-79
+ 1176 032e B1       		.byte	-79
+ 1177 032f B0       		.byte	-80
+ 1178 0330 B0       		.byte	-80
+ 1179 0331 B0       		.byte	-80
+ 1180 0332 B0       		.byte	-80
+ 1181 0333 AF       		.byte	-81
+ 1182 0334 AF       		.byte	-81
+ 1183 0335 AF       		.byte	-81
+ 1184 0336 AF       		.byte	-81
+ 1185 0337 AE       		.byte	-82
+ 1186 0338 AE       		.byte	-82
+ 1187 0339 AE       		.byte	-82
+ 1188 033a AE       		.byte	-82
+ 1189 033b AD       		.byte	-83
+ 1190 033c AD       		.byte	-83
+ 1191 033d AD       		.byte	-83
+ 1192 033e AD       		.byte	-83
+ 1193 033f AC       		.byte	-84
+ 1194 0340 AC       		.byte	-84
+ 1195 0341 AC       		.byte	-84
+ 1196 0342 AC       		.byte	-84
+ 1197 0343 AB       		.byte	-85
+ 1198 0344 AB       		.byte	-85
+ 1199 0345 AB       		.byte	-85
+ 1200 0346 AB       		.byte	-85
+ 1201 0347 AA       		.byte	-86
+ 1202 0348 AA       		.byte	-86
+ 1203 0349 AA       		.byte	-86
+ 1204 034a AA       		.byte	-86
+ 1205 034b A9       		.byte	-87
+ 1206 034c A9       		.byte	-87
+ 1207 034d A9       		.byte	-87
+ 1208 034e A9       		.byte	-87
+ 1209 034f A8       		.byte	-88
+ 1210 0350 A8       		.byte	-88
+ 1211 0351 A8       		.byte	-88
+ 1212 0352 A8       		.byte	-88
+ 1213 0353 A7       		.byte	-89
+ 1214 0354 A7       		.byte	-89
+ 1215 0355 A7       		.byte	-89
+ 1216 0356 A7       		.byte	-89
+ 1217 0357 A6       		.byte	-90
+ 1218 0358 A6       		.byte	-90
+ 1219 0359 A6       		.byte	-90
+ 1220 035a A5       		.byte	-91
+ 1221 035b A5       		.byte	-91
+ 1222 035c A5       		.byte	-91
+ 1223 035d A5       		.byte	-91
+ 1224 035e A4       		.byte	-92
+ 1225 035f A4       		.byte	-92
+ 1226 0360 A4       		.byte	-92
+ 1227 0361 A4       		.byte	-92
+ 1228 0362 A3       		.byte	-93
+ 1229 0363 A3       		.byte	-93
+ 1230 0364 A3       		.byte	-93
+ 1231 0365 A3       		.byte	-93
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 28
+
+
+ 1232 0366 A2       		.byte	-94
+ 1233 0367 A2       		.byte	-94
+ 1234 0368 A2       		.byte	-94
+ 1235 0369 A1       		.byte	-95
+ 1236 036a A1       		.byte	-95
+ 1237 036b A1       		.byte	-95
+ 1238 036c A1       		.byte	-95
+ 1239 036d A0       		.byte	-96
+ 1240 036e A0       		.byte	-96
+ 1241 036f A0       		.byte	-96
+ 1242 0370 A0       		.byte	-96
+ 1243 0371 9F       		.byte	-97
+ 1244 0372 9F       		.byte	-97
+ 1245 0373 9F       		.byte	-97
+ 1246 0374 9E       		.byte	-98
+ 1247 0375 9E       		.byte	-98
+ 1248 0376 9E       		.byte	-98
+ 1249 0377 9E       		.byte	-98
+ 1250 0378 9D       		.byte	-99
+ 1251 0379 9D       		.byte	-99
+ 1252 037a 9D       		.byte	-99
+ 1253 037b 9C       		.byte	-100
+ 1254 037c 9C       		.byte	-100
+ 1255 037d 9C       		.byte	-100
+ 1256 037e 9C       		.byte	-100
+ 1257 037f 9B       		.byte	-101
+ 1258 0380 9B       		.byte	-101
+ 1259 0381 9B       		.byte	-101
+ 1260 0382 9B       		.byte	-101
+ 1261 0383 9A       		.byte	-102
+ 1262 0384 9A       		.byte	-102
+ 1263 0385 9A       		.byte	-102
+ 1264 0386 99       		.byte	-103
+ 1265 0387 99       		.byte	-103
+ 1266 0388 99       		.byte	-103
+ 1267 0389 99       		.byte	-103
+ 1268 038a 98       		.byte	-104
+ 1269 038b 98       		.byte	-104
+ 1270 038c 98       		.byte	-104
+ 1271 038d 97       		.byte	-105
+ 1272 038e 97       		.byte	-105
+ 1273 038f 97       		.byte	-105
+ 1274 0390 97       		.byte	-105
+ 1275 0391 96       		.byte	-106
+ 1276 0392 96       		.byte	-106
+ 1277 0393 96       		.byte	-106
+ 1278 0394 95       		.byte	-107
+ 1279 0395 95       		.byte	-107
+ 1280 0396 95       		.byte	-107
+ 1281 0397 95       		.byte	-107
+ 1282 0398 94       		.byte	-108
+ 1283 0399 94       		.byte	-108
+ 1284 039a 94       		.byte	-108
+ 1285 039b 93       		.byte	-109
+ 1286 039c 93       		.byte	-109
+ 1287 039d 93       		.byte	-109
+ 1288 039e 93       		.byte	-109
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 29
+
+
+ 1289 039f 92       		.byte	-110
+ 1290 03a0 92       		.byte	-110
+ 1291 03a1 92       		.byte	-110
+ 1292 03a2 91       		.byte	-111
+ 1293 03a3 91       		.byte	-111
+ 1294 03a4 91       		.byte	-111
+ 1295 03a5 91       		.byte	-111
+ 1296 03a6 90       		.byte	-112
+ 1297 03a7 90       		.byte	-112
+ 1298 03a8 90       		.byte	-112
+ 1299 03a9 8F       		.byte	-113
+ 1300 03aa 8F       		.byte	-113
+ 1301 03ab 8F       		.byte	-113
+ 1302 03ac 8F       		.byte	-113
+ 1303 03ad 8E       		.byte	-114
+ 1304 03ae 8E       		.byte	-114
+ 1305 03af 8E       		.byte	-114
+ 1306 03b0 8D       		.byte	-115
+ 1307 03b1 8D       		.byte	-115
+ 1308 03b2 8D       		.byte	-115
+ 1309 03b3 8D       		.byte	-115
+ 1310 03b4 8C       		.byte	-116
+ 1311 03b5 8C       		.byte	-116
+ 1312 03b6 8C       		.byte	-116
+ 1313 03b7 8B       		.byte	-117
+ 1314 03b8 8B       		.byte	-117
+ 1315 03b9 8B       		.byte	-117
+ 1316 03ba 8B       		.byte	-117
+ 1317 03bb 8A       		.byte	-118
+ 1318 03bc 8A       		.byte	-118
+ 1319 03bd 8A       		.byte	-118
+ 1320 03be 89       		.byte	-119
+ 1321 03bf 89       		.byte	-119
+ 1322 03c0 89       		.byte	-119
+ 1323 03c1 88       		.byte	-120
+ 1324 03c2 88       		.byte	-120
+ 1325 03c3 88       		.byte	-120
+ 1326 03c4 88       		.byte	-120
+ 1327 03c5 87       		.byte	-121
+ 1328 03c6 87       		.byte	-121
+ 1329 03c7 87       		.byte	-121
+ 1330 03c8 86       		.byte	-122
+ 1331 03c9 86       		.byte	-122
+ 1332 03ca 86       		.byte	-122
+ 1333 03cb 86       		.byte	-122
+ 1334 03cc 85       		.byte	-123
+ 1335 03cd 85       		.byte	-123
+ 1336 03ce 85       		.byte	-123
+ 1337 03cf 84       		.byte	-124
+ 1338 03d0 84       		.byte	-124
+ 1339 03d1 84       		.byte	-124
+ 1340 03d2 83       		.byte	-125
+ 1341 03d3 83       		.byte	-125
+ 1342 03d4 83       		.byte	-125
+ 1343 03d5 83       		.byte	-125
+ 1344 03d6 82       		.byte	-126
+ 1345 03d7 82       		.byte	-126
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 30
+
+
+ 1346 03d8 82       		.byte	-126
+ 1347 03d9 81       		.byte	-127
+ 1348 03da 81       		.byte	-127
+ 1349 03db 81       		.byte	-127
+ 1350 03dc 81       		.byte	-127
+ 1351 03dd 80       		.byte	-128
+ 1352 03de 80       		.byte	-128
+ 1353 03df 80       		.byte	-128
+ 1354 03e0 7F       		.byte	127
+ 1355 03e1 7F       		.byte	127
+ 1356 03e2 7F       		.byte	127
+ 1357 03e3 7E       		.byte	126
+ 1358 03e4 7E       		.byte	126
+ 1359 03e5 7E       		.byte	126
+ 1360 03e6 7E       		.byte	126
+ 1361 03e7 7D       		.byte	125
+ 1362 03e8 7D       		.byte	125
+ 1363 03e9 7D       		.byte	125
+ 1364 03ea 7C       		.byte	124
+ 1365 03eb 7C       		.byte	124
+ 1366 03ec 7C       		.byte	124
+ 1367 03ed 7C       		.byte	124
+ 1368 03ee 7B       		.byte	123
+ 1369 03ef 7B       		.byte	123
+ 1370 03f0 7B       		.byte	123
+ 1371 03f1 7A       		.byte	122
+ 1372 03f2 7A       		.byte	122
+ 1373 03f3 7A       		.byte	122
+ 1374 03f4 79       		.byte	121
+ 1375 03f5 79       		.byte	121
+ 1376 03f6 79       		.byte	121
+ 1377 03f7 79       		.byte	121
+ 1378 03f8 78       		.byte	120
+ 1379 03f9 78       		.byte	120
+ 1380 03fa 78       		.byte	120
+ 1381 03fb 77       		.byte	119
+ 1382 03fc 77       		.byte	119
+ 1383 03fd 77       		.byte	119
+ 1384 03fe 77       		.byte	119
+ 1385 03ff 76       		.byte	118
+ 1386 0400 76       		.byte	118
+ 1387 0401 76       		.byte	118
+ 1388 0402 75       		.byte	117
+ 1389 0403 75       		.byte	117
+ 1390 0404 75       		.byte	117
+ 1391 0405 74       		.byte	116
+ 1392 0406 74       		.byte	116
+ 1393 0407 74       		.byte	116
+ 1394 0408 74       		.byte	116
+ 1395 0409 73       		.byte	115
+ 1396 040a 73       		.byte	115
+ 1397 040b 73       		.byte	115
+ 1398 040c 72       		.byte	114
+ 1399 040d 72       		.byte	114
+ 1400 040e 72       		.byte	114
+ 1401 040f 72       		.byte	114
+ 1402 0410 71       		.byte	113
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 31
+
+
+ 1403 0411 71       		.byte	113
+ 1404 0412 71       		.byte	113
+ 1405 0413 70       		.byte	112
+ 1406 0414 70       		.byte	112
+ 1407 0415 70       		.byte	112
+ 1408 0416 6F       		.byte	111
+ 1409 0417 6F       		.byte	111
+ 1410 0418 6F       		.byte	111
+ 1411 0419 6F       		.byte	111
+ 1412 041a 6E       		.byte	110
+ 1413 041b 6E       		.byte	110
+ 1414 041c 6E       		.byte	110
+ 1415 041d 6D       		.byte	109
+ 1416 041e 6D       		.byte	109
+ 1417 041f 6D       		.byte	109
+ 1418 0420 6D       		.byte	109
+ 1419 0421 6C       		.byte	108
+ 1420 0422 6C       		.byte	108
+ 1421 0423 6C       		.byte	108
+ 1422 0424 6B       		.byte	107
+ 1423 0425 6B       		.byte	107
+ 1424 0426 6B       		.byte	107
+ 1425 0427 6B       		.byte	107
+ 1426 0428 6A       		.byte	106
+ 1427 0429 6A       		.byte	106
+ 1428 042a 6A       		.byte	106
+ 1429 042b 69       		.byte	105
+ 1430 042c 69       		.byte	105
+ 1431 042d 69       		.byte	105
+ 1432 042e 69       		.byte	105
+ 1433 042f 68       		.byte	104
+ 1434 0430 68       		.byte	104
+ 1435 0431 68       		.byte	104
+ 1436 0432 67       		.byte	103
+ 1437 0433 67       		.byte	103
+ 1438 0434 67       		.byte	103
+ 1439 0435 67       		.byte	103
+ 1440 0436 66       		.byte	102
+ 1441 0437 66       		.byte	102
+ 1442 0438 66       		.byte	102
+ 1443 0439 65       		.byte	101
+ 1444 043a 65       		.byte	101
+ 1445 043b 65       		.byte	101
+ 1446 043c 65       		.byte	101
+ 1447 043d 64       		.byte	100
+ 1448 043e 64       		.byte	100
+ 1449 043f 64       		.byte	100
+ 1450 0440 63       		.byte	99
+ 1451 0441 63       		.byte	99
+ 1452 0442 63       		.byte	99
+ 1453 0443 63       		.byte	99
+ 1454 0444 62       		.byte	98
+ 1455 0445 62       		.byte	98
+ 1456 0446 62       		.byte	98
+ 1457 0447 61       		.byte	97
+ 1458 0448 61       		.byte	97
+ 1459 0449 61       		.byte	97
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 32
+
+
+ 1460 044a 61       		.byte	97
+ 1461 044b 60       		.byte	96
+ 1462 044c 60       		.byte	96
+ 1463 044d 60       		.byte	96
+ 1464 044e 5F       		.byte	95
+ 1465 044f 5F       		.byte	95
+ 1466 0450 5F       		.byte	95
+ 1467 0451 5F       		.byte	95
+ 1468 0452 5E       		.byte	94
+ 1469 0453 5E       		.byte	94
+ 1470 0454 5E       		.byte	94
+ 1471 0455 5E       		.byte	94
+ 1472 0456 5D       		.byte	93
+ 1473 0457 5D       		.byte	93
+ 1474 0458 5D       		.byte	93
+ 1475 0459 5C       		.byte	92
+ 1476 045a 5C       		.byte	92
+ 1477 045b 5C       		.byte	92
+ 1478 045c 5C       		.byte	92
+ 1479 045d 5B       		.byte	91
+ 1480 045e 5B       		.byte	91
+ 1481 045f 5B       		.byte	91
+ 1482 0460 5A       		.byte	90
+ 1483 0461 5A       		.byte	90
+ 1484 0462 5A       		.byte	90
+ 1485 0463 5A       		.byte	90
+ 1486 0464 59       		.byte	89
+ 1487 0465 59       		.byte	89
+ 1488 0466 59       		.byte	89
+ 1489 0467 59       		.byte	89
+ 1490 0468 58       		.byte	88
+ 1491 0469 58       		.byte	88
+ 1492 046a 58       		.byte	88
+ 1493 046b 57       		.byte	87
+ 1494 046c 57       		.byte	87
+ 1495 046d 57       		.byte	87
+ 1496 046e 57       		.byte	87
+ 1497 046f 56       		.byte	86
+ 1498 0470 56       		.byte	86
+ 1499 0471 56       		.byte	86
+ 1500 0472 56       		.byte	86
+ 1501 0473 55       		.byte	85
+ 1502 0474 55       		.byte	85
+ 1503 0475 55       		.byte	85
+ 1504 0476 55       		.byte	85
+ 1505 0477 54       		.byte	84
+ 1506 0478 54       		.byte	84
+ 1507 0479 54       		.byte	84
+ 1508 047a 53       		.byte	83
+ 1509 047b 53       		.byte	83
+ 1510 047c 53       		.byte	83
+ 1511 047d 53       		.byte	83
+ 1512 047e 52       		.byte	82
+ 1513 047f 52       		.byte	82
+ 1514 0480 52       		.byte	82
+ 1515 0481 52       		.byte	82
+ 1516 0482 51       		.byte	81
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 33
+
+
+ 1517 0483 51       		.byte	81
+ 1518 0484 51       		.byte	81
+ 1519 0485 51       		.byte	81
+ 1520 0486 50       		.byte	80
+ 1521 0487 50       		.byte	80
+ 1522 0488 50       		.byte	80
+ 1523 0489 50       		.byte	80
+ 1524 048a 4F       		.byte	79
+ 1525 048b 4F       		.byte	79
+ 1526 048c 4F       		.byte	79
+ 1527 048d 4F       		.byte	79
+ 1528 048e 4E       		.byte	78
+ 1529 048f 4E       		.byte	78
+ 1530 0490 4E       		.byte	78
+ 1531 0491 4E       		.byte	78
+ 1532 0492 4D       		.byte	77
+ 1533 0493 4D       		.byte	77
+ 1534 0494 4D       		.byte	77
+ 1535 0495 4D       		.byte	77
+ 1536 0496 4C       		.byte	76
+ 1537 0497 4C       		.byte	76
+ 1538 0498 4C       		.byte	76
+ 1539 0499 4C       		.byte	76
+ 1540 049a 4B       		.byte	75
+ 1541 049b 4B       		.byte	75
+ 1542 049c 4B       		.byte	75
+ 1543 049d 4B       		.byte	75
+ 1544 049e 4A       		.byte	74
+ 1545 049f 4A       		.byte	74
+ 1546 04a0 4A       		.byte	74
+ 1547 04a1 4A       		.byte	74
+ 1548 04a2 49       		.byte	73
+ 1549 04a3 49       		.byte	73
+ 1550 04a4 49       		.byte	73
+ 1551 04a5 49       		.byte	73
+ 1552 04a6 48       		.byte	72
+ 1553 04a7 48       		.byte	72
+ 1554 04a8 48       		.byte	72
+ 1555 04a9 48       		.byte	72
+ 1556 04aa 47       		.byte	71
+ 1557 04ab 47       		.byte	71
+ 1558 04ac 47       		.byte	71
+ 1559 04ad 47       		.byte	71
+ 1560 04ae 46       		.byte	70
+ 1561 04af 46       		.byte	70
+ 1562 04b0 46       		.byte	70
+ 1563 04b1 46       		.byte	70
+ 1564 04b2 45       		.byte	69
+ 1565 04b3 45       		.byte	69
+ 1566 04b4 45       		.byte	69
+ 1567 04b5 45       		.byte	69
+ 1568 04b6 44       		.byte	68
+ 1569 04b7 44       		.byte	68
+ 1570 04b8 44       		.byte	68
+ 1571 04b9 44       		.byte	68
+ 1572 04ba 44       		.byte	68
+ 1573 04bb 43       		.byte	67
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 34
+
+
+ 1574 04bc 43       		.byte	67
+ 1575 04bd 43       		.byte	67
+ 1576 04be 43       		.byte	67
+ 1577 04bf 42       		.byte	66
+ 1578 04c0 42       		.byte	66
+ 1579 04c1 42       		.byte	66
+ 1580 04c2 42       		.byte	66
+ 1581 04c3 41       		.byte	65
+ 1582 04c4 41       		.byte	65
+ 1583 04c5 41       		.byte	65
+ 1584 04c6 41       		.byte	65
+ 1585 04c7 41       		.byte	65
+ 1586 04c8 40       		.byte	64
+ 1587 04c9 40       		.byte	64
+ 1588 04ca 40       		.byte	64
+ 1589 04cb 40       		.byte	64
+ 1590 04cc 3F       		.byte	63
+ 1591 04cd 3F       		.byte	63
+ 1592 04ce 3F       		.byte	63
+ 1593 04cf 3F       		.byte	63
+ 1594 04d0 3F       		.byte	63
+ 1595 04d1 3E       		.byte	62
+ 1596 04d2 3E       		.byte	62
+ 1597 04d3 3E       		.byte	62
+ 1598 04d4 3E       		.byte	62
+ 1599 04d5 3D       		.byte	61
+ 1600 04d6 3D       		.byte	61
+ 1601 04d7 3D       		.byte	61
+ 1602 04d8 3D       		.byte	61
+ 1603 04d9 3D       		.byte	61
+ 1604 04da 3C       		.byte	60
+ 1605 04db 3C       		.byte	60
+ 1606 04dc 3C       		.byte	60
+ 1607 04dd 3C       		.byte	60
+ 1608 04de 3C       		.byte	60
+ 1609 04df 3B       		.byte	59
+ 1610 04e0 3B       		.byte	59
+ 1611 04e1 3B       		.byte	59
+ 1612 04e2 3B       		.byte	59
+ 1613 04e3 3B       		.byte	59
+ 1614 04e4 3A       		.byte	58
+ 1615 04e5 3A       		.byte	58
+ 1616 04e6 3A       		.byte	58
+ 1617 04e7 3A       		.byte	58
+ 1618 04e8 39       		.byte	57
+ 1619 04e9 39       		.byte	57
+ 1620 04ea 39       		.byte	57
+ 1621 04eb 39       		.byte	57
+ 1622 04ec 39       		.byte	57
+ 1623 04ed 38       		.byte	56
+ 1624 04ee 38       		.byte	56
+ 1625 04ef 38       		.byte	56
+ 1626 04f0 38       		.byte	56
+ 1627 04f1 38       		.byte	56
+ 1628 04f2 37       		.byte	55
+ 1629 04f3 37       		.byte	55
+ 1630 04f4 37       		.byte	55
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 35
+
+
+ 1631 04f5 37       		.byte	55
+ 1632 04f6 37       		.byte	55
+ 1633 04f7 36       		.byte	54
+ 1634 04f8 36       		.byte	54
+ 1635 04f9 36       		.byte	54
+ 1636 04fa 36       		.byte	54
+ 1637 04fb 36       		.byte	54
+ 1638 04fc 36       		.byte	54
+ 1639 04fd 35       		.byte	53
+ 1640 04fe 35       		.byte	53
+ 1641 04ff 35       		.byte	53
+ 1642 0500 35       		.byte	53
+ 1643 0501 35       		.byte	53
+ 1644 0502 34       		.byte	52
+ 1645 0503 34       		.byte	52
+ 1646 0504 34       		.byte	52
+ 1647 0505 34       		.byte	52
+ 1648 0506 34       		.byte	52
+ 1649 0507 33       		.byte	51
+ 1650 0508 33       		.byte	51
+ 1651 0509 33       		.byte	51
+ 1652 050a 33       		.byte	51
+ 1653 050b 33       		.byte	51
+ 1654 050c 33       		.byte	51
+ 1655 050d 32       		.byte	50
+ 1656 050e 32       		.byte	50
+ 1657 050f 32       		.byte	50
+ 1658 0510 32       		.byte	50
+ 1659 0511 32       		.byte	50
+ 1660 0512 32       		.byte	50
+ 1661 0513 31       		.byte	49
+ 1662 0514 31       		.byte	49
+ 1663 0515 31       		.byte	49
+ 1664 0516 31       		.byte	49
+ 1665 0517 31       		.byte	49
+ 1666 0518 30       		.byte	48
+ 1667 0519 30       		.byte	48
+ 1668 051a 30       		.byte	48
+ 1669 051b 30       		.byte	48
+ 1670 051c 30       		.byte	48
+ 1671 051d 30       		.byte	48
+ 1672 051e 2F       		.byte	47
+ 1673 051f 2F       		.byte	47
+ 1674 0520 2F       		.byte	47
+ 1675 0521 2F       		.byte	47
+ 1676 0522 2F       		.byte	47
+ 1677 0523 2F       		.byte	47
+ 1678 0524 2E       		.byte	46
+ 1679 0525 2E       		.byte	46
+ 1680 0526 2E       		.byte	46
+ 1681 0527 2E       		.byte	46
+ 1682 0528 2E       		.byte	46
+ 1683 0529 2E       		.byte	46
+ 1684 052a 2E       		.byte	46
+ 1685 052b 2D       		.byte	45
+ 1686 052c 2D       		.byte	45
+ 1687 052d 2D       		.byte	45
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 36
+
+
+ 1688 052e 2D       		.byte	45
+ 1689 052f 2D       		.byte	45
+ 1690 0530 2D       		.byte	45
+ 1691 0531 2C       		.byte	44
+ 1692 0532 2C       		.byte	44
+ 1693 0533 2C       		.byte	44
+ 1694 0534 2C       		.byte	44
+ 1695 0535 2C       		.byte	44
+ 1696 0536 2C       		.byte	44
+ 1697 0537 2C       		.byte	44
+ 1698 0538 2B       		.byte	43
+ 1699 0539 2B       		.byte	43
+ 1700 053a 2B       		.byte	43
+ 1701 053b 2B       		.byte	43
+ 1702 053c 2B       		.byte	43
+ 1703 053d 2B       		.byte	43
+ 1704 053e 2B       		.byte	43
+ 1705 053f 2A       		.byte	42
+ 1706 0540 2A       		.byte	42
+ 1707 0541 2A       		.byte	42
+ 1708 0542 2A       		.byte	42
+ 1709 0543 2A       		.byte	42
+ 1710 0544 2A       		.byte	42
+ 1711 0545 2A       		.byte	42
+ 1712 0546 29       		.byte	41
+ 1713 0547 29       		.byte	41
+ 1714 0548 29       		.byte	41
+ 1715 0549 29       		.byte	41
+ 1716 054a 29       		.byte	41
+ 1717 054b 29       		.byte	41
+ 1718 054c 29       		.byte	41
+ 1719 054d 29       		.byte	41
+ 1720 054e 28       		.byte	40
+ 1721 054f 28       		.byte	40
+ 1722 0550 28       		.byte	40
+ 1723 0551 28       		.byte	40
+ 1724 0552 28       		.byte	40
+ 1725 0553 28       		.byte	40
+ 1726 0554 28       		.byte	40
+ 1727 0555 28       		.byte	40
+ 1728 0556 27       		.byte	39
+ 1729 0557 27       		.byte	39
+ 1730 0558 27       		.byte	39
+ 1731 0559 27       		.byte	39
+ 1732 055a 27       		.byte	39
+ 1733 055b 27       		.byte	39
+ 1734 055c 27       		.byte	39
+ 1735 055d 27       		.byte	39
+ 1736 055e 26       		.byte	38
+ 1737 055f 26       		.byte	38
+ 1738 0560 26       		.byte	38
+ 1739 0561 26       		.byte	38
+ 1740 0562 26       		.byte	38
+ 1741 0563 26       		.byte	38
+ 1742 0564 26       		.byte	38
+ 1743 0565 26       		.byte	38
+ 1744 0566 26       		.byte	38
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 37
+
+
+ 1745 0567 26       		.byte	38
+ 1746 0568 25       		.byte	37
+ 1747 0569 25       		.byte	37
+ 1748 056a 25       		.byte	37
+ 1749 056b 25       		.byte	37
+ 1750 056c 25       		.byte	37
+ 1751 056d 25       		.byte	37
+ 1752 056e 25       		.byte	37
+ 1753 056f 25       		.byte	37
+ 1754 0570 25       		.byte	37
+ 1755 0571 24       		.byte	36
+ 1756 0572 24       		.byte	36
+ 1757 0573 24       		.byte	36
+ 1758 0574 24       		.byte	36
+ 1759 0575 24       		.byte	36
+ 1760 0576 24       		.byte	36
+ 1761 0577 24       		.byte	36
+ 1762 0578 24       		.byte	36
+ 1763 0579 24       		.byte	36
+ 1764 057a 24       		.byte	36
+ 1765 057b 24       		.byte	36
+ 1766 057c 23       		.byte	35
+ 1767 057d 23       		.byte	35
+ 1768 057e 23       		.byte	35
+ 1769 057f 23       		.byte	35
+ 1770 0580 23       		.byte	35
+ 1771 0581 23       		.byte	35
+ 1772 0582 23       		.byte	35
+ 1773 0583 23       		.byte	35
+ 1774 0584 23       		.byte	35
+ 1775 0585 23       		.byte	35
+ 1776 0586 23       		.byte	35
+ 1777 0587 23       		.byte	35
+ 1778 0588 22       		.byte	34
+ 1779 0589 22       		.byte	34
+ 1780 058a 22       		.byte	34
+ 1781 058b 22       		.byte	34
+ 1782 058c 22       		.byte	34
+ 1783 058d 22       		.byte	34
+ 1784 058e 22       		.byte	34
+ 1785 058f 22       		.byte	34
+ 1786 0590 22       		.byte	34
+ 1787 0591 22       		.byte	34
+ 1788 0592 22       		.byte	34
+ 1789 0593 22       		.byte	34
+ 1790 0594 22       		.byte	34
+ 1791 0595 22       		.byte	34
+ 1792 0596 22       		.byte	34
+ 1793 0597 21       		.byte	33
+ 1794 0598 21       		.byte	33
+ 1795 0599 21       		.byte	33
+ 1796 059a 21       		.byte	33
+ 1797 059b 21       		.byte	33
+ 1798 059c 21       		.byte	33
+ 1799 059d 21       		.byte	33
+ 1800 059e 21       		.byte	33
+ 1801 059f 21       		.byte	33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 38
+
+
+ 1802 05a0 21       		.byte	33
+ 1803 05a1 21       		.byte	33
+ 1804 05a2 21       		.byte	33
+ 1805 05a3 21       		.byte	33
+ 1806 05a4 21       		.byte	33
+ 1807 05a5 21       		.byte	33
+ 1808 05a6 21       		.byte	33
+ 1809 05a7 21       		.byte	33
+ 1810 05a8 20       		.byte	32
+ 1811 05a9 20       		.byte	32
+ 1812 05aa 20       		.byte	32
+ 1813 05ab 20       		.byte	32
+ 1814 05ac 20       		.byte	32
+ 1815 05ad 20       		.byte	32
+ 1816 05ae 20       		.byte	32
+ 1817 05af 20       		.byte	32
+ 1818 05b0 20       		.byte	32
+ 1819 05b1 20       		.byte	32
+ 1820 05b2 20       		.byte	32
+ 1821 05b3 20       		.byte	32
+ 1822 05b4 20       		.byte	32
+ 1823 05b5 20       		.byte	32
+ 1824 05b6 20       		.byte	32
+ 1825 05b7 20       		.byte	32
+ 1826 05b8 20       		.byte	32
+ 1827 05b9 20       		.byte	32
+ 1828 05ba 20       		.byte	32
+ 1829 05bb 20       		.byte	32
+ 1830 05bc 20       		.byte	32
+ 1831 05bd 20       		.byte	32
+ 1832 05be 20       		.byte	32
+ 1833 05bf 20       		.byte	32
+ 1834 05c0 20       		.byte	32
+ 1835 05c1 20       		.byte	32
+ 1836 05c2 20       		.byte	32
+ 1837 05c3 20       		.byte	32
+ 1838 05c4 20       		.byte	32
+ 1839 05c5 1F       		.byte	31
+ 1840 05c6 1F       		.byte	31
+ 1841 05c7 1F       		.byte	31
+ 1842 05c8 1F       		.byte	31
+ 1843 05c9 1F       		.byte	31
+ 1844 05ca 1F       		.byte	31
+ 1845 05cb 1F       		.byte	31
+ 1846 05cc 1F       		.byte	31
+ 1847 05cd 1F       		.byte	31
+ 1848 05ce 1F       		.byte	31
+ 1849 05cf 1F       		.byte	31
+ 1850 05d0 1F       		.byte	31
+ 1851 05d1 1F       		.byte	31
+ 1852 05d2 1F       		.byte	31
+ 1853 05d3 1F       		.byte	31
+ 1854 05d4 1F       		.byte	31
+ 1855 05d5 1F       		.byte	31
+ 1856 05d6 1F       		.byte	31
+ 1857 05d7 1F       		.byte	31
+ 1858 05d8 1F       		.byte	31
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 39
+
+
+ 1859 05d9 1F       		.byte	31
+ 1860 05da 1F       		.byte	31
+ 1861 05db 1F       		.byte	31
+ 1862 05dc 1F       		.byte	31
+ 1863 05dd 1F       		.byte	31
+ 1864 05de 1F       		.byte	31
+ 1865 05df 1F       		.byte	31
+ 1866 05e0 1F       		.byte	31
+ 1867 05e1 1F       		.byte	31
+ 1868 05e2 1F       		.byte	31
+ 1869 05e3 1F       		.byte	31
+ 1870 05e4 1F       		.byte	31
+ 1871 05e5 1F       		.byte	31
+ 1872 05e6 1F       		.byte	31
+ 1873 05e7 1F       		.byte	31
+ 1874 05e8 1F       		.byte	31
+ 1875 05e9 1F       		.byte	31
+ 1876 05ea 1F       		.byte	31
+ 1877 05eb 1F       		.byte	31
+ 1878 05ec 1F       		.byte	31
+ 1879 05ed 1F       		.byte	31
+ 1880 05ee 1F       		.byte	31
+ 1881 05ef 1F       		.byte	31
+ 1882 05f0 1F       		.byte	31
+ 1883 05f1 1F       		.byte	31
+ 1884 05f2 1F       		.byte	31
+ 1885 05f3 1F       		.byte	31
+ 1886 05f4 20       		.byte	32
+ 1887 05f5 20       		.byte	32
+ 1888 05f6 20       		.byte	32
+ 1889 05f7 20       		.byte	32
+ 1890 05f8 20       		.byte	32
+ 1891 05f9 20       		.byte	32
+ 1892 05fa 20       		.byte	32
+ 1893 05fb 20       		.byte	32
+ 1894 05fc 20       		.byte	32
+ 1895 05fd 20       		.byte	32
+ 1896 05fe 20       		.byte	32
+ 1897 05ff 20       		.byte	32
+ 1898 0600 20       		.byte	32
+ 1899 0601 20       		.byte	32
+ 1900 0602 20       		.byte	32
+ 1901 0603 20       		.byte	32
+ 1902 0604 20       		.byte	32
+ 1903 0605 20       		.byte	32
+ 1904 0606 20       		.byte	32
+ 1905 0607 20       		.byte	32
+ 1906 0608 20       		.byte	32
+ 1907 0609 20       		.byte	32
+ 1908 060a 20       		.byte	32
+ 1909 060b 20       		.byte	32
+ 1910 060c 20       		.byte	32
+ 1911 060d 20       		.byte	32
+ 1912 060e 20       		.byte	32
+ 1913 060f 20       		.byte	32
+ 1914 0610 20       		.byte	32
+ 1915 0611 21       		.byte	33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 40
+
+
+ 1916 0612 21       		.byte	33
+ 1917 0613 21       		.byte	33
+ 1918 0614 21       		.byte	33
+ 1919 0615 21       		.byte	33
+ 1920 0616 21       		.byte	33
+ 1921 0617 21       		.byte	33
+ 1922 0618 21       		.byte	33
+ 1923 0619 21       		.byte	33
+ 1924 061a 21       		.byte	33
+ 1925 061b 21       		.byte	33
+ 1926 061c 21       		.byte	33
+ 1927 061d 21       		.byte	33
+ 1928 061e 21       		.byte	33
+ 1929 061f 21       		.byte	33
+ 1930 0620 21       		.byte	33
+ 1931 0621 21       		.byte	33
+ 1932 0622 22       		.byte	34
+ 1933 0623 22       		.byte	34
+ 1934 0624 22       		.byte	34
+ 1935 0625 22       		.byte	34
+ 1936 0626 22       		.byte	34
+ 1937 0627 22       		.byte	34
+ 1938 0628 22       		.byte	34
+ 1939 0629 22       		.byte	34
+ 1940 062a 22       		.byte	34
+ 1941 062b 22       		.byte	34
+ 1942 062c 22       		.byte	34
+ 1943 062d 22       		.byte	34
+ 1944 062e 22       		.byte	34
+ 1945 062f 22       		.byte	34
+ 1946 0630 22       		.byte	34
+ 1947 0631 23       		.byte	35
+ 1948 0632 23       		.byte	35
+ 1949 0633 23       		.byte	35
+ 1950 0634 23       		.byte	35
+ 1951 0635 23       		.byte	35
+ 1952 0636 23       		.byte	35
+ 1953 0637 23       		.byte	35
+ 1954 0638 23       		.byte	35
+ 1955 0639 23       		.byte	35
+ 1956 063a 23       		.byte	35
+ 1957 063b 23       		.byte	35
+ 1958 063c 23       		.byte	35
+ 1959 063d 24       		.byte	36
+ 1960 063e 24       		.byte	36
+ 1961 063f 24       		.byte	36
+ 1962 0640 24       		.byte	36
+ 1963 0641 24       		.byte	36
+ 1964 0642 24       		.byte	36
+ 1965 0643 24       		.byte	36
+ 1966 0644 24       		.byte	36
+ 1967 0645 24       		.byte	36
+ 1968 0646 24       		.byte	36
+ 1969 0647 24       		.byte	36
+ 1970 0648 25       		.byte	37
+ 1971 0649 25       		.byte	37
+ 1972 064a 25       		.byte	37
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 41
+
+
+ 1973 064b 25       		.byte	37
+ 1974 064c 25       		.byte	37
+ 1975 064d 25       		.byte	37
+ 1976 064e 25       		.byte	37
+ 1977 064f 25       		.byte	37
+ 1978 0650 25       		.byte	37
+ 1979 0651 26       		.byte	38
+ 1980 0652 26       		.byte	38
+ 1981 0653 26       		.byte	38
+ 1982 0654 26       		.byte	38
+ 1983 0655 26       		.byte	38
+ 1984 0656 26       		.byte	38
+ 1985 0657 26       		.byte	38
+ 1986 0658 26       		.byte	38
+ 1987 0659 26       		.byte	38
+ 1988 065a 26       		.byte	38
+ 1989 065b 27       		.byte	39
+ 1990 065c 27       		.byte	39
+ 1991 065d 27       		.byte	39
+ 1992 065e 27       		.byte	39
+ 1993 065f 27       		.byte	39
+ 1994 0660 27       		.byte	39
+ 1995 0661 27       		.byte	39
+ 1996 0662 27       		.byte	39
+ 1997 0663 28       		.byte	40
+ 1998 0664 28       		.byte	40
+ 1999 0665 28       		.byte	40
+ 2000 0666 28       		.byte	40
+ 2001 0667 28       		.byte	40
+ 2002 0668 28       		.byte	40
+ 2003 0669 28       		.byte	40
+ 2004 066a 28       		.byte	40
+ 2005 066b 29       		.byte	41
+ 2006 066c 29       		.byte	41
+ 2007 066d 29       		.byte	41
+ 2008 066e 29       		.byte	41
+ 2009 066f 29       		.byte	41
+ 2010 0670 29       		.byte	41
+ 2011 0671 29       		.byte	41
+ 2012 0672 29       		.byte	41
+ 2013 0673 2A       		.byte	42
+ 2014 0674 2A       		.byte	42
+ 2015 0675 2A       		.byte	42
+ 2016 0676 2A       		.byte	42
+ 2017 0677 2A       		.byte	42
+ 2018 0678 2A       		.byte	42
+ 2019 0679 2A       		.byte	42
+ 2020 067a 2B       		.byte	43
+ 2021 067b 2B       		.byte	43
+ 2022 067c 2B       		.byte	43
+ 2023 067d 2B       		.byte	43
+ 2024 067e 2B       		.byte	43
+ 2025 067f 2B       		.byte	43
+ 2026 0680 2B       		.byte	43
+ 2027 0681 2C       		.byte	44
+ 2028 0682 2C       		.byte	44
+ 2029 0683 2C       		.byte	44
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 42
+
+
+ 2030 0684 2C       		.byte	44
+ 2031 0685 2C       		.byte	44
+ 2032 0686 2C       		.byte	44
+ 2033 0687 2C       		.byte	44
+ 2034 0688 2D       		.byte	45
+ 2035 0689 2D       		.byte	45
+ 2036 068a 2D       		.byte	45
+ 2037 068b 2D       		.byte	45
+ 2038 068c 2D       		.byte	45
+ 2039 068d 2D       		.byte	45
+ 2040 068e 2E       		.byte	46
+ 2041 068f 2E       		.byte	46
+ 2042 0690 2E       		.byte	46
+ 2043 0691 2E       		.byte	46
+ 2044 0692 2E       		.byte	46
+ 2045 0693 2E       		.byte	46
+ 2046 0694 2E       		.byte	46
+ 2047 0695 2F       		.byte	47
+ 2048 0696 2F       		.byte	47
+ 2049 0697 2F       		.byte	47
+ 2050 0698 2F       		.byte	47
+ 2051 0699 2F       		.byte	47
+ 2052 069a 2F       		.byte	47
+ 2053 069b 30       		.byte	48
+ 2054 069c 30       		.byte	48
+ 2055 069d 30       		.byte	48
+ 2056 069e 30       		.byte	48
+ 2057 069f 30       		.byte	48
+ 2058 06a0 30       		.byte	48
+ 2059 06a1 31       		.byte	49
+ 2060 06a2 31       		.byte	49
+ 2061 06a3 31       		.byte	49
+ 2062 06a4 31       		.byte	49
+ 2063 06a5 31       		.byte	49
+ 2064 06a6 32       		.byte	50
+ 2065 06a7 32       		.byte	50
+ 2066 06a8 32       		.byte	50
+ 2067 06a9 32       		.byte	50
+ 2068 06aa 32       		.byte	50
+ 2069 06ab 32       		.byte	50
+ 2070 06ac 33       		.byte	51
+ 2071 06ad 33       		.byte	51
+ 2072 06ae 33       		.byte	51
+ 2073 06af 33       		.byte	51
+ 2074 06b0 33       		.byte	51
+ 2075 06b1 33       		.byte	51
+ 2076 06b2 34       		.byte	52
+ 2077 06b3 34       		.byte	52
+ 2078 06b4 34       		.byte	52
+ 2079 06b5 34       		.byte	52
+ 2080 06b6 34       		.byte	52
+ 2081 06b7 35       		.byte	53
+ 2082 06b8 35       		.byte	53
+ 2083 06b9 35       		.byte	53
+ 2084 06ba 35       		.byte	53
+ 2085 06bb 35       		.byte	53
+ 2086 06bc 36       		.byte	54
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 43
+
+
+ 2087 06bd 36       		.byte	54
+ 2088 06be 36       		.byte	54
+ 2089 06bf 36       		.byte	54
+ 2090 06c0 36       		.byte	54
+ 2091 06c1 36       		.byte	54
+ 2092 06c2 37       		.byte	55
+ 2093 06c3 37       		.byte	55
+ 2094 06c4 37       		.byte	55
+ 2095 06c5 37       		.byte	55
+ 2096 06c6 37       		.byte	55
+ 2097 06c7 38       		.byte	56
+ 2098 06c8 38       		.byte	56
+ 2099 06c9 38       		.byte	56
+ 2100 06ca 38       		.byte	56
+ 2101 06cb 38       		.byte	56
+ 2102 06cc 39       		.byte	57
+ 2103 06cd 39       		.byte	57
+ 2104 06ce 39       		.byte	57
+ 2105 06cf 39       		.byte	57
+ 2106 06d0 39       		.byte	57
+ 2107 06d1 3A       		.byte	58
+ 2108 06d2 3A       		.byte	58
+ 2109 06d3 3A       		.byte	58
+ 2110 06d4 3A       		.byte	58
+ 2111 06d5 3B       		.byte	59
+ 2112 06d6 3B       		.byte	59
+ 2113 06d7 3B       		.byte	59
+ 2114 06d8 3B       		.byte	59
+ 2115 06d9 3B       		.byte	59
+ 2116 06da 3C       		.byte	60
+ 2117 06db 3C       		.byte	60
+ 2118 06dc 3C       		.byte	60
+ 2119 06dd 3C       		.byte	60
+ 2120 06de 3C       		.byte	60
+ 2121 06df 3D       		.byte	61
+ 2122 06e0 3D       		.byte	61
+ 2123 06e1 3D       		.byte	61
+ 2124 06e2 3D       		.byte	61
+ 2125 06e3 3D       		.byte	61
+ 2126 06e4 3E       		.byte	62
+ 2127 06e5 3E       		.byte	62
+ 2128 06e6 3E       		.byte	62
+ 2129 06e7 3E       		.byte	62
+ 2130 06e8 3F       		.byte	63
+ 2131 06e9 3F       		.byte	63
+ 2132 06ea 3F       		.byte	63
+ 2133 06eb 3F       		.byte	63
+ 2134 06ec 3F       		.byte	63
+ 2135 06ed 40       		.byte	64
+ 2136 06ee 40       		.byte	64
+ 2137 06ef 40       		.byte	64
+ 2138 06f0 40       		.byte	64
+ 2139 06f1 41       		.byte	65
+ 2140 06f2 41       		.byte	65
+ 2141 06f3 41       		.byte	65
+ 2142 06f4 41       		.byte	65
+ 2143 06f5 41       		.byte	65
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 44
+
+
+ 2144 06f6 42       		.byte	66
+ 2145 06f7 42       		.byte	66
+ 2146 06f8 42       		.byte	66
+ 2147 06f9 42       		.byte	66
+ 2148 06fa 43       		.byte	67
+ 2149 06fb 43       		.byte	67
+ 2150 06fc 43       		.byte	67
+ 2151 06fd 43       		.byte	67
+ 2152 06fe 44       		.byte	68
+ 2153 06ff 44       		.byte	68
+ 2154 0700 44       		.byte	68
+ 2155 0701 44       		.byte	68
+ 2156 0702 44       		.byte	68
+ 2157 0703 45       		.byte	69
+ 2158 0704 45       		.byte	69
+ 2159 0705 45       		.byte	69
+ 2160 0706 45       		.byte	69
+ 2161 0707 46       		.byte	70
+ 2162 0708 46       		.byte	70
+ 2163 0709 46       		.byte	70
+ 2164 070a 46       		.byte	70
+ 2165 070b 47       		.byte	71
+ 2166 070c 47       		.byte	71
+ 2167 070d 47       		.byte	71
+ 2168 070e 47       		.byte	71
+ 2169 070f 48       		.byte	72
+ 2170 0710 48       		.byte	72
+ 2171 0711 48       		.byte	72
+ 2172 0712 48       		.byte	72
+ 2173 0713 49       		.byte	73
+ 2174 0714 49       		.byte	73
+ 2175 0715 49       		.byte	73
+ 2176 0716 49       		.byte	73
+ 2177 0717 4A       		.byte	74
+ 2178 0718 4A       		.byte	74
+ 2179 0719 4A       		.byte	74
+ 2180 071a 4A       		.byte	74
+ 2181 071b 4B       		.byte	75
+ 2182 071c 4B       		.byte	75
+ 2183 071d 4B       		.byte	75
+ 2184 071e 4B       		.byte	75
+ 2185 071f 4C       		.byte	76
+ 2186 0720 4C       		.byte	76
+ 2187 0721 4C       		.byte	76
+ 2188 0722 4C       		.byte	76
+ 2189 0723 4D       		.byte	77
+ 2190 0724 4D       		.byte	77
+ 2191 0725 4D       		.byte	77
+ 2192 0726 4D       		.byte	77
+ 2193 0727 4E       		.byte	78
+ 2194 0728 4E       		.byte	78
+ 2195 0729 4E       		.byte	78
+ 2196 072a 4E       		.byte	78
+ 2197 072b 4F       		.byte	79
+ 2198 072c 4F       		.byte	79
+ 2199 072d 4F       		.byte	79
+ 2200 072e 4F       		.byte	79
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 45
+
+
+ 2201 072f 50       		.byte	80
+ 2202 0730 50       		.byte	80
+ 2203 0731 50       		.byte	80
+ 2204 0732 50       		.byte	80
+ 2205 0733 51       		.byte	81
+ 2206 0734 51       		.byte	81
+ 2207 0735 51       		.byte	81
+ 2208 0736 51       		.byte	81
+ 2209 0737 52       		.byte	82
+ 2210 0738 52       		.byte	82
+ 2211 0739 52       		.byte	82
+ 2212 073a 52       		.byte	82
+ 2213 073b 53       		.byte	83
+ 2214 073c 53       		.byte	83
+ 2215 073d 53       		.byte	83
+ 2216 073e 53       		.byte	83
+ 2217 073f 54       		.byte	84
+ 2218 0740 54       		.byte	84
+ 2219 0741 54       		.byte	84
+ 2220 0742 55       		.byte	85
+ 2221 0743 55       		.byte	85
+ 2222 0744 55       		.byte	85
+ 2223 0745 55       		.byte	85
+ 2224 0746 56       		.byte	86
+ 2225 0747 56       		.byte	86
+ 2226 0748 56       		.byte	86
+ 2227 0749 56       		.byte	86
+ 2228 074a 57       		.byte	87
+ 2229 074b 57       		.byte	87
+ 2230 074c 57       		.byte	87
+ 2231 074d 57       		.byte	87
+ 2232 074e 58       		.byte	88
+ 2233 074f 58       		.byte	88
+ 2234 0750 58       		.byte	88
+ 2235 0751 59       		.byte	89
+ 2236 0752 59       		.byte	89
+ 2237 0753 59       		.byte	89
+ 2238 0754 59       		.byte	89
+ 2239 0755 5A       		.byte	90
+ 2240 0756 5A       		.byte	90
+ 2241 0757 5A       		.byte	90
+ 2242 0758 5A       		.byte	90
+ 2243 0759 5B       		.byte	91
+ 2244 075a 5B       		.byte	91
+ 2245 075b 5B       		.byte	91
+ 2246 075c 5C       		.byte	92
+ 2247 075d 5C       		.byte	92
+ 2248 075e 5C       		.byte	92
+ 2249 075f 5C       		.byte	92
+ 2250 0760 5D       		.byte	93
+ 2251 0761 5D       		.byte	93
+ 2252 0762 5D       		.byte	93
+ 2253 0763 5E       		.byte	94
+ 2254 0764 5E       		.byte	94
+ 2255 0765 5E       		.byte	94
+ 2256 0766 5E       		.byte	94
+ 2257 0767 5F       		.byte	95
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 46
+
+
+ 2258 0768 5F       		.byte	95
+ 2259 0769 5F       		.byte	95
+ 2260 076a 5F       		.byte	95
+ 2261 076b 60       		.byte	96
+ 2262 076c 60       		.byte	96
+ 2263 076d 60       		.byte	96
+ 2264 076e 61       		.byte	97
+ 2265 076f 61       		.byte	97
+ 2266 0770 61       		.byte	97
+ 2267 0771 61       		.byte	97
+ 2268 0772 62       		.byte	98
+ 2269 0773 62       		.byte	98
+ 2270 0774 62       		.byte	98
+ 2271 0775 63       		.byte	99
+ 2272 0776 63       		.byte	99
+ 2273 0777 63       		.byte	99
+ 2274 0778 63       		.byte	99
+ 2275 0779 64       		.byte	100
+ 2276 077a 64       		.byte	100
+ 2277 077b 64       		.byte	100
+ 2278 077c 65       		.byte	101
+ 2279 077d 65       		.byte	101
+ 2280 077e 65       		.byte	101
+ 2281 077f 65       		.byte	101
+ 2282 0780 66       		.byte	102
+ 2283 0781 66       		.byte	102
+ 2284 0782 66       		.byte	102
+ 2285 0783 67       		.byte	103
+ 2286 0784 67       		.byte	103
+ 2287 0785 67       		.byte	103
+ 2288 0786 67       		.byte	103
+ 2289 0787 68       		.byte	104
+ 2290 0788 68       		.byte	104
+ 2291 0789 68       		.byte	104
+ 2292 078a 69       		.byte	105
+ 2293 078b 69       		.byte	105
+ 2294 078c 69       		.byte	105
+ 2295 078d 69       		.byte	105
+ 2296 078e 6A       		.byte	106
+ 2297 078f 6A       		.byte	106
+ 2298 0790 6A       		.byte	106
+ 2299 0791 6B       		.byte	107
+ 2300 0792 6B       		.byte	107
+ 2301 0793 6B       		.byte	107
+ 2302 0794 6B       		.byte	107
+ 2303 0795 6C       		.byte	108
+ 2304 0796 6C       		.byte	108
+ 2305 0797 6C       		.byte	108
+ 2306 0798 6D       		.byte	109
+ 2307 0799 6D       		.byte	109
+ 2308 079a 6D       		.byte	109
+ 2309 079b 6D       		.byte	109
+ 2310 079c 6E       		.byte	110
+ 2311 079d 6E       		.byte	110
+ 2312 079e 6E       		.byte	110
+ 2313 079f 6F       		.byte	111
+ 2314 07a0 6F       		.byte	111
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 47
+
+
+ 2315 07a1 6F       		.byte	111
+ 2316 07a2 6F       		.byte	111
+ 2317 07a3 70       		.byte	112
+ 2318 07a4 70       		.byte	112
+ 2319 07a5 70       		.byte	112
+ 2320 07a6 71       		.byte	113
+ 2321 07a7 71       		.byte	113
+ 2322 07a8 71       		.byte	113
+ 2323 07a9 72       		.byte	114
+ 2324 07aa 72       		.byte	114
+ 2325 07ab 72       		.byte	114
+ 2326 07ac 72       		.byte	114
+ 2327 07ad 73       		.byte	115
+ 2328 07ae 73       		.byte	115
+ 2329 07af 73       		.byte	115
+ 2330 07b0 74       		.byte	116
+ 2331 07b1 74       		.byte	116
+ 2332 07b2 74       		.byte	116
+ 2333 07b3 74       		.byte	116
+ 2334 07b4 75       		.byte	117
+ 2335 07b5 75       		.byte	117
+ 2336 07b6 75       		.byte	117
+ 2337 07b7 76       		.byte	118
+ 2338 07b8 76       		.byte	118
+ 2339 07b9 76       		.byte	118
+ 2340 07ba 77       		.byte	119
+ 2341 07bb 77       		.byte	119
+ 2342 07bc 77       		.byte	119
+ 2343 07bd 77       		.byte	119
+ 2344 07be 78       		.byte	120
+ 2345 07bf 78       		.byte	120
+ 2346 07c0 78       		.byte	120
+ 2347 07c1 79       		.byte	121
+ 2348 07c2 79       		.byte	121
+ 2349 07c3 79       		.byte	121
+ 2350 07c4 79       		.byte	121
+ 2351 07c5 7A       		.byte	122
+ 2352 07c6 7A       		.byte	122
+ 2353 07c7 7A       		.byte	122
+ 2354 07c8 7B       		.byte	123
+ 2355 07c9 7B       		.byte	123
+ 2356 07ca 7B       		.byte	123
+ 2357 07cb 7C       		.byte	124
+ 2358 07cc 7C       		.byte	124
+ 2359 07cd 7C       		.byte	124
+ 2360 07ce 7C       		.byte	124
+ 2361 07cf 7D       		.byte	125
+ 2362              		.type	WaveDAC8_wave2, %object
+ 2363              		.size	WaveDAC8_wave2, 100
+ 2364              	WaveDAC8_wave2:
+ 2365 07d0 80       		.byte	-128
+ 2366 07d1 84       		.byte	-124
+ 2367 07d2 8A       		.byte	-118
+ 2368 07d3 8F       		.byte	-113
+ 2369 07d4 94       		.byte	-108
+ 2370 07d5 98       		.byte	-104
+ 2371 07d6 9E       		.byte	-98
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 48
+
+
+ 2372 07d7 A2       		.byte	-94
+ 2373 07d8 A8       		.byte	-88
+ 2374 07d9 AC       		.byte	-84
+ 2375 07da B2       		.byte	-78
+ 2376 07db B6       		.byte	-74
+ 2377 07dc BC       		.byte	-68
+ 2378 07dd C0       		.byte	-64
+ 2379 07de C6       		.byte	-58
+ 2380 07df CA       		.byte	-54
+ 2381 07e0 D0       		.byte	-48
+ 2382 07e1 D5       		.byte	-43
+ 2383 07e2 DA       		.byte	-38
+ 2384 07e3 DE       		.byte	-34
+ 2385 07e4 E4       		.byte	-28
+ 2386 07e5 E8       		.byte	-24
+ 2387 07e6 EE       		.byte	-18
+ 2388 07e7 F2       		.byte	-14
+ 2389 07e8 F8       		.byte	-8
+ 2390 07e9 FC       		.byte	-4
+ 2391 07ea F8       		.byte	-8
+ 2392 07eb F2       		.byte	-14
+ 2393 07ec EE       		.byte	-18
+ 2394 07ed E8       		.byte	-24
+ 2395 07ee E4       		.byte	-28
+ 2396 07ef DE       		.byte	-34
+ 2397 07f0 DA       		.byte	-38
+ 2398 07f1 D4       		.byte	-44
+ 2399 07f2 D0       		.byte	-48
+ 2400 07f3 CA       		.byte	-54
+ 2401 07f4 C6       		.byte	-58
+ 2402 07f5 C0       		.byte	-64
+ 2403 07f6 BC       		.byte	-68
+ 2404 07f7 B6       		.byte	-74
+ 2405 07f8 B2       		.byte	-78
+ 2406 07f9 AD       		.byte	-83
+ 2407 07fa A8       		.byte	-88
+ 2408 07fb A2       		.byte	-94
+ 2409 07fc 9E       		.byte	-98
+ 2410 07fd 98       		.byte	-104
+ 2411 07fe 94       		.byte	-108
+ 2412 07ff 8F       		.byte	-113
+ 2413 0800 8A       		.byte	-118
+ 2414 0801 84       		.byte	-124
+ 2415 0802 80       		.byte	-128
+ 2416 0803 7A       		.byte	122
+ 2417 0804 76       		.byte	118
+ 2418 0805 70       		.byte	112
+ 2419 0806 6B       		.byte	107
+ 2420 0807 66       		.byte	102
+ 2421 0808 61       		.byte	97
+ 2422 0809 5D       		.byte	93
+ 2423 080a 58       		.byte	88
+ 2424 080b 53       		.byte	83
+ 2425 080c 4E       		.byte	78
+ 2426 080d 49       		.byte	73
+ 2427 080e 44       		.byte	68
+ 2428 080f 3E       		.byte	62
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 49
+
+
+ 2429 0810 39       		.byte	57
+ 2430 0811 34       		.byte	52
+ 2431 0812 2F       		.byte	47
+ 2432 0813 2A       		.byte	42
+ 2433 0814 25       		.byte	37
+ 2434 0815 21       		.byte	33
+ 2435 0816 1C       		.byte	28
+ 2436 0817 17       		.byte	23
+ 2437 0818 12       		.byte	18
+ 2438 0819 0D       		.byte	13
+ 2439 081a 08       		.byte	8
+ 2440 081b 03       		.byte	3
+ 2441 081c 08       		.byte	8
+ 2442 081d 0D       		.byte	13
+ 2443 081e 12       		.byte	18
+ 2444 081f 17       		.byte	23
+ 2445 0820 1C       		.byte	28
+ 2446 0821 21       		.byte	33
+ 2447 0822 25       		.byte	37
+ 2448 0823 2A       		.byte	42
+ 2449 0824 2F       		.byte	47
+ 2450 0825 34       		.byte	52
+ 2451 0826 39       		.byte	57
+ 2452 0827 3E       		.byte	62
+ 2453 0828 44       		.byte	68
+ 2454 0829 49       		.byte	73
+ 2455 082a 4E       		.byte	78
+ 2456 082b 53       		.byte	83
+ 2457 082c 58       		.byte	88
+ 2458 082d 5D       		.byte	93
+ 2459 082e 61       		.byte	97
+ 2460 082f 66       		.byte	102
+ 2461 0830 6B       		.byte	107
+ 2462 0831 70       		.byte	112
+ 2463 0832 76       		.byte	118
+ 2464 0833 7A       		.byte	122
+ 2465              		.bss
+ 2466              		.set	.LANCHOR0,. + 0
+ 2467              		.type	WaveDAC8_Wave1Chan, %object
+ 2468              		.size	WaveDAC8_Wave1Chan, 1
+ 2469              	WaveDAC8_Wave1Chan:
+ 2470 0000 00       		.space	1
+ 2471              		.type	WaveDAC8_Wave2Chan, %object
+ 2472              		.size	WaveDAC8_Wave2Chan, 1
+ 2473              	WaveDAC8_Wave2Chan:
+ 2474 0001 00       		.space	1
+ 2475              		.type	WaveDAC8_Wave1TD, %object
+ 2476              		.size	WaveDAC8_Wave1TD, 1
+ 2477              	WaveDAC8_Wave1TD:
+ 2478 0002 00       		.space	1
+ 2479              		.type	WaveDAC8_Wave2TD, %object
+ 2480              		.size	WaveDAC8_Wave2TD, 1
+ 2481              	WaveDAC8_Wave2TD:
+ 2482 0003 00       		.space	1
+ 2483              		.type	WaveDAC8_initVar, %object
+ 2484              		.size	WaveDAC8_initVar, 1
+ 2485              	WaveDAC8_initVar:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 50
+
+
+ 2486 0004 00       		.space	1
+ 2487              		.text
+ 2488              	.Letext0:
+ 2489              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 2490              		.file 3 "Generated_Source\\PSoC5/WaveDAC8_VDAC8.h"
+ 2491              		.file 4 "Generated_Source\\PSoC5/CYDMAC.H"
+ 2492              		.file 5 "Generated_Source\\PSoC5/WaveDAC8_DacClk.h"
+ 2493              		.file 6 "Generated_Source\\PSoC5/WaveDAC8_Wave1_DMA_dma.h"
+ 2494              		.file 7 "Generated_Source\\PSoC5/WaveDAC8_Wave2_DMA_dma.h"
+ 2495              		.section	.debug_info,"",%progbits
+ 2496              	.Ldebug_info0:
+ 2497 0000 15050000 		.4byte	0x515
+ 2498 0004 0400     		.2byte	0x4
+ 2499 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 2500 000a 04       		.byte	0x4
+ 2501 000b 01       		.uleb128 0x1
+ 2502 000c 35010000 		.4byte	.LASF53
+ 2503 0010 0C       		.byte	0xc
+ 2504 0011 08010000 		.4byte	.LASF54
+ 2505 0015 55020000 		.4byte	.LASF55
+ 2506 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 2507 001d 00000000 		.4byte	0
+ 2508 0021 00000000 		.4byte	.Ldebug_line0
+ 2509 0025 02       		.uleb128 0x2
+ 2510 0026 01       		.byte	0x1
+ 2511 0027 06       		.byte	0x6
+ 2512 0028 09040000 		.4byte	.LASF0
+ 2513 002c 02       		.uleb128 0x2
+ 2514 002d 01       		.byte	0x1
+ 2515 002e 08       		.byte	0x8
+ 2516 002f 25020000 		.4byte	.LASF1
+ 2517 0033 02       		.uleb128 0x2
+ 2518 0034 02       		.byte	0x2
+ 2519 0035 05       		.byte	0x5
+ 2520 0036 4B020000 		.4byte	.LASF2
+ 2521 003a 02       		.uleb128 0x2
+ 2522 003b 02       		.byte	0x2
+ 2523 003c 07       		.byte	0x7
+ 2524 003d 4E000000 		.4byte	.LASF3
+ 2525 0041 02       		.uleb128 0x2
+ 2526 0042 04       		.byte	0x4
+ 2527 0043 05       		.byte	0x5
+ 2528 0044 F4030000 		.4byte	.LASF4
+ 2529 0048 02       		.uleb128 0x2
+ 2530 0049 04       		.byte	0x4
+ 2531 004a 07       		.byte	0x7
+ 2532 004b E9010000 		.4byte	.LASF5
+ 2533 004f 02       		.uleb128 0x2
+ 2534 0050 08       		.byte	0x8
+ 2535 0051 05       		.byte	0x5
+ 2536 0052 59030000 		.4byte	.LASF6
+ 2537 0056 02       		.uleb128 0x2
+ 2538 0057 08       		.byte	0x8
+ 2539 0058 07       		.byte	0x7
+ 2540 0059 14030000 		.4byte	.LASF7
+ 2541 005d 03       		.uleb128 0x3
+ 2542 005e 04       		.byte	0x4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 51
+
+
+ 2543 005f 05       		.byte	0x5
+ 2544 0060 696E7400 		.ascii	"int\000"
+ 2545 0064 02       		.uleb128 0x2
+ 2546 0065 04       		.byte	0x4
+ 2547 0066 07       		.byte	0x7
+ 2548 0067 F9020000 		.4byte	.LASF8
+ 2549 006b 04       		.uleb128 0x4
+ 2550 006c 03020000 		.4byte	.LASF9
+ 2551 0070 02       		.byte	0x2
+ 2552 0071 E801     		.2byte	0x1e8
+ 2553 0073 2C000000 		.4byte	0x2c
+ 2554 0077 04       		.uleb128 0x4
+ 2555 0078 DA020000 		.4byte	.LASF10
+ 2556 007c 02       		.byte	0x2
+ 2557 007d E901     		.2byte	0x1e9
+ 2558 007f 3A000000 		.4byte	0x3a
+ 2559 0083 04       		.uleb128 0x4
+ 2560 0084 E1020000 		.4byte	.LASF11
+ 2561 0088 02       		.byte	0x2
+ 2562 0089 EA01     		.2byte	0x1ea
+ 2563 008b 48000000 		.4byte	0x48
+ 2564 008f 02       		.uleb128 0x2
+ 2565 0090 04       		.byte	0x4
+ 2566 0091 04       		.byte	0x4
+ 2567 0092 36000000 		.4byte	.LASF12
+ 2568 0096 02       		.uleb128 0x2
+ 2569 0097 08       		.byte	0x8
+ 2570 0098 04       		.byte	0x4
+ 2571 0099 33020000 		.4byte	.LASF13
+ 2572 009d 02       		.uleb128 0x2
+ 2573 009e 01       		.byte	0x1
+ 2574 009f 08       		.byte	0x8
+ 2575 00a0 67030000 		.4byte	.LASF14
+ 2576 00a4 02       		.uleb128 0x2
+ 2577 00a5 08       		.byte	0x8
+ 2578 00a6 04       		.byte	0x4
+ 2579 00a7 FD030000 		.4byte	.LASF15
+ 2580 00ab 02       		.uleb128 0x2
+ 2581 00ac 04       		.byte	0x4
+ 2582 00ad 07       		.byte	0x7
+ 2583 00ae 50030000 		.4byte	.LASF16
+ 2584 00b2 05       		.uleb128 0x5
+ 2585 00b3 09020000 		.4byte	.LASF17
+ 2586 00b7 01       		.byte	0x1
+ 2587 00b8 56       		.byte	0x56
+ 2588 00b9 00000000 		.4byte	.LFB1
+ 2589 00bd 28000000 		.4byte	.LFE1-.LFB1
+ 2590 00c1 01       		.uleb128 0x1
+ 2591 00c2 9C       		.byte	0x9c
+ 2592 00c3 13010000 		.4byte	0x113
+ 2593 00c7 06       		.uleb128 0x6
+ 2594 00c8 06000000 		.4byte	.LVL0
+ 2595 00cc 68040000 		.4byte	0x468
+ 2596 00d0 07       		.uleb128 0x7
+ 2597 00d1 10000000 		.4byte	.LVL1
+ 2598 00d5 73040000 		.4byte	0x473
+ 2599 00d9 E3000000 		.4byte	0xe3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 52
+
+
+ 2600 00dd 08       		.uleb128 0x8
+ 2601 00de 01       		.uleb128 0x1
+ 2602 00df 51       		.byte	0x51
+ 2603 00e0 01       		.uleb128 0x1
+ 2604 00e1 31       		.byte	0x31
+ 2605 00e2 00       		.byte	0
+ 2606 00e3 07       		.uleb128 0x7
+ 2607 00e4 18000000 		.4byte	.LVL2
+ 2608 00e8 73040000 		.4byte	0x473
+ 2609 00ec F6000000 		.4byte	0xf6
+ 2610 00f0 08       		.uleb128 0x8
+ 2611 00f1 01       		.uleb128 0x1
+ 2612 00f2 51       		.byte	0x51
+ 2613 00f3 01       		.uleb128 0x1
+ 2614 00f4 31       		.byte	0x31
+ 2615 00f5 00       		.byte	0
+ 2616 00f6 07       		.uleb128 0x7
+ 2617 00f7 1E000000 		.4byte	.LVL3
+ 2618 00fb 7E040000 		.4byte	0x47e
+ 2619 00ff 09010000 		.4byte	0x109
+ 2620 0103 08       		.uleb128 0x8
+ 2621 0104 01       		.uleb128 0x1
+ 2622 0105 50       		.byte	0x50
+ 2623 0106 01       		.uleb128 0x1
+ 2624 0107 30       		.byte	0x30
+ 2625 0108 00       		.byte	0
+ 2626 0109 06       		.uleb128 0x6
+ 2627 010a 22000000 		.4byte	.LVL4
+ 2628 010e 89040000 		.4byte	0x489
+ 2629 0112 00       		.byte	0
+ 2630 0113 05       		.uleb128 0x5
+ 2631 0114 C3010000 		.4byte	.LASF18
+ 2632 0118 01       		.byte	0x1
+ 2633 0119 BB       		.byte	0xbb
+ 2634 011a 00000000 		.4byte	.LFB4
+ 2635 011e 20000000 		.4byte	.LFE4-.LFB4
+ 2636 0122 01       		.uleb128 0x1
+ 2637 0123 9C       		.byte	0x9c
+ 2638 0124 4D010000 		.4byte	0x14d
+ 2639 0128 06       		.uleb128 0x6
+ 2640 0129 06000000 		.4byte	.LVL5
+ 2641 012d 94040000 		.4byte	0x494
+ 2642 0131 06       		.uleb128 0x6
+ 2643 0132 0E000000 		.4byte	.LVL6
+ 2644 0136 9F040000 		.4byte	0x49f
+ 2645 013a 06       		.uleb128 0x6
+ 2646 013b 14000000 		.4byte	.LVL7
+ 2647 013f 9F040000 		.4byte	0x49f
+ 2648 0143 06       		.uleb128 0x6
+ 2649 0144 18000000 		.4byte	.LVL8
+ 2650 0148 AA040000 		.4byte	0x4aa
+ 2651 014c 00       		.byte	0
+ 2652 014d 05       		.uleb128 0x5
+ 2653 014e F4000000 		.4byte	.LASF19
+ 2654 0152 01       		.byte	0x1
+ 2655 0153 DA       		.byte	0xda
+ 2656 0154 00000000 		.4byte	.LFB5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 53
+
+
+ 2657 0158 40000000 		.4byte	.LFE5-.LFB5
+ 2658 015c 01       		.uleb128 0x1
+ 2659 015d 9C       		.byte	0x9c
+ 2660 015e E5010000 		.4byte	0x1e5
+ 2661 0162 09       		.uleb128 0x9
+ 2662 0163 FB010000 		.4byte	.LASF20
+ 2663 0167 01       		.byte	0x1
+ 2664 0168 DA       		.byte	0xda
+ 2665 0169 E5010000 		.4byte	0x1e5
+ 2666 016d 00000000 		.4byte	.LLST0
+ 2667 0171 09       		.uleb128 0x9
+ 2668 0172 2A010000 		.4byte	.LASF21
+ 2669 0176 01       		.byte	0x1
+ 2670 0177 DA       		.byte	0xda
+ 2671 0178 77000000 		.4byte	0x77
+ 2672 017c 2C000000 		.4byte	.LLST1
+ 2673 0180 07       		.uleb128 0x7
+ 2674 0181 14000000 		.4byte	.LVL12
+ 2675 0185 B5040000 		.4byte	0x4b5
+ 2676 0189 A7010000 		.4byte	0x1a7
+ 2677 018d 08       		.uleb128 0x8
+ 2678 018e 01       		.uleb128 0x1
+ 2679 018f 50       		.byte	0x50
+ 2680 0190 01       		.uleb128 0x1
+ 2681 0191 31       		.byte	0x31
+ 2682 0192 08       		.uleb128 0x8
+ 2683 0193 01       		.uleb128 0x1
+ 2684 0194 51       		.byte	0x51
+ 2685 0195 01       		.uleb128 0x1
+ 2686 0196 31       		.byte	0x31
+ 2687 0197 08       		.uleb128 0x8
+ 2688 0198 01       		.uleb128 0x1
+ 2689 0199 52       		.byte	0x52
+ 2690 019a 04       		.uleb128 0x4
+ 2691 019b 75       		.byte	0x75
+ 2692 019c 00       		.sleb128 0
+ 2693 019d 40       		.byte	0x40
+ 2694 019e 25       		.byte	0x25
+ 2695 019f 08       		.uleb128 0x8
+ 2696 01a0 01       		.uleb128 0x1
+ 2697 01a1 53       		.byte	0x53
+ 2698 01a2 03       		.uleb128 0x3
+ 2699 01a3 0A       		.byte	0xa
+ 2700 01a4 0040     		.2byte	0x4000
+ 2701 01a6 00       		.byte	0
+ 2702 01a7 07       		.uleb128 0x7
+ 2703 01a8 24000000 		.4byte	.LVL13
+ 2704 01ac C0040000 		.4byte	0x4c0
+ 2705 01b0 C0010000 		.4byte	0x1c0
+ 2706 01b4 08       		.uleb128 0x8
+ 2707 01b5 01       		.uleb128 0x1
+ 2708 01b6 51       		.byte	0x51
+ 2709 01b7 02       		.uleb128 0x2
+ 2710 01b8 76       		.byte	0x76
+ 2711 01b9 00       		.sleb128 0
+ 2712 01ba 08       		.uleb128 0x8
+ 2713 01bb 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 54
+
+
+ 2714 01bc 53       		.byte	0x53
+ 2715 01bd 01       		.uleb128 0x1
+ 2716 01be 31       		.byte	0x31
+ 2717 01bf 00       		.byte	0
+ 2718 01c0 07       		.uleb128 0x7
+ 2719 01c1 30000000 		.4byte	.LVL14
+ 2720 01c5 CB040000 		.4byte	0x4cb
+ 2721 01c9 DB010000 		.4byte	0x1db
+ 2722 01cd 08       		.uleb128 0x8
+ 2723 01ce 01       		.uleb128 0x1
+ 2724 01cf 51       		.byte	0x51
+ 2725 01d0 02       		.uleb128 0x2
+ 2726 01d1 75       		.byte	0x75
+ 2727 01d2 00       		.sleb128 0
+ 2728 01d3 08       		.uleb128 0x8
+ 2729 01d4 01       		.uleb128 0x1
+ 2730 01d5 52       		.byte	0x52
+ 2731 01d6 03       		.uleb128 0x3
+ 2732 01d7 0A       		.byte	0xa
+ 2733 01d8 825B     		.2byte	0x5b82
+ 2734 01da 00       		.byte	0
+ 2735 01db 06       		.uleb128 0x6
+ 2736 01dc 38000000 		.4byte	.LVL15
+ 2737 01e0 D6040000 		.4byte	0x4d6
+ 2738 01e4 00       		.byte	0
+ 2739 01e5 0A       		.uleb128 0xa
+ 2740 01e6 04       		.byte	0x4
+ 2741 01e7 EB010000 		.4byte	0x1eb
+ 2742 01eb 0B       		.uleb128 0xb
+ 2743 01ec 6B000000 		.4byte	0x6b
+ 2744 01f0 0C       		.uleb128 0xc
+ 2745 01f1 3C030000 		.4byte	.LASF22
+ 2746 01f5 01       		.byte	0x1
+ 2747 01f6 0801     		.2byte	0x108
+ 2748 01f8 00000000 		.4byte	.LFB6
+ 2749 01fc 40000000 		.4byte	.LFE6-.LFB6
+ 2750 0200 01       		.uleb128 0x1
+ 2751 0201 9C       		.byte	0x9c
+ 2752 0202 8B020000 		.4byte	0x28b
+ 2753 0206 0D       		.uleb128 0xd
+ 2754 0207 FB010000 		.4byte	.LASF20
+ 2755 020b 01       		.byte	0x1
+ 2756 020c 0801     		.2byte	0x108
+ 2757 020e E5010000 		.4byte	0x1e5
+ 2758 0212 4D000000 		.4byte	.LLST2
+ 2759 0216 0D       		.uleb128 0xd
+ 2760 0217 2A010000 		.4byte	.LASF21
+ 2761 021b 01       		.byte	0x1
+ 2762 021c 0801     		.2byte	0x108
+ 2763 021e 77000000 		.4byte	0x77
+ 2764 0222 79000000 		.4byte	.LLST3
+ 2765 0226 07       		.uleb128 0x7
+ 2766 0227 14000000 		.4byte	.LVL20
+ 2767 022b E1040000 		.4byte	0x4e1
+ 2768 022f 4D020000 		.4byte	0x24d
+ 2769 0233 08       		.uleb128 0x8
+ 2770 0234 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 55
+
+
+ 2771 0235 50       		.byte	0x50
+ 2772 0236 01       		.uleb128 0x1
+ 2773 0237 31       		.byte	0x31
+ 2774 0238 08       		.uleb128 0x8
+ 2775 0239 01       		.uleb128 0x1
+ 2776 023a 51       		.byte	0x51
+ 2777 023b 01       		.uleb128 0x1
+ 2778 023c 31       		.byte	0x31
+ 2779 023d 08       		.uleb128 0x8
+ 2780 023e 01       		.uleb128 0x1
+ 2781 023f 52       		.byte	0x52
+ 2782 0240 04       		.uleb128 0x4
+ 2783 0241 75       		.byte	0x75
+ 2784 0242 00       		.sleb128 0
+ 2785 0243 40       		.byte	0x40
+ 2786 0244 25       		.byte	0x25
+ 2787 0245 08       		.uleb128 0x8
+ 2788 0246 01       		.uleb128 0x1
+ 2789 0247 53       		.byte	0x53
+ 2790 0248 03       		.uleb128 0x3
+ 2791 0249 0A       		.byte	0xa
+ 2792 024a 0040     		.2byte	0x4000
+ 2793 024c 00       		.byte	0
+ 2794 024d 07       		.uleb128 0x7
+ 2795 024e 24000000 		.4byte	.LVL21
+ 2796 0252 C0040000 		.4byte	0x4c0
+ 2797 0256 66020000 		.4byte	0x266
+ 2798 025a 08       		.uleb128 0x8
+ 2799 025b 01       		.uleb128 0x1
+ 2800 025c 51       		.byte	0x51
+ 2801 025d 02       		.uleb128 0x2
+ 2802 025e 76       		.byte	0x76
+ 2803 025f 00       		.sleb128 0
+ 2804 0260 08       		.uleb128 0x8
+ 2805 0261 01       		.uleb128 0x1
+ 2806 0262 53       		.byte	0x53
+ 2807 0263 01       		.uleb128 0x1
+ 2808 0264 31       		.byte	0x31
+ 2809 0265 00       		.byte	0
+ 2810 0266 07       		.uleb128 0x7
+ 2811 0267 30000000 		.4byte	.LVL22
+ 2812 026b CB040000 		.4byte	0x4cb
+ 2813 026f 81020000 		.4byte	0x281
+ 2814 0273 08       		.uleb128 0x8
+ 2815 0274 01       		.uleb128 0x1
+ 2816 0275 51       		.byte	0x51
+ 2817 0276 02       		.uleb128 0x2
+ 2818 0277 75       		.byte	0x75
+ 2819 0278 00       		.sleb128 0
+ 2820 0279 08       		.uleb128 0x8
+ 2821 027a 01       		.uleb128 0x1
+ 2822 027b 52       		.byte	0x52
+ 2823 027c 03       		.uleb128 0x3
+ 2824 027d 0A       		.byte	0xa
+ 2825 027e 825B     		.2byte	0x5b82
+ 2826 0280 00       		.byte	0
+ 2827 0281 06       		.uleb128 0x6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 56
+
+
+ 2828 0282 38000000 		.4byte	.LVL23
+ 2829 0286 D6040000 		.4byte	0x4d6
+ 2830 028a 00       		.byte	0
+ 2831 028b 05       		.uleb128 0x5
+ 2832 028c 00000000 		.4byte	.LASF23
+ 2833 0290 01       		.byte	0x1
+ 2834 0291 2B       		.byte	0x2b
+ 2835 0292 00000000 		.4byte	.LFB0
+ 2836 0296 40000000 		.4byte	.LFE0-.LFB0
+ 2837 029a 01       		.uleb128 0x1
+ 2838 029b 9C       		.byte	0x9c
+ 2839 029c 14030000 		.4byte	0x314
+ 2840 02a0 06       		.uleb128 0x6
+ 2841 02a1 06000000 		.4byte	.LVL25
+ 2842 02a5 EC040000 		.4byte	0x4ec
+ 2843 02a9 07       		.uleb128 0x7
+ 2844 02aa 0C000000 		.4byte	.LVL26
+ 2845 02ae F7040000 		.4byte	0x4f7
+ 2846 02b2 BC020000 		.4byte	0x2bc
+ 2847 02b6 08       		.uleb128 0x8
+ 2848 02b7 01       		.uleb128 0x1
+ 2849 02b8 50       		.byte	0x50
+ 2850 02b9 01       		.uleb128 0x1
+ 2851 02ba 32       		.byte	0x32
+ 2852 02bb 00       		.byte	0
+ 2853 02bc 07       		.uleb128 0x7
+ 2854 02bd 12000000 		.4byte	.LVL27
+ 2855 02c1 02050000 		.4byte	0x502
+ 2856 02c5 CF020000 		.4byte	0x2cf
+ 2857 02c9 08       		.uleb128 0x8
+ 2858 02ca 01       		.uleb128 0x1
+ 2859 02cb 50       		.byte	0x50
+ 2860 02cc 01       		.uleb128 0x1
+ 2861 02cd 34       		.byte	0x34
+ 2862 02ce 00       		.byte	0
+ 2863 02cf 06       		.uleb128 0x6
+ 2864 02d0 16000000 		.4byte	.LVL28
+ 2865 02d4 0D050000 		.4byte	0x50d
+ 2866 02d8 06       		.uleb128 0x6
+ 2867 02d9 1E000000 		.4byte	.LVL29
+ 2868 02dd 0D050000 		.4byte	0x50d
+ 2869 02e1 07       		.uleb128 0x7
+ 2870 02e2 2C000000 		.4byte	.LVL30
+ 2871 02e6 4D010000 		.4byte	0x14d
+ 2872 02ea FC020000 		.4byte	0x2fc
+ 2873 02ee 08       		.uleb128 0x8
+ 2874 02ef 01       		.uleb128 0x1
+ 2875 02f0 50       		.byte	0x50
+ 2876 02f1 02       		.uleb128 0x2
+ 2877 02f2 74       		.byte	0x74
+ 2878 02f3 00       		.sleb128 0
+ 2879 02f4 08       		.uleb128 0x8
+ 2880 02f5 01       		.uleb128 0x1
+ 2881 02f6 51       		.byte	0x51
+ 2882 02f7 03       		.uleb128 0x3
+ 2883 02f8 0A       		.byte	0xa
+ 2884 02f9 D007     		.2byte	0x7d0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 57
+
+
+ 2885 02fb 00       		.byte	0
+ 2886 02fc 0E       		.uleb128 0xe
+ 2887 02fd 36000000 		.4byte	.LVL31
+ 2888 0301 F0010000 		.4byte	0x1f0
+ 2889 0305 08       		.uleb128 0x8
+ 2890 0306 01       		.uleb128 0x1
+ 2891 0307 50       		.byte	0x50
+ 2892 0308 03       		.uleb128 0x3
+ 2893 0309 74       		.byte	0x74
+ 2894 030a D00F     		.sleb128 2000
+ 2895 030c 08       		.uleb128 0x8
+ 2896 030d 01       		.uleb128 0x1
+ 2897 030e 51       		.byte	0x51
+ 2898 030f 02       		.uleb128 0x2
+ 2899 0310 08       		.byte	0x8
+ 2900 0311 64       		.byte	0x64
+ 2901 0312 00       		.byte	0
+ 2902 0313 00       		.byte	0
+ 2903 0314 05       		.uleb128 0x5
+ 2904 0315 E5000000 		.4byte	.LASF24
+ 2905 0319 01       		.byte	0x1
+ 2906 031a 81       		.byte	0x81
+ 2907 031b 00000000 		.4byte	.LFB2
+ 2908 031f 1C000000 		.4byte	.LFE2-.LFB2
+ 2909 0323 01       		.uleb128 0x1
+ 2910 0324 9C       		.byte	0x9c
+ 2911 0325 3C030000 		.4byte	0x33c
+ 2912 0329 06       		.uleb128 0x6
+ 2913 032a 0C000000 		.4byte	.LVL32
+ 2914 032e 8B020000 		.4byte	0x28b
+ 2915 0332 06       		.uleb128 0x6
+ 2916 0333 16000000 		.4byte	.LVL33
+ 2917 0337 B2000000 		.4byte	0xb2
+ 2918 033b 00       		.byte	0
+ 2919 033c 05       		.uleb128 0x5
+ 2920 033d E8020000 		.4byte	.LASF25
+ 2921 0341 01       		.byte	0x1
+ 2922 0342 A3       		.byte	0xa3
+ 2923 0343 00000000 		.4byte	.LFB3
+ 2924 0347 18000000 		.4byte	.LFE3-.LFB3
+ 2925 034b 01       		.uleb128 0x1
+ 2926 034c 9C       		.byte	0x9c
+ 2927 034d C6030000 		.4byte	0x3c6
+ 2928 0351 09       		.uleb128 0x9
+ 2929 0352 96000000 		.4byte	.LASF26
+ 2930 0356 01       		.byte	0x1
+ 2931 0357 A3       		.byte	0xa3
+ 2932 0358 E5010000 		.4byte	0x1e5
+ 2933 035c 9A000000 		.4byte	.LLST4
+ 2934 0360 09       		.uleb128 0x9
+ 2935 0361 15040000 		.4byte	.LASF27
+ 2936 0365 01       		.byte	0x1
+ 2937 0366 A3       		.byte	0xa3
+ 2938 0367 77000000 		.4byte	0x77
+ 2939 036b BB000000 		.4byte	.LLST5
+ 2940 036f 09       		.uleb128 0x9
+ 2941 0370 9F000000 		.4byte	.LASF28
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 58
+
+
+ 2942 0374 01       		.byte	0x1
+ 2943 0375 A3       		.byte	0xa3
+ 2944 0376 E5010000 		.4byte	0x1e5
+ 2945 037a DC000000 		.4byte	.LLST6
+ 2946 037e 09       		.uleb128 0x9
+ 2947 037f 19020000 		.4byte	.LASF29
+ 2948 0383 01       		.byte	0x1
+ 2949 0384 A3       		.byte	0xa3
+ 2950 0385 77000000 		.4byte	0x77
+ 2951 0389 FA000000 		.4byte	.LLST7
+ 2952 038d 07       		.uleb128 0x7
+ 2953 038e 0A000000 		.4byte	.LVL35
+ 2954 0392 4D010000 		.4byte	0x14d
+ 2955 0396 A2030000 		.4byte	0x3a2
+ 2956 039a 08       		.uleb128 0x8
+ 2957 039b 01       		.uleb128 0x1
+ 2958 039c 50       		.byte	0x50
+ 2959 039d 03       		.uleb128 0x3
+ 2960 039e F3       		.byte	0xf3
+ 2961 039f 01       		.uleb128 0x1
+ 2962 03a0 50       		.byte	0x50
+ 2963 03a1 00       		.byte	0
+ 2964 03a2 07       		.uleb128 0x7
+ 2965 03a3 12000000 		.4byte	.LVL36
+ 2966 03a7 F0010000 		.4byte	0x1f0
+ 2967 03ab BC030000 		.4byte	0x3bc
+ 2968 03af 08       		.uleb128 0x8
+ 2969 03b0 01       		.uleb128 0x1
+ 2970 03b1 50       		.byte	0x50
+ 2971 03b2 02       		.uleb128 0x2
+ 2972 03b3 74       		.byte	0x74
+ 2973 03b4 00       		.sleb128 0
+ 2974 03b5 08       		.uleb128 0x8
+ 2975 03b6 01       		.uleb128 0x1
+ 2976 03b7 51       		.byte	0x51
+ 2977 03b8 02       		.uleb128 0x2
+ 2978 03b9 75       		.byte	0x75
+ 2979 03ba 00       		.sleb128 0
+ 2980 03bb 00       		.byte	0
+ 2981 03bc 06       		.uleb128 0x6
+ 2982 03bd 16000000 		.4byte	.LVL37
+ 2983 03c1 14030000 		.4byte	0x314
+ 2984 03c5 00       		.byte	0
+ 2985 03c6 0F       		.uleb128 0xf
+ 2986 03c7 6C030000 		.4byte	.LASF30
+ 2987 03cb 01       		.byte	0x1
+ 2988 03cc 17       		.byte	0x17
+ 2989 03cd 6B000000 		.4byte	0x6b
+ 2990 03d1 05       		.uleb128 0x5
+ 2991 03d2 03       		.byte	0x3
+ 2992 03d3 00000000 		.4byte	WaveDAC8_Wave1Chan
+ 2993 03d7 0F       		.uleb128 0xf
+ 2994 03d8 67040000 		.4byte	.LASF31
+ 2995 03dc 01       		.byte	0x1
+ 2996 03dd 18       		.byte	0x18
+ 2997 03de 6B000000 		.4byte	0x6b
+ 2998 03e2 05       		.uleb128 0x5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 59
+
+
+ 2999 03e3 03       		.byte	0x3
+ 3000 03e4 01000000 		.4byte	WaveDAC8_Wave2Chan
+ 3001 03e8 0F       		.uleb128 0xf
+ 3002 03e9 2B030000 		.4byte	.LASF32
+ 3003 03ed 01       		.byte	0x1
+ 3004 03ee 19       		.byte	0x19
+ 3005 03ef 6B000000 		.4byte	0x6b
+ 3006 03f3 05       		.uleb128 0x5
+ 3007 03f4 03       		.byte	0x3
+ 3008 03f5 02000000 		.4byte	WaveDAC8_Wave1TD
+ 3009 03f9 0F       		.uleb128 0xf
+ 3010 03fa 3A020000 		.4byte	.LASF33
+ 3011 03fe 01       		.byte	0x1
+ 3012 03ff 1A       		.byte	0x1a
+ 3013 0400 6B000000 		.4byte	0x6b
+ 3014 0404 05       		.uleb128 0x5
+ 3015 0405 03       		.byte	0x3
+ 3016 0406 03000000 		.4byte	WaveDAC8_Wave2TD
+ 3017 040a 10       		.uleb128 0x10
+ 3018 040b 95030000 		.4byte	.LASF34
+ 3019 040f 01       		.byte	0x1
+ 3020 0410 12       		.byte	0x12
+ 3021 0411 6B000000 		.4byte	0x6b
+ 3022 0415 05       		.uleb128 0x5
+ 3023 0416 03       		.byte	0x3
+ 3024 0417 00000000 		.4byte	WaveDAC8_initVar
+ 3025 041b 11       		.uleb128 0x11
+ 3026 041c EB010000 		.4byte	0x1eb
+ 3027 0420 2C040000 		.4byte	0x42c
+ 3028 0424 12       		.uleb128 0x12
+ 3029 0425 AB000000 		.4byte	0xab
+ 3030 0429 CF07     		.2byte	0x7cf
+ 3031 042b 00       		.byte	0
+ 3032 042c 10       		.uleb128 0x10
+ 3033 042d A6030000 		.4byte	.LASF35
+ 3034 0431 01       		.byte	0x1
+ 3035 0432 14       		.byte	0x14
+ 3036 0433 3D040000 		.4byte	0x43d
+ 3037 0437 05       		.uleb128 0x5
+ 3038 0438 03       		.byte	0x3
+ 3039 0439 00000000 		.4byte	WaveDAC8_wave1
+ 3040 043d 0B       		.uleb128 0xb
+ 3041 043e 1B040000 		.4byte	0x41b
+ 3042 0442 11       		.uleb128 0x11
+ 3043 0443 EB010000 		.4byte	0x1eb
+ 3044 0447 52040000 		.4byte	0x452
+ 3045 044b 13       		.uleb128 0x13
+ 3046 044c AB000000 		.4byte	0xab
+ 3047 0450 63       		.byte	0x63
+ 3048 0451 00       		.byte	0
+ 3049 0452 10       		.uleb128 0x10
+ 3050 0453 B5030000 		.4byte	.LASF36
+ 3051 0457 01       		.byte	0x1
+ 3052 0458 15       		.byte	0x15
+ 3053 0459 63040000 		.4byte	0x463
+ 3054 045d 05       		.uleb128 0x5
+ 3055 045e 03       		.byte	0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 60
+
+
+ 3056 045f 00000000 		.4byte	WaveDAC8_wave2
+ 3057 0463 0B       		.uleb128 0xb
+ 3058 0464 42040000 		.4byte	0x442
+ 3059 0468 14       		.uleb128 0x14
+ 3060 0469 7F030000 		.4byte	.LASF37
+ 3061 046d 7F030000 		.4byte	.LASF37
+ 3062 0471 03       		.byte	0x3
+ 3063 0472 3A       		.byte	0x3a
+ 3064 0473 14       		.uleb128 0x14
+ 3065 0474 06030000 		.4byte	.LASF38
+ 3066 0478 06030000 		.4byte	.LASF38
+ 3067 047c 04       		.byte	0x4
+ 3068 047d 29       		.byte	0x29
+ 3069 047e 14       		.uleb128 0x14
+ 3070 047f CD000000 		.4byte	.LASF39
+ 3071 0483 CD000000 		.4byte	.LASF39
+ 3072 0487 03       		.byte	0x3
+ 3073 0488 37       		.byte	0x37
+ 3074 0489 14       		.uleb128 0x14
+ 3075 048a 51040000 		.4byte	.LASF40
+ 3076 048e 51040000 		.4byte	.LASF40
+ 3077 0492 05       		.byte	0x5
+ 3078 0493 27       		.byte	0x27
+ 3079 0494 14       		.uleb128 0x14
+ 3080 0495 B8000000 		.4byte	.LASF41
+ 3081 0499 B8000000 		.4byte	.LASF41
+ 3082 049d 05       		.byte	0x5
+ 3083 049e 28       		.byte	0x28
+ 3084 049f 14       		.uleb128 0x14
+ 3085 04a0 21040000 		.4byte	.LASF42
+ 3086 04a4 21040000 		.4byte	.LASF42
+ 3087 04a8 04       		.byte	0x4
+ 3088 04a9 2A       		.byte	0x2a
+ 3089 04aa 14       		.uleb128 0x14
+ 3090 04ab 22000000 		.4byte	.LASF43
+ 3091 04af 22000000 		.4byte	.LASF43
+ 3092 04b3 03       		.byte	0x3
+ 3093 04b4 34       		.byte	0x34
+ 3094 04b5 14       		.uleb128 0x14
+ 3095 04b6 30040000 		.4byte	.LASF44
+ 3096 04ba 30040000 		.4byte	.LASF44
+ 3097 04be 06       		.byte	0x6
+ 3098 04bf 1E       		.byte	0x1e
+ 3099 04c0 14       		.uleb128 0x14
+ 3100 04c1 D1010000 		.4byte	.LASF45
+ 3101 04c5 D1010000 		.4byte	.LASF45
+ 3102 04c9 04       		.byte	0x4
+ 3103 04ca 3B       		.byte	0x3b
+ 3104 04cb 14       		.uleb128 0x14
+ 3105 04cc 3C000000 		.4byte	.LASF46
+ 3106 04d0 3C000000 		.4byte	.LASF46
+ 3107 04d4 04       		.byte	0x4
+ 3108 04d5 3F       		.byte	0x3f
+ 3109 04d6 14       		.uleb128 0x14
+ 3110 04d7 61000000 		.4byte	.LASF47
+ 3111 04db 61000000 		.4byte	.LASF47
+ 3112 04df 04       		.byte	0x4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 61
+
+
+ 3113 04e0 2F       		.byte	0x2f
+ 3114 04e1 14       		.uleb128 0x14
+ 3115 04e2 75000000 		.4byte	.LASF48
+ 3116 04e6 75000000 		.4byte	.LASF48
+ 3117 04ea 07       		.byte	0x7
+ 3118 04eb 1E       		.byte	0x1e
+ 3119 04ec 14       		.uleb128 0x14
+ 3120 04ed 0E000000 		.4byte	.LASF49
+ 3121 04f1 0E000000 		.4byte	.LASF49
+ 3122 04f5 03       		.byte	0x3
+ 3123 04f6 39       		.byte	0x39
+ 3124 04f7 14       		.uleb128 0x14
+ 3125 04f8 C4030000 		.4byte	.LASF50
+ 3126 04fc C4030000 		.4byte	.LASF50
+ 3127 0500 03       		.byte	0x3
+ 3128 0501 35       		.byte	0x35
+ 3129 0502 14       		.uleb128 0x14
+ 3130 0503 DC030000 		.4byte	.LASF51
+ 3131 0507 DC030000 		.4byte	.LASF51
+ 3132 050b 03       		.byte	0x3
+ 3133 050c 36       		.byte	0x36
+ 3134 050d 14       		.uleb128 0x14
+ 3135 050e A8000000 		.4byte	.LASF52
+ 3136 0512 A8000000 		.4byte	.LASF52
+ 3137 0516 04       		.byte	0x4
+ 3138 0517 38       		.byte	0x38
+ 3139 0518 00       		.byte	0
+ 3140              		.section	.debug_abbrev,"",%progbits
+ 3141              	.Ldebug_abbrev0:
+ 3142 0000 01       		.uleb128 0x1
+ 3143 0001 11       		.uleb128 0x11
+ 3144 0002 01       		.byte	0x1
+ 3145 0003 25       		.uleb128 0x25
+ 3146 0004 0E       		.uleb128 0xe
+ 3147 0005 13       		.uleb128 0x13
+ 3148 0006 0B       		.uleb128 0xb
+ 3149 0007 03       		.uleb128 0x3
+ 3150 0008 0E       		.uleb128 0xe
+ 3151 0009 1B       		.uleb128 0x1b
+ 3152 000a 0E       		.uleb128 0xe
+ 3153 000b 55       		.uleb128 0x55
+ 3154 000c 17       		.uleb128 0x17
+ 3155 000d 11       		.uleb128 0x11
+ 3156 000e 01       		.uleb128 0x1
+ 3157 000f 10       		.uleb128 0x10
+ 3158 0010 17       		.uleb128 0x17
+ 3159 0011 00       		.byte	0
+ 3160 0012 00       		.byte	0
+ 3161 0013 02       		.uleb128 0x2
+ 3162 0014 24       		.uleb128 0x24
+ 3163 0015 00       		.byte	0
+ 3164 0016 0B       		.uleb128 0xb
+ 3165 0017 0B       		.uleb128 0xb
+ 3166 0018 3E       		.uleb128 0x3e
+ 3167 0019 0B       		.uleb128 0xb
+ 3168 001a 03       		.uleb128 0x3
+ 3169 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 62
+
+
+ 3170 001c 00       		.byte	0
+ 3171 001d 00       		.byte	0
+ 3172 001e 03       		.uleb128 0x3
+ 3173 001f 24       		.uleb128 0x24
+ 3174 0020 00       		.byte	0
+ 3175 0021 0B       		.uleb128 0xb
+ 3176 0022 0B       		.uleb128 0xb
+ 3177 0023 3E       		.uleb128 0x3e
+ 3178 0024 0B       		.uleb128 0xb
+ 3179 0025 03       		.uleb128 0x3
+ 3180 0026 08       		.uleb128 0x8
+ 3181 0027 00       		.byte	0
+ 3182 0028 00       		.byte	0
+ 3183 0029 04       		.uleb128 0x4
+ 3184 002a 16       		.uleb128 0x16
+ 3185 002b 00       		.byte	0
+ 3186 002c 03       		.uleb128 0x3
+ 3187 002d 0E       		.uleb128 0xe
+ 3188 002e 3A       		.uleb128 0x3a
+ 3189 002f 0B       		.uleb128 0xb
+ 3190 0030 3B       		.uleb128 0x3b
+ 3191 0031 05       		.uleb128 0x5
+ 3192 0032 49       		.uleb128 0x49
+ 3193 0033 13       		.uleb128 0x13
+ 3194 0034 00       		.byte	0
+ 3195 0035 00       		.byte	0
+ 3196 0036 05       		.uleb128 0x5
+ 3197 0037 2E       		.uleb128 0x2e
+ 3198 0038 01       		.byte	0x1
+ 3199 0039 3F       		.uleb128 0x3f
+ 3200 003a 19       		.uleb128 0x19
+ 3201 003b 03       		.uleb128 0x3
+ 3202 003c 0E       		.uleb128 0xe
+ 3203 003d 3A       		.uleb128 0x3a
+ 3204 003e 0B       		.uleb128 0xb
+ 3205 003f 3B       		.uleb128 0x3b
+ 3206 0040 0B       		.uleb128 0xb
+ 3207 0041 27       		.uleb128 0x27
+ 3208 0042 19       		.uleb128 0x19
+ 3209 0043 11       		.uleb128 0x11
+ 3210 0044 01       		.uleb128 0x1
+ 3211 0045 12       		.uleb128 0x12
+ 3212 0046 06       		.uleb128 0x6
+ 3213 0047 40       		.uleb128 0x40
+ 3214 0048 18       		.uleb128 0x18
+ 3215 0049 9742     		.uleb128 0x2117
+ 3216 004b 19       		.uleb128 0x19
+ 3217 004c 01       		.uleb128 0x1
+ 3218 004d 13       		.uleb128 0x13
+ 3219 004e 00       		.byte	0
+ 3220 004f 00       		.byte	0
+ 3221 0050 06       		.uleb128 0x6
+ 3222 0051 898201   		.uleb128 0x4109
+ 3223 0054 00       		.byte	0
+ 3224 0055 11       		.uleb128 0x11
+ 3225 0056 01       		.uleb128 0x1
+ 3226 0057 31       		.uleb128 0x31
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 63
+
+
+ 3227 0058 13       		.uleb128 0x13
+ 3228 0059 00       		.byte	0
+ 3229 005a 00       		.byte	0
+ 3230 005b 07       		.uleb128 0x7
+ 3231 005c 898201   		.uleb128 0x4109
+ 3232 005f 01       		.byte	0x1
+ 3233 0060 11       		.uleb128 0x11
+ 3234 0061 01       		.uleb128 0x1
+ 3235 0062 31       		.uleb128 0x31
+ 3236 0063 13       		.uleb128 0x13
+ 3237 0064 01       		.uleb128 0x1
+ 3238 0065 13       		.uleb128 0x13
+ 3239 0066 00       		.byte	0
+ 3240 0067 00       		.byte	0
+ 3241 0068 08       		.uleb128 0x8
+ 3242 0069 8A8201   		.uleb128 0x410a
+ 3243 006c 00       		.byte	0
+ 3244 006d 02       		.uleb128 0x2
+ 3245 006e 18       		.uleb128 0x18
+ 3246 006f 9142     		.uleb128 0x2111
+ 3247 0071 18       		.uleb128 0x18
+ 3248 0072 00       		.byte	0
+ 3249 0073 00       		.byte	0
+ 3250 0074 09       		.uleb128 0x9
+ 3251 0075 05       		.uleb128 0x5
+ 3252 0076 00       		.byte	0
+ 3253 0077 03       		.uleb128 0x3
+ 3254 0078 0E       		.uleb128 0xe
+ 3255 0079 3A       		.uleb128 0x3a
+ 3256 007a 0B       		.uleb128 0xb
+ 3257 007b 3B       		.uleb128 0x3b
+ 3258 007c 0B       		.uleb128 0xb
+ 3259 007d 49       		.uleb128 0x49
+ 3260 007e 13       		.uleb128 0x13
+ 3261 007f 02       		.uleb128 0x2
+ 3262 0080 17       		.uleb128 0x17
+ 3263 0081 00       		.byte	0
+ 3264 0082 00       		.byte	0
+ 3265 0083 0A       		.uleb128 0xa
+ 3266 0084 0F       		.uleb128 0xf
+ 3267 0085 00       		.byte	0
+ 3268 0086 0B       		.uleb128 0xb
+ 3269 0087 0B       		.uleb128 0xb
+ 3270 0088 49       		.uleb128 0x49
+ 3271 0089 13       		.uleb128 0x13
+ 3272 008a 00       		.byte	0
+ 3273 008b 00       		.byte	0
+ 3274 008c 0B       		.uleb128 0xb
+ 3275 008d 26       		.uleb128 0x26
+ 3276 008e 00       		.byte	0
+ 3277 008f 49       		.uleb128 0x49
+ 3278 0090 13       		.uleb128 0x13
+ 3279 0091 00       		.byte	0
+ 3280 0092 00       		.byte	0
+ 3281 0093 0C       		.uleb128 0xc
+ 3282 0094 2E       		.uleb128 0x2e
+ 3283 0095 01       		.byte	0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 64
+
+
+ 3284 0096 3F       		.uleb128 0x3f
+ 3285 0097 19       		.uleb128 0x19
+ 3286 0098 03       		.uleb128 0x3
+ 3287 0099 0E       		.uleb128 0xe
+ 3288 009a 3A       		.uleb128 0x3a
+ 3289 009b 0B       		.uleb128 0xb
+ 3290 009c 3B       		.uleb128 0x3b
+ 3291 009d 05       		.uleb128 0x5
+ 3292 009e 27       		.uleb128 0x27
+ 3293 009f 19       		.uleb128 0x19
+ 3294 00a0 11       		.uleb128 0x11
+ 3295 00a1 01       		.uleb128 0x1
+ 3296 00a2 12       		.uleb128 0x12
+ 3297 00a3 06       		.uleb128 0x6
+ 3298 00a4 40       		.uleb128 0x40
+ 3299 00a5 18       		.uleb128 0x18
+ 3300 00a6 9742     		.uleb128 0x2117
+ 3301 00a8 19       		.uleb128 0x19
+ 3302 00a9 01       		.uleb128 0x1
+ 3303 00aa 13       		.uleb128 0x13
+ 3304 00ab 00       		.byte	0
+ 3305 00ac 00       		.byte	0
+ 3306 00ad 0D       		.uleb128 0xd
+ 3307 00ae 05       		.uleb128 0x5
+ 3308 00af 00       		.byte	0
+ 3309 00b0 03       		.uleb128 0x3
+ 3310 00b1 0E       		.uleb128 0xe
+ 3311 00b2 3A       		.uleb128 0x3a
+ 3312 00b3 0B       		.uleb128 0xb
+ 3313 00b4 3B       		.uleb128 0x3b
+ 3314 00b5 05       		.uleb128 0x5
+ 3315 00b6 49       		.uleb128 0x49
+ 3316 00b7 13       		.uleb128 0x13
+ 3317 00b8 02       		.uleb128 0x2
+ 3318 00b9 17       		.uleb128 0x17
+ 3319 00ba 00       		.byte	0
+ 3320 00bb 00       		.byte	0
+ 3321 00bc 0E       		.uleb128 0xe
+ 3322 00bd 898201   		.uleb128 0x4109
+ 3323 00c0 01       		.byte	0x1
+ 3324 00c1 11       		.uleb128 0x11
+ 3325 00c2 01       		.uleb128 0x1
+ 3326 00c3 31       		.uleb128 0x31
+ 3327 00c4 13       		.uleb128 0x13
+ 3328 00c5 00       		.byte	0
+ 3329 00c6 00       		.byte	0
+ 3330 00c7 0F       		.uleb128 0xf
+ 3331 00c8 34       		.uleb128 0x34
+ 3332 00c9 00       		.byte	0
+ 3333 00ca 03       		.uleb128 0x3
+ 3334 00cb 0E       		.uleb128 0xe
+ 3335 00cc 3A       		.uleb128 0x3a
+ 3336 00cd 0B       		.uleb128 0xb
+ 3337 00ce 3B       		.uleb128 0x3b
+ 3338 00cf 0B       		.uleb128 0xb
+ 3339 00d0 49       		.uleb128 0x49
+ 3340 00d1 13       		.uleb128 0x13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 65
+
+
+ 3341 00d2 02       		.uleb128 0x2
+ 3342 00d3 18       		.uleb128 0x18
+ 3343 00d4 00       		.byte	0
+ 3344 00d5 00       		.byte	0
+ 3345 00d6 10       		.uleb128 0x10
+ 3346 00d7 34       		.uleb128 0x34
+ 3347 00d8 00       		.byte	0
+ 3348 00d9 03       		.uleb128 0x3
+ 3349 00da 0E       		.uleb128 0xe
+ 3350 00db 3A       		.uleb128 0x3a
+ 3351 00dc 0B       		.uleb128 0xb
+ 3352 00dd 3B       		.uleb128 0x3b
+ 3353 00de 0B       		.uleb128 0xb
+ 3354 00df 49       		.uleb128 0x49
+ 3355 00e0 13       		.uleb128 0x13
+ 3356 00e1 3F       		.uleb128 0x3f
+ 3357 00e2 19       		.uleb128 0x19
+ 3358 00e3 02       		.uleb128 0x2
+ 3359 00e4 18       		.uleb128 0x18
+ 3360 00e5 00       		.byte	0
+ 3361 00e6 00       		.byte	0
+ 3362 00e7 11       		.uleb128 0x11
+ 3363 00e8 01       		.uleb128 0x1
+ 3364 00e9 01       		.byte	0x1
+ 3365 00ea 49       		.uleb128 0x49
+ 3366 00eb 13       		.uleb128 0x13
+ 3367 00ec 01       		.uleb128 0x1
+ 3368 00ed 13       		.uleb128 0x13
+ 3369 00ee 00       		.byte	0
+ 3370 00ef 00       		.byte	0
+ 3371 00f0 12       		.uleb128 0x12
+ 3372 00f1 21       		.uleb128 0x21
+ 3373 00f2 00       		.byte	0
+ 3374 00f3 49       		.uleb128 0x49
+ 3375 00f4 13       		.uleb128 0x13
+ 3376 00f5 2F       		.uleb128 0x2f
+ 3377 00f6 05       		.uleb128 0x5
+ 3378 00f7 00       		.byte	0
+ 3379 00f8 00       		.byte	0
+ 3380 00f9 13       		.uleb128 0x13
+ 3381 00fa 21       		.uleb128 0x21
+ 3382 00fb 00       		.byte	0
+ 3383 00fc 49       		.uleb128 0x49
+ 3384 00fd 13       		.uleb128 0x13
+ 3385 00fe 2F       		.uleb128 0x2f
+ 3386 00ff 0B       		.uleb128 0xb
+ 3387 0100 00       		.byte	0
+ 3388 0101 00       		.byte	0
+ 3389 0102 14       		.uleb128 0x14
+ 3390 0103 2E       		.uleb128 0x2e
+ 3391 0104 00       		.byte	0
+ 3392 0105 3F       		.uleb128 0x3f
+ 3393 0106 19       		.uleb128 0x19
+ 3394 0107 3C       		.uleb128 0x3c
+ 3395 0108 19       		.uleb128 0x19
+ 3396 0109 6E       		.uleb128 0x6e
+ 3397 010a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 66
+
+
+ 3398 010b 03       		.uleb128 0x3
+ 3399 010c 0E       		.uleb128 0xe
+ 3400 010d 3A       		.uleb128 0x3a
+ 3401 010e 0B       		.uleb128 0xb
+ 3402 010f 3B       		.uleb128 0x3b
+ 3403 0110 0B       		.uleb128 0xb
+ 3404 0111 00       		.byte	0
+ 3405 0112 00       		.byte	0
+ 3406 0113 00       		.byte	0
+ 3407              		.section	.debug_loc,"",%progbits
+ 3408              	.Ldebug_loc0:
+ 3409              	.LLST0:
+ 3410 0000 00000000 		.4byte	.LVL9
+ 3411 0004 10000000 		.4byte	.LVL11
+ 3412 0008 0100     		.2byte	0x1
+ 3413 000a 50       		.byte	0x50
+ 3414 000b 10000000 		.4byte	.LVL11
+ 3415 000f 3A000000 		.4byte	.LVL16
+ 3416 0013 0100     		.2byte	0x1
+ 3417 0015 55       		.byte	0x55
+ 3418 0016 3A000000 		.4byte	.LVL16
+ 3419 001a 40000000 		.4byte	.LFE5
+ 3420 001e 0400     		.2byte	0x4
+ 3421 0020 F3       		.byte	0xf3
+ 3422 0021 01       		.uleb128 0x1
+ 3423 0022 50       		.byte	0x50
+ 3424 0023 9F       		.byte	0x9f
+ 3425 0024 00000000 		.4byte	0
+ 3426 0028 00000000 		.4byte	0
+ 3427              	.LLST1:
+ 3428 002c 00000000 		.4byte	.LVL9
+ 3429 0030 0E000000 		.4byte	.LVL10
+ 3430 0034 0100     		.2byte	0x1
+ 3431 0036 51       		.byte	0x51
+ 3432 0037 0E000000 		.4byte	.LVL10
+ 3433 003b 40000000 		.4byte	.LFE5
+ 3434 003f 0400     		.2byte	0x4
+ 3435 0041 F3       		.byte	0xf3
+ 3436 0042 01       		.uleb128 0x1
+ 3437 0043 51       		.byte	0x51
+ 3438 0044 9F       		.byte	0x9f
+ 3439 0045 00000000 		.4byte	0
+ 3440 0049 00000000 		.4byte	0
+ 3441              	.LLST2:
+ 3442 004d 00000000 		.4byte	.LVL17
+ 3443 0051 10000000 		.4byte	.LVL19
+ 3444 0055 0100     		.2byte	0x1
+ 3445 0057 50       		.byte	0x50
+ 3446 0058 10000000 		.4byte	.LVL19
+ 3447 005c 3A000000 		.4byte	.LVL24
+ 3448 0060 0100     		.2byte	0x1
+ 3449 0062 55       		.byte	0x55
+ 3450 0063 3A000000 		.4byte	.LVL24
+ 3451 0067 40000000 		.4byte	.LFE6
+ 3452 006b 0400     		.2byte	0x4
+ 3453 006d F3       		.byte	0xf3
+ 3454 006e 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 67
+
+
+ 3455 006f 50       		.byte	0x50
+ 3456 0070 9F       		.byte	0x9f
+ 3457 0071 00000000 		.4byte	0
+ 3458 0075 00000000 		.4byte	0
+ 3459              	.LLST3:
+ 3460 0079 00000000 		.4byte	.LVL17
+ 3461 007d 0E000000 		.4byte	.LVL18
+ 3462 0081 0100     		.2byte	0x1
+ 3463 0083 51       		.byte	0x51
+ 3464 0084 0E000000 		.4byte	.LVL18
+ 3465 0088 40000000 		.4byte	.LFE6
+ 3466 008c 0400     		.2byte	0x4
+ 3467 008e F3       		.byte	0xf3
+ 3468 008f 01       		.uleb128 0x1
+ 3469 0090 51       		.byte	0x51
+ 3470 0091 9F       		.byte	0x9f
+ 3471 0092 00000000 		.4byte	0
+ 3472 0096 00000000 		.4byte	0
+ 3473              	.LLST4:
+ 3474 009a 00000000 		.4byte	.LVL34
+ 3475 009e 09000000 		.4byte	.LVL35-1
+ 3476 00a2 0100     		.2byte	0x1
+ 3477 00a4 50       		.byte	0x50
+ 3478 00a5 09000000 		.4byte	.LVL35-1
+ 3479 00a9 18000000 		.4byte	.LFE3
+ 3480 00ad 0400     		.2byte	0x4
+ 3481 00af F3       		.byte	0xf3
+ 3482 00b0 01       		.uleb128 0x1
+ 3483 00b1 50       		.byte	0x50
+ 3484 00b2 9F       		.byte	0x9f
+ 3485 00b3 00000000 		.4byte	0
+ 3486 00b7 00000000 		.4byte	0
+ 3487              	.LLST5:
+ 3488 00bb 00000000 		.4byte	.LVL34
+ 3489 00bf 09000000 		.4byte	.LVL35-1
+ 3490 00c3 0100     		.2byte	0x1
+ 3491 00c5 51       		.byte	0x51
+ 3492 00c6 09000000 		.4byte	.LVL35-1
+ 3493 00ca 18000000 		.4byte	.LFE3
+ 3494 00ce 0400     		.2byte	0x4
+ 3495 00d0 F3       		.byte	0xf3
+ 3496 00d1 01       		.uleb128 0x1
+ 3497 00d2 51       		.byte	0x51
+ 3498 00d3 9F       		.byte	0x9f
+ 3499 00d4 00000000 		.4byte	0
+ 3500 00d8 00000000 		.4byte	0
+ 3501              	.LLST6:
+ 3502 00dc 00000000 		.4byte	.LVL34
+ 3503 00e0 09000000 		.4byte	.LVL35-1
+ 3504 00e4 0100     		.2byte	0x1
+ 3505 00e6 52       		.byte	0x52
+ 3506 00e7 09000000 		.4byte	.LVL35-1
+ 3507 00eb 18000000 		.4byte	.LFE3
+ 3508 00ef 0100     		.2byte	0x1
+ 3509 00f1 54       		.byte	0x54
+ 3510 00f2 00000000 		.4byte	0
+ 3511 00f6 00000000 		.4byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 68
+
+
+ 3512              	.LLST7:
+ 3513 00fa 00000000 		.4byte	.LVL34
+ 3514 00fe 09000000 		.4byte	.LVL35-1
+ 3515 0102 0100     		.2byte	0x1
+ 3516 0104 53       		.byte	0x53
+ 3517 0105 09000000 		.4byte	.LVL35-1
+ 3518 0109 18000000 		.4byte	.LFE3
+ 3519 010d 0400     		.2byte	0x4
+ 3520 010f F3       		.byte	0xf3
+ 3521 0110 01       		.uleb128 0x1
+ 3522 0111 53       		.byte	0x53
+ 3523 0112 9F       		.byte	0x9f
+ 3524 0113 00000000 		.4byte	0
+ 3525 0117 00000000 		.4byte	0
+ 3526              		.section	.debug_aranges,"",%progbits
+ 3527 0000 4C000000 		.4byte	0x4c
+ 3528 0004 0200     		.2byte	0x2
+ 3529 0006 00000000 		.4byte	.Ldebug_info0
+ 3530 000a 04       		.byte	0x4
+ 3531 000b 00       		.byte	0
+ 3532 000c 0000     		.2byte	0
+ 3533 000e 0000     		.2byte	0
+ 3534 0010 00000000 		.4byte	.LFB1
+ 3535 0014 28000000 		.4byte	.LFE1-.LFB1
+ 3536 0018 00000000 		.4byte	.LFB4
+ 3537 001c 20000000 		.4byte	.LFE4-.LFB4
+ 3538 0020 00000000 		.4byte	.LFB5
+ 3539 0024 40000000 		.4byte	.LFE5-.LFB5
+ 3540 0028 00000000 		.4byte	.LFB6
+ 3541 002c 40000000 		.4byte	.LFE6-.LFB6
+ 3542 0030 00000000 		.4byte	.LFB0
+ 3543 0034 40000000 		.4byte	.LFE0-.LFB0
+ 3544 0038 00000000 		.4byte	.LFB2
+ 3545 003c 1C000000 		.4byte	.LFE2-.LFB2
+ 3546 0040 00000000 		.4byte	.LFB3
+ 3547 0044 18000000 		.4byte	.LFE3-.LFB3
+ 3548 0048 00000000 		.4byte	0
+ 3549 004c 00000000 		.4byte	0
+ 3550              		.section	.debug_ranges,"",%progbits
+ 3551              	.Ldebug_ranges0:
+ 3552 0000 00000000 		.4byte	.LFB1
+ 3553 0004 28000000 		.4byte	.LFE1
+ 3554 0008 00000000 		.4byte	.LFB4
+ 3555 000c 20000000 		.4byte	.LFE4
+ 3556 0010 00000000 		.4byte	.LFB5
+ 3557 0014 40000000 		.4byte	.LFE5
+ 3558 0018 00000000 		.4byte	.LFB6
+ 3559 001c 40000000 		.4byte	.LFE6
+ 3560 0020 00000000 		.4byte	.LFB0
+ 3561 0024 40000000 		.4byte	.LFE0
+ 3562 0028 00000000 		.4byte	.LFB2
+ 3563 002c 1C000000 		.4byte	.LFE2
+ 3564 0030 00000000 		.4byte	.LFB3
+ 3565 0034 18000000 		.4byte	.LFE3
+ 3566 0038 00000000 		.4byte	0
+ 3567 003c 00000000 		.4byte	0
+ 3568              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 69
+
+
+ 3569              	.Ldebug_line0:
+ 3570 0000 52010000 		.section	.debug_str,"MS",%progbits,1
+ 3570      0200B200 
+ 3570      00000201 
+ 3570      FB0E0D00 
+ 3570      01010101 
+ 3571              	.LASF23:
+ 3572 0000 57617665 		.ascii	"WaveDAC8_Init\000"
+ 3572      44414338 
+ 3572      5F496E69 
+ 3572      7400
+ 3573              	.LASF49:
+ 3574 000e 57617665 		.ascii	"WaveDAC8_VDAC8_Init\000"
+ 3574      44414338 
+ 3574      5F564441 
+ 3574      43385F49 
+ 3574      6E697400 
+ 3575              	.LASF43:
+ 3576 0022 57617665 		.ascii	"WaveDAC8_VDAC8_Stop\000"
+ 3576      44414338 
+ 3576      5F564441 
+ 3576      43385F53 
+ 3576      746F7000 
+ 3577              	.LASF12:
+ 3578 0036 666C6F61 		.ascii	"float\000"
+ 3578      7400
+ 3579              	.LASF46:
+ 3580 003c 4379446D 		.ascii	"CyDmaTdSetAddress\000"
+ 3580      61546453 
+ 3580      65744164 
+ 3580      64726573 
+ 3580      7300
+ 3581              	.LASF3:
+ 3582 004e 73686F72 		.ascii	"short unsigned int\000"
+ 3582      7420756E 
+ 3582      7369676E 
+ 3582      65642069 
+ 3582      6E7400
+ 3583              	.LASF47:
+ 3584 0061 4379446D 		.ascii	"CyDmaChSetInitialTd\000"
+ 3584      61436853 
+ 3584      6574496E 
+ 3584      69746961 
+ 3584      6C546400 
+ 3585              	.LASF48:
+ 3586 0075 57617665 		.ascii	"WaveDAC8_Wave2_DMA_DmaInitialize\000"
+ 3586      44414338 
+ 3586      5F576176 
+ 3586      65325F44 
+ 3586      4D415F44 
+ 3587              	.LASF26:
+ 3588 0096 77617665 		.ascii	"wavePtr1\000"
+ 3588      50747231 
+ 3588      00
+ 3589              	.LASF28:
+ 3590 009f 77617665 		.ascii	"wavePtr2\000"
+ 3590      50747232 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 70
+
+
+ 3590      00
+ 3591              	.LASF52:
+ 3592 00a8 4379446D 		.ascii	"CyDmaTdAllocate\000"
+ 3592      61546441 
+ 3592      6C6C6F63 
+ 3592      61746500 
+ 3593              	.LASF41:
+ 3594 00b8 57617665 		.ascii	"WaveDAC8_DacClk_Stop\000"
+ 3594      44414338 
+ 3594      5F446163 
+ 3594      436C6B5F 
+ 3594      53746F70 
+ 3595              	.LASF39:
+ 3596 00cd 57617665 		.ascii	"WaveDAC8_VDAC8_SetValue\000"
+ 3596      44414338 
+ 3596      5F564441 
+ 3596      43385F53 
+ 3596      65745661 
+ 3597              	.LASF24:
+ 3598 00e5 57617665 		.ascii	"WaveDAC8_Start\000"
+ 3598      44414338 
+ 3598      5F537461 
+ 3598      727400
+ 3599              	.LASF19:
+ 3600 00f4 57617665 		.ascii	"WaveDAC8_Wave1Setup\000"
+ 3600      44414338 
+ 3600      5F576176 
+ 3600      65315365 
+ 3600      74757000 
+ 3601              	.LASF54:
+ 3602 0108 47656E65 		.ascii	"Generated_Source\\PSoC5\\WaveDAC8.c\000"
+ 3602      72617465 
+ 3602      645F536F 
+ 3602      75726365 
+ 3602      5C50536F 
+ 3603              	.LASF21:
+ 3604 012a 73616D70 		.ascii	"sampleSize\000"
+ 3604      6C655369 
+ 3604      7A6500
+ 3605              	.LASF53:
+ 3606 0135 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 3606      43313120 
+ 3606      352E342E 
+ 3606      31203230 
+ 3606      31363036 
+ 3607 0168 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 3607      20726576 
+ 3607      6973696F 
+ 3607      6E203233 
+ 3607      37373135 
+ 3608 019b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 3608      66756E63 
+ 3608      74696F6E 
+ 3608      2D736563 
+ 3608      74696F6E 
+ 3609              	.LASF18:
+ 3610 01c3 57617665 		.ascii	"WaveDAC8_Stop\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 71
+
+
+ 3610      44414338 
+ 3610      5F53746F 
+ 3610      7000
+ 3611              	.LASF45:
+ 3612 01d1 4379446D 		.ascii	"CyDmaTdSetConfiguration\000"
+ 3612      61546453 
+ 3612      6574436F 
+ 3612      6E666967 
+ 3612      75726174 
+ 3613              	.LASF5:
+ 3614 01e9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3614      20756E73 
+ 3614      69676E65 
+ 3614      6420696E 
+ 3614      7400
+ 3615              	.LASF20:
+ 3616 01fb 77617665 		.ascii	"wavePtr\000"
+ 3616      50747200 
+ 3617              	.LASF9:
+ 3618 0203 75696E74 		.ascii	"uint8\000"
+ 3618      3800
+ 3619              	.LASF17:
+ 3620 0209 57617665 		.ascii	"WaveDAC8_Enable\000"
+ 3620      44414338 
+ 3620      5F456E61 
+ 3620      626C6500 
+ 3621              	.LASF29:
+ 3622 0219 73616D70 		.ascii	"sampleSize2\000"
+ 3622      6C655369 
+ 3622      7A653200 
+ 3623              	.LASF1:
+ 3624 0225 756E7369 		.ascii	"unsigned char\000"
+ 3624      676E6564 
+ 3624      20636861 
+ 3624      7200
+ 3625              	.LASF13:
+ 3626 0233 646F7562 		.ascii	"double\000"
+ 3626      6C6500
+ 3627              	.LASF33:
+ 3628 023a 57617665 		.ascii	"WaveDAC8_Wave2TD\000"
+ 3628      44414338 
+ 3628      5F576176 
+ 3628      65325444 
+ 3628      00
+ 3629              	.LASF2:
+ 3630 024b 73686F72 		.ascii	"short int\000"
+ 3630      7420696E 
+ 3630      7400
+ 3631              	.LASF55:
+ 3632 0255 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD\\NEW_MD\\Movement"
+ 3632      73657273 
+ 3632      5C7A616B 
+ 3632      69735C44 
+ 3632      6F63756D 
+ 3633 0282 44657465 		.ascii	"Detector\\40_Implementation\\20_SW\\10_work\\Moveme"
+ 3633      63746F72 
+ 3633      5C34305F 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 72
+
+
+ 3633      496D706C 
+ 3633      656D656E 
+ 3634 02b1 6E744465 		.ascii	"ntDetector\\RADAR_Movement_Detector.cydsn\000"
+ 3634      74656374 
+ 3634      6F725C52 
+ 3634      41444152 
+ 3634      5F4D6F76 
+ 3635              	.LASF10:
+ 3636 02da 75696E74 		.ascii	"uint16\000"
+ 3636      313600
+ 3637              	.LASF11:
+ 3638 02e1 75696E74 		.ascii	"uint32\000"
+ 3638      333200
+ 3639              	.LASF25:
+ 3640 02e8 57617665 		.ascii	"WaveDAC8_StartEx\000"
+ 3640      44414338 
+ 3640      5F537461 
+ 3640      72744578 
+ 3640      00
+ 3641              	.LASF8:
+ 3642 02f9 756E7369 		.ascii	"unsigned int\000"
+ 3642      676E6564 
+ 3642      20696E74 
+ 3642      00
+ 3643              	.LASF38:
+ 3644 0306 4379446D 		.ascii	"CyDmaChEnable\000"
+ 3644      61436845 
+ 3644      6E61626C 
+ 3644      6500
+ 3645              	.LASF7:
+ 3646 0314 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3646      206C6F6E 
+ 3646      6720756E 
+ 3646      7369676E 
+ 3646      65642069 
+ 3647              	.LASF32:
+ 3648 032b 57617665 		.ascii	"WaveDAC8_Wave1TD\000"
+ 3648      44414338 
+ 3648      5F576176 
+ 3648      65315444 
+ 3648      00
+ 3649              	.LASF22:
+ 3650 033c 57617665 		.ascii	"WaveDAC8_Wave2Setup\000"
+ 3650      44414338 
+ 3650      5F576176 
+ 3650      65325365 
+ 3650      74757000 
+ 3651              	.LASF16:
+ 3652 0350 73697A65 		.ascii	"sizetype\000"
+ 3652      74797065 
+ 3652      00
+ 3653              	.LASF6:
+ 3654 0359 6C6F6E67 		.ascii	"long long int\000"
+ 3654      206C6F6E 
+ 3654      6720696E 
+ 3654      7400
+ 3655              	.LASF14:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 73
+
+
+ 3656 0367 63686172 		.ascii	"char\000"
+ 3656      00
+ 3657              	.LASF30:
+ 3658 036c 57617665 		.ascii	"WaveDAC8_Wave1Chan\000"
+ 3658      44414338 
+ 3658      5F576176 
+ 3658      65314368 
+ 3658      616E00
+ 3659              	.LASF37:
+ 3660 037f 57617665 		.ascii	"WaveDAC8_VDAC8_Enable\000"
+ 3660      44414338 
+ 3660      5F564441 
+ 3660      43385F45 
+ 3660      6E61626C 
+ 3661              	.LASF34:
+ 3662 0395 57617665 		.ascii	"WaveDAC8_initVar\000"
+ 3662      44414338 
+ 3662      5F696E69 
+ 3662      74566172 
+ 3662      00
+ 3663              	.LASF35:
+ 3664 03a6 57617665 		.ascii	"WaveDAC8_wave1\000"
+ 3664      44414338 
+ 3664      5F776176 
+ 3664      653100
+ 3665              	.LASF36:
+ 3666 03b5 57617665 		.ascii	"WaveDAC8_wave2\000"
+ 3666      44414338 
+ 3666      5F776176 
+ 3666      653200
+ 3667              	.LASF50:
+ 3668 03c4 57617665 		.ascii	"WaveDAC8_VDAC8_SetSpeed\000"
+ 3668      44414338 
+ 3668      5F564441 
+ 3668      43385F53 
+ 3668      65745370 
+ 3669              	.LASF51:
+ 3670 03dc 57617665 		.ascii	"WaveDAC8_VDAC8_SetRange\000"
+ 3670      44414338 
+ 3670      5F564441 
+ 3670      43385F53 
+ 3670      65745261 
+ 3671              	.LASF4:
+ 3672 03f4 6C6F6E67 		.ascii	"long int\000"
+ 3672      20696E74 
+ 3672      00
+ 3673              	.LASF15:
+ 3674 03fd 6C6F6E67 		.ascii	"long double\000"
+ 3674      20646F75 
+ 3674      626C6500 
+ 3675              	.LASF0:
+ 3676 0409 7369676E 		.ascii	"signed char\000"
+ 3676      65642063 
+ 3676      68617200 
+ 3677              	.LASF27:
+ 3678 0415 73616D70 		.ascii	"sampleSize1\000"
+ 3678      6C655369 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc8nKmTf.s 			page 74
+
+
+ 3678      7A653100 
+ 3679              	.LASF42:
+ 3680 0421 4379446D 		.ascii	"CyDmaChDisable\000"
+ 3680      61436844 
+ 3680      69736162 
+ 3680      6C6500
+ 3681              	.LASF44:
+ 3682 0430 57617665 		.ascii	"WaveDAC8_Wave1_DMA_DmaInitialize\000"
+ 3682      44414338 
+ 3682      5F576176 
+ 3682      65315F44 
+ 3682      4D415F44 
+ 3683              	.LASF40:
+ 3684 0451 57617665 		.ascii	"WaveDAC8_DacClk_Start\000"
+ 3684      44414338 
+ 3684      5F446163 
+ 3684      436C6B5F 
+ 3684      53746172 
+ 3685              	.LASF31:
+ 3686 0467 57617665 		.ascii	"WaveDAC8_Wave2Chan\000"
+ 3686      44414338 
+ 3686      5F576176 
+ 3686      65324368 
+ 3686      616E00
+ 3687              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
