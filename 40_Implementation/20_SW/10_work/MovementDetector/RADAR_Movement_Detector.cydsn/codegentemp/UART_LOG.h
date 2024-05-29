@@ -369,7 +369,7 @@ extern uint8 UART_LOG_initVar;
 
 #define UART_LOG_INIT_TX_INTERRUPTS_MASK \
                                   (uint8)((1 << UART_LOG_TX_STS_COMPLETE_SHIFT) \
-                                        | (0 << UART_LOG_TX_STS_FIFO_EMPTY_SHIFT) \
+                                        | (1 << UART_LOG_TX_STS_FIFO_EMPTY_SHIFT) \
                                         | (0 << UART_LOG_TX_STS_FIFO_FULL_SHIFT) \
                                         | (0 << UART_LOG_TX_STS_FIFO_NOT_FULL_SHIFT))
 

@@ -38,7 +38,7 @@
 #include "DMA_ADC_MEM_dma.h"
 #include "DMA_MEM_UART_dma.h"
 #include "isr_DMA_MEM_UART.h"
-#include "Clock_1.h"
+#include "Clock_DMA_MEM_UART.h"
 #include "UART_LOG_IntClock.h"
 #include "WaveDAC8_DacClk.h"
 #include "WaveDAC8_Wave1_DMA_dma.h"

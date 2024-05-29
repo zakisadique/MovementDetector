@@ -3,7 +3,7 @@
 * \author P. Fromm
 * \date 8.12.19
 *
-* \brief uard wrapper driver
+* \brief UART wrapper driver
 *
 *
 * \note Set the symbols in the cfg file to the port you want to use and configure the buffer size in the ringbuffer config file
@@ -60,56 +60,8 @@ public:
 /* API functions                                                             */
 /*****************************************************************************/
 
-/**
- * Init a Uart Port
- * @param UART_t * const me : IN/OUT - pointer to uart port object 
- * @return RC_SUCCESS or errorcode
- */
+// Initialize UART
 RC_t UART_init();
-
-/**
- * Write a string to the UART, Using Ringbuffer and ISR
- * @param UART_t * const me : IN/OUT - pointer to uart port object 
- * @param uint8_t const * const s : IN - pointer to the string to be transmitted
- * @return RC_SUCCESS or errorcode
- */
-//RC_t UART_writeString(UART_t *const me, uint8_t const * const s);
-
-/**
- * Write next char to the UART port
- * @param UART_t * const me : IN/OUT - pointer to uart port object 
- * @return RC_SUCCESS or errorcode
- */
-//RC_t UART_TX_isrHandler(UART_t *const me);
-
-
-/**
- * @brief Handles UART receive interrupt.
- * @param me Pointer to the UART instance.
- * @return Status code indicating success or failure.
- */
-RC_t UART_RX_isrHandler();
-
-/**
- * @brief Retrieves the JSON string from UART.
- * @param me Pointer to the UART instance.
- * @param jsonString Pointer to store the retrieved JSON string.
- * @return Status code indicating success or failure.
- */
-//RC_t UART_getJsonString(UART_t *const me, uint8_t *const jsonString);
-
-/**
- * @brief Restarts the UART operation.
- * @return Status code indicating success or failure.
- */
-//RC_t UART_restartOperation();
-
-/**
- * @brief Clears the UART instance.
- * @param me Pointer to the UART instance.
- * @return Status code indicating success or failure.
- */
-RC_t UART_clear();
 
 
 /*****************************************************************************/

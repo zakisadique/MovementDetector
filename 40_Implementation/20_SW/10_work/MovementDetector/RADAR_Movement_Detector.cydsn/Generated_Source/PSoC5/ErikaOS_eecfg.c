@@ -394,16 +394,16 @@
         ,"ev_sReceived"
     #endif
     #if EE_MAX_EVENT > 3
-         ,"ev_countLessTen"
-    #endif
-    #if EE_MAX_EVENT > 4
-         ,"ev_countEqualTen"
-    #endif
-    #if EE_MAX_EVENT > 5
          ,"ev_samplingFinished"
     #endif
-    #if EE_MAX_EVENT > 6
+    #if EE_MAX_EVENT > 4
          ,"ev_send"
+    #endif
+    #if EE_MAX_EVENT > 5
+         ,"ev_oReceived"
+    #endif
+    #if EE_MAX_EVENT > 6
+         ,"ev_UARTOver"
     #endif
     #if EE_MAX_EVENT > 7
          ,"ev_UARTOver"
@@ -491,16 +491,16 @@
         ,ev_sReceived
     #endif
     #if EE_MAX_EVENT > 3
-        ,ev_countLessTen
-    #endif
-    #if EE_MAX_EVENT > 4
-        ,ev_countEqualTen
-    #endif
-    #if EE_MAX_EVENT > 5
         ,ev_samplingFinished
     #endif
-    #if EE_MAX_EVENT > 6
+    #if EE_MAX_EVENT > 4
         ,ev_send
+    #endif
+    #if EE_MAX_EVENT > 5
+        ,ev_oReceived
+    #endif
+    #if EE_MAX_EVENT > 6
+        ,ev_UARTOver
     #endif
     #if EE_MAX_EVENT > 7
         ,ev_UARTOver
@@ -1020,7 +1020,7 @@
         #endif
     #endif
     #if EE_MAX_TASK > 2
-        #if 7
+        #if 5
         ,1U
         #else
         ,0U

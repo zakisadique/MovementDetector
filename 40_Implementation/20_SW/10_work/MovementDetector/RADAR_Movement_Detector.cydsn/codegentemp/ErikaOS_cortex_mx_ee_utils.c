@@ -68,7 +68,7 @@
 //i.e. the value can be takes as it is
 #define ISR_SCALE(prio) (prio)
 
-#define Number_of_ISRs  4
+#define Number_of_ISRs  3
 
 extern void EE_set_switch_context_pri(void);
 
@@ -111,27 +111,27 @@ void EE_system_init(void)
 #error  The Interrupt isr_DMA_ADC_MEM could not be found. Make sure the name in the OS config exactly matches the name of the interrupt in the interrupt tab.
 #endif	/* isr_DMA_ADC_MEM */
 
-#if (Number_of_ISRs > 1) && defined isr_DMA_MEM_UART__INTC_NUMBER
-    ramVectorTable[CY_INT_IRQ_BASE + (isr_DMA_MEM_UART__INTC_NUMBER & CY_INT_NUMBER_MASK)] = isr_DMA_MEM_UART;
-	//PF v2.5.3
-    //NVIC_SET_PRI(isr_DMA_MEM_UART__INTC_NUMBER, (ISR_MIN_PRI - 1));
-    CyIntSetPriority(isr_DMA_MEM_UART__INTC_NUMBER, ISR_SCALE(1));
-    //\PF
-	NVIC_INT_ENABLE(isr_DMA_MEM_UART__INTC_NUMBER);
-#elif Number_of_ISRs > 1
-#error  The Interrupt isr_DMA_MEM_UART could not be found. Make sure the name in the OS config exactly matches the name of the interrupt in the interrupt tab.
-#endif	/* isr_DMA_MEM_UART */
-
-#if (Number_of_ISRs > 2) && defined isr_pushButton__INTC_NUMBER
+#if (Number_of_ISRs > 1) && defined isr_pushButton__INTC_NUMBER
     ramVectorTable[CY_INT_IRQ_BASE + (isr_pushButton__INTC_NUMBER & CY_INT_NUMBER_MASK)] = isr_pushButton;
 	//PF v2.5.3
     //NVIC_SET_PRI(isr_pushButton__INTC_NUMBER, (ISR_MIN_PRI - 1));
     CyIntSetPriority(isr_pushButton__INTC_NUMBER, ISR_SCALE(1));
     //\PF
 	NVIC_INT_ENABLE(isr_pushButton__INTC_NUMBER);
-#elif Number_of_ISRs > 2
+#elif Number_of_ISRs > 1
 #error  The Interrupt isr_pushButton could not be found. Make sure the name in the OS config exactly matches the name of the interrupt in the interrupt tab.
 #endif	/* isr_pushButton */
+
+#if (Number_of_ISRs > 2) && defined isr_UART_Rx__INTC_NUMBER
+    ramVectorTable[CY_INT_IRQ_BASE + (isr_UART_Rx__INTC_NUMBER & CY_INT_NUMBER_MASK)] = isr_UART_Rx;
+	//PF v2.5.3
+    //NVIC_SET_PRI(isr_UART_Rx__INTC_NUMBER, (ISR_MIN_PRI - 1));
+    CyIntSetPriority(isr_UART_Rx__INTC_NUMBER, ISR_SCALE(1));
+    //\PF
+	NVIC_INT_ENABLE(isr_UART_Rx__INTC_NUMBER);
+#elif Number_of_ISRs > 2
+#error  The Interrupt isr_UART_Rx could not be found. Make sure the name in the OS config exactly matches the name of the interrupt in the interrupt tab.
+#endif	/* isr_UART_Rx */
 
 #if (Number_of_ISRs > 3) && defined isr_UART_Rx__INTC_NUMBER
     ramVectorTable[CY_INT_IRQ_BASE + (isr_UART_Rx__INTC_NUMBER & CY_INT_NUMBER_MASK)] = isr_UART_Rx;

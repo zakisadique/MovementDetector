@@ -36,7 +36,7 @@
 #define WaveDAC8_ARB_DRAW_WAVE  (10u) /* Arbitrary (draw) */
 #define WaveDAC8_ARB_FILE_WAVE  (11u) /* Arbitrary (from file) */
 
-#define WaveDAC8_WAVE1_LENGTH   (2000u)   /* Length for wave1 */
+#define WaveDAC8_WAVE1_LENGTH   (1000u)   /* Length for wave1 */
 #define WaveDAC8_WAVE2_LENGTH   (100u)   /* Length for wave2 */
 	
 #define WaveDAC8_DEFAULT_RANGE    (1u) /* Default DAC range */

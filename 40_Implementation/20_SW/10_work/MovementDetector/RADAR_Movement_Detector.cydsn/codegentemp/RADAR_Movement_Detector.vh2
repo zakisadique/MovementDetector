@@ -2,7 +2,7 @@
 --	Conversion of RADAR_Movement_Detector.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue May 28 02:17:06 2024
+--	Wed May 29 23:48:05 2024
 --
 
 USE cypress.cypress.all;
@@ -33,7 +33,7 @@ SIGNAL tmpOE__Push_Button_net_0 : bit;
 SIGNAL Net_37 : bit;
 SIGNAL tmpIO_0__Push_Button_net_0 : bit;
 TERMINAL tmpSIOVREF__Push_Button_net_0 : bit;
-TERMINAL Net_47 : bit;
+TERMINAL Net_51 : bit;
 SIGNAL tmpINTERRUPT_0__Push_Button_net_0 : bit;
 SIGNAL \UART_LOG:Net_9\ : bit;
 SIGNAL \UART_LOG:Net_61\ : bit;
@@ -442,9 +442,9 @@ SIGNAL \ADC_DelSig:Net_252\ : bit;
 SIGNAL \ADC_DelSig:soc\ : bit;
 SIGNAL \ADC_DelSig:Net_268\ : bit;
 SIGNAL \ADC_DelSig:Net_270\ : bit;
-SIGNAL Net_40 : bit;
+SIGNAL Net_52 : bit;
 SIGNAL Net_44 : bit;
-SIGNAL Net_43 : bit;
+SIGNAL Net_63 : bit;
 SIGNAL \UART_LOG:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART_LOG:BUART:txn\\D\ : bit;
 SIGNAL \UART_LOG:BUART:tx_state_1\\D\ : bit;
@@ -865,7 +865,7 @@ Push_Button:cy_psoc3_pins_v1_10
 		analog=>(open),
 		io=>(tmpIO_0__Push_Button_net_0),
 		siovref=>(tmpSIOVREF__Push_Button_net_0),
-		annotation=>Net_47,
+		annotation=>Net_51,
 		in_clock=>zero,
 		in_clock_en=>tmpOE__LED_green_net_0,
 		in_reset=>zero,
@@ -878,7 +878,7 @@ Push_Button:cy_psoc3_pins_v1_10
 		id=>"b0162966-0060-4af5-82d1-fcb491ad7619/be0a0e37-ad17-42ca-b5a1-1a654d736358",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"13020833333.3333",
+		period=>"1085069444.44444",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\UART_LOG:Net_9\,
@@ -1329,7 +1329,7 @@ isr_UART_Rx:cy_isr_v1_0
 		id=>"8108b205-06b9-48bb-ba42-0c202ed05fe2/77086516-855e-4b7b-abbe-47b22f8543de",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"10000000000",
+		period=>"100000000000",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>\WaveDAC8:Net_279\,
@@ -1471,7 +1471,7 @@ isr_UART_Rx:cy_isr_v1_0
 		id=>"330b470c-b268-4c20-b638-3454ce02d381/edd15f43-b66b-457b-be3a-5342345270c8",
 		source_clock_id=>"61737EF6-3B74-48f9-8B91-F7473A442AE7",
 		divisor=>0,
-		period=>"488281250",
+		period=>"7812500000",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>\ADC_DelSig:Net_488\,
@@ -1486,7 +1486,7 @@ isr_UART_Rx:cy_isr_v1_0
 isr_DMA_ADC_MEM:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_40);
+	PORT MAP(int_signal=>Net_52);
 isr_pushButton:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
@@ -1496,23 +1496,23 @@ DMA_ADC_MEM:cy_dma_v1_0
 		num_tds=>0)
 	PORT MAP(drq=>Net_27,
 		trq=>zero,
-		nrq=>Net_40);
+		nrq=>Net_52);
 DMA_MEM_UART:cy_dma_v1_0
 	GENERIC MAP(drq_type=>"10",
 		num_tds=>0)
 	PORT MAP(drq=>Net_44,
 		trq=>zero,
-		nrq=>Net_43);
+		nrq=>Net_63);
 isr_DMA_MEM_UART:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_43);
-Clock_1:cy_clock_v1_0
+	PORT MAP(int_signal=>Net_63);
+Clock_DMA_MEM_UART:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"4e76a74a-9486-4093-8315-26382699b3b4",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"4000000000000",
+		period=>"200000000000",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_44,

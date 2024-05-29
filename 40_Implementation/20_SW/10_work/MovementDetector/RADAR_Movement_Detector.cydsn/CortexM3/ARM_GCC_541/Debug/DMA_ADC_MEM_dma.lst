@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
   28:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** * The following defines are available in Cyfitter.h
   29:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** * 
   30:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** * 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 2
 
 
   31:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** * 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
   85:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** *   UpperSrcAddress.
   86:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** *       
   87:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** *       
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 3
 
 
   88:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** *   UpperDestAddress.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  108:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c ****                                   (uint8)DMA_ADC_MEM__TERMOUT1_SEL,
  109:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c ****                                   (uint8)DMA_ADC_MEM__TERMIN_SEL);
  110:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 4
 
 
  111:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c ****     /* Set the extended address for the transfers */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  133:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** *   void.
  134:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** *
  135:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** *******************************************************************/
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 5
 
 
  136:Generated_Source\PSoC5/DMA_ADC_MEM_dma.c **** void DMA_ADC_MEM_DmaRelease(void) 
@@ -287,7 +287,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  133 000c 96000000 		.4byte	.LASF24
  134 0010 0C       		.byte	0xc
  135 0011 42000000 		.4byte	.LASF25
- 136 0015 68010000 		.4byte	.LASF26
+ 136 0015 DA010000 		.4byte	.LASF26
  137 0019 00000000 		.4byte	.Ldebug_ranges0+0
  138 001d 00000000 		.4byte	0
  139 0021 00000000 		.4byte	.Ldebug_line0
@@ -298,22 +298,22 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  144 002c 03       		.uleb128 0x3
  145 002d 04       		.byte	0x4
  146 002e 07       		.byte	0x7
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 6
 
 
- 147 002f F4010000 		.4byte	.LASF0
+ 147 002f 6F010000 		.4byte	.LASF0
  148 0033 03       		.uleb128 0x3
  149 0034 08       		.byte	0x8
  150 0035 05       		.byte	0x5
- 151 0036 32020000 		.4byte	.LASF1
+ 151 0036 AD010000 		.4byte	.LASF1
  152 003a 03       		.uleb128 0x3
  153 003b 08       		.byte	0x8
  154 003c 04       		.byte	0x4
- 155 003d 88020000 		.4byte	.LASF2
+ 155 003d 46020000 		.4byte	.LASF2
  156 0041 03       		.uleb128 0x3
  157 0042 01       		.byte	0x1
  158 0043 06       		.byte	0x6
- 159 0044 94020000 		.4byte	.LASF3
+ 159 0044 52020000 		.4byte	.LASF3
  160 0048 03       		.uleb128 0x3
  161 0049 01       		.byte	0x1
  162 004a 08       		.byte	0x8
@@ -321,7 +321,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  164 004f 03       		.uleb128 0x3
  165 0050 02       		.byte	0x2
  166 0051 05       		.byte	0x5
- 167 0052 5F020000 		.4byte	.LASF5
+ 167 0052 1D020000 		.4byte	.LASF5
  168 0056 03       		.uleb128 0x3
  169 0057 02       		.byte	0x2
  170 0058 07       		.byte	0x7
@@ -329,7 +329,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  172 005d 03       		.uleb128 0x3
  173 005e 04       		.byte	0x4
  174 005f 05       		.byte	0x5
- 175 0060 7F020000 		.4byte	.LASF7
+ 175 0060 3D020000 		.4byte	.LASF7
  176 0064 03       		.uleb128 0x3
  177 0065 04       		.byte	0x4
  178 0066 07       		.byte	0x7
@@ -337,28 +337,28 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  180 006b 03       		.uleb128 0x3
  181 006c 08       		.byte	0x8
  182 006d 07       		.byte	0x7
- 183 006e 01020000 		.4byte	.LASF9
+ 183 006e 7C010000 		.4byte	.LASF9
  184 0072 03       		.uleb128 0x3
  185 0073 04       		.byte	0x4
  186 0074 07       		.byte	0x7
- 187 0075 29020000 		.4byte	.LASF10
+ 187 0075 A4010000 		.4byte	.LASF10
  188 0079 03       		.uleb128 0x3
  189 007a 01       		.byte	0x1
  190 007b 08       		.byte	0x8
- 191 007c 5A020000 		.4byte	.LASF11
+ 191 007c D5010000 		.4byte	.LASF11
  192 0080 04       		.uleb128 0x4
  193 0081 41010000 		.4byte	.LASF12
  194 0085 02       		.byte	0x2
  195 0086 E801     		.2byte	0x1e8
  196 0088 48000000 		.4byte	0x48
  197 008c 04       		.uleb128 0x4
- 198 008d ED010000 		.4byte	.LASF13
+ 198 008d 68010000 		.4byte	.LASF13
  199 0091 02       		.byte	0x2
  200 0092 E901     		.2byte	0x1e9
  201 0094 56000000 		.4byte	0x56
  202 0098 03       		.uleb128 0x3
  203 0099 04       		.byte	0x4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 7
 
 
  204 009a 04       		.byte	0x4
@@ -396,7 +396,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  236 00e4 8C000000 		.4byte	0x8c
  237 00e8 42000000 		.4byte	.LLST2
  238 00ec 06       		.uleb128 0x6
- 239 00ed 18020000 		.4byte	.LASF19
+ 239 00ed 93010000 		.4byte	.LASF19
  240 00f1 01       		.byte	0x1
  241 00f2 61       		.byte	0x61
  242 00f3 8C000000 		.4byte	0x8c
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  258 0112 75       		.byte	0x75
  259 0113 00       		.sleb128 0
  260 0114 08       		.uleb128 0x8
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 8
 
 
  261 0115 02       		.uleb128 0x2
@@ -474,24 +474,24 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  311 0165 9C010000 		.4byte	0x19c
  312 0169 00       		.byte	0
  313 016a 0C       		.uleb128 0xc
- 314 016b 69020000 		.4byte	.LASF29
+ 314 016b 27020000 		.4byte	.LASF29
  315 016f 01       		.byte	0x1
  316 0170 45       		.byte	0x45
  317 0171 80000000 		.4byte	0x80
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 9
 
 
  318 0175 05       		.uleb128 0x5
  319 0176 03       		.byte	0x3
  320 0177 00000000 		.4byte	DMA_ADC_MEM_DmaHandle
  321 017b 0D       		.uleb128 0xd
- 322 017c AF020000 		.4byte	.LASF20
- 323 0180 AF020000 		.4byte	.LASF20
+ 322 017c 6D020000 		.4byte	.LASF20
+ 323 0180 6D020000 		.4byte	.LASF20
  324 0184 03       		.byte	0x3
  325 0185 33       		.byte	0x33
  326 0186 0D       		.uleb128 0xd
- 327 0187 40020000 		.4byte	.LASF21
- 328 018b 40020000 		.4byte	.LASF21
+ 327 0187 BB010000 		.4byte	.LASF21
+ 328 018b BB010000 		.4byte	.LASF21
  329 018f 03       		.byte	0x3
  330 0190 2D       		.byte	0x2d
  331 0191 0D       		.uleb128 0xd
@@ -500,8 +500,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  334 019a 03       		.byte	0x3
  335 019b 2C       		.byte	0x2c
  336 019c 0D       		.uleb128 0xd
- 337 019d A0020000 		.4byte	.LASF23
- 338 01a1 A0020000 		.4byte	.LASF23
+ 337 019d 5E020000 		.4byte	.LASF23
+ 338 01a1 5E020000 		.4byte	.LASF23
  339 01a5 03       		.byte	0x3
  340 01a6 2A       		.byte	0x2a
  341 01a7 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  372 001c 00       		.byte	0
  373 001d 00       		.byte	0
  374 001e 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 10
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 10
 
 
  375 001f 24       		.uleb128 0x24
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  429 0056 0E       		.uleb128 0xe
  430 0057 3A       		.uleb128 0x3a
  431 0058 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 11
 
 
  432 0059 3B       		.uleb128 0x3b
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  486 0096 40       		.uleb128 0x40
  487 0097 18       		.uleb128 0x18
  488 0098 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 12
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 12
 
 
  489 009a 19       		.uleb128 0x19
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  543 0008 0100     		.2byte	0x1
  544 000a 50       		.byte	0x50
  545 000b 1C000000 		.4byte	.LVL4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 13
 
 
  546 000f 3C000000 		.4byte	.LFE0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  600 000a 04       		.byte	0x4
  601 000b 00       		.byte	0
  602 000c 0000     		.2byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 14
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 14
 
 
  603 000e 0000     		.2byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  632      656C6561 
  633              	.LASF14:
  634 0082 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 15
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 15
 
 
  634      7400
@@ -885,97 +885,92 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 1
  649              	.LASF15:
  650 0161 646F7562 		.ascii	"double\000"
  650      6C6500
- 651              	.LASF26:
- 652 0168 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD\\NEW_MD\\Movement"
- 652      73657273 
- 652      5C7A616B 
- 652      69735C44 
- 652      6F63756D 
- 653 0195 44657465 		.ascii	"Detector\\40_Implementation\\20_SW\\10_work\\Moveme"
- 653      63746F72 
- 653      5C34305F 
- 653      496D706C 
- 653      656D656E 
- 654 01c4 6E744465 		.ascii	"ntDetector\\RADAR_Movement_Detector.cydsn\000"
- 654      74656374 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 16
+ 651              	.LASF13:
+ 652 0168 75696E74 		.ascii	"uint16\000"
+ 652      313600
+ 653              	.LASF0:
+ 654 016f 756E7369 		.ascii	"unsigned int\000"
+ 654      676E6564 
+ 654      20696E74 
+ 654      00
+ 655              	.LASF9:
+ 656 017c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 656      206C6F6E 
+ 656      6720756E 
+ 656      7369676E 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 16
 
 
- 654      6F725C52 
- 654      41444152 
- 654      5F4D6F76 
- 655              	.LASF13:
- 656 01ed 75696E74 		.ascii	"uint16\000"
- 656      313600
- 657              	.LASF0:
- 658 01f4 756E7369 		.ascii	"unsigned int\000"
- 658      676E6564 
- 658      20696E74 
+ 656      65642069 
+ 657              	.LASF19:
+ 658 0193 55707065 		.ascii	"UpperDestAddress\000"
+ 658      72446573 
+ 658      74416464 
+ 658      72657373 
  658      00
- 659              	.LASF9:
- 660 0201 6C6F6E67 		.ascii	"long long unsigned int\000"
- 660      206C6F6E 
- 660      6720756E 
- 660      7369676E 
- 660      65642069 
- 661              	.LASF19:
- 662 0218 55707065 		.ascii	"UpperDestAddress\000"
- 662      72446573 
- 662      74416464 
- 662      72657373 
- 662      00
- 663              	.LASF10:
- 664 0229 73697A65 		.ascii	"sizetype\000"
- 664      74797065 
- 664      00
- 665              	.LASF1:
- 666 0232 6C6F6E67 		.ascii	"long long int\000"
- 666      206C6F6E 
- 666      6720696E 
- 666      7400
- 667              	.LASF21:
- 668 0240 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
- 668      61436853 
- 668      65744578 
- 668      74656E64 
- 668      65644164 
- 669              	.LASF11:
- 670 025a 63686172 		.ascii	"char\000"
- 670      00
- 671              	.LASF5:
- 672 025f 73686F72 		.ascii	"short int\000"
- 672      7420696E 
- 672      7400
- 673              	.LASF29:
- 674 0269 444D415F 		.ascii	"DMA_ADC_MEM_DmaHandle\000"
- 674      4144435F 
- 674      4D454D5F 
- 674      446D6148 
- 674      616E646C 
- 675              	.LASF7:
- 676 027f 6C6F6E67 		.ascii	"long int\000"
- 676      20696E74 
- 676      00
- 677              	.LASF2:
- 678 0288 6C6F6E67 		.ascii	"long double\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZVZdHl.s 			page 17
+ 659              	.LASF10:
+ 660 01a4 73697A65 		.ascii	"sizetype\000"
+ 660      74797065 
+ 660      00
+ 661              	.LASF1:
+ 662 01ad 6C6F6E67 		.ascii	"long long int\000"
+ 662      206C6F6E 
+ 662      6720696E 
+ 662      7400
+ 663              	.LASF21:
+ 664 01bb 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
+ 664      61436853 
+ 664      65744578 
+ 664      74656E64 
+ 664      65644164 
+ 665              	.LASF11:
+ 666 01d5 63686172 		.ascii	"char\000"
+ 666      00
+ 667              	.LASF26:
+ 668 01da 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD\\Review\\RADAR_Mo"
+ 668      73657273 
+ 668      5C7A616B 
+ 668      69735C44 
+ 668      6F63756D 
+ 669 0207 76656D65 		.ascii	"vement_Detector.cydsn\000"
+ 669      6E745F44 
+ 669      65746563 
+ 669      746F722E 
+ 669      63796473 
+ 670              	.LASF5:
+ 671 021d 73686F72 		.ascii	"short int\000"
+ 671      7420696E 
+ 671      7400
+ 672              	.LASF29:
+ 673 0227 444D415F 		.ascii	"DMA_ADC_MEM_DmaHandle\000"
+ 673      4144435F 
+ 673      4D454D5F 
+ 673      446D6148 
+ 673      616E646C 
+ 674              	.LASF7:
+ 675 023d 6C6F6E67 		.ascii	"long int\000"
+ 675      20696E74 
+ 675      00
+ 676              	.LASF2:
+ 677 0246 6C6F6E67 		.ascii	"long double\000"
+ 677      20646F75 
+ 677      626C6500 
+ 678              	.LASF3:
+ 679 0252 7369676E 		.ascii	"signed char\000"
+ 679      65642063 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccoYG3ra.s 			page 17
 
 
- 678      20646F75 
- 678      626C6500 
- 679              	.LASF3:
- 680 0294 7369676E 		.ascii	"signed char\000"
- 680      65642063 
- 680      68617200 
- 681              	.LASF23:
- 682 02a0 4379446D 		.ascii	"CyDmaChDisable\000"
- 682      61436844 
- 682      69736162 
- 682      6C6500
- 683              	.LASF20:
- 684 02af 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
- 684      61436853 
- 684      6574436F 
- 684      6E666967 
- 684      75726174 
- 685              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 679      68617200 
+ 680              	.LASF23:
+ 681 025e 4379446D 		.ascii	"CyDmaChDisable\000"
+ 681      61436844 
+ 681      69736162 
+ 681      6C6500
+ 682              	.LASF20:
+ 683 026d 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
+ 683      61436853 
+ 683      6574436F 
+ 683      6E666967 
+ 683      75726174 
+ 684              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
