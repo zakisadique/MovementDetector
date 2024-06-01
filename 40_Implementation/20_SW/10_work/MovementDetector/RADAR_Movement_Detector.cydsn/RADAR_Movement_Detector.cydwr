@@ -253,10 +253,12 @@
     <Group key="Pin">
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="Push_Button" />
       <Data key="72baf961-1488-48f1-b19f-289e10f4944e" value="LED_orange" />
+      <Data key="762cb276-d17f-4a77-a1c4-1d0186578f1e" value="DAC_Out" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx" />
       <Data key="a794956a-ab2b-464d-a496-e60a2329de3d" value="LED_red" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="LED_green" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx" />
+      <Data key="f8415712-69ab-4f7d-9b62-22cb65a8c983" value="ADC_In" />
     </Group>
   </Group>
   <Group key="EEPROM">
@@ -3353,6 +3355,11 @@
         <Data key="Port Format" value="2,6" />
       </Group>
     </Group>
+    <Group key="762cb276-d17f-4a77-a1c4-1d0186578f1e">
+      <Group key="0">
+        <Data key="Port Format" value="15,4" />
+      </Group>
+    </Group>
     <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">
       <Group key="0">
         <Data key="Port Format" value="2,0" />
@@ -3371,6 +3378,11 @@
     <Group key="ed092b9b-d398-4703-be89-cebf998501f6">
       <Group key="0">
         <Data key="Port Format" value="2,1" />
+      </Group>
+    </Group>
+    <Group key="f8415712-69ab-4f7d-9b62-22cb65a8c983">
+      <Group key="0">
+        <Data key="Port Format" value="15,5" />
       </Group>
     </Group>
     <Group key="UnAssigned Pins" />
