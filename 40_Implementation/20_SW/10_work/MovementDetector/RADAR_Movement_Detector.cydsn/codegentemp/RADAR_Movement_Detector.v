@@ -1,6 +1,6 @@
 // ======================================================================
 // RADAR_Movement_Detector.v generated from TopDesign.cysch
-// 05/31/2024 at 18:17
+// 06/01/2024 at 10:13
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -759,10 +759,10 @@ endmodule
 module top ;
 
     electrical  Net_70;
-          wire  Net_62;
-          wire  Net_64;
-          wire  Net_63;
+          wire  Net_72;
+          wire  Net_74;
           wire  Net_39;
+          wire  Net_52;
     electrical  Net_25;
           wire  Net_26;
     electrical  Net_29;
@@ -786,11 +786,11 @@ module top ;
           wire  Net_5;
           wire  Net_4;
     electrical  Net_51;
-    electrical  Net_69;
-    electrical  Net_68;
-          wire  Net_52;
+          wire  Net_73;
           wire  Net_44;
           wire  Net_27;
+    electrical  Net_68;
+    electrical  Net_69;
           wire  Net_37;
 
 	wire [0:0] tmpOE__LED_green_net;
@@ -1322,7 +1322,7 @@ module top ;
 		#(.drq_type(2'b10))
 		DMA_MEM_UART
 		 (.drq(Net_44),
-		  .nrq(Net_63),
+		  .nrq(Net_73),
 		  .trq(1'b0));
 
 
@@ -1330,7 +1330,7 @@ module top ;
 	cy_isr_v1_0
 		#(.int_type(2'b10))
 		isr_DMA_MEM_UART
-		 (.int_signal(Net_63));
+		 (.int_signal(Net_73));
 
 
 

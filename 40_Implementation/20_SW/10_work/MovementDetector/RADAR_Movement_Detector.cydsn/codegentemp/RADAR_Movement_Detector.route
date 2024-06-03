@@ -1088,7 +1088,7 @@ net Net_52
 	switch ":interrupt_idmux_0.interrupt_idmux_0__out==>:interrupt_0.interrupt"
 	term   ":interrupt_0.interrupt"
 end Net_52
-net Net_63
+net Net_73
 	term   ":dma_0.termout"
 	switch ":dma_0.termout==>:dma_termout0_demux_0.in"
 	switch ":dma_termout0_demux_0.out_0==>:dma_dsi_termout0_mux_0.in_0"
@@ -1100,7 +1100,7 @@ net Net_63
 	switch "Stub-:dsiswitch_bottom@[DSI=(1,5)][side=bottom]:dsihc_bottom:v49+:dsiswitch_bottom@[DSI=(1,5)][side=bottom]:dsihc_bottom:v51==>:interrupt_idmux_1.in_2"
 	switch ":interrupt_idmux_1.interrupt_idmux_1__out==>:interrupt_1.interrupt"
 	term   ":interrupt_1.interrupt"
-end Net_63
+end Net_73
 net \ADC_DelSig:Net_93_local\
 	term   ":clockblockcell.dclk_0"
 	switch ":clockblockcell.dclk_0==>Stub-:dsiswitch_bottom@[DSI=(1,1)][side=bottom]:dsihc_bottom:v33+:dsiswitch_bottom@[DSI=(1,1)][side=bottom]:dsihc_bottom:v35"

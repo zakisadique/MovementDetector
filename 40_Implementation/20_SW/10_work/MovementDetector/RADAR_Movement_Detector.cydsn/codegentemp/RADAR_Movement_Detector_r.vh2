@@ -1,5 +1,5 @@
 -- Project:   RADAR_Movement_Detector
--- Generated: 05/31/2024 18:17:37
+-- Generated: 06/01/2024 10:13:02
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS
@@ -49,7 +49,7 @@ ARCHITECTURE __DEFAULT__ OF RADAR_Movement_Detector IS
     ATTRIBUTE global_signal OF Net_44 : SIGNAL IS true;
     SIGNAL Net_44_local : bit;
     SIGNAL Net_52 : bit;
-    SIGNAL Net_63 : bit;
+    SIGNAL Net_73 : bit;
     SIGNAL Net_8 : bit;
     SIGNAL Push_Button(0)__PA : bit;
     SIGNAL Rx(0)__PA : bit;
@@ -1729,7 +1729,7 @@ BEGIN
         PORT MAP(
             dmareq => Net_44_local,
             termin => '0',
-            termout => Net_63,
+            termout => Net_73,
             clock => ClockBlock_BUS_CLK);
 
     isr_DMA_MEM_UART:interrupt
@@ -1737,7 +1737,7 @@ BEGIN
             int_type => "10",
             is_nmi => 0)
         PORT MAP(
-            interrupt => Net_63,
+            interrupt => Net_73,
             clock => ClockBlock_BUS_CLK);
 
     \UART_LOG:BUART:txn\:macrocell
