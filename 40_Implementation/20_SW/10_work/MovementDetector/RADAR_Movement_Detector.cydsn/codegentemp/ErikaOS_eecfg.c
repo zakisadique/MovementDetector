@@ -388,19 +388,19 @@
          "ev_pushButton"
     #endif
     #if EE_MAX_EVENT > 1
-        ,"ev_noSReceived"
-    #endif
-    #if EE_MAX_EVENT > 2
         ,"ev_sReceived"
     #endif
-    #if EE_MAX_EVENT > 3
-         ,"ev_samplingFinished"
+    #if EE_MAX_EVENT > 2
+        ,"ev_samplingFinished"
     #endif
-    #if EE_MAX_EVENT > 4
+    #if EE_MAX_EVENT > 3
          ,"ev_send"
     #endif
-    #if EE_MAX_EVENT > 5
+    #if EE_MAX_EVENT > 4
          ,"ev_oReceived"
+    #endif
+    #if EE_MAX_EVENT > 5
+         ,"ev_reSample"
     #endif
     #if EE_MAX_EVENT > 6
          ,"ev_UARTOver"
@@ -485,19 +485,19 @@
         ev_pushButton
     #endif
     #if EE_MAX_EVENT > 1
-        ,ev_noSReceived
-    #endif
-    #if EE_MAX_EVENT > 2
         ,ev_sReceived
     #endif
-    #if EE_MAX_EVENT > 3
+    #if EE_MAX_EVENT > 2
         ,ev_samplingFinished
     #endif
-    #if EE_MAX_EVENT > 4
+    #if EE_MAX_EVENT > 3
         ,ev_send
     #endif
-    #if EE_MAX_EVENT > 5
+    #if EE_MAX_EVENT > 4
         ,ev_oReceived
+    #endif
+    #if EE_MAX_EVENT > 5
+        ,ev_reSample
     #endif
     #if EE_MAX_EVENT > 6
         ,ev_UARTOver
@@ -1020,7 +1020,7 @@
         #endif
     #endif
     #if EE_MAX_TASK > 2
-        #if 5
+        #if 4
         ,1U
         #else
         ,0U

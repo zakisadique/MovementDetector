@@ -1,6 +1,6 @@
 // ======================================================================
 // RADAR_Movement_Detector.v generated from TopDesign.cysch
-// 06/01/2024 at 10:13
+// 06/05/2024 at 18:45
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -382,7 +382,7 @@ endmodule
 `include "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cydff_v1_30\cydff_v1_30.v"
 `endif
 
-// WaveDAC8_v2_10(Clock_SRC=1, DAC_Range=1, DacModeReplString=VDAC8, Sample_Clock_Freq=10000, Wave1_Amplitude=3, Wave1_Data=125u,126u,126u,127u,127u,128u,129u,129u,130u,130u,131u,131u,132u,133u,133u,134u,134u,135u,136u,136u,137u,137u,138u,139u,139u,140u,140u,141u,141u,142u,143u,143u,144u,144u,145u,145u,146u,147u,147u,148u,148u,149u,149u,150u,151u,151u,152u,152u,153u,153u,154u,155u,155u,156u,156u,157u,157u,158u,158u,159u,160u,160u,161u,161u,162u,162u,163u,163u,164u,164u,165u,165u,166u,167u,167u,168u,168u,169u,169u,170u,170u,171u,171u,172u,172u,173u,173u,174u,174u,175u,175u,176u,176u,177u,177u,178u,178u,179u,179u,180u,180u,181u,181u,182u,182u,182u,183u,183u,184u,184u,185u,185u,186u,186u,187u,187u,187u,188u,188u,189u,189u,190u,190u,190u,191u,191u,192u,192u,193u,193u,193u,194u,194u,195u,195u,195u,196u,196u,196u,197u,197u,198u,198u,198u,199u,199u,199u,200u,200u,200u,201u,201u,202u,202u,202u,203u,203u,203u,204u,204u,204u,204u,205u,205u,205u,206u,206u,206u,207u,207u,207u,207u,208u,208u,208u,209u,209u,209u,209u,210u,210u,210u,210u,211u,211u,211u,211u,212u,212u,212u,212u,212u,213u,213u,213u,213u,213u,214u,214u,214u,214u,214u,215u,215u,215u,215u,215u,215u,216u,216u,216u,216u,216u,216u,216u,216u,217u,217u,217u,217u,217u,217u,217u,217u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,219u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,218u,217u,217u,217u,217u,217u,217u,217u,217u,216u,216u,216u,216u,216u,216u,216u,216u,215u,215u,215u,215u,215u,215u,214u,214u,214u,214u,214u,213u,213u,213u,213u,213u,212u,212u,212u,212u,212u,211u,211u,211u,211u,210u,210u,210u,210u,209u,209u,209u,209u,208u,208u,208u,207u,207u,207u,207u,206u,206u,206u,205u,205u,205u,204u,204u,204u,204u,203u,203u,203u,202u,202u,202u,201u,201u,200u,200u,200u,199u,199u,199u,198u,198u,198u,197u,197u,196u,196u,196u,195u,195u,195u,194u,194u,193u,193u,193u,192u,192u,191u,191u,190u,190u,190u,189u,189u,188u,188u,187u,187u,187u,186u,186u,185u,185u,184u,184u,183u,183u,182u,182u,182u,181u,181u,180u,180u,179u,179u,178u,178u,177u,177u,176u,176u,175u,175u,174u,174u,173u,173u,172u,172u,171u,171u,170u,170u,169u,169u,168u,168u,167u,167u,166u,165u,165u,164u,164u,163u,163u,162u,162u,161u,161u,160u,160u,159u,158u,158u,157u,157u,156u,156u,155u,155u,154u,153u,153u,152u,152u,151u,151u,150u,149u,149u,148u,148u,147u,147u,146u,145u,145u,144u,144u,143u,143u,142u,141u,141u,140u,140u,139u,139u,138u,137u,137u,136u,136u,135u,134u,134u,133u,133u,132u,131u,131u,130u,130u,129u,129u,128u,127u,127u,126u,126u,125u,124u,124u,123u,123u,122u,121u,121u,120u,120u,119u,119u,118u,117u,117u,116u,116u,115u,114u,114u,113u,113u,112u,111u,111u,110u,110u,109u,109u,108u,107u,107u,106u,106u,105u,105u,104u,103u,103u,102u,102u,101u,101u,100u,99u,99u,98u,98u,97u,97u,96u,95u,95u,94u,94u,93u,93u,92u,92u,91u,90u,90u,89u,89u,88u,88u,87u,87u,86u,86u,85u,85u,84u,83u,83u,82u,82u,81u,81u,80u,80u,79u,79u,78u,78u,77u,77u,76u,76u,75u,75u,74u,74u,73u,73u,72u,72u,71u,71u,70u,70u,69u,69u,68u,68u,68u,67u,67u,66u,66u,65u,65u,64u,64u,63u,63u,63u,62u,62u,61u,61u,60u,60u,60u,59u,59u,58u,58u,57u,57u,57u,56u,56u,55u,55u,55u,54u,54u,54u,53u,53u,52u,52u,52u,51u,51u,51u,50u,50u,50u,49u,49u,48u,48u,48u,47u,47u,47u,46u,46u,46u,46u,45u,45u,45u,44u,44u,44u,43u,43u,43u,43u,42u,42u,42u,41u,41u,41u,41u,40u,40u,40u,40u,39u,39u,39u,39u,38u,38u,38u,38u,38u,37u,37u,37u,37u,37u,36u,36u,36u,36u,36u,35u,35u,35u,35u,35u,35u,34u,34u,34u,34u,34u,34u,34u,34u,33u,33u,33u,33u,33u,33u,33u,33u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,31u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,32u,33u,33u,33u,33u,33u,33u,33u,33u,34u,34u,34u,34u,34u,34u,34u,34u,35u,35u,35u,35u,35u,35u,36u,36u,36u,36u,36u,37u,37u,37u,37u,37u,38u,38u,38u,38u,38u,39u,39u,39u,39u,40u,40u,40u,40u,41u,41u,41u,41u,42u,42u,42u,43u,43u,43u,43u,44u,44u,44u,45u,45u,45u,46u,46u,46u,46u,47u,47u,47u,48u,48u,48u,49u,49u,50u,50u,50u,51u,51u,51u,52u,52u,52u,53u,53u,54u,54u,54u,55u,55u,55u,56u,56u,57u,57u,57u,58u,58u,59u,59u,60u,60u,60u,61u,61u,62u,62u,63u,63u,63u,64u,64u,65u,65u,66u,66u,67u,67u,68u,68u,68u,69u,69u,70u,70u,71u,71u,72u,72u,73u,73u,74u,74u,75u,75u,76u,76u,77u,77u,78u,78u,79u,79u,80u,80u,81u,81u,82u,82u,83u,83u,84u,85u,85u,86u,86u,87u,87u,88u,88u,89u,89u,90u,90u,91u,92u,92u,93u,93u,94u,94u,95u,95u,96u,97u,97u,98u,98u,99u,99u,100u,101u,101u,102u,102u,103u,103u,104u,105u,105u,106u,106u,107u,107u,108u,109u,109u,110u,110u,111u,111u,112u,113u,113u,114u,114u,115u,116u,116u,117u,117u,118u,119u,119u,120u,120u,121u,121u,122u,123u,123u,124u,124u, Wave1_DCOffset=2, Wave1_Length=1000, Wave1_PhaseShift=0, Wave1_Type=0, Wave2_Amplitude=4, Wave2_Data=128u,132u,138u,143u,148u,152u,158u,162u,168u,172u,178u,182u,188u,192u,198u,202u,208u,213u,218u,222u,228u,232u,238u,242u,248u,252u,248u,242u,238u,232u,228u,222u,218u,212u,208u,202u,198u,192u,188u,182u,178u,173u,168u,162u,158u,152u,148u,143u,138u,132u,128u,122u,118u,112u,107u,102u,97u,93u,88u,83u,78u,73u,68u,62u,57u,52u,47u,42u,37u,33u,28u,23u,18u,13u,8u,3u,8u,13u,18u,23u,28u,33u,37u,42u,47u,52u,57u,62u,68u,73u,78u,83u,88u,93u,97u,102u,107u,112u,118u,122u, Wave2_DCOffset=2.04, Wave2_Length=100, Wave2_PhaseShift=0, Wave2_Type=2, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMMENT=, CY_COMPONENT_NAME=WaveDAC8_v2_10, CY_CONFIG_TITLE=WaveDAC8, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=WaveDAC8, CY_INSTANCE_SHORT_NAME=WaveDAC8, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=WaveDAC8, )
+// WaveDAC8_v2_10(Clock_SRC=1, DAC_Range=0, DacModeReplString=VDAC8, Sample_Clock_Freq=10000, Wave1_Amplitude=1, Wave1_Data=128u,128u,129u,130u,131u,131u,132u,133u,134u,135u,135u,136u,137u,138u,138u,139u,140u,141u,142u,142u,143u,144u,145u,146u,146u,147u,148u,149u,149u,150u,151u,152u,152u,153u,154u,155u,156u,156u,157u,158u,159u,159u,160u,161u,162u,162u,163u,164u,165u,165u,166u,167u,168u,168u,169u,170u,171u,171u,172u,173u,174u,174u,175u,176u,176u,177u,178u,179u,179u,180u,181u,181u,182u,183u,184u,184u,185u,186u,186u,187u,188u,188u,189u,190u,190u,191u,192u,192u,193u,194u,194u,195u,196u,196u,197u,198u,198u,199u,200u,200u,201u,202u,202u,203u,203u,204u,205u,205u,206u,207u,207u,208u,208u,209u,210u,210u,211u,211u,212u,212u,213u,214u,214u,215u,215u,216u,216u,217u,218u,218u,219u,219u,220u,220u,221u,221u,222u,222u,223u,223u,224u,224u,225u,225u,226u,226u,227u,227u,228u,228u,229u,229u,230u,230u,230u,231u,231u,232u,232u,233u,233u,233u,234u,234u,235u,235u,235u,236u,236u,237u,237u,237u,238u,238u,239u,239u,239u,240u,240u,240u,241u,241u,241u,242u,242u,242u,243u,243u,243u,243u,244u,244u,244u,245u,245u,245u,245u,246u,246u,246u,246u,247u,247u,247u,247u,248u,248u,248u,248u,248u,249u,249u,249u,249u,249u,249u,250u,250u,250u,250u,250u,250u,251u,251u,251u,251u,251u,251u,251u,251u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,252u,251u,251u,251u,251u,251u,251u,251u,251u,250u,250u,250u,250u,250u,250u,249u,249u,249u,249u,249u,249u,248u,248u,248u,248u,248u,247u,247u,247u,247u,246u,246u,246u,246u,245u,245u,245u,245u,244u,244u,244u,243u,243u,243u,243u,242u,242u,242u,241u,241u,241u,240u,240u,240u,239u,239u,239u,238u,238u,237u,237u,237u,236u,236u,235u,235u,235u,234u,234u,233u,233u,233u,232u,232u,231u,231u,230u,230u,230u,229u,229u,228u,228u,227u,227u,226u,226u,225u,225u,224u,224u,223u,223u,222u,222u,221u,221u,220u,220u,219u,219u,218u,218u,217u,216u,216u,215u,215u,214u,214u,213u,212u,212u,211u,211u,210u,210u,209u,208u,208u,207u,207u,206u,205u,205u,204u,203u,203u,202u,202u,201u,200u,200u,199u,198u,198u,197u,196u,196u,195u,194u,194u,193u,192u,192u,191u,190u,190u,189u,188u,188u,187u,186u,186u,185u,184u,184u,183u,182u,181u,181u,180u,179u,179u,178u,177u,176u,176u,175u,174u,174u,173u,172u,171u,171u,170u,169u,168u,168u,167u,166u,165u,165u,164u,163u,162u,162u,161u,160u,159u,159u,158u,157u,156u,156u,155u,154u,153u,152u,152u,151u,150u,149u,149u,148u,147u,146u,146u,145u,144u,143u,142u,142u,141u,140u,139u,138u,138u,137u,136u,135u,135u,134u,133u,132u,131u,131u,130u,129u,128u,128u,127u,126u,125u,124u,124u,123u,122u,121u,120u,120u,119u,118u,117u,117u,116u,115u,114u,113u,113u,112u,111u,110u,109u,109u,108u,107u,106u,106u,105u,104u,103u,103u,102u,101u,100u,99u,99u,98u,97u,96u,96u,95u,94u,93u,93u,92u,91u,90u,90u,89u,88u,87u,87u,86u,85u,84u,84u,83u,82u,81u,81u,80u,79u,79u,78u,77u,76u,76u,75u,74u,74u,73u,72u,71u,71u,70u,69u,69u,68u,67u,67u,66u,65u,65u,64u,63u,63u,62u,61u,61u,60u,59u,59u,58u,57u,57u,56u,55u,55u,54u,53u,53u,52u,52u,51u,50u,50u,49u,48u,48u,47u,47u,46u,45u,45u,44u,44u,43u,43u,42u,41u,41u,40u,40u,39u,39u,38u,37u,37u,36u,36u,35u,35u,34u,34u,33u,33u,32u,32u,31u,31u,30u,30u,29u,29u,28u,28u,27u,27u,26u,26u,25u,25u,25u,24u,24u,23u,23u,22u,22u,22u,21u,21u,20u,20u,20u,19u,19u,18u,18u,18u,17u,17u,16u,16u,16u,15u,15u,15u,14u,14u,14u,13u,13u,13u,12u,12u,12u,12u,11u,11u,11u,10u,10u,10u,10u,9u,9u,9u,9u,8u,8u,8u,8u,7u,7u,7u,7u,7u,6u,6u,6u,6u,6u,6u,5u,5u,5u,5u,5u,5u,4u,4u,4u,4u,4u,4u,4u,4u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,3u,4u,4u,4u,4u,4u,4u,4u,4u,5u,5u,5u,5u,5u,5u,6u,6u,6u,6u,6u,6u,7u,7u,7u,7u,7u,8u,8u,8u,8u,9u,9u,9u,9u,10u,10u,10u,10u,11u,11u,11u,12u,12u,12u,12u,13u,13u,13u,14u,14u,14u,15u,15u,15u,16u,16u,16u,17u,17u,18u,18u,18u,19u,19u,20u,20u,20u,21u,21u,22u,22u,22u,23u,23u,24u,24u,25u,25u,25u,26u,26u,27u,27u,28u,28u,29u,29u,30u,30u,31u,31u,32u,32u,33u,33u,34u,34u,35u,35u,36u,36u,37u,37u,38u,39u,39u,40u,40u,41u,41u,42u,43u,43u,44u,44u,45u,45u,46u,47u,47u,48u,48u,49u,50u,50u,51u,52u,52u,53u,53u,54u,55u,55u,56u,57u,57u,58u,59u,59u,60u,61u,61u,62u,63u,63u,64u,65u,65u,66u,67u,67u,68u,69u,69u,70u,71u,71u,72u,73u,74u,74u,75u,76u,76u,77u,78u,79u,79u,80u,81u,81u,82u,83u,84u,84u,85u,86u,87u,87u,88u,89u,90u,90u,91u,92u,93u,93u,94u,95u,96u,96u,97u,98u,99u,99u,100u,101u,102u,103u,103u,104u,105u,106u,106u,107u,108u,109u,109u,110u,111u,112u,113u,113u,114u,115u,116u,117u,117u,118u,119u,120u,120u,121u,122u,123u,124u,124u,125u,126u,127u, Wave1_DCOffset=0.51, Wave1_Length=1000, Wave1_PhaseShift=0, Wave1_Type=0, Wave2_Amplitude=1, Wave2_Data=128u,132u,138u,143u,148u,152u,158u,162u,168u,172u,178u,182u,188u,192u,198u,202u,208u,213u,218u,222u,228u,232u,238u,242u,248u,252u,248u,242u,238u,232u,228u,222u,218u,212u,208u,202u,198u,192u,188u,182u,178u,173u,168u,162u,158u,152u,148u,143u,138u,132u,128u,122u,118u,112u,107u,102u,97u,93u,88u,83u,78u,73u,68u,62u,57u,52u,47u,42u,37u,33u,28u,23u,18u,13u,8u,3u,8u,13u,18u,23u,28u,33u,37u,42u,47u,52u,57u,62u,68u,73u,78u,83u,88u,93u,97u,102u,107u,112u,118u,122u, Wave2_DCOffset=0.51, Wave2_Length=100, Wave2_PhaseShift=0, Wave2_Type=2, CY_API_CALLBACK_HEADER_INCLUDE=, CY_COMMENT=, CY_COMPONENT_NAME=WaveDAC8_v2_10, CY_CONFIG_TITLE=WaveDAC8, CY_CONST_CONFIG=true, CY_CONTROL_FILE=<:default:>, CY_DATASHEET_FILE=<:default:>, CY_FITTER_NAME=WaveDAC8, CY_INSTANCE_SHORT_NAME=WaveDAC8, CY_MAJOR_VERSION=2, CY_MINOR_VERSION=10, CY_PDL_DRIVER_NAME=, CY_PDL_DRIVER_REQ_VERSION=, CY_PDL_DRIVER_SUBGROUP=, CY_PDL_DRIVER_VARIANT=, CY_REMOVE=false, CY_SUPPRESS_API_GEN=false, CY_VERSION=PSoC Creator  4.4, INSTANCE_NAME=WaveDAC8, )
 module WaveDAC8_v2_10_2 (
     clock,
     Wave,
@@ -785,12 +785,11 @@ module top ;
           wire  Net_6;
           wire  Net_5;
           wire  Net_4;
-    electrical  Net_51;
+    electrical  Net_78;
+    electrical  Net_69;
           wire  Net_73;
           wire  Net_44;
           wire  Net_27;
-    electrical  Net_68;
-    electrical  Net_69;
           wire  Net_37;
 
 	wire [0:0] tmpOE__LED_green_net;
@@ -1025,9 +1024,9 @@ module top ;
 
 	cy_psoc3_pins_v1_10
 		#(.id("8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba"),
-		  .drive_mode(3'b010),
+		  .drive_mode(3'b001),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b1),
+		  .init_dr_st(1'b0),
 		  .input_clk_en(0),
 		  .input_sync(1'b0),
 		  .input_sync_mode(1'b0),
@@ -1069,7 +1068,7 @@ module top ;
 		  .sio_vohsel(""),
 		  .slew_rate(1'b0),
 		  .spanning(0),
-		  .use_annotation(1'b1),
+		  .use_annotation(1'b0),
 		  .vtrip(2'b00),
 		  .width(1),
 		  .ovt_hyst_trim(1'b0),
@@ -1083,7 +1082,6 @@ module top ;
 		  .io({tmpIO_0__Push_Button_net[0:0]}),
 		  .siovref(tmpSIOVREF__Push_Button_net),
 		  .interrupt({tmpINTERRUPT_0__Push_Button_net[0:0]}),
-		  .annotation({Net_51}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -1278,7 +1276,7 @@ module top ;
 
     WaveDAC8_v2_10_2 WaveDAC8 (
         .clock(1'b0),
-        .Wave(Net_68),
+        .Wave(Net_78),
         .wc1(Net_33),
         .wc2(Net_34),
         .ws(Net_20));
@@ -1408,7 +1406,7 @@ module top ;
 		 (.oe(tmpOE__DAC_Out_net),
 		  .y({1'b0}),
 		  .fb({tmpFB_0__DAC_Out_net[0:0]}),
-		  .analog({Net_68}),
+		  .analog({Net_78}),
 		  .io({tmpIO_0__DAC_Out_net[0:0]}),
 		  .siovref(tmpSIOVREF__DAC_Out_net),
 		  .interrupt({tmpINTERRUPT_0__DAC_Out_net[0:0]}),

@@ -61,6 +61,8 @@ RC_t DETECTOR_initDrivers(){
     DMA_Init();
     ADC_Init();
     DAC_Init();
+    
+    return RC_SUCCESS;
 }
 
 // Init Detector object attributes and drivers used by the object
@@ -75,7 +77,7 @@ RC_t DETECTOR_init(Detector_t* detector){
     detector->readyToSend = FALSE;
     detector->memoryToUARTFinished = FALSE;
     
-    
+    return RC_SUCCESS;    
 }
 
 RC_t DETECTOR_setLedState(States_t state){
@@ -99,7 +101,7 @@ RC_t DETECTOR_setLedState(States_t state){
         break;
     }
     
-
+    return RC_SUCCESS;
 }
 
 // Process events as they get triggered based on a State Machine Architecture
@@ -132,7 +134,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
             *                               can be sent 
             *   ev_samplingFinished:    Triggered when ADC finishes sampling. If external system is not ready to receice data, 
             *                               existing data is discarded and another event is triggered to start resampling
-            *   ev_noSReceived:         Triggered when sampling needs to be restarted.
+            *   ev_reSample:            Triggered when sampling needs to be restarted.
             *   ev_send:                Triggered when sampling is finished and external system is ready to recieve data. State changes
             *                               from SAMPLING to UART_TRANSFER 
             */
@@ -149,7 +151,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                         DAC_Set(DAC_OFF);
                         ADC_Set(ADC_OFF);
 
-                        SetEvent(tsk_control, ev_noSReceived);
+                        SetEvent(tsk_control, ev_reSample);
                     }
                     if (detector ->readyToSend == TRUE){
                             detector -> readyToSend = FALSE;
@@ -161,7 +163,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                             SetEvent(tsk_control, ev_send);
                         }
                 } 
-                if (ev & ev_noSReceived){
+                if (ev & ev_reSample){
 
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
                     DAC_Set(DAC_ON);
@@ -195,7 +197,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     if (detector -> numberOfTransfers < 10){
                         detector -> detectorState = SAMPLING;
                         DETECTOR_setLedState(SAMPLING);
-                        SetEvent(tsk_control, ev_noSReceived);
+                        SetEvent(tsk_control, ev_reSample);
                     }
                     else if (detector -> numberOfTransfers == 10){
                         
@@ -211,5 +213,5 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
             break;
         
         }
-            return RC_SUCCESS;
+    return RC_SUCCESS;
 }

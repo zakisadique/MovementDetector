@@ -11,9 +11,6 @@
 */
 #include "project.h"
 #include "global.h"
-//#include "led.h"
-//#include "uart.h"
-//#include "dma.h"
 #include "detector.h"
 #include "fft_application.h"
 
@@ -83,7 +80,7 @@ TASK(tsk_control)
     EventMaskType ev = 0;
     
     while (1){
-        WaitEvent(ev_pushButton | ev_noSReceived | ev_sReceived | ev_send | ev_oReceived);
+        WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived);
         GetEvent(tsk_control, &ev);
         ClearEvent(ev);
         
@@ -112,10 +109,10 @@ TASK(tsk_background)
 ISR2(isr_UART_Rx){
     
     uint8_t data = UART_LOG_GetByte();
-    if (data ==  's'){
+    if (data ==  UART_START_VARIABLE){
         SetEvent(tsk_control, ev_sReceived);
-    } else if (data == 'o'){
-        SetEvent(tsk_control, ev_oReceived); // change name t ev_o received
+    } else if (data == UART_FINISH_VARIABLE){
+        SetEvent(tsk_control, ev_oReceived); 
     }
     
 }
@@ -128,7 +125,8 @@ ISR2(isr_DMA_ADC_MEM){
 
 // Process interrupts when button is pressed
 ISR2(isr_pushButton){
-
+    
+    isr_pushButton_ClearPending();
     SetEvent(tsk_control, ev_pushButton);
 }
 

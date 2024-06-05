@@ -156,11 +156,11 @@
 #define DAC_Out__SLW CYREG_PRT15_SLW
 
 /* LED_red */
-#define LED_red__0__INTTYPE CYREG_PICU2_INTTYPE4
-#define LED_red__0__MASK 0x10u
-#define LED_red__0__PC CYREG_PRT2_PC4
+#define LED_red__0__INTTYPE CYREG_PICU2_INTTYPE7
+#define LED_red__0__MASK 0x80u
+#define LED_red__0__PC CYREG_PRT2_PC7
 #define LED_red__0__PORT 2u
-#define LED_red__0__SHIFT 4u
+#define LED_red__0__SHIFT 7u
 #define LED_red__AG CYREG_PRT2_AG
 #define LED_red__AMUX CYREG_PRT2_AMUX
 #define LED_red__BIE CYREG_PRT2_BIE
@@ -175,7 +175,7 @@
 #define LED_red__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU2_BASE
 #define LED_red__LCD_COM_SEG CYREG_PRT2_LCD_COM_SEG
 #define LED_red__LCD_EN CYREG_PRT2_LCD_EN
-#define LED_red__MASK 0x10u
+#define LED_red__MASK 0x80u
 #define LED_red__PORT 2u
 #define LED_red__PRT CYREG_PRT2_PRT
 #define LED_red__PRTDSI__CAPS_SEL CYREG_PRT2_CAPS_SEL
@@ -186,7 +186,7 @@
 #define LED_red__PRTDSI__OUT_SEL1 CYREG_PRT2_OUT_SEL1
 #define LED_red__PRTDSI__SYNC_OUT CYREG_PRT2_SYNC_OUT
 #define LED_red__PS CYREG_PRT2_PS
-#define LED_red__SHIFT 4u
+#define LED_red__SHIFT 7u
 #define LED_red__SLW CYREG_PRT2_SLW
 
 /* UART_LOG */
@@ -527,11 +527,11 @@
 #define DMA_ADC_MEM__TERMOUT1_SEL 0u
 
 /* Push_Button */
-#define Push_Button__0__INTTYPE CYREG_PICU2_INTTYPE7
-#define Push_Button__0__MASK 0x80u
-#define Push_Button__0__PC CYREG_PRT2_PC7
+#define Push_Button__0__INTTYPE CYREG_PICU2_INTTYPE4
+#define Push_Button__0__MASK 0x10u
+#define Push_Button__0__PC CYREG_PRT2_PC4
 #define Push_Button__0__PORT 2u
-#define Push_Button__0__SHIFT 7u
+#define Push_Button__0__SHIFT 4u
 #define Push_Button__AG CYREG_PRT2_AG
 #define Push_Button__AMUX CYREG_PRT2_AMUX
 #define Push_Button__BIE CYREG_PRT2_BIE
@@ -546,7 +546,7 @@
 #define Push_Button__INTTYPE_BASE CYDEV_PICU_INTTYPE_PICU2_BASE
 #define Push_Button__LCD_COM_SEG CYREG_PRT2_LCD_COM_SEG
 #define Push_Button__LCD_EN CYREG_PRT2_LCD_EN
-#define Push_Button__MASK 0x80u
+#define Push_Button__MASK 0x10u
 #define Push_Button__PORT 2u
 #define Push_Button__PRT CYREG_PRT2_PRT
 #define Push_Button__PRTDSI__CAPS_SEL CYREG_PRT2_CAPS_SEL
@@ -557,7 +557,7 @@
 #define Push_Button__PRTDSI__OUT_SEL1 CYREG_PRT2_OUT_SEL1
 #define Push_Button__PRTDSI__SYNC_OUT CYREG_PRT2_SYNC_OUT
 #define Push_Button__PS CYREG_PRT2_PS
-#define Push_Button__SHIFT 7u
+#define Push_Button__SHIFT 4u
 #define Push_Button__SLW CYREG_PRT2_SLW
 
 /* isr_UART_Rx */

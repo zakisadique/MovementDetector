@@ -2,7 +2,7 @@
 --	Conversion of RADAR_Movement_Detector.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sat Jun 01 10:13:01 2024
+--	Wed Jun 05 18:45:27 2024
 --
 
 USE cypress.cypress.all;
@@ -33,7 +33,6 @@ SIGNAL tmpOE__Push_Button_net_0 : bit;
 SIGNAL Net_37 : bit;
 SIGNAL tmpIO_0__Push_Button_net_0 : bit;
 TERMINAL tmpSIOVREF__Push_Button_net_0 : bit;
-TERMINAL Net_51 : bit;
 SIGNAL tmpINTERRUPT_0__Push_Button_net_0 : bit;
 SIGNAL \UART_LOG:Net_9\ : bit;
 SIGNAL \UART_LOG:Net_61\ : bit;
@@ -400,7 +399,7 @@ SIGNAL \WaveDAC8:VDAC8:Net_83\ : bit;
 SIGNAL \WaveDAC8:VDAC8:Net_81\ : bit;
 SIGNAL \WaveDAC8:VDAC8:Net_82\ : bit;
 TERMINAL \WaveDAC8:VDAC8:Net_77\ : bit;
-TERMINAL Net_68 : bit;
+TERMINAL Net_78 : bit;
 SIGNAL \WaveDAC8:Net_280\ : bit;
 SIGNAL \WaveDAC8:Net_80\ : bit;
 SIGNAL \WaveDAC8:cydff_1\ : bit;
@@ -817,9 +816,9 @@ LED_red:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__LED_red_net_0);
 Push_Button:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
-		drive_mode=>"010",
+		drive_mode=>"001",
 		ibuf_enabled=>"1",
-		init_dr_st=>"1",
+		init_dr_st=>"0",
 		input_sync=>"0",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
@@ -860,7 +859,7 @@ Push_Button:cy_psoc3_pins_v1_10
 		width=>1,
 		port_alias_required=>'0',
 		port_alias_group=>"",
-		use_annotation=>"1",
+		use_annotation=>"0",
 		pa_in_clock=>-1,
 		pa_in_clock_en=>-1,
 		pa_in_reset=>-1,
@@ -877,7 +876,7 @@ Push_Button:cy_psoc3_pins_v1_10
 		analog=>(open),
 		io=>(tmpIO_0__Push_Button_net_0),
 		siovref=>(tmpSIOVREF__Push_Button_net_0),
-		annotation=>Net_51,
+		annotation=>(open),
 		in_clock=>zero,
 		in_clock_en=>tmpOE__LED_green_net_0,
 		in_reset=>zero,
@@ -1388,7 +1387,7 @@ isr_UART_Rx:cy_isr_v1_0
 \WaveDAC8:cy_analog_virtualmux_3_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
-	PORT MAP(signal1=>Net_68,
+	PORT MAP(signal1=>Net_78,
 		signal2=>\WaveDAC8:Net_256\);
 \ADC_DelSig:vRef_2\:cy_vref_v1_0
 	GENERIC MAP(guid=>"15B3DB15-B7B3-4d62-A2DF-25EA392A7161",
@@ -1588,7 +1587,7 @@ DAC_Out:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(tmpOE__LED_green_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__DAC_Out_net_0),
-		analog=>Net_68,
+		analog=>Net_78,
 		io=>(tmpIO_0__DAC_Out_net_0),
 		siovref=>(tmpSIOVREF__DAC_Out_net_0),
 		annotation=>(open),

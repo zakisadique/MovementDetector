@@ -1,5 +1,5 @@
 -- Project:   C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\RADAR_Movement_Detector.cyprj
--- Generated: 06/01/2024 10:13:04
+-- Generated: 06/05/2024 18:45:31
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS
@@ -160,9 +160,9 @@ ARCHITECTURE __DEFAULT__ OF RADAR_Movement_Detector IS
     ATTRIBUTE lib_model OF LED_orange(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF LED_orange(0) : LABEL IS "P2[6]";
     ATTRIBUTE lib_model OF LED_red(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF LED_red(0) : LABEL IS "P2[4]";
+    ATTRIBUTE Location OF LED_red(0) : LABEL IS "P2[7]";
     ATTRIBUTE lib_model OF Push_Button(0) : LABEL IS "iocell4";
-    ATTRIBUTE Location OF Push_Button(0) : LABEL IS "P2[7]";
+    ATTRIBUTE Location OF Push_Button(0) : LABEL IS "P2[4]";
     ATTRIBUTE lib_model OF Rx(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF Rx(0) : LABEL IS "P2[0]";
     ATTRIBUTE lib_model OF Tx(0) : LABEL IS "iocell6";
@@ -895,10 +895,10 @@ BEGIN
 
     Push_Button:logicalport
         GENERIC MAP(
-            drive_mode => "010",
+            drive_mode => "001",
             ibuf_enabled => "1",
             id => "8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
-            init_dr_st => "1",
+            init_dr_st => "0",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "0",
@@ -947,7 +947,7 @@ BEGIN
             slew_rate => "0",
             spanning => 0,
             sw_only => 0,
-            use_annotation => "1",
+            use_annotation => "0",
             vtrip => "00",
             width => 1,
             in_clk_inv => 0,

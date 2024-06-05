@@ -14,19 +14,19 @@
     #define ev_pushButton 0x1U
     #endif
     #if 6 > 1
-    #define ev_noSReceived 0x2U
+    #define ev_sReceived 0x2U
     #endif
     #if 6 > 2
-    #define ev_sReceived 0x4U
+    #define ev_samplingFinished 0x4U
     #endif
     #if 6 > 3
-    #define ev_samplingFinished 0x8U
+    #define ev_send 0x8U
     #endif
     #if 6 > 4
-    #define ev_send 0x10U
+    #define ev_oReceived 0x10U
     #endif
     #if 6 > 5
-    #define ev_oReceived 0x20U
+    #define ev_reSample 0x20U
     #endif
     #if 6 > 6
     #define ev_UARTOver 0x40U

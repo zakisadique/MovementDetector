@@ -156,11 +156,11 @@
 .set DAC_Out__SLW, CYREG_PRT15_SLW
 
 /* LED_red */
-.set LED_red__0__INTTYPE, CYREG_PICU2_INTTYPE4
-.set LED_red__0__MASK, 0x10
-.set LED_red__0__PC, CYREG_PRT2_PC4
+.set LED_red__0__INTTYPE, CYREG_PICU2_INTTYPE7
+.set LED_red__0__MASK, 0x80
+.set LED_red__0__PC, CYREG_PRT2_PC7
 .set LED_red__0__PORT, 2
-.set LED_red__0__SHIFT, 4
+.set LED_red__0__SHIFT, 7
 .set LED_red__AG, CYREG_PRT2_AG
 .set LED_red__AMUX, CYREG_PRT2_AMUX
 .set LED_red__BIE, CYREG_PRT2_BIE
@@ -175,7 +175,7 @@
 .set LED_red__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU2_BASE
 .set LED_red__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
 .set LED_red__LCD_EN, CYREG_PRT2_LCD_EN
-.set LED_red__MASK, 0x10
+.set LED_red__MASK, 0x80
 .set LED_red__PORT, 2
 .set LED_red__PRT, CYREG_PRT2_PRT
 .set LED_red__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
@@ -186,7 +186,7 @@
 .set LED_red__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
 .set LED_red__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
 .set LED_red__PS, CYREG_PRT2_PS
-.set LED_red__SHIFT, 4
+.set LED_red__SHIFT, 7
 .set LED_red__SLW, CYREG_PRT2_SLW
 
 /* UART_LOG */
@@ -527,11 +527,11 @@
 .set DMA_ADC_MEM__TERMOUT1_SEL, 0
 
 /* Push_Button */
-.set Push_Button__0__INTTYPE, CYREG_PICU2_INTTYPE7
-.set Push_Button__0__MASK, 0x80
-.set Push_Button__0__PC, CYREG_PRT2_PC7
+.set Push_Button__0__INTTYPE, CYREG_PICU2_INTTYPE4
+.set Push_Button__0__MASK, 0x10
+.set Push_Button__0__PC, CYREG_PRT2_PC4
 .set Push_Button__0__PORT, 2
-.set Push_Button__0__SHIFT, 7
+.set Push_Button__0__SHIFT, 4
 .set Push_Button__AG, CYREG_PRT2_AG
 .set Push_Button__AMUX, CYREG_PRT2_AMUX
 .set Push_Button__BIE, CYREG_PRT2_BIE
@@ -546,7 +546,7 @@
 .set Push_Button__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU2_BASE
 .set Push_Button__LCD_COM_SEG, CYREG_PRT2_LCD_COM_SEG
 .set Push_Button__LCD_EN, CYREG_PRT2_LCD_EN
-.set Push_Button__MASK, 0x80
+.set Push_Button__MASK, 0x10
 .set Push_Button__PORT, 2
 .set Push_Button__PRT, CYREG_PRT2_PRT
 .set Push_Button__PRTDSI__CAPS_SEL, CYREG_PRT2_CAPS_SEL
@@ -557,7 +557,7 @@
 .set Push_Button__PRTDSI__OUT_SEL1, CYREG_PRT2_OUT_SEL1
 .set Push_Button__PRTDSI__SYNC_OUT, CYREG_PRT2_SYNC_OUT
 .set Push_Button__PS, CYREG_PRT2_PS
-.set Push_Button__SHIFT, 7
+.set Push_Button__SHIFT, 4
 .set Push_Button__SLW, CYREG_PRT2_SLW
 
 /* isr_UART_Rx */
