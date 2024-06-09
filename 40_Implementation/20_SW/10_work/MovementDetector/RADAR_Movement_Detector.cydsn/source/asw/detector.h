@@ -49,6 +49,7 @@
 #include "project.h"
 #include "global.h"
 #include "led.h"
+#include "dac_adc.h"
     
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */

@@ -1,5 +1,5 @@
 -- Project:   RADAR_Movement_Detector
--- Generated: 06/05/2024 18:45:28
+-- Generated: 06/09/2024 22:06:35
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS
@@ -130,9 +130,9 @@ ARCHITECTURE __DEFAULT__ OF RADAR_Movement_Detector IS
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \ClockBlock.aclk_glb_ff_0__sig\ : bit;
     ATTRIBUTE lib_model OF LED_green(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF LED_green(0) : LABEL IS "P2[5]";
+    ATTRIBUTE Location OF LED_green(0) : LABEL IS "P2[6]";
     ATTRIBUTE lib_model OF LED_orange(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF LED_orange(0) : LABEL IS "P2[6]";
+    ATTRIBUTE Location OF LED_orange(0) : LABEL IS "P2[5]";
     ATTRIBUTE lib_model OF LED_red(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF LED_red(0) : LABEL IS "P2[7]";
     ATTRIBUTE lib_model OF Push_Button(0) : LABEL IS "iocell4";
@@ -850,7 +850,7 @@ BEGIN
             drive_mode => "001",
             ibuf_enabled => "1",
             id => "8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "0",
@@ -1690,6 +1690,14 @@ BEGIN
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_73,
+            clock => ClockBlock_BUS_CLK);
+
+    isr_ADC_Out:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_27,
             clock => ClockBlock_BUS_CLK);
 
     \UART_LOG:BUART:txn\:macrocell

@@ -2,7 +2,7 @@
 --	Conversion of RADAR_Movement_Detector.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Jun 05 18:45:27 2024
+--	Sun Jun 09 22:06:34 2024
 --
 
 USE cypress.cypress.all;
@@ -399,7 +399,7 @@ SIGNAL \WaveDAC8:VDAC8:Net_83\ : bit;
 SIGNAL \WaveDAC8:VDAC8:Net_81\ : bit;
 SIGNAL \WaveDAC8:VDAC8:Net_82\ : bit;
 TERMINAL \WaveDAC8:VDAC8:Net_77\ : bit;
-TERMINAL Net_78 : bit;
+TERMINAL Net_88 : bit;
 SIGNAL \WaveDAC8:Net_280\ : bit;
 SIGNAL \WaveDAC8:Net_80\ : bit;
 SIGNAL \WaveDAC8:cydff_1\ : bit;
@@ -411,7 +411,7 @@ TERMINAL \ADC_DelSig:Net_34\ : bit;
 TERMINAL \ADC_DelSig:Net_677\ : bit;
 TERMINAL \ADC_DelSig:Net_20\ : bit;
 SIGNAL \ADC_DelSig:Net_488\ : bit;
-TERMINAL Net_69 : bit;
+TERMINAL Net_80 : bit;
 TERMINAL \ADC_DelSig:Net_520\ : bit;
 SIGNAL \ADC_DelSig:Net_481\ : bit;
 SIGNAL \ADC_DelSig:Net_482\ : bit;
@@ -818,7 +818,7 @@ Push_Button:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
 		drive_mode=>"001",
 		ibuf_enabled=>"1",
-		init_dr_st=>"0",
+		init_dr_st=>"1",
 		input_sync=>"0",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
@@ -1387,7 +1387,7 @@ isr_UART_Rx:cy_isr_v1_0
 \WaveDAC8:cy_analog_virtualmux_3_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
-	PORT MAP(signal1=>Net_78,
+	PORT MAP(signal1=>Net_88,
 		signal2=>\WaveDAC8:Net_256\);
 \ADC_DelSig:vRef_2\:cy_vref_v1_0
 	GENERIC MAP(guid=>"15B3DB15-B7B3-4d62-A2DF-25EA392A7161",
@@ -1422,7 +1422,7 @@ isr_UART_Rx:cy_isr_v1_0
 	GENERIC MAP(cy_registers=>"",
 		resolution=>16)
 	PORT MAP(aclock=>\ADC_DelSig:Net_488\,
-		vplus=>Net_69,
+		vplus=>Net_80,
 		vminus=>\ADC_DelSig:Net_520\,
 		modbit=>zero,
 		reset_udb=>zero,
@@ -1587,7 +1587,7 @@ DAC_Out:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(tmpOE__LED_green_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__DAC_Out_net_0),
-		analog=>Net_78,
+		analog=>Net_88,
 		io=>(tmpIO_0__DAC_Out_net_0),
 		siovref=>(tmpSIOVREF__DAC_Out_net_0),
 		annotation=>(open),
@@ -1657,7 +1657,7 @@ ADC_In:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(tmpOE__LED_green_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__ADC_In_net_0),
-		analog=>Net_69,
+		analog=>Net_80,
 		io=>(tmpIO_0__ADC_In_net_0),
 		siovref=>(tmpSIOVREF__ADC_In_net_0),
 		annotation=>Net_70,
@@ -1668,6 +1668,10 @@ ADC_In:cy_psoc3_pins_v1_10
 		out_clock_en=>tmpOE__LED_green_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__ADC_In_net_0);
+isr_ADC_Out:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_27);
 \UART_LOG:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART_LOG:BUART:clock_op\,

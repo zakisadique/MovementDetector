@@ -130,6 +130,12 @@ ISR2(isr_pushButton){
     SetEvent(tsk_control, ev_pushButton);
 }
 
+ISR2(isr_ADC_Out){
+    
+//    ADC_Set(ADC_OFF);
+//    ADC_Set(ADC_ON);
+}
+
 /********************************************************************************
  * ISR Definitions
  ********************************************************************************/
