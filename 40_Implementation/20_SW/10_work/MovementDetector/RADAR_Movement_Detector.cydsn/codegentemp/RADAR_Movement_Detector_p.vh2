@@ -1,5 +1,5 @@
 -- Project:   RADAR_Movement_Detector
--- Generated: 06/09/2024 22:06:35
+-- Generated: 06/11/2024 19:41:54
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS
@@ -1690,14 +1690,6 @@ BEGIN
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_73,
-            clock => ClockBlock_BUS_CLK);
-
-    isr_ADC_Out:interrupt
-        GENERIC MAP(
-            int_type => "10",
-            is_nmi => 0)
-        PORT MAP(
-            interrupt => Net_27,
             clock => ClockBlock_BUS_CLK);
 
     \UART_LOG:BUART:txn\:macrocell

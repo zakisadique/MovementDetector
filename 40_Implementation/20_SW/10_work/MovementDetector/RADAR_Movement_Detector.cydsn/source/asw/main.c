@@ -19,7 +19,6 @@
 
 Detector_t movementDetector;
 
-
 //ISR which will increment the systick counter every ms
 ISR(systick_handler)
 {
@@ -126,15 +125,9 @@ ISR2(isr_DMA_ADC_MEM){
 // Process interrupts when button is pressed
 ISR2(isr_pushButton){
     
-    isr_pushButton_ClearPending();
     SetEvent(tsk_control, ev_pushButton);
 }
 
-ISR2(isr_ADC_Out){
-    
-//    ADC_Set(ADC_OFF);
-//    ADC_Set(ADC_ON);
-}
 
 /********************************************************************************
  * ISR Definitions

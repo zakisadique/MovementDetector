@@ -148,8 +148,8 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     if (detector -> readyToSend == FALSE){
 
                         DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
-                        DAC_Set(DAC_OFF);
-                        ADC_Set(ADC_OFF);
+//                        DAC_Set(DAC_OFF);
+//                        ADC_Set(ADC_OFF);
 
                         SetEvent(tsk_control, ev_reSample);
                     }
@@ -157,8 +157,8 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                             detector -> readyToSend = FALSE;
                         
                             DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
-                            DAC_Set(DAC_OFF);
-                            ADC_Set(ADC_OFF);
+//                            DAC_Set(DAC_OFF);
+//                            ADC_Set(ADC_OFF);
                             
                             SetEvent(tsk_control, ev_send);
                         }
@@ -166,8 +166,8 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                 if (ev & ev_reSample){
 
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
-                    DAC_Set(DAC_ON);
-                    ADC_Set(ADC_ON);
+//                    DAC_Set(DAC_ON);
+//                    ADC_Set(ADC_ON);
                 }
                 if (ev & ev_send){
                     

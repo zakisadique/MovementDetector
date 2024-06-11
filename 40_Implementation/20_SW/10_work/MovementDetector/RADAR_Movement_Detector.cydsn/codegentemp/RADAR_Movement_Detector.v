@@ -1,6 +1,6 @@
 // ======================================================================
 // RADAR_Movement_Detector.v generated from TopDesign.cysch
-// 06/09/2024 at 22:06
+// 06/11/2024 at 19:41
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -762,7 +762,7 @@ module top ;
           wire  Net_72;
           wire  Net_74;
           wire  Net_39;
-          wire  Net_52;
+    electrical  Net_80;
     electrical  Net_25;
           wire  Net_26;
     electrical  Net_29;
@@ -771,7 +771,6 @@ module top ;
           wire  Net_20;
           wire  Net_34;
           wire  Net_33;
-    electrical  Net_88;
           wire  Net_31;
           wire  Net_16;
           wire  Net_15;
@@ -786,8 +785,9 @@ module top ;
           wire  Net_6;
           wire  Net_5;
           wire  Net_4;
+    electrical  Net_88;
+          wire  Net_52;
           wire  Net_27;
-    electrical  Net_80;
           wire  Net_73;
           wire  Net_44;
           wire  Net_37;
@@ -1495,13 +1495,6 @@ module top ;
 		  .out_reset({1'b0}));
 
 	assign tmpOE__ADC_In_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
-
-
-	cy_isr_v1_0
-		#(.int_type(2'b10))
-		isr_ADC_Out
-		 (.int_signal(Net_27));
-
 
 
 

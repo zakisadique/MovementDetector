@@ -142,7 +142,7 @@
 
     /* Number of isr */
     #include "ErikaOS_ISR_definition.inc"
-    #define EE_MAX_ISR_ID 4    
+    #define EE_MAX_ISR_ID 3    
     #define EE_MAX_ISR2   Number_ISR2
     #define EE_MAX_ISR2_WITH_RESOURCES Number_ISR2_Resources
     
