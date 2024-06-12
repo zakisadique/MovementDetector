@@ -1,5 +1,5 @@
 -- Project:   C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\RADAR_Movement_Detector.cyprj
--- Generated: 06/12/2024 21:36:41
+-- Generated: 06/12/2024 22:50:04
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS
@@ -160,7 +160,7 @@ ARCHITECTURE __DEFAULT__ OF RADAR_Movement_Detector IS
     ATTRIBUTE lib_model OF LED_orange(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF LED_orange(0) : LABEL IS "P2[5]";
     ATTRIBUTE lib_model OF LED_red(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF LED_red(0) : LABEL IS "P1[4]";
+    ATTRIBUTE Location OF LED_red(0) : LABEL IS "P2[4]";
     ATTRIBUTE lib_model OF Push_Button(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF Push_Button(0) : LABEL IS "P2[7]";
     ATTRIBUTE lib_model OF Rx(0) : LABEL IS "iocell5";

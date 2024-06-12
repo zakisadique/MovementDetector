@@ -69,26 +69,13 @@ RC_t DETECTOR_initDrivers(){
 RC_t DETECTOR_init(Detector_t* detector){
     DETECTOR_initDrivers();
     
-//    detector->detectorState = IDLE;
-//    DETECTOR_setLedState(IDLE);
-    
-        //
-        detector->detectorState = SAMPLING;
-        DETECTOR_setLedState(SAMPLING);
-        
-        //
+    detector->detectorState = IDLE;
+    DETECTOR_setLedState(IDLE);
     
     detector->numberOfTransfers = 0;
     detector->samplingFinished = FALSE;
     detector->readyToSend = FALSE;
     detector->memoryToUARTFinished = FALSE;
-    
-        //
-        
-        DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
-        DAC_Set(DAC_ON);
-        ADC_Set(ADC_ON);
-        //
     
     
     return RC_SUCCESS;    
@@ -99,18 +86,19 @@ RC_t DETECTOR_setLedState(States_t state){
         case (IDLE): {
             LED_Set(LED_ALL, LED_OFF);
             LED_Set(LED_RED, LED_ON);
+            
         }
         break;
         
         case (SAMPLING): {
             LED_Set(LED_ALL, LED_OFF);
-            LED_Set(LED_GREEN, LED_ON);
+            LED_Set(LED_ORANGE, LED_ON);
         }
         break;
         
         case (UART_TRANSFER): {
             LED_Set(LED_ALL, LED_OFF);
-            LED_Set(LED_ORANGE, LED_ON);
+            LED_Set(LED_GREEN, LED_ON);
         }
         break;
     }
@@ -139,6 +127,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     detector -> detectorState = SAMPLING;
                     DETECTOR_setLedState(SAMPLING);
+                    
                 }
             }
             break;
@@ -209,24 +198,22 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     if (detector -> numberOfTransfers < 10){
                         detector -> detectorState = SAMPLING;
                         DETECTOR_setLedState(SAMPLING);
+                        
                         SetEvent(tsk_control, ev_reSample);
                     }
                     else if (detector -> numberOfTransfers == 10){
-                        
-                        detector -> detectorState = SAMPLING;
-                        DETECTOR_setLedState(SAMPLING);
+                        detector -> detectorState = IDLE;
+                        DETECTOR_setLedState(IDLE);
+
                         DAC_Set(DAC_OFF);
                         ADC_Set(ADC_OFF);
+                        
                         detector -> numberOfTransfers = 0;
                         detector -> samplingFinished = FALSE;
                         detector ->readyToSend = FALSE;
                         detector ->memoryToUARTFinished = FALSE;
                         
-                        //
-                                DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
-                                DAC_Set(DAC_ON);
-                                ADC_Set(ADC_ON);
-                        //
+
                     }
                 }
             }
