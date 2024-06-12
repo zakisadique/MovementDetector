@@ -69,13 +69,27 @@ RC_t DETECTOR_initDrivers(){
 RC_t DETECTOR_init(Detector_t* detector){
     DETECTOR_initDrivers();
     
-    detector->detectorState = IDLE;
-    DETECTOR_setLedState(IDLE);
+//    detector->detectorState = IDLE;
+//    DETECTOR_setLedState(IDLE);
+    
+        //
+        detector->detectorState = SAMPLING;
+        DETECTOR_setLedState(SAMPLING);
+        
+        //
     
     detector->numberOfTransfers = 0;
     detector->samplingFinished = FALSE;
     detector->readyToSend = FALSE;
     detector->memoryToUARTFinished = FALSE;
+    
+        //
+        
+        DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
+        DAC_Set(DAC_ON);
+        ADC_Set(ADC_ON);
+        //
+    
     
     return RC_SUCCESS;    
 }
@@ -140,6 +154,8 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
             */
             case (SAMPLING):
             {
+
+                
                 
                 if (ev & ev_sReceived){
                     
@@ -197,14 +213,20 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     }
                     else if (detector -> numberOfTransfers == 10){
                         
-                        detector -> detectorState = IDLE;
-                        DETECTOR_setLedState(IDLE);
+                        detector -> detectorState = SAMPLING;
+                        DETECTOR_setLedState(SAMPLING);
                         DAC_Set(DAC_OFF);
                         ADC_Set(ADC_OFF);
                         detector -> numberOfTransfers = 0;
                         detector -> samplingFinished = FALSE;
                         detector ->readyToSend = FALSE;
                         detector ->memoryToUARTFinished = FALSE;
+                        
+                        //
+                                DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
+                                DAC_Set(DAC_ON);
+                                ADC_Set(ADC_ON);
+                        //
                     }
                 }
             }
