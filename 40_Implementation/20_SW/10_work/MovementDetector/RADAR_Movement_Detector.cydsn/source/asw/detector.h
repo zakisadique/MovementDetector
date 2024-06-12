@@ -54,24 +54,25 @@
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
-    
-typedef enum {
+
+// States of the statemachine
+enum eStates{
     IDLE,    
     SAMPLING,       
     UART_TRANSFER
-} States_t;
+};
+typedef enum eStates States_t;
 
-/**
- * @brief Structure representing the state and statistics of the game.
- */
-typedef struct Detector_t{
+// Structure of the Detector object.
+struct sDetector{
     States_t detectorState;          
     uint8_t  numberOfTransfers; 
     
     boolean_t samplingFinished;
     boolean_t readyToSend;
     boolean_t memoryToUARTFinished;
-} Detector_t;
+};
+typedef struct sDetector Detector_t;
 
 // Wrapper to allow representing the file in Together as class
 #ifdef TOGETHER

@@ -142,32 +142,27 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
             {
                 
                 if (ev & ev_sReceived){
+                    
                     detector -> readyToSend = TRUE;
                 }
                 if (ev & ev_samplingFinished){
+                    
+                    DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
+                    
                     if (detector -> readyToSend == FALSE){
-
-                        DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
-//                        DAC_Set(DAC_OFF);
-//                        ADC_Set(ADC_OFF);
 
                         SetEvent(tsk_control, ev_reSample);
                     }
                     if (detector ->readyToSend == TRUE){
+
                             detector -> readyToSend = FALSE;
-                        
-                            DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
-//                            DAC_Set(DAC_OFF);
-//                            ADC_Set(ADC_OFF);
-                            
                             SetEvent(tsk_control, ev_send);
                         }
                 } 
                 if (ev & ev_reSample){
 
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
-//                    DAC_Set(DAC_ON);
-//                    ADC_Set(ADC_ON);
+                    
                 }
                 if (ev & ev_send){
                     
@@ -177,6 +172,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     DETECTOR_setLedState(UART_TRANSFER);
                 }
             }
+            break;
 
             /*  UART_TRANSFER state transfers the sampled data over UART and waits for a feedback
             *   ev_noSReceived:         Trigered when sampling needs to be started again
@@ -203,6 +199,8 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                         
                         detector -> detectorState = IDLE;
                         DETECTOR_setLedState(IDLE);
+                        DAC_Set(DAC_OFF);
+                        ADC_Set(ADC_OFF);
                         detector -> numberOfTransfers = 0;
                         detector -> samplingFinished = FALSE;
                         detector ->readyToSend = FALSE;

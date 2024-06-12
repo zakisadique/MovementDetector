@@ -77,12 +77,14 @@
 
 //####################### Enumerations
 
+//DAC States
 enum eDAC_ONOFF{
     DAC_OFF = 0,    /**< Turn the LED OFF */
     DAC_ON  = 1     /**< Turn the LED ON */
 };
 typedef enum eDAC_ONOFF DAC_ONOFF_t;
 
+//ADC States
 enum eADC_ONOFF{
     ADC_OFF = 0,    /**< Turn the LED OFF */
     ADC_ON  = 1     /**< Turn the LED ON */

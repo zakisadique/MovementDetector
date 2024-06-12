@@ -75,44 +75,43 @@
 /*****************************************************************************/
 
 //####################### Enumerations
-/**
-* \brief Enumeration identifying the LED to be set
-*
-*/
+
+// DMA Identifier
 enum eDMA_id{
   DMA_ADC_TO_MEMORY,
   DMA_MEMORY_TO_UART
-} ;         
+};         
 typedef enum eDMA_id DMA_id_t;
 
+// DMA States
 enum eDMA_ONOFF{
     DMA_OFF = 0,    /**< Turn the LED OFF */
     DMA_ON  = 1     /**< Turn the LED ON */
 };
 typedef enum eDMA_ONOFF DMA_ONOFF_t;
 
-    /* Variable declarations for DMA_ADC_MEM */
-    #define DMA_ADC_MEM_BYTES_PER_BURST 2
-    #define DMA_ADC_MEM_REQUEST_PER_BURST 1
-    #define DMA_ADC_MEM_SRC_BASE (CYDEV_PERIPH_BASE)
-    #define DMA_ADC_MEM_DST_BASE (CYDEV_SRAM_BASE)
+/* Variable declarations for DMA_ADC_MEM */
+#define DMA_ADC_MEM_BYTES_PER_BURST 2
+#define DMA_ADC_MEM_REQUEST_PER_BURST 1
+#define DMA_ADC_MEM_SRC_BASE (CYDEV_PERIPH_BASE)
+#define DMA_ADC_MEM_DST_BASE (CYDEV_SRAM_BASE)
 
-    /* Variable declarations for DMA_ADC_MEM */
-    /* Move these variable declarations to the top of the function */
-    uint8_t DMA_ADC_MEM_Chan;
-    uint8_t DMA_ADC_MEM_TD[1];
+/* Variable declarations for DMA_ADC_MEM */
+/* Move these variable declarations to the top of the function */
+uint8_t DMA_ADC_MEM_Chan;
+uint8_t DMA_ADC_MEM_TD[1];
 
 
-    /* Defines for DMA_MEM_UART */
-    #define DMA_MEM_UART_BYTES_PER_BURST 2
-    #define DMA_MEM_UART_REQUEST_PER_BURST 1
-    #define DMA_MEM_UART_SRC_BASE (CYDEV_SRAM_BASE)
-    #define DMA_MEM_UART_DST_BASE (CYDEV_PERIPH_BASE)
+/* Defines for DMA_MEM_UART */
+#define DMA_MEM_UART_BYTES_PER_BURST 2
+#define DMA_MEM_UART_REQUEST_PER_BURST 1
+#define DMA_MEM_UART_SRC_BASE (CYDEV_SRAM_BASE)
+#define DMA_MEM_UART_DST_BASE (CYDEV_PERIPH_BASE)
 
-    /* Variable declarations for DMA_MEM_UART */
-    /* Move these variable declarations to the top of the function */
-    uint8_t DMA_MEM_UART_Chan;
-    uint8_t DMA_MEM_UART_TD[1];  
+/* Variable declarations for DMA_MEM_UART */
+/* Move these variable declarations to the top of the function */
+uint8_t DMA_MEM_UART_Chan;
+uint8_t DMA_MEM_UART_TD[1];  
 
 // Wrapper to allow representing the file in Together as class
 #ifdef TOGETHER
