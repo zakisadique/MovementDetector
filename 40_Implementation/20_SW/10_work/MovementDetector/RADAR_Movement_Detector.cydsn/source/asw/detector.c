@@ -160,9 +160,11 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     }
                     if (detector ->readyToSend == TRUE){
 
-                            detector -> readyToSend = FALSE;
-                            SetEvent(tsk_control, ev_send);
-                        }
+                        detector -> readyToSend = FALSE;
+                        
+                        // send fft
+                        SetEvent(tsk_control, ev_send);
+                    }
                 } 
                 if (ev & ev_reSample){
 

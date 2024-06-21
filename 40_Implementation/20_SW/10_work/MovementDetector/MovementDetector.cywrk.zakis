@@ -39,6 +39,7 @@
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\cyapicallbacks.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\main.c</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\derivate.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\global.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\led.c</v>
@@ -73,6 +74,10 @@
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\main.c</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\arm_common_tables.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\arm_const_structs.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\arm_math.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\fft_application.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\dac_adc.c</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\dac_adc.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\derivate.h</v>
@@ -101,10 +106,6 @@
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\DMA_ADC_MEM</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\DMA_MEM_UART</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\ErikaOS</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_DMA_ADC_MEM</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_DMA_MEM_UART</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_pushButton</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="MovementDetector\RADAR_Movement_Detector">
@@ -492,16 +493,12 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\RADAR_Movement_Detector.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\RADAR_Movement_Detector.cydsn\source\bsw\fft_application\fft_application.h" />
 <name v=".\RADAR_Movement_Detector.cydsn\source\asw\main.c" />
-<name v=".\RADAR_Movement_Detector.cydsn\RADAR_Movement_Detector.cydwr" />
+<name v=".\RADAR_Movement_Detector.cydsn\source\bsw\dma.c" />
+<name v=".\RADAR_Movement_Detector.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\RADAR_Movement_Detector.cydsn\source\asw\detector.c" />
-<name v=".\RADAR_Movement_Detector.cydsn\source\bsw\dac_adc.c" />
 <name v=".\RADAR_Movement_Detector.cydsn\source\asw\detector.h" />
-<name v=".\RADAR_Movement_Detector.cydsn\source\bsw\dac_adc.h" />
-<name v=".\RADAR_Movement_Detector.cydsn\source\bsw\dma.h" />
-<name v=".\RADAR_Movement_Detector.cydsn\source\bsw\led.c" />
-<name v=".\RADAR_Movement_Detector.cydsn\source\bsw\led.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -509,7 +506,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="821, 437" SelectedTabbedMdiWindow="ba6dcfa4-8c7b-473d-9432-3641783baff5"><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\TopDesign\TopDesign.cysch" Guid="6af22400-4598-413d-b344-b063050a33e3" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\asw\main.c" Guid="35e9d20a-33eb-4694-9cd1-b0a0e63a9eaa" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\RADAR_Movement_Detector.cydwr" Guid="30e92d62-0559-4d7c-9d30-a961f8eebf80" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\asw\detector.c" Guid="ba6dcfa4-8c7b-473d-9432-3641783baff5" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\bsw\dac_adc.c" Guid="2351015f-d090-41d8-bd84-8be8b2f8a01b" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\asw\detector.h" Guid="dd865ad4-b2d2-4376-b36c-dbe577be6b8a" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="2964b916-1975-46c7-a843-95eea54ad963" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\bsw\dac_adc.h" Guid="e4313b28-75e0-4637-a7ae-0f3e47c57779" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\bsw\dma.h" Guid="c12ee324-5b00-4b48-ba32-7f9c0f28f975" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\bsw\led.c" Guid="81e9b84d-0b5d-4dc3-82d7-e104431f2bbb" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\bsw\led.h" Guid="09af308b-9fee-4f1f-80b7-e2dc2a62f103" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1490, 755" SelectedTabbedMdiWindow="64bc3341-af1a-4861-b9de-b5f10bec3716"><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\bsw\fft_application\fft_application.h" Guid="6b58c134-eaaa-46f1-a65e-eecb6d1fec16" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\asw\main.c" Guid="4dcf4da6-9c2b-491b-8e85-99bc36d03149" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\bsw\dma.c" Guid="ddd0ae46-e6e7-4916-a110-4201f59bf7ef" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\TopDesign\TopDesign.cysch" Guid="e9401986-305f-4341-9f6f-1a18ec34425c" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\asw\detector.c" Guid="64bc3341-af1a-4861-b9de-b5f10bec3716" /><DocumentWindow Key="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\source\asw\detector.h" Guid="96719b88-5a88-426c-a309-2f9083b8ac04" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
