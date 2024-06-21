@@ -100,12 +100,12 @@
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\ADC_DelSig_IRQ</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\ADC_DelSig_theACLK</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\ADC_In</v>
+<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\Clock_DMA_FFT_UART</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\Clock_DMA_MEM_UART</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cy_boot</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\DAC_Out</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\DMA_ADC_MEM</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\DMA_MEM_UART</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\DMA_FFT_UART</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="MovementDetector\RADAR_Movement_Detector">
@@ -291,6 +291,7 @@
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_PM.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_theACLK.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_In.lst</v>
+<v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_DMA_FFT_UART.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_DMA_MEM_UART.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
@@ -308,6 +309,7 @@
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\detector.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\dma.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_ADC_MEM_dma.lst</v>
+<v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_FFT_UART_dma.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_MEM_UART_dma.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_common_ee_hal_structs.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_cortex_mx_ee_context.lst</v>
@@ -356,6 +358,7 @@
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_ee_ulockres.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_eecfg.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_DMA_ADC_MEM.lst</v>
+<v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_DMA_FFT_UART.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_DMA_MEM_UART.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_pushButton.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_UART_Rx.lst</v>
@@ -397,6 +400,7 @@
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_PM.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_theACLK.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_In.lst</v>
+<v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_DMA_FFT_UART.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_DMA_MEM_UART.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
@@ -414,6 +418,7 @@
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\detector.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\dma.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_ADC_MEM_dma.lst</v>
+<v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_FFT_UART_dma.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_MEM_UART_dma.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_common_ee_hal_structs.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_cortex_mx_ee_context.lst</v>
@@ -435,8 +440,6 @@
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_ee_getcountervalue.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_ee_getelapsedvalue.lst</v>
 <v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_ee_gettaskid.lst</v>
-<v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_ee_gettaskstate.lst</v>
-<v>MovementDetector\RADAR_Movement_Detector\CortexM3\ARM_GCC_541\Debug\Listing Files\ErikaOS_ee_gnu_change_context_isr.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -453,7 +456,8 @@
 <v>MovementDetector\RADAR_Movement_Detector\System Reference Guides</v>
 <v>MovementDetector\RADAR_Movement_Detector\System Reference Guides\cy_boot_v6_0</v>
 <v>MovementDetector\RADAR_Movement_Detector\ADC_DelSig_v3_30.pdf</v>
-<v>MovementDetector\RADAR_Movement_Detector\cy_clock_v2_20.pdf</v>
+<v>MovementDetector\RADAR_Movement_Detector\cy_clock_v2_20</v>
+<v>MovementDetector\RADAR_Movement_Detector\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>MovementDetector\RADAR_Movement_Detector\cy_constant_v1_0.pdf</v>
 <v>MovementDetector\RADAR_Movement_Detector\cy_dma_v1_70</v>
 <v>MovementDetector\RADAR_Movement_Detector\cy_dma_v1_70\cy_dma_v1_70.pdf</v>
@@ -473,7 +477,8 @@
 <v>MovementDetector\RADAR_Movement_Detector\System Reference Guides</v>
 <v>MovementDetector\RADAR_Movement_Detector\System Reference Guides\cy_boot_v6_0</v>
 <v>MovementDetector\RADAR_Movement_Detector\ADC_DelSig_v3_30.pdf</v>
-<v>MovementDetector\RADAR_Movement_Detector\cy_clock_v2_20.pdf</v>
+<v>MovementDetector\RADAR_Movement_Detector\cy_clock_v2_20</v>
+<v>MovementDetector\RADAR_Movement_Detector\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>MovementDetector\RADAR_Movement_Detector\cy_constant_v1_0.pdf</v>
 <v>MovementDetector\RADAR_Movement_Detector\cy_dma_v1_70</v>
 <v>MovementDetector\RADAR_Movement_Detector\cy_dma_v1_70\cy_dma_v1_70.pdf</v>

@@ -1,5 +1,5 @@
 -- Project:   RADAR_Movement_Detector
--- Generated: 06/12/2024 22:50:02
+-- Generated: 06/22/2024 01:41:55
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS
@@ -50,6 +50,10 @@ ARCHITECTURE __DEFAULT__ OF RADAR_Movement_Detector IS
     SIGNAL Net_52 : bit;
     SIGNAL Net_73 : bit;
     SIGNAL Net_8 : bit;
+    SIGNAL Net_92 : bit;
+    ATTRIBUTE global_signal OF Net_92 : SIGNAL IS true;
+    SIGNAL Net_92_local : bit;
+    SIGNAL Net_94 : bit;
     SIGNAL Push_Button(0)__PA : bit;
     SIGNAL Rx(0)__PA : bit;
     SIGNAL Tx(0)__PA : bit;
@@ -165,6 +169,7 @@ ARCHITECTURE __DEFAULT__ OF RADAR_Movement_Detector IS
     ATTRIBUTE Location OF \ADC_DelSig:DSM\ : LABEL IS "F(DSM,0)";
     ATTRIBUTE lib_model OF DMA_ADC_MEM : LABEL IS "drqcell3";
     ATTRIBUTE lib_model OF DMA_MEM_UART : LABEL IS "drqcell4";
+    ATTRIBUTE lib_model OF DMA_FFT_UART : LABEL IS "drqcell5";
     ATTRIBUTE lib_model OF \UART_LOG:BUART:txn\ : LABEL IS "macrocell10";
     ATTRIBUTE lib_model OF \UART_LOG:BUART:tx_state_1\ : LABEL IS "macrocell11";
     ATTRIBUTE lib_model OF \UART_LOG:BUART:tx_state_0\ : LABEL IS "macrocell12";
@@ -563,16 +568,18 @@ BEGIN
             dsi_glb_div => open,
             dclk_glb_0 => \ADC_DelSig:Net_93\,
             dclk_0 => \ADC_DelSig:Net_93_local\,
-            dclk_glb_1 => \UART_LOG:Net_9\,
-            dclk_1 => \UART_LOG:Net_9_local\,
             aclk_glb_0 => \ADC_DelSig:Net_488\,
             aclk_0 => \ADC_DelSig:Net_488_local\,
             clk_a_dig_glb_0 => \ADC_DelSig:Net_488_adig\,
             clk_a_dig_0 => \ADC_DelSig:Net_488_adig_local\,
+            dclk_glb_1 => \UART_LOG:Net_9\,
+            dclk_1 => \UART_LOG:Net_9_local\,
             dclk_glb_2 => \WaveDAC8:Net_279\,
             dclk_2 => \WaveDAC8:Net_279_local\,
             dclk_glb_3 => Net_44,
             dclk_3 => Net_44_local,
+            dclk_glb_4 => Net_92,
+            dclk_4 => Net_92_local,
             aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
 
     LED_green:logicalport
@@ -1690,6 +1697,24 @@ BEGIN
             is_nmi => 0)
         PORT MAP(
             interrupt => Net_73,
+            clock => ClockBlock_BUS_CLK);
+
+    DMA_FFT_UART:drqcell
+        GENERIC MAP(
+            drq_type => "10",
+            num_tds => 0)
+        PORT MAP(
+            dmareq => Net_92_local,
+            termin => '0',
+            termout => Net_94,
+            clock => ClockBlock_BUS_CLK);
+
+    isr_DMA_FFT_UART:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_94,
             clock => ClockBlock_BUS_CLK);
 
     \UART_LOG:BUART:txn\:macrocell

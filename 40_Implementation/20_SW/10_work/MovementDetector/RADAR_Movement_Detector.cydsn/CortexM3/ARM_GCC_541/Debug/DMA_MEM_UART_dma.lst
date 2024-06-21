@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 1
   28:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** * The following defines are available in Cyfitter.h
   29:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** * 
   30:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** * 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 2
 
 
   31:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** * 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 1
   85:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** *   UpperSrcAddress.
   86:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** *       
   87:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** *       
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 3
 
 
   88:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** *   UpperDestAddress.
@@ -152,74 +152,75 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 1
  100:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     /* Allocate a DMA channel. */
  101:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     DMA_MEM_UART_DmaHandle = (uint8)DMA_MEM_UART__DRQ_NUMBER;
   44              		.loc 1 101 0
-  45 0008 0B4D     		ldr	r5, .L3
-  46 000a 0024     		movs	r4, #0
-  47 000c 2C70     		strb	r4, [r5]
+  45 0008 0B4C     		ldr	r4, .L3
+  46 000a 0125     		movs	r5, #1
+  47 000c 2570     		strb	r5, [r4]
  102:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** 
  103:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     /* Configure the channel. */
  104:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     (void)CyDmaChSetConfiguration(DMA_MEM_UART_DmaHandle,
   48              		.loc 1 104 0
-  49 000e 0194     		str	r4, [sp, #4]
-  50 0010 0094     		str	r4, [sp]
-  51 0012 2346     		mov	r3, r4
-  52              	.LVL1:
-  53 0014 0A46     		mov	r2, r1
-  54              	.LVL2:
-  55 0016 0146     		mov	r1, r0
-  56              	.LVL3:
-  57 0018 2046     		mov	r0, r4
-  58              	.LVL4:
-  59 001a FFF7FEFF 		bl	CyDmaChSetConfiguration
-  60              	.LVL5:
+  49 000e 0023     		movs	r3, #0
+  50              	.LVL1:
+  51 0010 0193     		str	r3, [sp, #4]
+  52 0012 0093     		str	r3, [sp]
+  53 0014 2B46     		mov	r3, r5
+  54 0016 0A46     		mov	r2, r1
+  55              	.LVL2:
+  56 0018 0146     		mov	r1, r0
+  57              	.LVL3:
+  58 001a 2846     		mov	r0, r5
+  59              	.LVL4:
+  60 001c FFF7FEFF 		bl	CyDmaChSetConfiguration
+  61              	.LVL5:
  105:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****                                   BurstCount,
  106:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****                                   ReqestPerBurst,
  107:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****                                   (uint8)DMA_MEM_UART__TERMOUT0_SEL,
  108:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****                                   (uint8)DMA_MEM_UART__TERMOUT1_SEL,
  109:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****                                   (uint8)DMA_MEM_UART__TERMIN_SEL);
  110:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 4
+
+
  111:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     /* Set the extended address for the transfers */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 4
-
-
  112:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     (void)CyDmaChSetExtendedAddress(DMA_MEM_UART_DmaHandle, UpperSrcAddress, UpperDestAddress);
-  61              		.loc 1 112 0
-  62 001e 3A46     		mov	r2, r7
-  63 0020 3146     		mov	r1, r6
-  64 0022 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
-  65 0024 FFF7FEFF 		bl	CyDmaChSetExtendedAddress
-  66              	.LVL6:
+  62              		.loc 1 112 0
+  63 0020 3A46     		mov	r2, r7
+  64 0022 3146     		mov	r1, r6
+  65 0024 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  66 0026 FFF7FEFF 		bl	CyDmaChSetExtendedAddress
+  67              	.LVL6:
  113:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** 
  114:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     /* Set the priority for this channel */
  115:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     (void)CyDmaChPriority(DMA_MEM_UART_DmaHandle, (uint8)DMA_MEM_UART__PRIORITY);
-  67              		.loc 1 115 0
-  68 0028 0221     		movs	r1, #2
-  69 002a 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
-  70 002c FFF7FEFF 		bl	CyDmaChPriority
-  71              	.LVL7:
+  68              		.loc 1 115 0
+  69 002a 0221     		movs	r1, #2
+  70 002c 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  71 002e FFF7FEFF 		bl	CyDmaChPriority
+  72              	.LVL7:
  116:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     
  117:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     return DMA_MEM_UART_DmaHandle;
  118:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** }
-  72              		.loc 1 118 0
-  73 0030 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
-  74 0032 03B0     		add	sp, sp, #12
-  75              		.cfi_def_cfa_offset 20
-  76              		@ sp needed
-  77 0034 F0BD     		pop	{r4, r5, r6, r7, pc}
-  78              	.L4:
-  79 0036 00BF     		.align	2
-  80              	.L3:
-  81 0038 00000000 		.word	.LANCHOR0
-  82              		.cfi_endproc
-  83              	.LFE0:
-  84              		.size	DMA_MEM_UART_DmaInitialize, .-DMA_MEM_UART_DmaInitialize
-  85              		.section	.text.DMA_MEM_UART_DmaRelease,"ax",%progbits
-  86              		.align	2
-  87              		.global	DMA_MEM_UART_DmaRelease
-  88              		.thumb
-  89              		.thumb_func
-  90              		.type	DMA_MEM_UART_DmaRelease, %function
-  91              	DMA_MEM_UART_DmaRelease:
-  92              	.LFB1:
+  73              		.loc 1 118 0
+  74 0032 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+  75 0034 03B0     		add	sp, sp, #12
+  76              		.cfi_def_cfa_offset 20
+  77              		@ sp needed
+  78 0036 F0BD     		pop	{r4, r5, r6, r7, pc}
+  79              	.L4:
+  80              		.align	2
+  81              	.L3:
+  82 0038 00000000 		.word	.LANCHOR0
+  83              		.cfi_endproc
+  84              	.LFE0:
+  85              		.size	DMA_MEM_UART_DmaInitialize, .-DMA_MEM_UART_DmaInitialize
+  86              		.section	.text.DMA_MEM_UART_DmaRelease,"ax",%progbits
+  87              		.align	2
+  88              		.global	DMA_MEM_UART_DmaRelease
+  89              		.thumb
+  90              		.thumb_func
+  91              		.type	DMA_MEM_UART_DmaRelease, %function
+  92              	DMA_MEM_UART_DmaRelease:
+  93              	.LFB1:
  119:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** 
  120:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** /*********************************************************************
  121:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** * Function Name: void DMA_MEM_UART_DmaRelease
@@ -237,746 +238,744 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 1
  133:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** *   void.
  134:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** *
  135:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** *******************************************************************/
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 5
+
+
  136:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** void DMA_MEM_UART_DmaRelease(void) 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 5
-
-
  137:Generated_Source\PSoC5/DMA_MEM_UART_dma.c **** {
-  93              		.loc 1 137 0
-  94              		.cfi_startproc
-  95              		@ args = 0, pretend = 0, frame = 0
-  96              		@ frame_needed = 0, uses_anonymous_args = 0
-  97 0000 08B5     		push	{r3, lr}
-  98              		.cfi_def_cfa_offset 8
-  99              		.cfi_offset 3, -8
- 100              		.cfi_offset 14, -4
+  94              		.loc 1 137 0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98 0000 08B5     		push	{r3, lr}
+  99              		.cfi_def_cfa_offset 8
+ 100              		.cfi_offset 3, -8
+ 101              		.cfi_offset 14, -4
  138:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     /* Disable the channel */
  139:Generated_Source\PSoC5/DMA_MEM_UART_dma.c ****     (void)CyDmaChDisable(DMA_MEM_UART_DmaHandle);
- 101              		.loc 1 139 0
- 102 0002 024B     		ldr	r3, .L7
- 103 0004 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 104 0006 FFF7FEFF 		bl	CyDmaChDisable
- 105              	.LVL8:
- 106 000a 08BD     		pop	{r3, pc}
- 107              	.L8:
- 108              		.align	2
- 109              	.L7:
- 110 000c 00000000 		.word	.LANCHOR0
- 111              		.cfi_endproc
- 112              	.LFE1:
- 113              		.size	DMA_MEM_UART_DmaRelease, .-DMA_MEM_UART_DmaRelease
- 114              		.global	DMA_MEM_UART_DmaHandle
- 115              		.data
- 116              		.set	.LANCHOR0,. + 0
- 117              		.type	DMA_MEM_UART_DmaHandle, %object
- 118              		.size	DMA_MEM_UART_DmaHandle, 1
- 119              	DMA_MEM_UART_DmaHandle:
- 120 0000 FF       		.byte	-1
- 121              		.text
- 122              	.Letext0:
- 123              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
- 124              		.file 3 "Generated_Source\\PSoC5/CYDMAC.H"
- 125              		.section	.debug_info,"",%progbits
- 126              	.Ldebug_info0:
- 127 0000 A6010000 		.4byte	0x1a6
- 128 0004 0400     		.2byte	0x4
- 129 0006 00000000 		.4byte	.Ldebug_abbrev0
- 130 000a 04       		.byte	0x4
- 131 000b 01       		.uleb128 0x1
- 132 000c 76000000 		.4byte	.LASF24
- 133 0010 0C       		.byte	0xc
- 134 0011 5D010000 		.4byte	.LASF25
- 135 0015 FE010000 		.4byte	.LASF26
- 136 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 137 001d 00000000 		.4byte	0
- 138 0021 00000000 		.4byte	.Ldebug_line0
- 139 0025 02       		.uleb128 0x2
- 140 0026 04       		.byte	0x4
- 141 0027 05       		.byte	0x5
- 142 0028 696E7400 		.ascii	"int\000"
- 143 002c 03       		.uleb128 0x3
- 144 002d 04       		.byte	0x4
- 145 002e 07       		.byte	0x7
- 146 002f 50010000 		.4byte	.LASF0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 6
+ 102              		.loc 1 139 0
+ 103 0002 024B     		ldr	r3, .L7
+ 104 0004 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 105 0006 FFF7FEFF 		bl	CyDmaChDisable
+ 106              	.LVL8:
+ 107 000a 08BD     		pop	{r3, pc}
+ 108              	.L8:
+ 109              		.align	2
+ 110              	.L7:
+ 111 000c 00000000 		.word	.LANCHOR0
+ 112              		.cfi_endproc
+ 113              	.LFE1:
+ 114              		.size	DMA_MEM_UART_DmaRelease, .-DMA_MEM_UART_DmaRelease
+ 115              		.global	DMA_MEM_UART_DmaHandle
+ 116              		.data
+ 117              		.set	.LANCHOR0,. + 0
+ 118              		.type	DMA_MEM_UART_DmaHandle, %object
+ 119              		.size	DMA_MEM_UART_DmaHandle, 1
+ 120              	DMA_MEM_UART_DmaHandle:
+ 121 0000 FF       		.byte	-1
+ 122              		.text
+ 123              	.Letext0:
+ 124              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
+ 125              		.file 3 "Generated_Source\\PSoC5/CYDMAC.H"
+ 126              		.section	.debug_info,"",%progbits
+ 127              	.Ldebug_info0:
+ 128 0000 A4010000 		.4byte	0x1a4
+ 129 0004 0400     		.2byte	0x4
+ 130 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 131 000a 04       		.byte	0x4
+ 132 000b 01       		.uleb128 0x1
+ 133 000c 76000000 		.4byte	.LASF24
+ 134 0010 0C       		.byte	0xc
+ 135 0011 5D010000 		.4byte	.LASF25
+ 136 0015 FE010000 		.4byte	.LASF26
+ 137 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 138 001d 00000000 		.4byte	0
+ 139 0021 00000000 		.4byte	.Ldebug_line0
+ 140 0025 02       		.uleb128 0x2
+ 141 0026 04       		.byte	0x4
+ 142 0027 05       		.byte	0x5
+ 143 0028 696E7400 		.ascii	"int\000"
+ 144 002c 03       		.uleb128 0x3
+ 145 002d 04       		.byte	0x4
+ 146 002e 07       		.byte	0x7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 6
 
 
- 147 0033 03       		.uleb128 0x3
- 148 0034 08       		.byte	0x8
- 149 0035 05       		.byte	0x5
- 150 0036 C7010000 		.4byte	.LASF1
- 151 003a 03       		.uleb128 0x3
- 152 003b 08       		.byte	0x8
- 153 003c 04       		.byte	0x4
- 154 003d 89020000 		.4byte	.LASF2
- 155 0041 03       		.uleb128 0x3
- 156 0042 01       		.byte	0x1
- 157 0043 06       		.byte	0x6
- 158 0044 95020000 		.4byte	.LASF3
- 159 0048 03       		.uleb128 0x3
- 160 0049 01       		.byte	0x1
- 161 004a 08       		.byte	0x8
- 162 004b 68000000 		.4byte	.LASF4
- 163 004f 03       		.uleb128 0x3
- 164 0050 02       		.byte	0x2
- 165 0051 05       		.byte	0x5
- 166 0052 F4010000 		.4byte	.LASF5
- 167 0056 03       		.uleb128 0x3
- 168 0057 02       		.byte	0x2
- 169 0058 07       		.byte	0x7
- 170 0059 38000000 		.4byte	.LASF6
- 171 005d 03       		.uleb128 0x3
- 172 005e 04       		.byte	0x4
- 173 005f 05       		.byte	0x5
- 174 0060 80020000 		.4byte	.LASF7
- 175 0064 03       		.uleb128 0x3
- 176 0065 04       		.byte	0x4
- 177 0066 07       		.byte	0x7
- 178 0067 0F010000 		.4byte	.LASF8
- 179 006b 03       		.uleb128 0x3
- 180 006c 08       		.byte	0x8
- 181 006d 07       		.byte	0x7
- 182 006e 51000000 		.4byte	.LASF9
- 183 0072 03       		.uleb128 0x3
- 184 0073 04       		.byte	0x4
- 185 0074 07       		.byte	0x7
- 186 0075 BE010000 		.4byte	.LASF10
- 187 0079 03       		.uleb128 0x3
- 188 007a 01       		.byte	0x1
- 189 007b 08       		.byte	0x8
- 190 007c EF010000 		.4byte	.LASF11
- 191 0080 04       		.uleb128 0x4
- 192 0081 21010000 		.4byte	.LASF12
- 193 0085 02       		.byte	0x2
- 194 0086 E801     		.2byte	0x1e8
- 195 0088 48000000 		.4byte	0x48
- 196 008c 04       		.uleb128 0x4
- 197 008d 49010000 		.4byte	.LASF13
- 198 0091 02       		.byte	0x2
- 199 0092 E901     		.2byte	0x1e9
- 200 0094 56000000 		.4byte	0x56
- 201 0098 03       		.uleb128 0x3
- 202 0099 04       		.byte	0x4
- 203 009a 04       		.byte	0x4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 7
+ 147 002f 50010000 		.4byte	.LASF0
+ 148 0033 03       		.uleb128 0x3
+ 149 0034 08       		.byte	0x8
+ 150 0035 05       		.byte	0x5
+ 151 0036 C7010000 		.4byte	.LASF1
+ 152 003a 03       		.uleb128 0x3
+ 153 003b 08       		.byte	0x8
+ 154 003c 04       		.byte	0x4
+ 155 003d 89020000 		.4byte	.LASF2
+ 156 0041 03       		.uleb128 0x3
+ 157 0042 01       		.byte	0x1
+ 158 0043 06       		.byte	0x6
+ 159 0044 95020000 		.4byte	.LASF3
+ 160 0048 03       		.uleb128 0x3
+ 161 0049 01       		.byte	0x1
+ 162 004a 08       		.byte	0x8
+ 163 004b 68000000 		.4byte	.LASF4
+ 164 004f 03       		.uleb128 0x3
+ 165 0050 02       		.byte	0x2
+ 166 0051 05       		.byte	0x5
+ 167 0052 F4010000 		.4byte	.LASF5
+ 168 0056 03       		.uleb128 0x3
+ 169 0057 02       		.byte	0x2
+ 170 0058 07       		.byte	0x7
+ 171 0059 38000000 		.4byte	.LASF6
+ 172 005d 03       		.uleb128 0x3
+ 173 005e 04       		.byte	0x4
+ 174 005f 05       		.byte	0x5
+ 175 0060 80020000 		.4byte	.LASF7
+ 176 0064 03       		.uleb128 0x3
+ 177 0065 04       		.byte	0x4
+ 178 0066 07       		.byte	0x7
+ 179 0067 0F010000 		.4byte	.LASF8
+ 180 006b 03       		.uleb128 0x3
+ 181 006c 08       		.byte	0x8
+ 182 006d 07       		.byte	0x7
+ 183 006e 51000000 		.4byte	.LASF9
+ 184 0072 03       		.uleb128 0x3
+ 185 0073 04       		.byte	0x4
+ 186 0074 07       		.byte	0x7
+ 187 0075 BE010000 		.4byte	.LASF10
+ 188 0079 03       		.uleb128 0x3
+ 189 007a 01       		.byte	0x1
+ 190 007b 08       		.byte	0x8
+ 191 007c EF010000 		.4byte	.LASF11
+ 192 0080 04       		.uleb128 0x4
+ 193 0081 21010000 		.4byte	.LASF12
+ 194 0085 02       		.byte	0x2
+ 195 0086 E801     		.2byte	0x1e8
+ 196 0088 48000000 		.4byte	0x48
+ 197 008c 04       		.uleb128 0x4
+ 198 008d 49010000 		.4byte	.LASF13
+ 199 0091 02       		.byte	0x2
+ 200 0092 E901     		.2byte	0x1e9
+ 201 0094 56000000 		.4byte	0x56
+ 202 0098 03       		.uleb128 0x3
+ 203 0099 04       		.byte	0x4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 7
 
 
- 204 009b 4B000000 		.4byte	.LASF14
- 205 009f 03       		.uleb128 0x3
- 206 00a0 08       		.byte	0x8
- 207 00a1 04       		.byte	0x4
- 208 00a2 42010000 		.4byte	.LASF15
- 209 00a6 05       		.uleb128 0x5
- 210 00a7 27010000 		.4byte	.LASF27
- 211 00ab 01       		.byte	0x1
- 212 00ac 61       		.byte	0x61
- 213 00ad 80000000 		.4byte	0x80
- 214 00b1 00000000 		.4byte	.LFB0
- 215 00b5 3C000000 		.4byte	.LFE0-.LFB0
- 216 00b9 01       		.uleb128 0x1
- 217 00ba 9C       		.byte	0x9c
- 218 00bb 4D010000 		.4byte	0x14d
- 219 00bf 06       		.uleb128 0x6
- 220 00c0 04010000 		.4byte	.LASF16
- 221 00c4 01       		.byte	0x1
- 222 00c5 61       		.byte	0x61
- 223 00c6 80000000 		.4byte	0x80
- 224 00ca 00000000 		.4byte	.LLST0
- 225 00ce 06       		.uleb128 0x6
- 226 00cf 9E010000 		.4byte	.LASF17
- 227 00d3 01       		.byte	0x1
- 228 00d4 61       		.byte	0x61
- 229 00d5 80000000 		.4byte	0x80
- 230 00d9 21000000 		.4byte	.LLST1
- 231 00dd 06       		.uleb128 0x6
- 232 00de 00000000 		.4byte	.LASF18
- 233 00e2 01       		.byte	0x1
- 234 00e3 61       		.byte	0x61
- 235 00e4 8C000000 		.4byte	0x8c
- 236 00e8 42000000 		.4byte	.LLST2
- 237 00ec 06       		.uleb128 0x6
- 238 00ed AD010000 		.4byte	.LASF19
- 239 00f1 01       		.byte	0x1
- 240 00f2 61       		.byte	0x61
- 241 00f3 8C000000 		.4byte	0x8c
- 242 00f7 63000000 		.4byte	.LLST3
- 243 00fb 07       		.uleb128 0x7
- 244 00fc 1E000000 		.4byte	.LVL5
- 245 0100 7D010000 		.4byte	0x17d
- 246 0104 23010000 		.4byte	0x123
- 247 0108 08       		.uleb128 0x8
- 248 0109 01       		.uleb128 0x1
- 249 010a 50       		.byte	0x50
- 250 010b 02       		.uleb128 0x2
- 251 010c 74       		.byte	0x74
- 252 010d 00       		.sleb128 0
- 253 010e 08       		.uleb128 0x8
- 254 010f 01       		.uleb128 0x1
- 255 0110 53       		.byte	0x53
- 256 0111 02       		.uleb128 0x2
- 257 0112 74       		.byte	0x74
- 258 0113 00       		.sleb128 0
- 259 0114 08       		.uleb128 0x8
- 260 0115 02       		.uleb128 0x2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 8
+ 204 009a 04       		.byte	0x4
+ 205 009b 4B000000 		.4byte	.LASF14
+ 206 009f 03       		.uleb128 0x3
+ 207 00a0 08       		.byte	0x8
+ 208 00a1 04       		.byte	0x4
+ 209 00a2 42010000 		.4byte	.LASF15
+ 210 00a6 05       		.uleb128 0x5
+ 211 00a7 27010000 		.4byte	.LASF27
+ 212 00ab 01       		.byte	0x1
+ 213 00ac 61       		.byte	0x61
+ 214 00ad 80000000 		.4byte	0x80
+ 215 00b1 00000000 		.4byte	.LFB0
+ 216 00b5 3C000000 		.4byte	.LFE0-.LFB0
+ 217 00b9 01       		.uleb128 0x1
+ 218 00ba 9C       		.byte	0x9c
+ 219 00bb 4B010000 		.4byte	0x14b
+ 220 00bf 06       		.uleb128 0x6
+ 221 00c0 04010000 		.4byte	.LASF16
+ 222 00c4 01       		.byte	0x1
+ 223 00c5 61       		.byte	0x61
+ 224 00c6 80000000 		.4byte	0x80
+ 225 00ca 00000000 		.4byte	.LLST0
+ 226 00ce 06       		.uleb128 0x6
+ 227 00cf 9E010000 		.4byte	.LASF17
+ 228 00d3 01       		.byte	0x1
+ 229 00d4 61       		.byte	0x61
+ 230 00d5 80000000 		.4byte	0x80
+ 231 00d9 21000000 		.4byte	.LLST1
+ 232 00dd 06       		.uleb128 0x6
+ 233 00de 00000000 		.4byte	.LASF18
+ 234 00e2 01       		.byte	0x1
+ 235 00e3 61       		.byte	0x61
+ 236 00e4 8C000000 		.4byte	0x8c
+ 237 00e8 42000000 		.4byte	.LLST2
+ 238 00ec 06       		.uleb128 0x6
+ 239 00ed AD010000 		.4byte	.LASF19
+ 240 00f1 01       		.byte	0x1
+ 241 00f2 61       		.byte	0x61
+ 242 00f3 8C000000 		.4byte	0x8c
+ 243 00f7 63000000 		.4byte	.LLST3
+ 244 00fb 07       		.uleb128 0x7
+ 245 00fc 20000000 		.4byte	.LVL5
+ 246 0100 7B010000 		.4byte	0x17b
+ 247 0104 21010000 		.4byte	0x121
+ 248 0108 08       		.uleb128 0x8
+ 249 0109 01       		.uleb128 0x1
+ 250 010a 50       		.byte	0x50
+ 251 010b 02       		.uleb128 0x2
+ 252 010c 75       		.byte	0x75
+ 253 010d 00       		.sleb128 0
+ 254 010e 08       		.uleb128 0x8
+ 255 010f 01       		.uleb128 0x1
+ 256 0110 53       		.byte	0x53
+ 257 0111 02       		.uleb128 0x2
+ 258 0112 75       		.byte	0x75
+ 259 0113 00       		.sleb128 0
+ 260 0114 08       		.uleb128 0x8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 8
 
 
- 261 0116 7D       		.byte	0x7d
- 262 0117 00       		.sleb128 0
- 263 0118 02       		.uleb128 0x2
- 264 0119 74       		.byte	0x74
- 265 011a 00       		.sleb128 0
- 266 011b 08       		.uleb128 0x8
- 267 011c 02       		.uleb128 0x2
- 268 011d 7D       		.byte	0x7d
- 269 011e 04       		.sleb128 4
- 270 011f 02       		.uleb128 0x2
- 271 0120 74       		.byte	0x74
- 272 0121 00       		.sleb128 0
- 273 0122 00       		.byte	0
- 274 0123 07       		.uleb128 0x7
- 275 0124 28000000 		.4byte	.LVL6
- 276 0128 88010000 		.4byte	0x188
- 277 012c 3D010000 		.4byte	0x13d
- 278 0130 08       		.uleb128 0x8
- 279 0131 01       		.uleb128 0x1
- 280 0132 51       		.byte	0x51
- 281 0133 02       		.uleb128 0x2
- 282 0134 76       		.byte	0x76
- 283 0135 00       		.sleb128 0
- 284 0136 08       		.uleb128 0x8
- 285 0137 01       		.uleb128 0x1
- 286 0138 52       		.byte	0x52
- 287 0139 02       		.uleb128 0x2
- 288 013a 77       		.byte	0x77
- 289 013b 00       		.sleb128 0
- 290 013c 00       		.byte	0
- 291 013d 09       		.uleb128 0x9
- 292 013e 30000000 		.4byte	.LVL7
- 293 0142 93010000 		.4byte	0x193
- 294 0146 08       		.uleb128 0x8
- 295 0147 01       		.uleb128 0x1
- 296 0148 51       		.byte	0x51
- 297 0149 01       		.uleb128 0x1
- 298 014a 32       		.byte	0x32
- 299 014b 00       		.byte	0
- 300 014c 00       		.byte	0
- 301 014d 0A       		.uleb128 0xa
- 302 014e 20000000 		.4byte	.LASF28
- 303 0152 01       		.byte	0x1
- 304 0153 88       		.byte	0x88
- 305 0154 00000000 		.4byte	.LFB1
- 306 0158 10000000 		.4byte	.LFE1-.LFB1
- 307 015c 01       		.uleb128 0x1
- 308 015d 9C       		.byte	0x9c
- 309 015e 6C010000 		.4byte	0x16c
- 310 0162 0B       		.uleb128 0xb
- 311 0163 0A000000 		.4byte	.LVL8
- 312 0167 9E010000 		.4byte	0x19e
- 313 016b 00       		.byte	0
- 314 016c 0C       		.uleb128 0xc
- 315 016d 87010000 		.4byte	.LASF29
- 316 0171 01       		.byte	0x1
- 317 0172 45       		.byte	0x45
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 9
+ 261 0115 02       		.uleb128 0x2
+ 262 0116 7D       		.byte	0x7d
+ 263 0117 00       		.sleb128 0
+ 264 0118 01       		.uleb128 0x1
+ 265 0119 30       		.byte	0x30
+ 266 011a 08       		.uleb128 0x8
+ 267 011b 02       		.uleb128 0x2
+ 268 011c 7D       		.byte	0x7d
+ 269 011d 04       		.sleb128 4
+ 270 011e 01       		.uleb128 0x1
+ 271 011f 30       		.byte	0x30
+ 272 0120 00       		.byte	0
+ 273 0121 07       		.uleb128 0x7
+ 274 0122 2A000000 		.4byte	.LVL6
+ 275 0126 86010000 		.4byte	0x186
+ 276 012a 3B010000 		.4byte	0x13b
+ 277 012e 08       		.uleb128 0x8
+ 278 012f 01       		.uleb128 0x1
+ 279 0130 51       		.byte	0x51
+ 280 0131 02       		.uleb128 0x2
+ 281 0132 76       		.byte	0x76
+ 282 0133 00       		.sleb128 0
+ 283 0134 08       		.uleb128 0x8
+ 284 0135 01       		.uleb128 0x1
+ 285 0136 52       		.byte	0x52
+ 286 0137 02       		.uleb128 0x2
+ 287 0138 77       		.byte	0x77
+ 288 0139 00       		.sleb128 0
+ 289 013a 00       		.byte	0
+ 290 013b 09       		.uleb128 0x9
+ 291 013c 32000000 		.4byte	.LVL7
+ 292 0140 91010000 		.4byte	0x191
+ 293 0144 08       		.uleb128 0x8
+ 294 0145 01       		.uleb128 0x1
+ 295 0146 51       		.byte	0x51
+ 296 0147 01       		.uleb128 0x1
+ 297 0148 32       		.byte	0x32
+ 298 0149 00       		.byte	0
+ 299 014a 00       		.byte	0
+ 300 014b 0A       		.uleb128 0xa
+ 301 014c 20000000 		.4byte	.LASF28
+ 302 0150 01       		.byte	0x1
+ 303 0151 88       		.byte	0x88
+ 304 0152 00000000 		.4byte	.LFB1
+ 305 0156 10000000 		.4byte	.LFE1-.LFB1
+ 306 015a 01       		.uleb128 0x1
+ 307 015b 9C       		.byte	0x9c
+ 308 015c 6A010000 		.4byte	0x16a
+ 309 0160 0B       		.uleb128 0xb
+ 310 0161 0A000000 		.4byte	.LVL8
+ 311 0165 9C010000 		.4byte	0x19c
+ 312 0169 00       		.byte	0
+ 313 016a 0C       		.uleb128 0xc
+ 314 016b 87010000 		.4byte	.LASF29
+ 315 016f 01       		.byte	0x1
+ 316 0170 45       		.byte	0x45
+ 317 0171 80000000 		.4byte	0x80
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 9
 
 
- 318 0173 80000000 		.4byte	0x80
- 319 0177 05       		.uleb128 0x5
- 320 0178 03       		.byte	0x3
- 321 0179 00000000 		.4byte	DMA_MEM_UART_DmaHandle
- 322 017d 0D       		.uleb128 0xd
- 323 017e B0020000 		.4byte	.LASF20
- 324 0182 B0020000 		.4byte	.LASF20
- 325 0186 03       		.byte	0x3
- 326 0187 33       		.byte	0x33
- 327 0188 0D       		.uleb128 0xd
- 328 0189 D5010000 		.4byte	.LASF21
- 329 018d D5010000 		.4byte	.LASF21
- 330 0191 03       		.byte	0x3
- 331 0192 2D       		.byte	0x2d
- 332 0193 0D       		.uleb128 0xd
- 333 0194 10000000 		.4byte	.LASF22
- 334 0198 10000000 		.4byte	.LASF22
- 335 019c 03       		.byte	0x3
- 336 019d 2C       		.byte	0x2c
- 337 019e 0D       		.uleb128 0xd
- 338 019f A1020000 		.4byte	.LASF23
- 339 01a3 A1020000 		.4byte	.LASF23
- 340 01a7 03       		.byte	0x3
- 341 01a8 2A       		.byte	0x2a
- 342 01a9 00       		.byte	0
- 343              		.section	.debug_abbrev,"",%progbits
- 344              	.Ldebug_abbrev0:
- 345 0000 01       		.uleb128 0x1
- 346 0001 11       		.uleb128 0x11
- 347 0002 01       		.byte	0x1
- 348 0003 25       		.uleb128 0x25
- 349 0004 0E       		.uleb128 0xe
- 350 0005 13       		.uleb128 0x13
- 351 0006 0B       		.uleb128 0xb
- 352 0007 03       		.uleb128 0x3
- 353 0008 0E       		.uleb128 0xe
- 354 0009 1B       		.uleb128 0x1b
- 355 000a 0E       		.uleb128 0xe
- 356 000b 55       		.uleb128 0x55
- 357 000c 17       		.uleb128 0x17
- 358 000d 11       		.uleb128 0x11
- 359 000e 01       		.uleb128 0x1
- 360 000f 10       		.uleb128 0x10
- 361 0010 17       		.uleb128 0x17
- 362 0011 00       		.byte	0
- 363 0012 00       		.byte	0
- 364 0013 02       		.uleb128 0x2
- 365 0014 24       		.uleb128 0x24
- 366 0015 00       		.byte	0
- 367 0016 0B       		.uleb128 0xb
- 368 0017 0B       		.uleb128 0xb
- 369 0018 3E       		.uleb128 0x3e
- 370 0019 0B       		.uleb128 0xb
- 371 001a 03       		.uleb128 0x3
- 372 001b 08       		.uleb128 0x8
- 373 001c 00       		.byte	0
- 374 001d 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 10
+ 318 0175 05       		.uleb128 0x5
+ 319 0176 03       		.byte	0x3
+ 320 0177 00000000 		.4byte	DMA_MEM_UART_DmaHandle
+ 321 017b 0D       		.uleb128 0xd
+ 322 017c B0020000 		.4byte	.LASF20
+ 323 0180 B0020000 		.4byte	.LASF20
+ 324 0184 03       		.byte	0x3
+ 325 0185 33       		.byte	0x33
+ 326 0186 0D       		.uleb128 0xd
+ 327 0187 D5010000 		.4byte	.LASF21
+ 328 018b D5010000 		.4byte	.LASF21
+ 329 018f 03       		.byte	0x3
+ 330 0190 2D       		.byte	0x2d
+ 331 0191 0D       		.uleb128 0xd
+ 332 0192 10000000 		.4byte	.LASF22
+ 333 0196 10000000 		.4byte	.LASF22
+ 334 019a 03       		.byte	0x3
+ 335 019b 2C       		.byte	0x2c
+ 336 019c 0D       		.uleb128 0xd
+ 337 019d A1020000 		.4byte	.LASF23
+ 338 01a1 A1020000 		.4byte	.LASF23
+ 339 01a5 03       		.byte	0x3
+ 340 01a6 2A       		.byte	0x2a
+ 341 01a7 00       		.byte	0
+ 342              		.section	.debug_abbrev,"",%progbits
+ 343              	.Ldebug_abbrev0:
+ 344 0000 01       		.uleb128 0x1
+ 345 0001 11       		.uleb128 0x11
+ 346 0002 01       		.byte	0x1
+ 347 0003 25       		.uleb128 0x25
+ 348 0004 0E       		.uleb128 0xe
+ 349 0005 13       		.uleb128 0x13
+ 350 0006 0B       		.uleb128 0xb
+ 351 0007 03       		.uleb128 0x3
+ 352 0008 0E       		.uleb128 0xe
+ 353 0009 1B       		.uleb128 0x1b
+ 354 000a 0E       		.uleb128 0xe
+ 355 000b 55       		.uleb128 0x55
+ 356 000c 17       		.uleb128 0x17
+ 357 000d 11       		.uleb128 0x11
+ 358 000e 01       		.uleb128 0x1
+ 359 000f 10       		.uleb128 0x10
+ 360 0010 17       		.uleb128 0x17
+ 361 0011 00       		.byte	0
+ 362 0012 00       		.byte	0
+ 363 0013 02       		.uleb128 0x2
+ 364 0014 24       		.uleb128 0x24
+ 365 0015 00       		.byte	0
+ 366 0016 0B       		.uleb128 0xb
+ 367 0017 0B       		.uleb128 0xb
+ 368 0018 3E       		.uleb128 0x3e
+ 369 0019 0B       		.uleb128 0xb
+ 370 001a 03       		.uleb128 0x3
+ 371 001b 08       		.uleb128 0x8
+ 372 001c 00       		.byte	0
+ 373 001d 00       		.byte	0
+ 374 001e 03       		.uleb128 0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 10
 
 
- 375 001e 03       		.uleb128 0x3
- 376 001f 24       		.uleb128 0x24
- 377 0020 00       		.byte	0
- 378 0021 0B       		.uleb128 0xb
- 379 0022 0B       		.uleb128 0xb
- 380 0023 3E       		.uleb128 0x3e
- 381 0024 0B       		.uleb128 0xb
- 382 0025 03       		.uleb128 0x3
- 383 0026 0E       		.uleb128 0xe
- 384 0027 00       		.byte	0
- 385 0028 00       		.byte	0
- 386 0029 04       		.uleb128 0x4
- 387 002a 16       		.uleb128 0x16
- 388 002b 00       		.byte	0
- 389 002c 03       		.uleb128 0x3
- 390 002d 0E       		.uleb128 0xe
- 391 002e 3A       		.uleb128 0x3a
- 392 002f 0B       		.uleb128 0xb
- 393 0030 3B       		.uleb128 0x3b
- 394 0031 05       		.uleb128 0x5
- 395 0032 49       		.uleb128 0x49
- 396 0033 13       		.uleb128 0x13
- 397 0034 00       		.byte	0
- 398 0035 00       		.byte	0
- 399 0036 05       		.uleb128 0x5
- 400 0037 2E       		.uleb128 0x2e
- 401 0038 01       		.byte	0x1
- 402 0039 3F       		.uleb128 0x3f
- 403 003a 19       		.uleb128 0x19
- 404 003b 03       		.uleb128 0x3
- 405 003c 0E       		.uleb128 0xe
- 406 003d 3A       		.uleb128 0x3a
- 407 003e 0B       		.uleb128 0xb
- 408 003f 3B       		.uleb128 0x3b
- 409 0040 0B       		.uleb128 0xb
- 410 0041 27       		.uleb128 0x27
- 411 0042 19       		.uleb128 0x19
- 412 0043 49       		.uleb128 0x49
- 413 0044 13       		.uleb128 0x13
- 414 0045 11       		.uleb128 0x11
- 415 0046 01       		.uleb128 0x1
- 416 0047 12       		.uleb128 0x12
- 417 0048 06       		.uleb128 0x6
- 418 0049 40       		.uleb128 0x40
- 419 004a 18       		.uleb128 0x18
- 420 004b 9742     		.uleb128 0x2117
- 421 004d 19       		.uleb128 0x19
- 422 004e 01       		.uleb128 0x1
- 423 004f 13       		.uleb128 0x13
- 424 0050 00       		.byte	0
- 425 0051 00       		.byte	0
- 426 0052 06       		.uleb128 0x6
- 427 0053 05       		.uleb128 0x5
- 428 0054 00       		.byte	0
- 429 0055 03       		.uleb128 0x3
- 430 0056 0E       		.uleb128 0xe
- 431 0057 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 11
+ 375 001f 24       		.uleb128 0x24
+ 376 0020 00       		.byte	0
+ 377 0021 0B       		.uleb128 0xb
+ 378 0022 0B       		.uleb128 0xb
+ 379 0023 3E       		.uleb128 0x3e
+ 380 0024 0B       		.uleb128 0xb
+ 381 0025 03       		.uleb128 0x3
+ 382 0026 0E       		.uleb128 0xe
+ 383 0027 00       		.byte	0
+ 384 0028 00       		.byte	0
+ 385 0029 04       		.uleb128 0x4
+ 386 002a 16       		.uleb128 0x16
+ 387 002b 00       		.byte	0
+ 388 002c 03       		.uleb128 0x3
+ 389 002d 0E       		.uleb128 0xe
+ 390 002e 3A       		.uleb128 0x3a
+ 391 002f 0B       		.uleb128 0xb
+ 392 0030 3B       		.uleb128 0x3b
+ 393 0031 05       		.uleb128 0x5
+ 394 0032 49       		.uleb128 0x49
+ 395 0033 13       		.uleb128 0x13
+ 396 0034 00       		.byte	0
+ 397 0035 00       		.byte	0
+ 398 0036 05       		.uleb128 0x5
+ 399 0037 2E       		.uleb128 0x2e
+ 400 0038 01       		.byte	0x1
+ 401 0039 3F       		.uleb128 0x3f
+ 402 003a 19       		.uleb128 0x19
+ 403 003b 03       		.uleb128 0x3
+ 404 003c 0E       		.uleb128 0xe
+ 405 003d 3A       		.uleb128 0x3a
+ 406 003e 0B       		.uleb128 0xb
+ 407 003f 3B       		.uleb128 0x3b
+ 408 0040 0B       		.uleb128 0xb
+ 409 0041 27       		.uleb128 0x27
+ 410 0042 19       		.uleb128 0x19
+ 411 0043 49       		.uleb128 0x49
+ 412 0044 13       		.uleb128 0x13
+ 413 0045 11       		.uleb128 0x11
+ 414 0046 01       		.uleb128 0x1
+ 415 0047 12       		.uleb128 0x12
+ 416 0048 06       		.uleb128 0x6
+ 417 0049 40       		.uleb128 0x40
+ 418 004a 18       		.uleb128 0x18
+ 419 004b 9742     		.uleb128 0x2117
+ 420 004d 19       		.uleb128 0x19
+ 421 004e 01       		.uleb128 0x1
+ 422 004f 13       		.uleb128 0x13
+ 423 0050 00       		.byte	0
+ 424 0051 00       		.byte	0
+ 425 0052 06       		.uleb128 0x6
+ 426 0053 05       		.uleb128 0x5
+ 427 0054 00       		.byte	0
+ 428 0055 03       		.uleb128 0x3
+ 429 0056 0E       		.uleb128 0xe
+ 430 0057 3A       		.uleb128 0x3a
+ 431 0058 0B       		.uleb128 0xb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 11
 
 
- 432 0058 0B       		.uleb128 0xb
- 433 0059 3B       		.uleb128 0x3b
- 434 005a 0B       		.uleb128 0xb
- 435 005b 49       		.uleb128 0x49
- 436 005c 13       		.uleb128 0x13
- 437 005d 02       		.uleb128 0x2
- 438 005e 17       		.uleb128 0x17
- 439 005f 00       		.byte	0
- 440 0060 00       		.byte	0
- 441 0061 07       		.uleb128 0x7
- 442 0062 898201   		.uleb128 0x4109
- 443 0065 01       		.byte	0x1
- 444 0066 11       		.uleb128 0x11
- 445 0067 01       		.uleb128 0x1
- 446 0068 31       		.uleb128 0x31
- 447 0069 13       		.uleb128 0x13
- 448 006a 01       		.uleb128 0x1
- 449 006b 13       		.uleb128 0x13
- 450 006c 00       		.byte	0
- 451 006d 00       		.byte	0
- 452 006e 08       		.uleb128 0x8
- 453 006f 8A8201   		.uleb128 0x410a
- 454 0072 00       		.byte	0
- 455 0073 02       		.uleb128 0x2
- 456 0074 18       		.uleb128 0x18
- 457 0075 9142     		.uleb128 0x2111
- 458 0077 18       		.uleb128 0x18
- 459 0078 00       		.byte	0
- 460 0079 00       		.byte	0
- 461 007a 09       		.uleb128 0x9
- 462 007b 898201   		.uleb128 0x4109
- 463 007e 01       		.byte	0x1
- 464 007f 11       		.uleb128 0x11
- 465 0080 01       		.uleb128 0x1
- 466 0081 31       		.uleb128 0x31
- 467 0082 13       		.uleb128 0x13
- 468 0083 00       		.byte	0
- 469 0084 00       		.byte	0
- 470 0085 0A       		.uleb128 0xa
- 471 0086 2E       		.uleb128 0x2e
- 472 0087 01       		.byte	0x1
- 473 0088 3F       		.uleb128 0x3f
- 474 0089 19       		.uleb128 0x19
- 475 008a 03       		.uleb128 0x3
- 476 008b 0E       		.uleb128 0xe
- 477 008c 3A       		.uleb128 0x3a
- 478 008d 0B       		.uleb128 0xb
- 479 008e 3B       		.uleb128 0x3b
- 480 008f 0B       		.uleb128 0xb
- 481 0090 27       		.uleb128 0x27
- 482 0091 19       		.uleb128 0x19
- 483 0092 11       		.uleb128 0x11
- 484 0093 01       		.uleb128 0x1
- 485 0094 12       		.uleb128 0x12
- 486 0095 06       		.uleb128 0x6
- 487 0096 40       		.uleb128 0x40
- 488 0097 18       		.uleb128 0x18
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 12
+ 432 0059 3B       		.uleb128 0x3b
+ 433 005a 0B       		.uleb128 0xb
+ 434 005b 49       		.uleb128 0x49
+ 435 005c 13       		.uleb128 0x13
+ 436 005d 02       		.uleb128 0x2
+ 437 005e 17       		.uleb128 0x17
+ 438 005f 00       		.byte	0
+ 439 0060 00       		.byte	0
+ 440 0061 07       		.uleb128 0x7
+ 441 0062 898201   		.uleb128 0x4109
+ 442 0065 01       		.byte	0x1
+ 443 0066 11       		.uleb128 0x11
+ 444 0067 01       		.uleb128 0x1
+ 445 0068 31       		.uleb128 0x31
+ 446 0069 13       		.uleb128 0x13
+ 447 006a 01       		.uleb128 0x1
+ 448 006b 13       		.uleb128 0x13
+ 449 006c 00       		.byte	0
+ 450 006d 00       		.byte	0
+ 451 006e 08       		.uleb128 0x8
+ 452 006f 8A8201   		.uleb128 0x410a
+ 453 0072 00       		.byte	0
+ 454 0073 02       		.uleb128 0x2
+ 455 0074 18       		.uleb128 0x18
+ 456 0075 9142     		.uleb128 0x2111
+ 457 0077 18       		.uleb128 0x18
+ 458 0078 00       		.byte	0
+ 459 0079 00       		.byte	0
+ 460 007a 09       		.uleb128 0x9
+ 461 007b 898201   		.uleb128 0x4109
+ 462 007e 01       		.byte	0x1
+ 463 007f 11       		.uleb128 0x11
+ 464 0080 01       		.uleb128 0x1
+ 465 0081 31       		.uleb128 0x31
+ 466 0082 13       		.uleb128 0x13
+ 467 0083 00       		.byte	0
+ 468 0084 00       		.byte	0
+ 469 0085 0A       		.uleb128 0xa
+ 470 0086 2E       		.uleb128 0x2e
+ 471 0087 01       		.byte	0x1
+ 472 0088 3F       		.uleb128 0x3f
+ 473 0089 19       		.uleb128 0x19
+ 474 008a 03       		.uleb128 0x3
+ 475 008b 0E       		.uleb128 0xe
+ 476 008c 3A       		.uleb128 0x3a
+ 477 008d 0B       		.uleb128 0xb
+ 478 008e 3B       		.uleb128 0x3b
+ 479 008f 0B       		.uleb128 0xb
+ 480 0090 27       		.uleb128 0x27
+ 481 0091 19       		.uleb128 0x19
+ 482 0092 11       		.uleb128 0x11
+ 483 0093 01       		.uleb128 0x1
+ 484 0094 12       		.uleb128 0x12
+ 485 0095 06       		.uleb128 0x6
+ 486 0096 40       		.uleb128 0x40
+ 487 0097 18       		.uleb128 0x18
+ 488 0098 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 12
 
 
- 489 0098 9742     		.uleb128 0x2117
- 490 009a 19       		.uleb128 0x19
- 491 009b 01       		.uleb128 0x1
- 492 009c 13       		.uleb128 0x13
- 493 009d 00       		.byte	0
- 494 009e 00       		.byte	0
- 495 009f 0B       		.uleb128 0xb
- 496 00a0 898201   		.uleb128 0x4109
- 497 00a3 00       		.byte	0
- 498 00a4 11       		.uleb128 0x11
- 499 00a5 01       		.uleb128 0x1
- 500 00a6 31       		.uleb128 0x31
- 501 00a7 13       		.uleb128 0x13
- 502 00a8 00       		.byte	0
- 503 00a9 00       		.byte	0
- 504 00aa 0C       		.uleb128 0xc
- 505 00ab 34       		.uleb128 0x34
- 506 00ac 00       		.byte	0
- 507 00ad 03       		.uleb128 0x3
- 508 00ae 0E       		.uleb128 0xe
- 509 00af 3A       		.uleb128 0x3a
- 510 00b0 0B       		.uleb128 0xb
- 511 00b1 3B       		.uleb128 0x3b
- 512 00b2 0B       		.uleb128 0xb
- 513 00b3 49       		.uleb128 0x49
- 514 00b4 13       		.uleb128 0x13
- 515 00b5 3F       		.uleb128 0x3f
- 516 00b6 19       		.uleb128 0x19
- 517 00b7 02       		.uleb128 0x2
- 518 00b8 18       		.uleb128 0x18
- 519 00b9 00       		.byte	0
- 520 00ba 00       		.byte	0
- 521 00bb 0D       		.uleb128 0xd
- 522 00bc 2E       		.uleb128 0x2e
- 523 00bd 00       		.byte	0
- 524 00be 3F       		.uleb128 0x3f
- 525 00bf 19       		.uleb128 0x19
- 526 00c0 3C       		.uleb128 0x3c
- 527 00c1 19       		.uleb128 0x19
- 528 00c2 6E       		.uleb128 0x6e
- 529 00c3 0E       		.uleb128 0xe
- 530 00c4 03       		.uleb128 0x3
- 531 00c5 0E       		.uleb128 0xe
- 532 00c6 3A       		.uleb128 0x3a
- 533 00c7 0B       		.uleb128 0xb
- 534 00c8 3B       		.uleb128 0x3b
- 535 00c9 0B       		.uleb128 0xb
- 536 00ca 00       		.byte	0
- 537 00cb 00       		.byte	0
- 538 00cc 00       		.byte	0
- 539              		.section	.debug_loc,"",%progbits
- 540              	.Ldebug_loc0:
- 541              	.LLST0:
- 542 0000 00000000 		.4byte	.LVL0
- 543 0004 1A000000 		.4byte	.LVL4
- 544 0008 0100     		.2byte	0x1
- 545 000a 50       		.byte	0x50
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 13
+ 489 009a 19       		.uleb128 0x19
+ 490 009b 01       		.uleb128 0x1
+ 491 009c 13       		.uleb128 0x13
+ 492 009d 00       		.byte	0
+ 493 009e 00       		.byte	0
+ 494 009f 0B       		.uleb128 0xb
+ 495 00a0 898201   		.uleb128 0x4109
+ 496 00a3 00       		.byte	0
+ 497 00a4 11       		.uleb128 0x11
+ 498 00a5 01       		.uleb128 0x1
+ 499 00a6 31       		.uleb128 0x31
+ 500 00a7 13       		.uleb128 0x13
+ 501 00a8 00       		.byte	0
+ 502 00a9 00       		.byte	0
+ 503 00aa 0C       		.uleb128 0xc
+ 504 00ab 34       		.uleb128 0x34
+ 505 00ac 00       		.byte	0
+ 506 00ad 03       		.uleb128 0x3
+ 507 00ae 0E       		.uleb128 0xe
+ 508 00af 3A       		.uleb128 0x3a
+ 509 00b0 0B       		.uleb128 0xb
+ 510 00b1 3B       		.uleb128 0x3b
+ 511 00b2 0B       		.uleb128 0xb
+ 512 00b3 49       		.uleb128 0x49
+ 513 00b4 13       		.uleb128 0x13
+ 514 00b5 3F       		.uleb128 0x3f
+ 515 00b6 19       		.uleb128 0x19
+ 516 00b7 02       		.uleb128 0x2
+ 517 00b8 18       		.uleb128 0x18
+ 518 00b9 00       		.byte	0
+ 519 00ba 00       		.byte	0
+ 520 00bb 0D       		.uleb128 0xd
+ 521 00bc 2E       		.uleb128 0x2e
+ 522 00bd 00       		.byte	0
+ 523 00be 3F       		.uleb128 0x3f
+ 524 00bf 19       		.uleb128 0x19
+ 525 00c0 3C       		.uleb128 0x3c
+ 526 00c1 19       		.uleb128 0x19
+ 527 00c2 6E       		.uleb128 0x6e
+ 528 00c3 0E       		.uleb128 0xe
+ 529 00c4 03       		.uleb128 0x3
+ 530 00c5 0E       		.uleb128 0xe
+ 531 00c6 3A       		.uleb128 0x3a
+ 532 00c7 0B       		.uleb128 0xb
+ 533 00c8 3B       		.uleb128 0x3b
+ 534 00c9 0B       		.uleb128 0xb
+ 535 00ca 00       		.byte	0
+ 536 00cb 00       		.byte	0
+ 537 00cc 00       		.byte	0
+ 538              		.section	.debug_loc,"",%progbits
+ 539              	.Ldebug_loc0:
+ 540              	.LLST0:
+ 541 0000 00000000 		.4byte	.LVL0
+ 542 0004 1C000000 		.4byte	.LVL4
+ 543 0008 0100     		.2byte	0x1
+ 544 000a 50       		.byte	0x50
+ 545 000b 1C000000 		.4byte	.LVL4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 13
 
 
- 546 000b 1A000000 		.4byte	.LVL4
- 547 000f 3C000000 		.4byte	.LFE0
- 548 0013 0400     		.2byte	0x4
- 549 0015 F3       		.byte	0xf3
- 550 0016 01       		.uleb128 0x1
- 551 0017 50       		.byte	0x50
- 552 0018 9F       		.byte	0x9f
- 553 0019 00000000 		.4byte	0
- 554 001d 00000000 		.4byte	0
- 555              	.LLST1:
- 556 0021 00000000 		.4byte	.LVL0
- 557 0025 18000000 		.4byte	.LVL3
- 558 0029 0100     		.2byte	0x1
- 559 002b 51       		.byte	0x51
- 560 002c 18000000 		.4byte	.LVL3
- 561 0030 3C000000 		.4byte	.LFE0
- 562 0034 0400     		.2byte	0x4
- 563 0036 F3       		.byte	0xf3
- 564 0037 01       		.uleb128 0x1
- 565 0038 51       		.byte	0x51
- 566 0039 9F       		.byte	0x9f
- 567 003a 00000000 		.4byte	0
- 568 003e 00000000 		.4byte	0
- 569              	.LLST2:
- 570 0042 00000000 		.4byte	.LVL0
- 571 0046 16000000 		.4byte	.LVL2
- 572 004a 0100     		.2byte	0x1
- 573 004c 52       		.byte	0x52
- 574 004d 16000000 		.4byte	.LVL2
- 575 0051 3C000000 		.4byte	.LFE0
- 576 0055 0400     		.2byte	0x4
- 577 0057 F3       		.byte	0xf3
- 578 0058 01       		.uleb128 0x1
- 579 0059 52       		.byte	0x52
- 580 005a 9F       		.byte	0x9f
- 581 005b 00000000 		.4byte	0
- 582 005f 00000000 		.4byte	0
- 583              	.LLST3:
- 584 0063 00000000 		.4byte	.LVL0
- 585 0067 14000000 		.4byte	.LVL1
- 586 006b 0100     		.2byte	0x1
- 587 006d 53       		.byte	0x53
- 588 006e 14000000 		.4byte	.LVL1
- 589 0072 3C000000 		.4byte	.LFE0
- 590 0076 0400     		.2byte	0x4
- 591 0078 F3       		.byte	0xf3
- 592 0079 01       		.uleb128 0x1
- 593 007a 53       		.byte	0x53
- 594 007b 9F       		.byte	0x9f
- 595 007c 00000000 		.4byte	0
- 596 0080 00000000 		.4byte	0
- 597              		.section	.debug_aranges,"",%progbits
- 598 0000 24000000 		.4byte	0x24
- 599 0004 0200     		.2byte	0x2
- 600 0006 00000000 		.4byte	.Ldebug_info0
- 601 000a 04       		.byte	0x4
- 602 000b 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 14
+ 546 000f 3C000000 		.4byte	.LFE0
+ 547 0013 0400     		.2byte	0x4
+ 548 0015 F3       		.byte	0xf3
+ 549 0016 01       		.uleb128 0x1
+ 550 0017 50       		.byte	0x50
+ 551 0018 9F       		.byte	0x9f
+ 552 0019 00000000 		.4byte	0
+ 553 001d 00000000 		.4byte	0
+ 554              	.LLST1:
+ 555 0021 00000000 		.4byte	.LVL0
+ 556 0025 1A000000 		.4byte	.LVL3
+ 557 0029 0100     		.2byte	0x1
+ 558 002b 51       		.byte	0x51
+ 559 002c 1A000000 		.4byte	.LVL3
+ 560 0030 3C000000 		.4byte	.LFE0
+ 561 0034 0400     		.2byte	0x4
+ 562 0036 F3       		.byte	0xf3
+ 563 0037 01       		.uleb128 0x1
+ 564 0038 51       		.byte	0x51
+ 565 0039 9F       		.byte	0x9f
+ 566 003a 00000000 		.4byte	0
+ 567 003e 00000000 		.4byte	0
+ 568              	.LLST2:
+ 569 0042 00000000 		.4byte	.LVL0
+ 570 0046 18000000 		.4byte	.LVL2
+ 571 004a 0100     		.2byte	0x1
+ 572 004c 52       		.byte	0x52
+ 573 004d 18000000 		.4byte	.LVL2
+ 574 0051 3C000000 		.4byte	.LFE0
+ 575 0055 0400     		.2byte	0x4
+ 576 0057 F3       		.byte	0xf3
+ 577 0058 01       		.uleb128 0x1
+ 578 0059 52       		.byte	0x52
+ 579 005a 9F       		.byte	0x9f
+ 580 005b 00000000 		.4byte	0
+ 581 005f 00000000 		.4byte	0
+ 582              	.LLST3:
+ 583 0063 00000000 		.4byte	.LVL0
+ 584 0067 10000000 		.4byte	.LVL1
+ 585 006b 0100     		.2byte	0x1
+ 586 006d 53       		.byte	0x53
+ 587 006e 10000000 		.4byte	.LVL1
+ 588 0072 3C000000 		.4byte	.LFE0
+ 589 0076 0400     		.2byte	0x4
+ 590 0078 F3       		.byte	0xf3
+ 591 0079 01       		.uleb128 0x1
+ 592 007a 53       		.byte	0x53
+ 593 007b 9F       		.byte	0x9f
+ 594 007c 00000000 		.4byte	0
+ 595 0080 00000000 		.4byte	0
+ 596              		.section	.debug_aranges,"",%progbits
+ 597 0000 24000000 		.4byte	0x24
+ 598 0004 0200     		.2byte	0x2
+ 599 0006 00000000 		.4byte	.Ldebug_info0
+ 600 000a 04       		.byte	0x4
+ 601 000b 00       		.byte	0
+ 602 000c 0000     		.2byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 14
 
 
- 603 000c 0000     		.2byte	0
- 604 000e 0000     		.2byte	0
- 605 0010 00000000 		.4byte	.LFB0
- 606 0014 3C000000 		.4byte	.LFE0-.LFB0
- 607 0018 00000000 		.4byte	.LFB1
- 608 001c 10000000 		.4byte	.LFE1-.LFB1
- 609 0020 00000000 		.4byte	0
- 610 0024 00000000 		.4byte	0
- 611              		.section	.debug_ranges,"",%progbits
- 612              	.Ldebug_ranges0:
- 613 0000 00000000 		.4byte	.LFB0
- 614 0004 3C000000 		.4byte	.LFE0
- 615 0008 00000000 		.4byte	.LFB1
- 616 000c 10000000 		.4byte	.LFE1
- 617 0010 00000000 		.4byte	0
- 618 0014 00000000 		.4byte	0
- 619              		.section	.debug_line,"",%progbits
- 620              	.Ldebug_line0:
- 621 0000 85000000 		.section	.debug_str,"MS",%progbits,1
- 621      02005900 
- 621      00000201 
- 621      FB0E0D00 
- 621      01010101 
- 622              	.LASF18:
- 623 0000 55707065 		.ascii	"UpperSrcAddress\000"
- 623      72537263 
- 623      41646472 
- 623      65737300 
- 624              	.LASF22:
- 625 0010 4379446D 		.ascii	"CyDmaChPriority\000"
- 625      61436850 
- 625      72696F72 
- 625      69747900 
- 626              	.LASF28:
- 627 0020 444D415F 		.ascii	"DMA_MEM_UART_DmaRelease\000"
- 627      4D454D5F 
- 627      55415254 
- 627      5F446D61 
- 627      52656C65 
- 628              	.LASF6:
- 629 0038 73686F72 		.ascii	"short unsigned int\000"
- 629      7420756E 
- 629      7369676E 
- 629      65642069 
- 629      6E7400
- 630              	.LASF14:
- 631 004b 666C6F61 		.ascii	"float\000"
- 631      7400
- 632              	.LASF9:
- 633 0051 6C6F6E67 		.ascii	"long long unsigned int\000"
- 633      206C6F6E 
- 633      6720756E 
- 633      7369676E 
- 633      65642069 
- 634              	.LASF4:
- 635 0068 756E7369 		.ascii	"unsigned char\000"
- 635      676E6564 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 15
+ 603 000e 0000     		.2byte	0
+ 604 0010 00000000 		.4byte	.LFB0
+ 605 0014 3C000000 		.4byte	.LFE0-.LFB0
+ 606 0018 00000000 		.4byte	.LFB1
+ 607 001c 10000000 		.4byte	.LFE1-.LFB1
+ 608 0020 00000000 		.4byte	0
+ 609 0024 00000000 		.4byte	0
+ 610              		.section	.debug_ranges,"",%progbits
+ 611              	.Ldebug_ranges0:
+ 612 0000 00000000 		.4byte	.LFB0
+ 613 0004 3C000000 		.4byte	.LFE0
+ 614 0008 00000000 		.4byte	.LFB1
+ 615 000c 10000000 		.4byte	.LFE1
+ 616 0010 00000000 		.4byte	0
+ 617 0014 00000000 		.4byte	0
+ 618              		.section	.debug_line,"",%progbits
+ 619              	.Ldebug_line0:
+ 620 0000 85000000 		.section	.debug_str,"MS",%progbits,1
+ 620      02005900 
+ 620      00000201 
+ 620      FB0E0D00 
+ 620      01010101 
+ 621              	.LASF18:
+ 622 0000 55707065 		.ascii	"UpperSrcAddress\000"
+ 622      72537263 
+ 622      41646472 
+ 622      65737300 
+ 623              	.LASF22:
+ 624 0010 4379446D 		.ascii	"CyDmaChPriority\000"
+ 624      61436850 
+ 624      72696F72 
+ 624      69747900 
+ 625              	.LASF28:
+ 626 0020 444D415F 		.ascii	"DMA_MEM_UART_DmaRelease\000"
+ 626      4D454D5F 
+ 626      55415254 
+ 626      5F446D61 
+ 626      52656C65 
+ 627              	.LASF6:
+ 628 0038 73686F72 		.ascii	"short unsigned int\000"
+ 628      7420756E 
+ 628      7369676E 
+ 628      65642069 
+ 628      6E7400
+ 629              	.LASF14:
+ 630 004b 666C6F61 		.ascii	"float\000"
+ 630      7400
+ 631              	.LASF9:
+ 632 0051 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 632      206C6F6E 
+ 632      6720756E 
+ 632      7369676E 
+ 632      65642069 
+ 633              	.LASF4:
+ 634 0068 756E7369 		.ascii	"unsigned char\000"
+ 634      676E6564 
+ 634      20636861 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 15
 
 
- 635      20636861 
- 635      7200
- 636              	.LASF24:
- 637 0076 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 637      43313120 
- 637      352E342E 
- 637      31203230 
- 637      31363036 
- 638 00a9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 638      20726576 
- 638      6973696F 
- 638      6E203233 
- 638      37373135 
- 639 00dc 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 639      66756E63 
- 639      74696F6E 
- 639      2D736563 
- 639      74696F6E 
- 640              	.LASF16:
- 641 0104 42757273 		.ascii	"BurstCount\000"
- 641      74436F75 
- 641      6E7400
- 642              	.LASF8:
- 643 010f 6C6F6E67 		.ascii	"long unsigned int\000"
- 643      20756E73 
- 643      69676E65 
- 643      6420696E 
- 643      7400
- 644              	.LASF12:
- 645 0121 75696E74 		.ascii	"uint8\000"
- 645      3800
- 646              	.LASF27:
- 647 0127 444D415F 		.ascii	"DMA_MEM_UART_DmaInitialize\000"
- 647      4D454D5F 
- 647      55415254 
- 647      5F446D61 
- 647      496E6974 
- 648              	.LASF15:
- 649 0142 646F7562 		.ascii	"double\000"
- 649      6C6500
- 650              	.LASF13:
- 651 0149 75696E74 		.ascii	"uint16\000"
- 651      313600
- 652              	.LASF0:
- 653 0150 756E7369 		.ascii	"unsigned int\000"
- 653      676E6564 
- 653      20696E74 
- 653      00
- 654              	.LASF25:
- 655 015d 47656E65 		.ascii	"Generated_Source\\PSoC5\\DMA_MEM_UART_dma.c\000"
- 655      72617465 
- 655      645F536F 
- 655      75726365 
- 655      5C50536F 
- 656              	.LASF29:
- 657 0187 444D415F 		.ascii	"DMA_MEM_UART_DmaHandle\000"
- 657      4D454D5F 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 16
+ 634      7200
+ 635              	.LASF24:
+ 636 0076 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 636      43313120 
+ 636      352E342E 
+ 636      31203230 
+ 636      31363036 
+ 637 00a9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 637      20726576 
+ 637      6973696F 
+ 637      6E203233 
+ 637      37373135 
+ 638 00dc 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 638      66756E63 
+ 638      74696F6E 
+ 638      2D736563 
+ 638      74696F6E 
+ 639              	.LASF16:
+ 640 0104 42757273 		.ascii	"BurstCount\000"
+ 640      74436F75 
+ 640      6E7400
+ 641              	.LASF8:
+ 642 010f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 642      20756E73 
+ 642      69676E65 
+ 642      6420696E 
+ 642      7400
+ 643              	.LASF12:
+ 644 0121 75696E74 		.ascii	"uint8\000"
+ 644      3800
+ 645              	.LASF27:
+ 646 0127 444D415F 		.ascii	"DMA_MEM_UART_DmaInitialize\000"
+ 646      4D454D5F 
+ 646      55415254 
+ 646      5F446D61 
+ 646      496E6974 
+ 647              	.LASF15:
+ 648 0142 646F7562 		.ascii	"double\000"
+ 648      6C6500
+ 649              	.LASF13:
+ 650 0149 75696E74 		.ascii	"uint16\000"
+ 650      313600
+ 651              	.LASF0:
+ 652 0150 756E7369 		.ascii	"unsigned int\000"
+ 652      676E6564 
+ 652      20696E74 
+ 652      00
+ 653              	.LASF25:
+ 654 015d 47656E65 		.ascii	"Generated_Source\\PSoC5\\DMA_MEM_UART_dma.c\000"
+ 654      72617465 
+ 654      645F536F 
+ 654      75726365 
+ 654      5C50536F 
+ 655              	.LASF29:
+ 656 0187 444D415F 		.ascii	"DMA_MEM_UART_DmaHandle\000"
+ 656      4D454D5F 
+ 656      55415254 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 16
 
 
- 657      55415254 
- 657      5F446D61 
- 657      48616E64 
- 658              	.LASF17:
- 659 019e 52657165 		.ascii	"ReqestPerBurst\000"
- 659      73745065 
- 659      72427572 
- 659      737400
- 660              	.LASF19:
- 661 01ad 55707065 		.ascii	"UpperDestAddress\000"
- 661      72446573 
- 661      74416464 
- 661      72657373 
- 661      00
- 662              	.LASF10:
- 663 01be 73697A65 		.ascii	"sizetype\000"
- 663      74797065 
- 663      00
- 664              	.LASF1:
- 665 01c7 6C6F6E67 		.ascii	"long long int\000"
- 665      206C6F6E 
- 665      6720696E 
- 665      7400
- 666              	.LASF21:
- 667 01d5 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
- 667      61436853 
- 667      65744578 
- 667      74656E64 
- 667      65644164 
- 668              	.LASF11:
- 669 01ef 63686172 		.ascii	"char\000"
- 669      00
- 670              	.LASF5:
- 671 01f4 73686F72 		.ascii	"short int\000"
- 671      7420696E 
- 671      7400
- 672              	.LASF26:
- 673 01fe 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD_LAB\\MovementDete"
- 673      73657273 
- 673      5C7A616B 
- 673      69735C44 
- 673      6F63756D 
- 674 022c 63746F72 		.ascii	"ctor\\40_Implementation\\20_SW\\10_work\\MovementDe"
- 674      5C34305F 
- 674      496D706C 
+ 656      5F446D61 
+ 656      48616E64 
+ 657              	.LASF17:
+ 658 019e 52657165 		.ascii	"ReqestPerBurst\000"
+ 658      73745065 
+ 658      72427572 
+ 658      737400
+ 659              	.LASF19:
+ 660 01ad 55707065 		.ascii	"UpperDestAddress\000"
+ 660      72446573 
+ 660      74416464 
+ 660      72657373 
+ 660      00
+ 661              	.LASF10:
+ 662 01be 73697A65 		.ascii	"sizetype\000"
+ 662      74797065 
+ 662      00
+ 663              	.LASF1:
+ 664 01c7 6C6F6E67 		.ascii	"long long int\000"
+ 664      206C6F6E 
+ 664      6720696E 
+ 664      7400
+ 665              	.LASF21:
+ 666 01d5 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
+ 666      61436853 
+ 666      65744578 
+ 666      74656E64 
+ 666      65644164 
+ 667              	.LASF11:
+ 668 01ef 63686172 		.ascii	"char\000"
+ 668      00
+ 669              	.LASF5:
+ 670 01f4 73686F72 		.ascii	"short int\000"
+ 670      7420696E 
+ 670      7400
+ 671              	.LASF26:
+ 672 01fe 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD_LAB\\MovementDete"
+ 672      73657273 
+ 672      5C7A616B 
+ 672      69735C44 
+ 672      6F63756D 
+ 673 022c 63746F72 		.ascii	"ctor\\40_Implementation\\20_SW\\10_work\\MovementDe"
+ 673      5C34305F 
+ 673      496D706C 
+ 673      656D656E 
+ 673      74617469 
+ 674 025b 74656374 		.ascii	"tector\\RADAR_Movement_Detector.cydsn\000"
+ 674      6F725C52 
+ 674      41444152 
+ 674      5F4D6F76 
  674      656D656E 
- 674      74617469 
- 675 025b 74656374 		.ascii	"tector\\RADAR_Movement_Detector.cydsn\000"
- 675      6F725C52 
- 675      41444152 
- 675      5F4D6F76 
- 675      656D656E 
- 676              	.LASF7:
- 677 0280 6C6F6E67 		.ascii	"long int\000"
- 677      20696E74 
- 677      00
- 678              	.LASF2:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccf7ed0g.s 			page 17
+ 675              	.LASF7:
+ 676 0280 6C6F6E67 		.ascii	"long int\000"
+ 676      20696E74 
+ 676      00
+ 677              	.LASF2:
+ 678 0289 6C6F6E67 		.ascii	"long double\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\cc6NHo0z.s 			page 17
 
 
- 679 0289 6C6F6E67 		.ascii	"long double\000"
- 679      20646F75 
- 679      626C6500 
- 680              	.LASF3:
- 681 0295 7369676E 		.ascii	"signed char\000"
- 681      65642063 
- 681      68617200 
- 682              	.LASF23:
- 683 02a1 4379446D 		.ascii	"CyDmaChDisable\000"
- 683      61436844 
- 683      69736162 
- 683      6C6500
- 684              	.LASF20:
- 685 02b0 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
- 685      61436853 
- 685      6574436F 
- 685      6E666967 
- 685      75726174 
- 686              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 678      20646F75 
+ 678      626C6500 
+ 679              	.LASF3:
+ 680 0295 7369676E 		.ascii	"signed char\000"
+ 680      65642063 
+ 680      68617200 
+ 681              	.LASF23:
+ 682 02a1 4379446D 		.ascii	"CyDmaChDisable\000"
+ 682      61436844 
+ 682      69736162 
+ 682      6C6500
+ 683              	.LASF20:
+ 684 02b0 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
+ 684      61436853 
+ 684      6574436F 
+ 684      6E666967 
+ 684      75726174 
+ 685              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

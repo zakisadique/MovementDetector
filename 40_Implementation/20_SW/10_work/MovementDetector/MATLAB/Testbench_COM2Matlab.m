@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Testbench Communication from FreeSoc2 to Matlab
-% Version 1.0, Bannwarth, 30.05.2020
+% Version 1.0, Bannwarth, 30.05./332020
 %
 % Behaviour: 
 % - Everytime Maltlab writes ‘s’on the UART, the PSoC sends new measurement 
-%    results and Matalab writes 'o' if these data is received.
+%    results and Matalab writes 'o' i5f these data is received.
 % - The Script terminates after 10 data transfers.
 %
 % Using:
@@ -14,25 +14,20 @@
 % 4. Run this Script
 % 5. Press the external Push Button to start measuring
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 close all;
 clear all;
 clc;
-
-
-
 priorPorts=instrfind;
 delete(priorPorts);
-PSoC=serial('COM8', 'BaudRate', 9600, 'InputBufferSize', 14000);
+PSoC=serial('COM9', 'BaudRate', 115200, 'InputBufferSize', 14000);
 fopen(PSoC);
-
 f1 = figure;
 count = 1;
 
 flg_data_avai = 0;
 fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 while(flg_data_avai == 0)
-   fprintf("Bytes Available: %d\n", PSoC.BytesAvailable); % Print BytesAvailable
+    fprintf("Transfer in progress: %i, Bytes Available: %d\n", count, PSoC.BytesAvailable); % Print BytesAvailable
        if PSoC.BytesAvailable == 2048
              fwrite(PSoC,'o','uchar') % means I received all expected data
              rx_data_adc = fread(PSoC,1024,'uint16');
@@ -59,7 +54,5 @@ while(flg_data_avai == 0)
 
        fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 end
-
 fclose(PSoC);
-
 fprintf(" Scipt End \n");

@@ -25,6 +25,8 @@
 #include "dac_adc.h"
 #include "led.h"
 
+#include "fft_application.h"
+
 /*****************************************************************************/
 /* Local pre-processor symbols/macros ('#define')                            */
 /*****************************************************************************/
@@ -162,7 +164,6 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
 
                         detector -> readyToSend = FALSE;
                         
-                        // send fft
                         SetEvent(tsk_control, ev_send);
                     }
                 } 
@@ -175,8 +176,14 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
                     DMA_Set(DMA_MEMORY_TO_UART, DMA_ON);
+                    
+                    fft_app(ADCBuffer,fftBuffer,NO_OF_SAMPLES); //
+//                    DMA_Set(DMA_FFT_TO_UART, DMA_ON); //
+                    
                     detector -> detectorState = UART_TRANSFER;
                     DETECTOR_setLedState(UART_TRANSFER);
+                    
+
                 }
             }
             break;
@@ -195,6 +202,8 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                 if (ev & ev_oReceived){
                     
                     DMA_Set(DMA_MEMORY_TO_UART, DMA_OFF);
+//                    DMA_Set(DMA_FFT_TO_UART, DMA_OFF); //
+                    
                     
                     detector -> numberOfTransfers += 1;
                     if (detector -> numberOfTransfers < 10){
@@ -215,7 +224,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                         detector ->readyToSend = FALSE;
                         detector ->memoryToUARTFinished = FALSE;
                         
-
+                        
                     }
                 }
             }

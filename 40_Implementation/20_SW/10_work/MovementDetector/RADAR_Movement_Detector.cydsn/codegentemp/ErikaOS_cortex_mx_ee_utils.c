@@ -68,7 +68,7 @@
 //i.e. the value can be takes as it is
 #define ISR_SCALE(prio) (prio)
 
-#define Number_of_ISRs  3
+#define Number_of_ISRs  4
 
 extern void EE_set_switch_context_pri(void);
 
@@ -133,16 +133,16 @@ void EE_system_init(void)
 #error  The Interrupt isr_UART_Rx could not be found. Make sure the name in the OS config exactly matches the name of the interrupt in the interrupt tab.
 #endif	/* isr_UART_Rx */
 
-#if (Number_of_ISRs > 3) && defined isr_ADC_Out__INTC_NUMBER
-    ramVectorTable[CY_INT_IRQ_BASE + (isr_ADC_Out__INTC_NUMBER & CY_INT_NUMBER_MASK)] = isr_ADC_Out;
+#if (Number_of_ISRs > 3) && defined isr_DMA_FFT_UART__INTC_NUMBER
+    ramVectorTable[CY_INT_IRQ_BASE + (isr_DMA_FFT_UART__INTC_NUMBER & CY_INT_NUMBER_MASK)] = isr_DMA_FFT_UART;
 	//PF v2.5.3
-    //NVIC_SET_PRI(isr_ADC_Out__INTC_NUMBER, (ISR_MIN_PRI - 1));
-    CyIntSetPriority(isr_ADC_Out__INTC_NUMBER, ISR_SCALE(1));
+    //NVIC_SET_PRI(isr_DMA_FFT_UART__INTC_NUMBER, (ISR_MIN_PRI - 1));
+    CyIntSetPriority(isr_DMA_FFT_UART__INTC_NUMBER, ISR_SCALE(1));
     //\PF
-	NVIC_INT_ENABLE(isr_ADC_Out__INTC_NUMBER);
+	NVIC_INT_ENABLE(isr_DMA_FFT_UART__INTC_NUMBER);
 #elif Number_of_ISRs > 3
-#error  The Interrupt isr_ADC_Out could not be found. Make sure the name in the OS config exactly matches the name of the interrupt in the interrupt tab.
-#endif	/* isr_ADC_Out */
+#error  The Interrupt isr_DMA_FFT_UART could not be found. Make sure the name in the OS config exactly matches the name of the interrupt in the interrupt tab.
+#endif	/* isr_DMA_FFT_UART */
 
 #if (Number_of_ISRs > 4) && defined ISR_5__INTC_NUMBER
     ramVectorTable[CY_INT_IRQ_BASE + (ISR_5__INTC_NUMBER & CY_INT_NUMBER_MASK)] = ISR_5;

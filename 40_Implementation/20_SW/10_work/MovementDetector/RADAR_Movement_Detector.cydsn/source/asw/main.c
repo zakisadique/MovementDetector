@@ -17,13 +17,12 @@
 #define UART_START_VARIABLE 's'
 #define UART_FINISH_VARIABLE 'o'
 
-#define NO_OF_SAMPLES 1024
+//#define NO_OF_SAMPLES 1024
 
 Detector_t movementDetector;
 
-
-extern uint16_t ADCBuffer[NO_OF_SAMPLES];
-extern uint32_t fftBuffer[2* NO_OF_SAMPLES];
+//extern uint16_t ADCBuffer[NO_OF_SAMPLES];
+//extern uint32_t fftBuffer[2* NO_OF_SAMPLES];
 
 //ISR which will increment the systick counter every ms
 ISR(systick_handler)
@@ -133,6 +132,11 @@ ISR2(isr_pushButton){
     
     SetEvent(tsk_control, ev_pushButton);
 }
+
+ISR2(isr_DMA_FFT_UART){}
+
+    __asm("nop");
+
 
 
 /********************************************************************************

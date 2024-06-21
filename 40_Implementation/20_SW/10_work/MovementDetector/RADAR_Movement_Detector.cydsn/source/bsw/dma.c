@@ -46,6 +46,7 @@
 /* Local variable definitions ('static')                                     */
 /*****************************************************************************/
 uint16_t ADCBuffer[1024]; // buffer to store sampled data
+int32 fftBuffer[2* NO_OF_SAMPLES];
 /*****************************************************************************/
 /* Local function prototypes ('static')                                      */
 /*****************************************************************************/
@@ -82,7 +83,21 @@ RC_t DMA_Init(){
     
     
     
+    /* DMA Configuration for DMA_FFT_UART */
+    DMA_FFT_UART_Chan = DMA_FFT_UART_DmaInitialize(
+        DMA_FFT_UART_BYTES_PER_BURST, 
+        DMA_FFT_UART_REQUEST_PER_BURST, 
+        HI16(DMA_FFT_UART_SRC_BASE), 
+        HI16(DMA_FFT_UART_DST_BASE));
+    DMA_FFT_UART_TD[0] = CyDmaTdAllocate();
+    CyDmaTdSetConfiguration(DMA_FFT_UART_TD[0], 2048 * sizeof(int32), CY_DMA_DISABLE_TD, DMA_FFT_UART__TD_TERMOUT_EN | CY_DMA_TD_INC_SRC_ADR);
+    CyDmaTdSetAddress(DMA_FFT_UART_TD[0], LO16((uint32)fftBuffer), LO16((uint32)UART_LOG_TXDATA_PTR));
+    CyDmaChSetInitialTd(DMA_FFT_UART_Chan, DMA_FFT_UART_TD[0]);
+
+    
+    
     Clock_DMA_MEM_UART_Start();
+    Clock_DMA_FFT_UART_Start();
     return RC_SUCCESS;
     
     
@@ -107,9 +122,18 @@ RC_t DMA_Set(DMA_id_t dmaId, DMA_ONOFF_t dmaOnOff){
                 CyDmaChDisable(DMA_MEM_UART_Chan);
             }
             break;
+            
+        case DMA_FFT_TO_UART : 
+            if (dmaOnOff == DMA_ON){
+                CyDmaChEnable(DMA_FFT_UART_Chan, 1);
+            } else if (dmaOnOff == DMA_ON){
+                CyDmaChDisable(DMA_FFT_UART_Chan);
+            }
+            break;   
 
         default: return RC_ERROR_BAD_PARAM;
     }
+    return RC_SUCCESS;
 
 }
 

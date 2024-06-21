@@ -67,19 +67,25 @@
 #define DMA_H
 
 #include "global.h"
-
+#include "arm_math.h"
     
     
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
+    
+#define NO_OF_SAMPLES 1024
+    
+extern uint16_t ADCBuffer[1024];
+extern int32 fftBuffer[2* NO_OF_SAMPLES];
 
 //####################### Enumerations
 
 // DMA Identifier
 enum eDMA_id{
   DMA_ADC_TO_MEMORY,
-  DMA_MEMORY_TO_UART
+  DMA_MEMORY_TO_UART,
+  DMA_FFT_TO_UART
 };         
 typedef enum eDMA_id DMA_id_t;
 
@@ -111,7 +117,24 @@ uint8_t DMA_ADC_MEM_TD[1];
 /* Variable declarations for DMA_MEM_UART */
 /* Move these variable declarations to the top of the function */
 uint8_t DMA_MEM_UART_Chan;
-uint8_t DMA_MEM_UART_TD[1];  
+uint8_t DMA_MEM_UART_TD[1]; 
+
+
+/* Defines for DMA_FFT_UART */
+#define DMA_FFT_UART_BYTES_PER_BURST 4
+#define DMA_FFT_UART_REQUEST_PER_BURST 1
+#define DMA_FFT_UART_SRC_BASE (CYDEV_SRAM_BASE)
+#define DMA_FFT_UART_DST_BASE (CYDEV_PERIPH_BASE)
+
+/* Variable declarations for DMA_FFT_UART */
+/* Move these variable declarations to the top of the function */
+uint8_t DMA_FFT_UART_Chan;
+uint8_t DMA_FFT_UART_TD[1];
+
+
+
+
+
 
 // Wrapper to allow representing the file in Together as class
 #ifdef TOGETHER
