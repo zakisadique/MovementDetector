@@ -77,7 +77,9 @@
 #define NO_OF_SAMPLES 1024
     
 extern uint16_t ADCBuffer[1024];
-extern int32 fftBuffer[2* NO_OF_SAMPLES];
+extern int32 fftBuffer[2048];
+extern uint8_t *casted_buffer;
+
 
 //####################### Enumerations
 
@@ -129,7 +131,7 @@ uint8_t DMA_MEM_UART_TD[1];
 /* Variable declarations for DMA_FFT_UART */
 /* Move these variable declarations to the top of the function */
 uint8_t DMA_FFT_UART_Chan;
-uint8_t DMA_FFT_UART_TD[1];
+uint8_t DMA_FFT_UART_TD[3];
 
 
 

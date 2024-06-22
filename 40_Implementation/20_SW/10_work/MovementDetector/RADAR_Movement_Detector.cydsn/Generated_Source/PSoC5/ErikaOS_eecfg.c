@@ -403,7 +403,7 @@
          ,"ev_reSample"
     #endif
     #if EE_MAX_EVENT > 6
-         ,"ev_UARTOver"
+         ,"ev_sendFFT"
     #endif
     #if EE_MAX_EVENT > 7
          ,"ev_UARTOver"
@@ -500,7 +500,7 @@
         ,ev_reSample
     #endif
     #if EE_MAX_EVENT > 6
-        ,ev_UARTOver
+        ,ev_sendFFT
     #endif
     #if EE_MAX_EVENT > 7
         ,ev_UARTOver
@@ -1020,7 +1020,7 @@
         #endif
     #endif
     #if EE_MAX_TASK > 2
-        #if 4
+        #if 7
         ,1U
         #else
         ,0U

@@ -24,6 +24,7 @@
 #include "dma.h"
 #include "dac_adc.h"
 #include "led.h"
+#include "uart.h"
 
 #include "fft_application.h"
 
@@ -175,16 +176,26 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                 if (ev & ev_send){
                     
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
-                    DMA_Set(DMA_MEMORY_TO_UART, DMA_ON);
+                    DMA_Set(DMA_MEMORY_TO_UART, DMA_ON); //
                     
-                    fft_app(ADCBuffer,fftBuffer,NO_OF_SAMPLES); //
+//                    fft_app(ADCBuffer,fftBuffer,1024); //
+//                    
+////                    for (uint16_t i = 0; i < 2048; ++i){
+////                        fftBuffer[i] = i;
+////                    }
+                    
+//                    fftBuffer[0] = 0b01111111111111111111111111111111;
+//                    fftBuffer[1] = 0b01010101111111110000000010101010;
 //                    DMA_Set(DMA_FFT_TO_UART, DMA_ON); //
+//                  
+
                     
                     detector -> detectorState = UART_TRANSFER;
                     DETECTOR_setLedState(UART_TRANSFER);
                     
 
                 }
+                
             }
             break;
 
@@ -199,10 +210,54 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
             */
             case (UART_TRANSFER):
             {
+                if (ev & ev_sendFFT){
+                    DMA_Set(DMA_MEMORY_TO_UART, DMA_OFF);
+                    
+                    #define DMA 1
+                    #if DMA == 1
+                    
+                    
+                    fft_app(ADCBuffer,fftBuffer,1024); //
+                    uint8_t *casted_buffer = (uint8_t*)fftBuffer; 
+
+//                    fftBuffer[2046] = 0b01111111111111111111111111111111;
+//                    fftBuffer[2047] = 1471483647;
+//                    for (uint16_t i = 0; i < 2048; ++i){
+//                        fftBuffer[0] = 1048575;
+//                    }
+                    DMA_Set(DMA_FFT_TO_UART, DMA_ON); //
+                    #endif 
+                    #if DMA == 0
+                    
+                    fft_app(ADCBuffer,fftBuffer,1024); //
+                    for (int i = 0; i < 2048; ++i){
+                        uint8_t byte0 = (fftBuffer[i] >> 24) & 0xFF; // Most significant byte
+                        uint8_t byte1 = (fftBuffer[i] >> 16) & 0xFF;
+                        uint8_t byte2 = (fftBuffer[i] >> 8) & 0xFF;
+                        uint8_t byte3 = fftBuffer[i] & 0xFF;         // Least significant byte
+
+                        // Send each byte over UART
+                        UART_LOG_PutChar(byte3);
+                        UART_LOG_PutChar(byte2);
+                        UART_LOG_PutChar(byte1);
+                        UART_LOG_PutChar(byte0);
+                    
+                    }
+                    #endif
+                    
+                    
+
+                    
+
+                }
+                
+                
                 if (ev & ev_oReceived){
                     
-                    DMA_Set(DMA_MEMORY_TO_UART, DMA_OFF);
-//                    DMA_Set(DMA_FFT_TO_UART, DMA_OFF); //
+//                    DMA_Set(DMA_MEMORY_TO_UART, DMA_OFF);
+                    
+//                    CyDelay(5000);
+                    DMA_Set(DMA_FFT_TO_UART, DMA_OFF); //
                     
                     
                     detector -> numberOfTransfers += 1;

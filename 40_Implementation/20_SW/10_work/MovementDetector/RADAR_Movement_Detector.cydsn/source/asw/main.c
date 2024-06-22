@@ -21,8 +21,6 @@
 
 Detector_t movementDetector;
 
-//extern uint16_t ADCBuffer[NO_OF_SAMPLES];
-//extern uint32_t fftBuffer[2* NO_OF_SAMPLES];
 
 //ISR which will increment the systick counter every ms
 ISR(systick_handler)
@@ -84,7 +82,7 @@ TASK(tsk_control)
     EventMaskType ev = 0;
     
     while (1){
-        WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived);
+        WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived | ev_sendFFT);
         GetEvent(tsk_control, &ev);
         ClearEvent(ev);
         
@@ -133,9 +131,18 @@ ISR2(isr_pushButton){
     SetEvent(tsk_control, ev_pushButton);
 }
 
-ISR2(isr_DMA_FFT_UART){}
+ISR2(isr_DMA_MEM_UART){
+    
+    SetEvent(tsk_control, ev_sendFFT);
+    
 
-    __asm("nop");
+}
+
+ISR2(isr_DMA_FFT_UART){
+    
+
+}
+
 
 
 

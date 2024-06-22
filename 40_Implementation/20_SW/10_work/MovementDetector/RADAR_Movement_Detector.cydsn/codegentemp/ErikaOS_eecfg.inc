@@ -142,7 +142,7 @@
 
     /* Number of isr */
     #include "ErikaOS_ISR_definition.inc"
-    #define EE_MAX_ISR_ID 4    
+    #define EE_MAX_ISR_ID 5    
     #define EE_MAX_ISR2   Number_ISR2
     #define EE_MAX_ISR2_WITH_RESOURCES Number_ISR2_Resources
     
@@ -255,7 +255,7 @@ extern void isr_UART_Rx(void);
 extern void isr_DMA_FFT_UART(void);
 #endif
 #if EE_MAX_ISR_ID > 4
-extern void ISR_5(void);
+extern void isr_DMA_MEM_UART(void);
 #endif
 #if EE_MAX_ISR_ID > 5
 extern void ISR_6(void);

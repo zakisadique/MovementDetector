@@ -10,7 +10,7 @@
  * ========================================
 */
 
-    #if (4 > 0) && 1
+    #if (5 > 0) && 1
     #if 0
     #define ISR_1_RES   1
     #else
@@ -22,7 +22,7 @@
     #define ISR_1_CAT   0
     #endif
 
-    #if (4 > 1) && 1
+    #if (5 > 1) && 1
     #if 0
     #define ISR_2_RES   1
     #else
@@ -34,7 +34,7 @@
     #define ISR_2_CAT   0
     #endif
 
-    #if (4 > 2) && 1
+    #if (5 > 2) && 1
     #if 0
     #define ISR_3_RES   1
     #else
@@ -46,7 +46,7 @@
     #define ISR_3_CAT   0
     #endif
     
-    #if (4 > 3) && 1
+    #if (5 > 3) && 1
     #if 0
     #define ISR_4_RES   1
     #else
@@ -58,7 +58,7 @@
     #define ISR_4_CAT   0
     #endif
 
-    #if (4 > 4) && 0
+    #if (5 > 4) && 1
     #if 0
     #define ISR_5_RES   1
     #else
@@ -70,7 +70,7 @@
     #define ISR_5_CAT   0
     #endif
 
-    #if (4 > 5) && 0
+    #if (5 > 5) && 0
     #if 0
     #define ISR_6_RES   1
     #else
@@ -82,7 +82,7 @@
     #define ISR_6_CAT   0
     #endif
 
-    #if (4 > 6) && 0
+    #if (5 > 6) && 0
     #if 0
     #define ISR_7_RES   1
     #else
@@ -94,7 +94,7 @@
     #define ISR_7_CAT   0
     #endif
 
-    #if (4 > 7) && 0
+    #if (5 > 7) && 0
     #if 0
     #define ISR_8_RES   1
     #else
@@ -106,7 +106,7 @@
     #define ISR_8_CAT   0
     #endif
 
-    #if (4 > 8) && 0
+    #if (5 > 8) && 0
     #if 0
     #define ISR_9_RES   1
     #else
@@ -118,7 +118,7 @@
     #define ISR_9_CAT   0
     #endif
 
-    #if (4 > 9) && 0
+    #if (5 > 9) && 0
     #if 0
     #define ISR_10_RES   1
     #else
@@ -130,7 +130,7 @@
     #define ISR_10_CAT   0
     #endif
 
-    #if (4 > 10) && 0
+    #if (5 > 10) && 0
     #if 0
     #define ISR_11_RES   1
     #else
@@ -142,7 +142,7 @@
     #define ISR_11_CAT   0
     #endif
 
-    #if (4 > 11) && 0
+    #if (5 > 11) && 0
     #if 0
     #define ISR_12_RES   1
     #else
@@ -154,7 +154,7 @@
     #define ISR_12_CAT   0
     #endif
 
-    #if (4 > 12) && 0
+    #if (5 > 12) && 0
     #if 0
     #define ISR_13_RES   1
     #else
@@ -166,7 +166,7 @@
     #define ISR_13_CAT   0
     #endif
 
-    #if (4 > 13) && 0
+    #if (5 > 13) && 0
     #if 0
     #define ISR_14_RES   1
     #else
@@ -178,7 +178,7 @@
     #define ISR_14_CAT   0
     #endif
 
-    #if (4 > 14) && 0
+    #if (5 > 14) && 0
     #if 0
     #define ISR_15_RES   1
     #else
@@ -190,7 +190,7 @@
     #define ISR_15_CAT   0
     #endif
     
-    #if (4 > 15) && 0
+    #if (5 > 15) && 0
     #if 0
     #define ISR_16_RES   1
     #else

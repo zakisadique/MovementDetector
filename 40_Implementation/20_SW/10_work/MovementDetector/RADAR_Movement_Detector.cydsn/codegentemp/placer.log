@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Jun 22 2024 01:41:55
+#File Generated:     Jun 22 2024 15:56:34
 
 #Purpose:            
 
@@ -93,7 +93,7 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_LOG_IntClock    | Frequency:  55.3 MHz | Target:   0.1 MHz
+Clock: UART_LOG_IntClock    | Frequency:  55.3 MHz | Target:   0.9 MHz
 Clock: WaveDAC8_DacClk      | Frequency: N/A       | Target:   0.0 MHz
 Clock: WaveDAC8_DacClk(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: \ADC_DelSig:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
@@ -122,7 +122,7 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_LOG_IntClock    | Frequency:   1.5 MHz | Target:   0.1 MHz
+Clock: UART_LOG_IntClock    | Frequency:   1.5 MHz | Target:   0.9 MHz
 Clock: WaveDAC8_DacClk      | Frequency: N/A       | Target:   0.0 MHz
 Clock: WaveDAC8_DacClk(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: \ADC_DelSig:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
@@ -174,7 +174,7 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: UART_LOG_IntClock    | Frequency:   1.5 MHz | Target:   0.1 MHz
+Clock: UART_LOG_IntClock    | Frequency:   1.5 MHz | Target:   0.9 MHz
 Clock: WaveDAC8_DacClk      | Frequency: N/A       | Target:   0.0 MHz
 Clock: WaveDAC8_DacClk(routed) | Frequency: N/A       | Target:   0.0 MHz
 Clock: \ADC_DelSig:DSM\/dec_clock | Frequency: N/A       | Target:   0.1 MHz
