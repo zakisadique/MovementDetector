@@ -78,7 +78,7 @@
     
 extern uint16_t ADCBuffer[1024];
 extern int32 fftBuffer[2048];
-extern uint8_t *casted_buffer;
+extern uint8_t fftBuffer_uint8[8192];
 
 
 //####################### Enumerations

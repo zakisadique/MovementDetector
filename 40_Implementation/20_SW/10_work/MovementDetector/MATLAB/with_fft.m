@@ -34,7 +34,7 @@ flg_data_avai = 0;
 fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 while(flg_data_avai == 0)
    fprintf("Transfer in progress: %i, Bytes Available: %d\n", count, PSoC.BytesAvailable); % Print BytesAvailable
-       if PSoC.BytesAvailable == ADC_bytes + FFT_Bytes
+       if PSoC.BytesAvailable >= ADC_bytes + FFT_Bytes
              fwrite(PSoC,'o','uchar') % means I received all expected data
              rx_data_adc = fread(PSoC,1024,'uint16');
              rx_data_fft = fread(PSoC,2048,'int32');
