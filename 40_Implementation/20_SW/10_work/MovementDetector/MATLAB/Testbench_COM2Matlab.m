@@ -23,7 +23,7 @@ clc;
 
 priorPorts=instrfind;
 delete(priorPorts);
-PSoC=serial('COM8', 'BaudRate', 9600, 'InputBufferSize', 14000);
+PSoC=serial('COM10', 'BaudRate', 115200, 'InputBufferSize', 14000);
 fopen(PSoC);
 
 f1 = figure;
