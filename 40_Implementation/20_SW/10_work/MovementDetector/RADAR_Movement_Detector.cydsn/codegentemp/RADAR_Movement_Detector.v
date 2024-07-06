@@ -1,6 +1,6 @@
 // ======================================================================
 // RADAR_Movement_Detector.v generated from TopDesign.cysch
-// 06/22/2024 at 16:40
+// 06/25/2024 at 18:21
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1340,7 +1340,7 @@ module top ;
 		#(.id("4e76a74a-9486-4093-8315-26382699b3b4"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("500000000000"),
+		  .period("2000000000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_DMA_MEM_UART
@@ -1514,7 +1514,7 @@ module top ;
 		#(.id("b5373b87-d286-4553-86c2-1eb1a9451215"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("500000000000"),
+		  .period("2000000000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_DMA_FFT_UART

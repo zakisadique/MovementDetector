@@ -1,5 +1,5 @@
 -- Project:   C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\RADAR_Movement_Detector.cyprj
--- Generated: 06/22/2024 16:41:01
+-- Generated: 06/25/2024 18:21:23
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS

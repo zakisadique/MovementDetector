@@ -24,7 +24,7 @@ FFT_Bytes = 2048*4;
 
 priorPorts=instrfind;
 delete(priorPorts);
-PSoC=serial('COM9', 'BaudRate', 115200, 'InputBufferSize', 40480);
+PSoC=serial('COM10', 'BaudRate', 115200, 'InputBufferSize', 40480);
 fopen(PSoC);
 
 f1 = figure;
