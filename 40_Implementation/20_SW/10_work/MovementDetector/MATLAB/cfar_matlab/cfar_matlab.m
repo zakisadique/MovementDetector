@@ -27,7 +27,7 @@ while(flg_data_avai == 0)
    %fprintf("Bytes Available: %d\n", PSoC.BytesAvailable); % Print BytesAvailable
        if PSoC.BytesAvailable == 2048
           
-           fwrite(PSoC,'o','uchar') % means I received all expected data
+           %fwrite(PSoC,'o','uchar') % means I received all expected data
            rx_data_adc = fread(PSoC,1024,'uint16');
            figure(f1)
            subplot(2,1,1)
@@ -88,11 +88,20 @@ while(flg_data_avai == 0)
             num_targets = sum(targets > 0);
             disp(['Number of targets detected: ', num2str(num_targets)]);
             count=count+1;
+            if (num_targets > 0)
+                 fprintf("there\n");
+               fwrite(PSoC,'t','uchar') % means target detected
+            end
+            if (num_targets == 0)
+                fprintf("here\n");
+               fwrite(PSoC,'n','uchar') % means target detected
+            end
+            fwrite(PSoC,'o','uchar') % means I received all expected data
        end
 
             
-             if count == 11
-           break;
+            if count == 11
+                break;
             end
 
        fwrite(PSoC,'s','uchar') % means send, I am ready to receive

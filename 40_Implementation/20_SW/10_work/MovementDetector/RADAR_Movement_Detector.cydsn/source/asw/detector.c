@@ -70,7 +70,7 @@ RC_t DETECTOR_init(Detector_t* detector){
     DETECTOR_initDrivers();
     
     detector->detectorState = IDLE;
-    DETECTOR_setLedState(IDLE);
+    //DETECTOR_setLedState(IDLE);
     
     detector->numberOfTransfers = 0;
     detector->samplingFinished = FALSE;
@@ -126,7 +126,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     ADC_Set(ADC_ON);
                     
                     detector -> detectorState = SAMPLING;
-                    DETECTOR_setLedState(SAMPLING);
+                    //DETECTOR_setLedState(SAMPLING);
                     
                 }
             }
@@ -176,7 +176,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
                     DMA_Set(DMA_MEMORY_TO_UART, DMA_ON);
                     detector -> detectorState = UART_TRANSFER;
-                    DETECTOR_setLedState(UART_TRANSFER);
+                    //DETECTOR_setLedState(UART_TRANSFER);
                 }
             }
             break;
@@ -199,13 +199,13 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     detector -> numberOfTransfers += 1;
                     if (detector -> numberOfTransfers < 10){
                         detector -> detectorState = SAMPLING;
-                        DETECTOR_setLedState(SAMPLING);
+                        //DETECTOR_setLedState(SAMPLING);
                         
                         SetEvent(tsk_control, ev_reSample);
                     }
                     else if (detector -> numberOfTransfers == 10){
                         detector -> detectorState = IDLE;
-                        DETECTOR_setLedState(IDLE);
+                        //DETECTOR_setLedState(IDLE);
 
                         DAC_Set(DAC_OFF);
                         ADC_Set(ADC_OFF);
@@ -217,6 +217,12 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                         
 
                     }
+                }
+                if (ev & ev_nReceived){
+                    LED_Set(LED_ALL, OFF);
+                }
+                if (ev & ev_tReceived){
+                    LED_Set(LED_ALL, ON);
                 }
             }
             break;

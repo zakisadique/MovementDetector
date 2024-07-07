@@ -16,6 +16,8 @@
 
 #define UART_START_VARIABLE 's'
 #define UART_FINISH_VARIABLE 'o'
+#define UART_TARGET_VARIABLE 't'
+#define UART_NO_TARGET_VARIABLE 'n'
 
 #define NO_OF_SAMPLES 1024
 
@@ -85,7 +87,7 @@ TASK(tsk_control)
     EventMaskType ev = 0;
     
     while (1){
-        WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived);
+        WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived | ev_tReceived | ev_nReceived);
         GetEvent(tsk_control, &ev);
         ClearEvent(ev);
         
@@ -118,7 +120,14 @@ ISR2(isr_UART_Rx){
         SetEvent(tsk_control, ev_sReceived);
     } else if (data == UART_FINISH_VARIABLE){
         SetEvent(tsk_control, ev_oReceived); 
+    } else if (data == UART_TARGET_VARIABLE){
+        SetEvent(tsk_control, ev_tReceived); 
+    } else if (data == UART_NO_TARGET_VARIABLE){
+        SetEvent(tsk_control, ev_nReceived); 
     }
+    
+    
+    
     
 }
 

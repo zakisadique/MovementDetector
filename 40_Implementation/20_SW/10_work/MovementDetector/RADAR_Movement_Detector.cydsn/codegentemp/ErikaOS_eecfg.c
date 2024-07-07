@@ -403,10 +403,10 @@
          ,"ev_reSample"
     #endif
     #if EE_MAX_EVENT > 6
-         ,"ev_UARTOver"
+         ,"ev_tReceived"
     #endif
     #if EE_MAX_EVENT > 7
-         ,"ev_UARTOver"
+         ,"ev_nReceived"
     #endif
     #if EE_MAX_EVENT > 8
          ,"Event_9"
@@ -500,10 +500,10 @@
         ,ev_reSample
     #endif
     #if EE_MAX_EVENT > 6
-        ,ev_UARTOver
+        ,ev_tReceived
     #endif
     #if EE_MAX_EVENT > 7
-        ,ev_UARTOver
+        ,ev_nReceived
     #endif
     #if EE_MAX_EVENT > 8
         ,Event_9
@@ -1020,7 +1020,7 @@
         #endif
     #endif
     #if EE_MAX_TASK > 2
-        #if 4
+        #if 8
         ,1U
         #else
         ,0U
