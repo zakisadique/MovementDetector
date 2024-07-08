@@ -33,8 +33,8 @@ Clock: CyIMO                               | N/A                   | Target: 3.0
 Clock: CyMASTER_CLK                        | N/A                   | Target: 24.00 MHz   | 
 Clock: CyPLL_OUT                           | N/A                   | Target: 24.00 MHz   | 
 Clock: UART_LOG_IntClock                   | Frequency: 44.65 MHz  | Target: 0.92 MHz    | 
-Clock: WaveDAC8_DacClk                     | N/A                   | Target: 0.01 MHz    | 
-Clock: WaveDAC8_DacClk(routed)             | N/A                   | Target: 0.01 MHz    | 
+Clock: WaveDAC8_DacClk                     | N/A                   | Target: 0.04 MHz    | 
+Clock: WaveDAC8_DacClk(routed)             | N/A                   | Target: 0.04 MHz    | 
 Clock: \ADC_DelSig:DSM\/dec_clock          | N/A                   | Target: 100.00 MHz  | 
 
  =====================================================================

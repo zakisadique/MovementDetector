@@ -6,8 +6,10 @@ clc;
 % CA CFAR Parameters
 N  = 1024;   % Sample Size
 NG = 2;     % Guard Cells
-NR = 15;    % Reference Cells
-PFA = 10^-0.5; % Probability of False Alarm
+NR = 10;    % Reference Cells
+%PFA = 10^-0.2; % Probability of False Alarm
+PFA = 10^-9.5;
+%PFA = 100;
 
 n = 0:(N-1);
 
@@ -36,7 +38,11 @@ while(flg_data_avai == 0)
 
            % Spectral computation
            adc_fft = fft(rx_data_adc); % Compute FFT
-           adc_fft_db = 20*log10((1/N)*abs(adc_fft)); % Convert to dB
+           %adc_fft_db = 20*log10((1/N)*abs(adc_fft)); % Convert to dB
+           %adc_fft_db = ((1/N)*abs(adc_fft)).^2;
+           adc_fft(1) = 0;
+           adc_fft_db = ((abs(adc_fft)).^2);
+           %adc_fft_db = 20*log10((1/N)*abs(adc_fft));
            subplot(2,1,2)
            plot(n,adc_fft_db);
            xlabel 'Frequency (Hz)'
@@ -54,6 +60,8 @@ while(flg_data_avai == 0)
             % Calculate the scaling factor alpha using PFA
             alpha = NR * (PFA^(-1/NR) - 1);
 
+            %alpha = PFA;
+
             % Calculate the CA-CFAR threshold for each cell under test
             for i = NR + NG + 1 : N - NR - NG %setting the range of i, i=CUT 
                 %consider cells for lagging &leading window, [x1,x2,x3,CUT,x5,x6,x7]
@@ -67,6 +75,7 @@ while(flg_data_avai == 0)
                 
                 % calculate CFAR threshold by scaling
                 threshold = noise_level * alpha;
+                %threshold = noise_level * PFA;
                 
 
                 % Store the threshold
@@ -80,20 +89,22 @@ while(flg_data_avai == 0)
             end
             
             % Plot the resulting threshold and detected targets in the spectra plot
+            if (count == 10)
             hold on;
             plot(n, thresholds, 'r', 'LineWidth', 1); 
             legend('Spectrum', 'Threshold')
+            end
             
             % Return the number of targets
             num_targets = sum(targets > 0);
             disp(['Number of targets detected: ', num2str(num_targets)]);
+
+             save(strcat('CW_rx_data_adc_',int2str(count),'.mat'),'rx_data_adc');
             count=count+1;
             if (num_targets > 0)
-                 fprintf("there\n");
                fwrite(PSoC,'t','uchar') % means target detected
             end
             if (num_targets == 0)
-                fprintf("here\n");
                fwrite(PSoC,'n','uchar') % means target detected
             end
             fwrite(PSoC,'o','uchar') % means I received all expected data

@@ -6,8 +6,8 @@ clc;
 % CA CFAR Parameters
 N  = 1024;   % Sample Size
 NG = 2;     % Guard Cells
-NR = 15;    % Reference Cells
-PFA = 10^-0.5; % Probability of False Alarm
+NR = 10;    % Reference Cells
+PFA = 10^-0.2; % Probability of False Alarm
 
 n = 0:(N-1);
 
@@ -24,19 +24,22 @@ flg_data_avai = 0;
 fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 
 while(flg_data_avai == 0)
-   fprintf("Bytes Available: %d\n", PSoC.BytesAvailable); % Print BytesAvailable
+   %fprintf("Bytes Available: %d\n", PSoC.BytesAvailable); % Print BytesAvailable
        if PSoC.BytesAvailable == 2048
           
-           fwrite(PSoC,'o','uchar') % means I received all expected data
+           %fwrite(PSoC,'o','uchar') % means I received all expected data
            rx_data_adc = fread(PSoC,1024,'uint16');
-           figure(1)
+           figure(f1)
            subplot(2,1,1)
            plot(n,rx_data_adc);
             title(['Received Time Domain Data No.:',num2str(count)]);
 
            % Spectral computation
            adc_fft = fft(rx_data_adc); % Compute FFT
-           adc_fft_db = 20*log10((1/N)*abs(adc_fft)); % Convert to dB
+           %adc_fft_db = 20*log10((1/N)*abs(adc_fft)); % Convert to dB
+           %adc_fft_db = ((1/N)*abs(adc_fft)).^2;
+           adc_fft(1) = 0;
+           adc_fft_db = 20*log10((abs(adc_fft)).^2;
            subplot(2,1,2)
            plot(n,adc_fft_db);
            xlabel 'Frequency (Hz)'
@@ -80,21 +83,34 @@ while(flg_data_avai == 0)
             end
             
             % Plot the resulting threshold and detected targets in the spectra plot
-            %hold on;
-            %plot(n, thresholds, 'r', 'LineWidth', 1); 
-            %legend('Spectrum', 'Threshold')
+            if (count == 10)
+            hold on;
+            plot(n, thresholds, 'r', 'LineWidth', 1); 
+            legend('Spectrum', 'Threshold')
+            end
             
             % Return the number of targets
             num_targets = sum(targets > 0);
             disp(['Number of targets detected: ', num2str(num_targets)]);
             count=count+1;
-             if count == 11
-           break;
+            if (num_targets > 0)
+                 fprintf("there\n");
+               fwrite(PSoC,'t','uchar') % means target detected
+            end
+            if (num_targets == 0)
+                fprintf("here\n");
+               fwrite(PSoC,'n','uchar') % means target detected
+            end
+            fwrite(PSoC,'o','uchar') % means I received all expected data
+       end
+
+            
+            if count == 11
+                break;
             end
 
        fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 
-       end
 end
 
 
