@@ -118,9 +118,6 @@
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\UART_LOG_BOOT.c" value="SOURCE_C;CortexM3;;;;UART_LOG" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\isr_UART_Rx.c" value="SOURCE_C;CortexM3;;;;isr_UART_Rx" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\isr_UART_Rx.h" value="HEADER;;;;;isr_UART_Rx" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8.c" value="SOURCE_C;CortexM3;;;;WaveDAC8" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8.h" value="HEADER;;;;;WaveDAC8" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_PM.c" value="SOURCE_C;CortexM3;;;;WaveDAC8" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_DelSig.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_DelSig.h" value="HEADER;;;;;ADC_DelSig" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_DelSig_PM.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig" />
@@ -137,9 +134,6 @@
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\isr_DMA_MEM_UART.h" value="HEADER;;;;;isr_DMA_MEM_UART" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\Clock_DMA_MEM_UART.c" value="SOURCE_C;CortexM3;;;;Clock_DMA_MEM_UART" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\Clock_DMA_MEM_UART.h" value="HEADER;;;;;Clock_DMA_MEM_UART" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\DAC_Out_aliases.h" value="HEADER;;;;;DAC_Out" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\DAC_Out.c" value="SOURCE_C;CortexM3;;;;DAC_Out" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\DAC_Out.h" value="HEADER;;;;;DAC_Out" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_In_aliases.h" value="HEADER;;;;;ADC_In" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_In.c" value="SOURCE_C;CortexM3;;;;ADC_In" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_In.h" value="HEADER;;;;;ADC_In" />
@@ -151,15 +145,6 @@
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\isr_DMA_FFT_UART.h" value="HEADER;;;;;isr_DMA_FFT_UART" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\UART_LOG_IntClock.c" value="SOURCE_C;CortexM3;;;;UART_LOG_IntClock" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\UART_LOG_IntClock.h" value="HEADER;;;;;UART_LOG_IntClock" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_DacClk.c" value="SOURCE_C;CortexM3;;;;WaveDAC8_DacClk" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_DacClk.h" value="HEADER;;;;;WaveDAC8_DacClk" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_Wave1_DMA_dma.c" value="SOURCE_C;CortexM3;;;;WaveDAC8_Wave1_DMA" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_Wave1_DMA_dma.h" value="HEADER;;;;;WaveDAC8_Wave1_DMA" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_Wave2_DMA_dma.c" value="SOURCE_C;CortexM3;;;;WaveDAC8_Wave2_DMA" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_Wave2_DMA_dma.h" value="HEADER;;;;;WaveDAC8_Wave2_DMA" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_VDAC8.c" value="SOURCE_C;CortexM3;;;;WaveDAC8_VDAC8" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_VDAC8.h" value="HEADER;;;;;WaveDAC8_VDAC8" />
-  <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\WaveDAC8_VDAC8_PM.c" value="SOURCE_C;CortexM3;;;;WaveDAC8_VDAC8" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_DelSig_AMux.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig_AMux" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_DelSig_AMux.h" value="HEADER;;;;;ADC_DelSig_AMux" />
   <file name="C:\Users\zakis\Documents\SDHD_LAB\MovementDetector\40_Implementation\20_SW\10_work\MovementDetector\RADAR_Movement_Detector.cydsn\codegentemp\ADC_DelSig_Ext_CP_Clk.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig_Ext_CP_Clk" />

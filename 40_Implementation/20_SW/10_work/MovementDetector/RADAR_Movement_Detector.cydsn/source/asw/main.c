@@ -84,7 +84,7 @@ TASK(tsk_control)
     EventMaskType ev = 0;
     
     while (1){
-        WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived | ev_sendFFT);
+        WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived | ev_sendFFT | ev_tReceived | ev_nReceived);
         GetEvent(tsk_control, &ev);
         ClearEvent(ev);
         

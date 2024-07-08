@@ -21,7 +21,7 @@ fopen(PSoC);
 
 
 count = 1;
-totalCount = 6;
+totalCount = 11;
 f1 = figure;
 
 flg_data_avai = 0;
@@ -29,11 +29,12 @@ fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 
 while(flg_data_avai == 0)
     fprintf("Bytes Available: %d\n", PSoC.BytesAvailable); % Print BytesAvailable
-    if PSoC.BytesAvailable == 8192 + 2048
+    if PSoC.BytesAvailable == 10240 %8192 + 2048
 
         %fwrite(PSoC,'o','uchar') % means I received all expected data
 
         rx_data_signal = fread(PSoC,1024,'int16');
+        rx_data_fft = fread(PSoC,2048,'int32');
         figure(1)
         subplot(4,1,1);
         plot(n,rx_data_signal);
@@ -52,7 +53,7 @@ while(flg_data_avai == 0)
         title('signal fft - matlab')
 
 
-        rx_data_fft = fread(PSoC,2048,'int32');
+        %rx_data_fft = fread(PSoC,2048,'int32');
 
 
         % Spectral computation
@@ -69,6 +70,7 @@ while(flg_data_avai == 0)
         xlabel 'Frequency Bins'
         ylabel 'amplitude'
         title('signal fft - psoc')
+        
 
         %adc_fft_db = 20*log10((1/N)*abs(adc_fft));
         rx_data_signal_power = ((abs(rx_data_signal_fft_psoc)).^2);
@@ -81,42 +83,42 @@ while(flg_data_avai == 0)
         title('Spectrum of the signal')
 
 
-        % CFAR
-        % Implement CA-CFAR Algorithm
-
-        % Initialize arrays for thresholds and detected targets
-        thresholds = zeros(N, 1);
-        targets = zeros(N, 1);
-
-        % Calculate the scaling factor alpha using PFA
-        alpha = NR * (PFA^(-1/NR) - 1);
-
-        %alpha = PFA;
-
-        % Calculate the CA-CFAR threshold for each cell under test
-        for i = NR + NG + 1 : N - NR - NG %setting the range of i, i=CUT
-            %consider cells for lagging &leading window, [x1,x2,x3,CUT,x5,x6,x7]
-
-            % Reference cells: sum of the reference cells surrounding the CUT
-            lagging_cells = rx_data_signal_power(i - NR - NG : i - NG - 1); %cells behind CUT
-            leading_cells = rx_data_signal_power(i + NG + 1 : i + NG + NR); %cells after CUT
-
-            % Compute the noise level by avg the reference cells
-            noise_level = mean([lagging_cells', leading_cells']');
-
-            % calculate CFAR threshold by scaling
-            threshold = noise_level * alpha;
-            %threshold = noise_level * PFA;
-
-
-            % Store the threshold
-            thresholds(i) = threshold;
-
-            % Check if spectra peaks go above the calculated threshold limit
-            if rx_data_signal_power(i) > threshold
-                targets(i) = rx_data_signal_power(i); % Target detected
-            end
-        end
+%         % CFAR
+%         % Implement CA-CFAR Algorithm
+% 
+%         % Initialize arrays for thresholds and detected targets
+%         thresholds = zeros(N, 1);
+%         targets = zeros(N, 1);
+% 
+%         % Calculate the scaling factor alpha using PFA
+%         alpha = NR * (PFA^(-1/NR) - 1);
+% 
+%         %alpha = PFA;
+% 
+%         % Calculate the CA-CFAR threshold for each cell under test
+%         for i = NR + NG + 1 : N - NR - NG %setting the range of i, i=CUT
+%             %consider cells for lagging &leading window, [x1,x2,x3,CUT,x5,x6,x7]
+% 
+%             % Reference cells: sum of the reference cells surrounding the CUT
+%             lagging_cells = rx_data_signal_power(i - NR - NG : i - NG - 1); %cells behind CUT
+%             leading_cells = rx_data_signal_power(i + NG + 1 : i + NG + NR); %cells after CUT
+% 
+%             % Compute the noise level by avg the reference cells
+%             noise_level = mean([lagging_cells', leading_cells']');
+% 
+%             % calculate CFAR threshold by scaling
+%             threshold = noise_level * alpha;
+%             %threshold = noise_level * PFA;
+% 
+% 
+%             % Store the threshold
+%             thresholds(i) = threshold;
+% 
+%             % Check if spectra peaks go above the calculated threshold limit
+%             if rx_data_signal_power(i) > threshold
+%                 targets(i) = rx_data_signal_power(i); % Target detected
+%             end
+%         end
         count=count+1;
         % Plot the resulting threshold and detected targets in the spectra plot
 
@@ -130,17 +132,17 @@ while(flg_data_avai == 0)
             plot(n, thresholds, 'r', 'LineWidth', 1);
             legend('Spectrum', 'Threshold')
         end
-
-
-
-        %save(strcat('CW_rx_data_adc_',int2str(count),'.mat'),'rx_data_adc');
-
-        if (num_targets > 0)
-            fwrite(PSoC,'t','uchar') % means target detected
-        end
-        if (num_targets == 0)
-            fwrite(PSoC,'n','uchar') % means target detected
-        end
+% 
+% 
+% 
+%         %save(strcat('CW_rx_data_adc_',int2str(count),'.mat'),'rx_data_adc');
+% 
+%         if (num_targets > 0)
+%             fwrite(PSoC,'t','uchar') % means target detected
+%         end
+%         if (num_targets == 0)
+%             fwrite(PSoC,'n','uchar') % means target detected
+%         end
         fwrite(PSoC,'o','uchar') % means I received all expected data
     end
 

@@ -63,7 +63,7 @@ RC_t DETECTOR_initDrivers(){
     UART_init();
     DMA_Init();
     ADC_Init();
-    DAC_Init();
+    //DAC_Init();
     
     return RC_SUCCESS;
 }
@@ -125,7 +125,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                 if (ev & ev_pushButton){
   
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_ON);
-                    DAC_Set(DAC_ON);
+                    //DAC_Set(DAC_ON);
                     ADC_Set(ADC_ON);
                     
                     detector -> detectorState = SAMPLING;
@@ -257,17 +257,17 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     
                     detector -> numberOfTransfers += 1;
-                    if (detector -> numberOfTransfers < 5){
+                    if (detector -> numberOfTransfers < 10){
                         detector -> detectorState = SAMPLING;
 //                        DETECTOR_setLedState(SAMPLING);
                         
                         SetEvent(tsk_control, ev_reSample);
                     }
-                    else if (detector -> numberOfTransfers == 5){
+                    else if (detector -> numberOfTransfers == 10){
                         detector -> detectorState = IDLE;
 //                        DETECTOR_setLedState(IDLE);
 
-                        DAC_Set(DAC_OFF);
+                        //DAC_Set(DAC_OFF);
                         ADC_Set(ADC_OFF);
                         
                         detector -> numberOfTransfers = 0;
