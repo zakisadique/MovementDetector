@@ -52,10 +52,15 @@ while(flg_data_avai == 0)
              plot([0:(length(rx_data_adc)-1)],rx_data_adc(1:(length(rx_data_adc))));
              title(['Received Time Domain Data No.:',num2str(count)]);
              subplot(3,1,2)
-             plot([0:1023],1/length(rx_data_adc)*20*log10(abs(fft(rx_data_adc))));
+
+            plot([0:1023],20*log10(1/length(rx_data_adc)*(abs(fft(rx_data_adc)))));
+
+             %plot([0:1023],1/length(rx_data_adc)*20*log10(abs(fft(rx_data_adc))));
              title('FFT - Array - Matlab');
              subplot(3,1,3)
-             plot([0:1023],1/length(rx_data_adc)*2*20*log10(fft_mag));
+
+             plot([0:1023],20*log10(fft_mag));
+             %plot([0:1023],1/length(rx_data_adc)*2*20*log10(fft_mag));
              title('FFT - Array - PSoC');
              
 

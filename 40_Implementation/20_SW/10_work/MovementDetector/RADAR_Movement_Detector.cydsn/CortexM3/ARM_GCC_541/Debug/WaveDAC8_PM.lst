@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
   28:Generated_Source\PSoC5/WaveDAC8_PM.c **** *  
   29:Generated_Source\PSoC5/WaveDAC8_PM.c **** * Parameters:  
   30:Generated_Source\PSoC5/WaveDAC8_PM.c **** *  None
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 2
 
 
   31:Generated_Source\PSoC5/WaveDAC8_PM.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
   60              		.global	WaveDAC8_Wakeup
   61              		.thumb
   62              		.thumb_func
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 3
 
 
   63              		.type	WaveDAC8_Wakeup, %function
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
   85              	.L5:
   86 0012 08BD     		pop	{r3, pc}
   87              	.L9:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 4
 
 
   88              		.align	2
@@ -208,37 +208,37 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  112 000b 01       		.uleb128 0x1
  113 000c 27000000 		.4byte	.LASF23
  114 0010 0C       		.byte	0xc
- 115 0011 06010000 		.4byte	.LASF24
- 116 0015 F7010000 		.4byte	.LASF25
+ 115 0011 0B010000 		.4byte	.LASF24
+ 116 0015 3E010000 		.4byte	.LASF25
  117 0019 00000000 		.4byte	.Ldebug_ranges0+0
  118 001d 00000000 		.4byte	0
  119 0021 00000000 		.4byte	.Ldebug_line0
  120 0025 02       		.uleb128 0x2
  121 0026 01       		.byte	0x1
  122 0027 06       		.byte	0x6
- 123 0028 9A010000 		.4byte	.LASF0
+ 123 0028 1C020000 		.4byte	.LASF0
  124 002c 02       		.uleb128 0x2
  125 002d 01       		.byte	0x1
  126 002e 08       		.byte	0x8
- 127 002f 2B010000 		.4byte	.LASF1
+ 127 002f 30010000 		.4byte	.LASF1
  128 0033 02       		.uleb128 0x2
  129 0034 02       		.byte	0x2
  130 0035 05       		.byte	0x5
- 131 0036 64010000 		.4byte	.LASF2
+ 131 0036 E6010000 		.4byte	.LASF2
  132 003a 02       		.uleb128 0x2
  133 003b 02       		.byte	0x2
  134 003c 07       		.byte	0x7
- 135 003d 87010000 		.4byte	.LASF3
+ 135 003d 09020000 		.4byte	.LASF3
  136 0041 02       		.uleb128 0x2
  137 0042 04       		.byte	0x4
  138 0043 05       		.byte	0x5
- 139 0044 5B010000 		.4byte	.LASF4
+ 139 0044 DD010000 		.4byte	.LASF4
  140 0048 02       		.uleb128 0x2
  141 0049 04       		.byte	0x4
  142 004a 07       		.byte	0x7
- 143 004b 6E010000 		.4byte	.LASF5
+ 143 004b F0010000 		.4byte	.LASF5
  144 004f 02       		.uleb128 0x2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 5
 
 
  145 0050 08       		.byte	0x8
@@ -268,13 +268,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  169 007e 02       		.uleb128 0x2
  170 007f 08       		.byte	0x8
  171 0080 04       		.byte	0x4
- 172 0081 80010000 		.4byte	.LASF10
+ 172 0081 02020000 		.4byte	.LASF10
  173 0085 02       		.uleb128 0x2
  174 0086 01       		.byte	0x1
  175 0087 08       		.byte	0x8
- 176 0088 39010000 		.4byte	.LASF11
+ 176 0088 06010000 		.4byte	.LASF11
  177 008c 04       		.uleb128 0x4
- 178 008d F2010000 		.4byte	.LASF13
+ 178 008d 74020000 		.4byte	.LASF13
  179 0091 02       		.byte	0x2
  180 0092 9202     		.2byte	0x292
  181 0094 98000000 		.4byte	0x98
@@ -283,7 +283,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  184 009d 02       		.uleb128 0x2
  185 009e 08       		.byte	0x8
  186 009f 04       		.byte	0x4
- 187 00a0 C0010000 		.4byte	.LASF14
+ 187 00a0 42020000 		.4byte	.LASF14
  188 00a4 02       		.uleb128 0x2
  189 00a5 04       		.byte	0x4
  190 00a6 07       		.byte	0x7
@@ -298,18 +298,18 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  199 00b8 03       		.byte	0x3
  200 00b9 5F       		.byte	0x5f
  201 00ba 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 6
 
 
  202 00be 00       		.byte	0
  203 00bf 00       		.byte	0
  204 00c0 08       		.uleb128 0x8
- 205 00c1 CC010000 		.4byte	.LASF16
+ 205 00c1 4E020000 		.4byte	.LASF16
  206 00c5 03       		.byte	0x3
  207 00c6 60       		.byte	0x60
  208 00c7 AB000000 		.4byte	0xab
  209 00cb 09       		.uleb128 0x9
- 210 00cc E3010000 		.4byte	.LASF17
+ 210 00cc 65020000 		.4byte	.LASF17
  211 00d0 01       		.byte	0x1
  212 00d1 2B       		.byte	0x2b
  213 00d2 00000000 		.4byte	.LFB0
@@ -354,16 +354,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  252 0135 03       		.byte	0x3
  253 0136 6C       		.byte	0x6c
  254 0137 0C       		.uleb128 0xc
- 255 0138 A6010000 		.4byte	.LASF20
- 256 013c A6010000 		.4byte	.LASF20
+ 255 0138 28020000 		.4byte	.LASF20
+ 256 013c 28020000 		.4byte	.LASF20
  257 0140 04       		.byte	0x4
  258 0141 3B       		.byte	0x3b
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 7
 
 
  259 0142 0C       		.uleb128 0xc
- 260 0143 3E010000 		.4byte	.LASF21
- 261 0147 3E010000 		.4byte	.LASF21
+ 260 0143 C0010000 		.4byte	.LASF21
+ 261 0147 C0010000 		.4byte	.LASF21
  262 014b 04       		.byte	0x4
  263 014c 3C       		.byte	0x3c
  264 014d 0C       		.uleb128 0xc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  313 0029 04       		.uleb128 0x4
  314 002a 16       		.uleb128 0x16
  315 002b 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 8
 
 
  316 002c 03       		.uleb128 0x3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  370 0062 49       		.uleb128 0x49
  371 0063 13       		.uleb128 0x13
  372 0064 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 9
 
 
  373 0065 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  427 009e 19       		.uleb128 0x19
  428 009f 3C       		.uleb128 0x3c
  429 00a0 19       		.uleb128 0x19
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 10
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 10
 
 
  430 00a1 6E       		.uleb128 0x6e
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  472              	.LASF23:
  473 0027 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  473      43313120 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 11
 
 
  473      352E342E 
@@ -641,99 +641,99 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 1
  486              	.LASF9:
  487 0100 666C6F61 		.ascii	"float\000"
  487      7400
- 488              	.LASF24:
- 489 0106 47656E65 		.ascii	"Generated_Source\\PSoC5\\WaveDAC8_PM.c\000"
- 489      72617465 
- 489      645F536F 
- 489      75726365 
- 489      5C50536F 
- 490              	.LASF1:
- 491 012b 756E7369 		.ascii	"unsigned char\000"
- 491      676E6564 
- 491      20636861 
- 491      7200
- 492              	.LASF11:
- 493 0139 63686172 		.ascii	"char\000"
- 493      00
- 494              	.LASF21:
- 495 013e 57617665 		.ascii	"WaveDAC8_VDAC8_RestoreConfig\000"
- 495      44414338 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 12
+ 488              	.LASF11:
+ 489 0106 63686172 		.ascii	"char\000"
+ 489      00
+ 490              	.LASF24:
+ 491 010b 47656E65 		.ascii	"Generated_Source\\PSoC5\\WaveDAC8_PM.c\000"
+ 491      72617465 
+ 491      645F536F 
+ 491      75726365 
+ 491      5C50536F 
+ 492              	.LASF1:
+ 493 0130 756E7369 		.ascii	"unsigned char\000"
+ 493      676E6564 
+ 493      20636861 
+ 493      7200
+ 494              	.LASF25:
+ 495 013e 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD_FFT\\MovementDete"
+ 495      73657273 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 12
 
 
- 495      5F564441 
- 495      43385F52 
- 495      6573746F 
- 496              	.LASF4:
- 497 015b 6C6F6E67 		.ascii	"long int\000"
- 497      20696E74 
- 497      00
- 498              	.LASF2:
- 499 0164 73686F72 		.ascii	"short int\000"
- 499      7420696E 
- 499      7400
- 500              	.LASF5:
- 501 016e 6C6F6E67 		.ascii	"long unsigned int\000"
- 501      20756E73 
- 501      69676E65 
- 501      6420696E 
- 501      7400
- 502              	.LASF10:
- 503 0180 646F7562 		.ascii	"double\000"
- 503      6C6500
- 504              	.LASF3:
- 505 0187 73686F72 		.ascii	"short unsigned int\000"
- 505      7420756E 
- 505      7369676E 
- 505      65642069 
- 505      6E7400
- 506              	.LASF0:
- 507 019a 7369676E 		.ascii	"signed char\000"
- 507      65642063 
- 507      68617200 
- 508              	.LASF20:
- 509 01a6 57617665 		.ascii	"WaveDAC8_VDAC8_SaveConfig\000"
- 509      44414338 
- 509      5F564441 
- 509      43385F53 
- 509      61766543 
- 510              	.LASF14:
- 511 01c0 6C6F6E67 		.ascii	"long double\000"
- 511      20646F75 
- 511      626C6500 
- 512              	.LASF16:
- 513 01cc 57617665 		.ascii	"WaveDAC8_BACKUP_STRUCT\000"
+ 495      5C7A616B 
+ 495      69735C44 
+ 495      6F63756D 
+ 496 016c 63746F72 		.ascii	"ctor\\40_Implementation\\20_SW\\10_work\\MovementDe"
+ 496      5C34305F 
+ 496      496D706C 
+ 496      656D656E 
+ 496      74617469 
+ 497 019b 74656374 		.ascii	"tector\\RADAR_Movement_Detector.cydsn\000"
+ 497      6F725C52 
+ 497      41444152 
+ 497      5F4D6F76 
+ 497      656D656E 
+ 498              	.LASF21:
+ 499 01c0 57617665 		.ascii	"WaveDAC8_VDAC8_RestoreConfig\000"
+ 499      44414338 
+ 499      5F564441 
+ 499      43385F52 
+ 499      6573746F 
+ 500              	.LASF4:
+ 501 01dd 6C6F6E67 		.ascii	"long int\000"
+ 501      20696E74 
+ 501      00
+ 502              	.LASF2:
+ 503 01e6 73686F72 		.ascii	"short int\000"
+ 503      7420696E 
+ 503      7400
+ 504              	.LASF5:
+ 505 01f0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 505      20756E73 
+ 505      69676E65 
+ 505      6420696E 
+ 505      7400
+ 506              	.LASF10:
+ 507 0202 646F7562 		.ascii	"double\000"
+ 507      6C6500
+ 508              	.LASF3:
+ 509 0209 73686F72 		.ascii	"short unsigned int\000"
+ 509      7420756E 
+ 509      7369676E 
+ 509      65642069 
+ 509      6E7400
+ 510              	.LASF0:
+ 511 021c 7369676E 		.ascii	"signed char\000"
+ 511      65642063 
+ 511      68617200 
+ 512              	.LASF20:
+ 513 0228 57617665 		.ascii	"WaveDAC8_VDAC8_SaveConfig\000"
  513      44414338 
- 513      5F424143 
- 513      4B55505F 
- 513      53545255 
- 514              	.LASF17:
- 515 01e3 57617665 		.ascii	"WaveDAC8_Sleep\000"
- 515      44414338 
- 515      5F536C65 
- 515      657000
- 516              	.LASF13:
- 517 01f2 72656738 		.ascii	"reg8\000"
- 517      00
- 518              	.LASF25:
- 519 01f7 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD_LAB\\MovementDete"
- 519      73657273 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJXzVCq.s 			page 13
+ 513      5F564441 
+ 513      43385F53 
+ 513      61766543 
+ 514              	.LASF14:
+ 515 0242 6C6F6E67 		.ascii	"long double\000"
+ 515      20646F75 
+ 515      626C6500 
+ 516              	.LASF16:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccJaqQg1.s 			page 13
 
 
- 519      5C7A616B 
- 519      69735C44 
- 519      6F63756D 
- 520 0225 63746F72 		.ascii	"ctor\\40_Implementation\\20_SW\\10_work\\MovementDe"
- 520      5C34305F 
- 520      496D706C 
- 520      656D656E 
- 520      74617469 
- 521 0254 74656374 		.ascii	"tector\\RADAR_Movement_Detector.cydsn\000"
- 521      6F725C52 
- 521      41444152 
- 521      5F4D6F76 
- 521      656D656E 
+ 517 024e 57617665 		.ascii	"WaveDAC8_BACKUP_STRUCT\000"
+ 517      44414338 
+ 517      5F424143 
+ 517      4B55505F 
+ 517      53545255 
+ 518              	.LASF17:
+ 519 0265 57617665 		.ascii	"WaveDAC8_Sleep\000"
+ 519      44414338 
+ 519      5F536C65 
+ 519      657000
+ 520              	.LASF13:
+ 521 0274 72656738 		.ascii	"reg8\000"
+ 521      00
  522              	.LASF15:
  523 0279 73697A65 		.ascii	"sizetype\000"
  523      74797065 

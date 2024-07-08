@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
   28:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****  * exception statement from your version.
   29:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****  *
   30:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****  * ERIKA Enterprise is distributed in the hope that it will be
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 2
 
 
   31:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
   33              	.LVL0:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 3
 
 
   34              	.LBB24:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
   51:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Carlos Fernando Meier Martinez
   52:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Hochschule Darmstadt, Germany. 2017.
   53:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 4
 
 
   54:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  108:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** return temp;
  109:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** }
  110:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 5
 
 
  111:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* Set a breakpoint */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  165:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  166:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /*extern	EE_UREG EE_pic30_thread_tos[];
  167:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define	EE_std_thread_tos EE_pic30_thread_tos */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 6
 
 
  168:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif /* __MULTI__ */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  222:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __IAR__
  223:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__set_PRIMASK(f);
  224:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __IAR__ */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 7
 
 
  225:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
   83:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****   /* Primitive Lock Procedure */
   84:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****   EE_OS_DECLARE_AND_ENTER_CRITICAL_SECTION();
   85:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 8
 
 
   86:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****   EE_ORTI_set_service_in(EE_SERVICETRACE_GETELAPSEDVALUE);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  136:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****     ev = EE_as_rpc(OSServiceId_GetElapsedValue, unmarked_alarm_id, as_value,
  137:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****       as_elapsed_value);
  138:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****   } else {
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 9
 
 
  139:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c **** #endif /* EE_AS_RPC__ */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
   81 0028 4D1B     		subs	r5, r1, r5
   82 002a 02E0     		b	.L4
   83              	.L3:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 10
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 10
 
 
  169:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****         /* Timer already passed the <value> */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  181:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****   }
  182:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c **** #endif /* EE_AS_RPC__ */
  183:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 11
 
 
  184:Generated_Source\PSoC5/ErikaOS_ee_getelapsedvalue.c ****   if ( ev != E_OK ) {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  160              		.cfi_restore 5
  161              		.cfi_restore 4
  162              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 12
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 12
 
 
  163 0050 7047     		bx	lr
@@ -690,7 +690,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  189 000c 03050000 		.4byte	.LASF74
  190 0010 0C       		.byte	0xc
  191 0011 9A050000 		.4byte	.LASF75
- 192 0015 71040000 		.4byte	.LASF76
+ 192 0015 B6030000 		.4byte	.LASF76
  193 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
  194 001d 00000000 		.4byte	0
  195 0021 00000000 		.4byte	.Ldebug_line0
@@ -709,7 +709,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  208 003a 02       		.uleb128 0x2
  209 003b 02       		.byte	0x2
  210 003c 07       		.byte	0x7
- 211 003d 92030000 		.4byte	.LASF3
+ 211 003d 85030000 		.4byte	.LASF3
  212 0041 02       		.uleb128 0x2
  213 0042 04       		.byte	0x4
  214 0043 05       		.byte	0x5
@@ -717,8 +717,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  216 0048 02       		.uleb128 0x2
  217 0049 04       		.byte	0x4
  218 004a 07       		.byte	0x7
- 219 004b 06040000 		.4byte	.LASF5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 13
+ 219 004b 7B040000 		.4byte	.LASF5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 13
 
 
  220 004f 02       		.uleb128 0x2
@@ -752,12 +752,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  248 0083 3F       		.byte	0x3f
  249 0084 25000000 		.4byte	0x25
  250 0088 04       		.uleb128 0x4
- 251 0089 C3030000 		.4byte	.LASF12
+ 251 0089 38040000 		.4byte	.LASF12
  252 008d 03       		.byte	0x3
  253 008e 52       		.byte	0x52
  254 008f 3A000000 		.4byte	0x3a
  255 0093 04       		.uleb128 0x4
- 256 0094 83030000 		.4byte	.LASF13
+ 256 0094 76030000 		.4byte	.LASF13
  257 0098 03       		.byte	0x3
  258 0099 53       		.byte	0x53
  259 009a 5D000000 		.4byte	0x5d
@@ -777,8 +777,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  273 00ba 4F       		.byte	0x4f
  274 00bb 9E000000 		.4byte	0x9e
  275 00bf 04       		.uleb128 0x4
- 276 00c0 18040000 		.4byte	.LASF17
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 14
+ 276 00c0 8D040000 		.4byte	.LASF17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 14
 
 
  277 00c4 02       		.byte	0x2
@@ -813,7 +813,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  306 0105 5D02     		.2byte	0x25d
  307 0107 A9000000 		.4byte	0xa9
  308 010b 05       		.uleb128 0x5
- 309 010c 65040000 		.4byte	.LASF23
+ 309 010c DA040000 		.4byte	.LASF23
  310 0110 04       		.byte	0x4
  311 0111 6C02     		.2byte	0x26c
  312 0113 A9000000 		.4byte	0xa9
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  331 013b FF000000 		.4byte	.LASF26
  332 013f 04       		.byte	0x4
  333 0140 7502     		.2byte	0x275
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 15
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 15
 
 
  334 0142 E1000000 		.4byte	0xe1
@@ -879,7 +879,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  369 018b 8A02     		.2byte	0x28a
  370 018d 9E010000 		.4byte	0x19e
  371 0191 0A       		.uleb128 0xa
- 372 0192 4E040000 		.4byte	.LASF31
+ 372 0192 C3040000 		.4byte	.LASF31
  373 0196 00       		.byte	0
  374 0197 0A       		.uleb128 0xa
  375 0198 F8010000 		.4byte	.LASF32
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  388 01b6 07       		.uleb128 0x7
  389 01b7 0C       		.byte	0xc
  390 01b8 04       		.byte	0x4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 16
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 16
 
 
  391 01b9 9402     		.2byte	0x294
@@ -923,7 +923,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  410 01e3 08       		.byte	0x8
  411 01e4 00       		.byte	0
  412 01e5 05       		.uleb128 0x5
- 413 01e6 A5030000 		.4byte	.LASF37
+ 413 01e6 98030000 		.4byte	.LASF37
  414 01ea 04       		.byte	0x4
  415 01eb 9B02     		.2byte	0x29b
  416 01ed B6010000 		.4byte	0x1b6
@@ -933,7 +933,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  420 01f4 9F02     		.2byte	0x29f
  421 01f6 2F020000 		.4byte	0x22f
  422 01fa 08       		.uleb128 0x8
- 423 01fb 57040000 		.4byte	.LASF38
+ 423 01fb CC040000 		.4byte	.LASF38
  424 01ff 04       		.byte	0x4
  425 0200 A002     		.2byte	0x2a0
  426 0202 BF000000 		.4byte	0xbf
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  445 022d 0C       		.byte	0xc
  446 022e 00       		.byte	0
  447 022f 05       		.uleb128 0x5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 17
 
 
  448 0230 22020000 		.4byte	.LASF42
@@ -978,13 +978,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  462 0252 03       		.byte	0x3
  463 0253 63020000 		.4byte	0x263
  464 0257 0D       		.uleb128 0xd
- 465 0258 8C030000 		.4byte	.LASF78
+ 465 0258 7F030000 		.4byte	.LASF78
  466 025c 02       		.byte	0x2
  467 025d F4       		.byte	0xf4
  468 025e B4000000 		.4byte	0xb4
  469 0262 00       		.byte	0
  470 0263 0E       		.uleb128 0xe
- 471 0264 CD030000 		.4byte	.LASF44
+ 471 0264 42040000 		.4byte	.LASF44
  472 0268 02       		.byte	0x2
  473 0269 DC       		.byte	0xdc
  474 026a 03       		.byte	0x3
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  502 02a2 A303     		.2byte	0x3a3
  503 02a4 03       		.byte	0x3
  504 02a5 B5020000 		.4byte	0x2b5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 18
 
 
  505 02a9 11       		.uleb128 0x11
@@ -1068,7 +1068,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  549 0304 9C       		.byte	0x9c
  550 0305 B9030000 		.4byte	0x3b9
  551 0309 15       		.uleb128 0x15
- 552 030a 44040000 		.4byte	.LASF49
+ 552 030a B9040000 		.4byte	.LASF49
  553 030e 01       		.byte	0x1
  554 030f 4F       		.byte	0x4f
  555 0310 0B010000 		.4byte	0x10b
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  559 031d 01       		.byte	0x1
  560 031e 4F       		.byte	0x4f
  561 031f ED000000 		.4byte	0xed
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 19
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 19
 
 
  562 0323 85000000 		.4byte	.LLST1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  616 03a3 3A000000 		.4byte	.LBB28
  617 03a7 00000000 		.4byte	.Ldebug_ranges0+0
  618 03ab 05       		.byte	0x5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 20
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 20
 
 
  619 03ac 6A       		.byte	0x6a
@@ -1154,7 +1154,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  629 03bf 44       		.byte	0x44
  630 03c0 A9000000 		.4byte	0xa9
  631 03c4 1F       		.uleb128 0x1f
- 632 03c5 6A030000 		.4byte	.LASF54
+ 632 03c5 5D030000 		.4byte	.LASF54
  633 03c9 07       		.byte	0x7
  634 03ca 48       		.byte	0x48
  635 03cb CA000000 		.4byte	0xca
@@ -1168,7 +1168,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  643 03df 02       		.uleb128 0x2
  644 03e0 04       		.byte	0x4
  645 03e1 07       		.byte	0x7
- 646 03e2 5C040000 		.4byte	.LASF55
+ 646 03e2 D1040000 		.4byte	.LASF55
  647 03e6 22       		.uleb128 0x22
  648 03e7 A9000000 		.4byte	0xa9
  649 03eb 1F       		.uleb128 0x1f
@@ -1179,7 +1179,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  654 03f6 22       		.uleb128 0x22
  655 03f7 CF030000 		.4byte	0x3cf
  656 03fb 1F       		.uleb128 0x1f
- 657 03fc 30040000 		.4byte	.LASF57
+ 657 03fc A5040000 		.4byte	.LASF57
  658 0400 04       		.byte	0x4
  659 0401 B3       		.byte	0xb3
  660 0402 06040000 		.4byte	0x406
@@ -1193,12 +1193,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  668 0419 02       		.byte	0x2
  669 041a 00       		.byte	0
  670 041b 1F       		.uleb128 0x1f
- 671 041c 51030000 		.4byte	.LASF58
+ 671 041c E6040000 		.4byte	.LASF58
  672 0420 04       		.byte	0x4
  673 0421 CA       		.byte	0xca
  674 0422 0B040000 		.4byte	0x40b
  675 0426 20       		.uleb128 0x20
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 21
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 21
 
 
  676 0427 CA000000 		.4byte	0xca
@@ -1213,12 +1213,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  685 043c D2       		.byte	0xd2
  686 043d 26040000 		.4byte	0x426
  687 0441 1F       		.uleb128 0x1f
- 688 0442 5E030000 		.4byte	.LASF60
+ 688 0442 51030000 		.4byte	.LASF60
  689 0446 04       		.byte	0x4
  690 0447 DA       		.byte	0xda
  691 0448 0B040000 		.4byte	0x40b
  692 044c 1F       		.uleb128 0x1f
- 693 044d 24040000 		.4byte	.LASF61
+ 693 044d 99040000 		.4byte	.LASF61
  694 0451 04       		.byte	0x4
  695 0452 E2       		.byte	0xe2
  696 0453 CA000000 		.4byte	0xca
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  730 04a5 00       		.byte	0
  731 04a6 22       		.uleb128 0x22
  732 04a7 48010000 		.4byte	0x148
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 22
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 22
 
 
  733 04ab 23       		.uleb128 0x23
@@ -1292,7 +1292,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  761 04f0 00       		.byte	0
  762 04f1 00       		.byte	0
  763 04f2 23       		.uleb128 0x23
- 764 04f3 E4030000 		.4byte	.LASF68
+ 764 04f3 59040000 		.4byte	.LASF68
  765 04f7 04       		.byte	0x4
  766 04f8 FB02     		.2byte	0x2fb
  767 04fa E2040000 		.4byte	0x4e2
@@ -1318,11 +1318,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  787 052a 08       		.byte	0x8
  788 052b 47       		.byte	0x47
  789 052c B4000000 		.4byte	0xb4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 23
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 23
 
 
  790 0530 1F       		.uleb128 0x1f
- 791 0531 F3030000 		.4byte	.LASF72
+ 791 0531 68040000 		.4byte	.LASF72
  792 0535 08       		.byte	0x8
  793 0536 4A       		.byte	0x4a
  794 0537 A9000000 		.4byte	0xa9
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  844 001e 03       		.uleb128 0x3
  845 001f 24       		.uleb128 0x24
  846 0020 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 24
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 24
 
 
  847 0021 0B       		.uleb128 0xb
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  901 0057 00       		.byte	0
  902 0058 00       		.byte	0
  903 0059 08       		.uleb128 0x8
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 25
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 25
 
 
  904 005a 0D       		.uleb128 0xd
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  958 0090 2E       		.uleb128 0x2e
  959 0091 01       		.byte	0x1
  960 0092 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 26
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 26
 
 
  961 0093 0E       		.uleb128 0xe
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1015 00c9 49       		.uleb128 0x49
  1016 00ca 13       		.uleb128 0x13
  1017 00cb 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 27
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 27
 
 
  1018 00cc 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1072 0102 0B       		.uleb128 0xb
  1073 0103 27       		.uleb128 0x27
  1074 0104 19       		.uleb128 0x19
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 28
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 28
 
 
  1075 0105 49       		.uleb128 0x49
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1129 013c 0B       		.uleb128 0xb
  1130 013d 3B       		.uleb128 0x3b
  1131 013e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 29
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 29
 
 
  1132 013f 49       		.uleb128 0x49
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1186 0175 1D       		.uleb128 0x1d
  1187 0176 01       		.byte	0x1
  1188 0177 31       		.uleb128 0x31
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 30
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 30
 
 
  1189 0178 13       		.uleb128 0x13
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1243 01ae 34       		.uleb128 0x34
  1244 01af 00       		.byte	0
  1245 01b0 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 31
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 31
 
 
  1246 01b1 0E       		.uleb128 0xe
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1300 01e7 00       		.byte	0
  1301 01e8 00       		.byte	0
  1302              		.section	.debug_loc,"",%progbits
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 32
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 32
 
 
  1303              	.Ldebug_loc0:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1357 007a 01       		.uleb128 0x1
  1358 007b 50       		.byte	0x50
  1359 007c 9F       		.byte	0x9f
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 33
 
 
  1360 007d 00000000 		.4byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1414 0106 53       		.byte	0x53
  1415 0107 4A000000 		.4byte	.LVL14
  1416 010b 4E000000 		.4byte	.LVL15
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 34
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 34
 
 
  1417 010f 0100     		.2byte	0x1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1457 0035 45455F72 		.ascii	"EE_rq_bitmask\000"
  1457      715F6269 
  1457      746D6173 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 35
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 35
 
 
  1457      6B00
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1482              	.LASF21:
  1483 00db 5469636B 		.ascii	"TickRefType\000"
  1483      52656654 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 36
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 36
 
 
  1483      79706500 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1505      6F5F636F 
  1505      756E7465 
  1505      725F5241 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 37
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 37
 
 
  1505      4D5F7479 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1527      54797065 
  1527      00
  1528              	.LASF62:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 38
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 38
 
 
  1529 0260 45455F73 		.ascii	"EE_sys_ceiling\000"
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1549      7369676E 
  1549      65642069 
  1550              	.LASF79:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 39
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 39
 
 
  1551 0329 45455F61 		.ascii	"EE_as_monitoring_the_stack\000"
@@ -2291,122 +2291,122 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 1
  1553      676E6564 
  1553      20696E74 
  1553      00
- 1554              	.LASF58:
- 1555 0351 45455F74 		.ascii	"EE_th_status\000"
- 1555      685F7374 
- 1555      61747573 
- 1555      00
- 1556              	.LASF60:
- 1557 035e 45455F74 		.ascii	"EE_th_rnact\000"
- 1557      685F726E 
- 1557      61637400 
- 1558              	.LASF54:
- 1559 036a 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
- 1559      74645F65 
- 1559      6E646379 
- 1559      636C655F 
- 1559      6E657874 
- 1560              	.LASF13:
- 1561 0383 45455F49 		.ascii	"EE_INT32\000"
- 1561      4E543332 
- 1561      00
- 1562              	.LASF78:
- 1563 038c 69737461 		.ascii	"istat\000"
- 1563      7400
- 1564              	.LASF3:
- 1565 0392 73686F72 		.ascii	"short unsigned int\000"
- 1565      7420756E 
- 1565      7369676E 
- 1565      65642069 
- 1565      6E7400
- 1566              	.LASF37:
- 1567 03a5 45455F6F 		.ascii	"EE_oo_counter_object_ROM_type\000"
- 1567      6F5F636F 
- 1567      756E7465 
- 1567      725F6F62 
- 1567      6A656374 
- 1568              	.LASF12:
- 1569 03c3 45455F55 		.ascii	"EE_UINT16\000"
- 1569      494E5431 
- 1569      3600
- 1570              	.LASF44:
- 1571 03cd 45455F63 		.ascii	"EE_cortex_mx_resumeIRQ\000"
- 1571      6F727465 
- 1571      785F6D78 
- 1571      5F726573 
- 1571      756D6549 
- 1572              	.LASF68:
- 1573 03e4 45455F63 		.ascii	"EE_counter_RAM\000"
- 1573      6F756E74 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 40
+ 1554              	.LASF60:
+ 1555 0351 45455F74 		.ascii	"EE_th_rnact\000"
+ 1555      685F726E 
+ 1555      61637400 
+ 1556              	.LASF54:
+ 1557 035d 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 1557      74645F65 
+ 1557      6E646379 
+ 1557      636C655F 
+ 1557      6E657874 
+ 1558              	.LASF13:
+ 1559 0376 45455F49 		.ascii	"EE_INT32\000"
+ 1559      4E543332 
+ 1559      00
+ 1560              	.LASF78:
+ 1561 037f 69737461 		.ascii	"istat\000"
+ 1561      7400
+ 1562              	.LASF3:
+ 1563 0385 73686F72 		.ascii	"short unsigned int\000"
+ 1563      7420756E 
+ 1563      7369676E 
+ 1563      65642069 
+ 1563      6E7400
+ 1564              	.LASF37:
+ 1565 0398 45455F6F 		.ascii	"EE_oo_counter_object_ROM_type\000"
+ 1565      6F5F636F 
+ 1565      756E7465 
+ 1565      725F6F62 
+ 1565      6A656374 
+ 1566              	.LASF76:
+ 1567 03b6 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD_FFT\\MovementDete"
+ 1567      73657273 
+ 1567      5C7A616B 
+ 1567      69735C44 
+ 1567      6F63756D 
+ 1568 03e4 63746F72 		.ascii	"ctor\\40_Implementation\\20_SW\\10_work\\MovementDe"
+ 1568      5C34305F 
+ 1568      496D706C 
+ 1568      656D656E 
+ 1568      74617469 
+ 1569 0413 74656374 		.ascii	"tector\\RADAR_Movement_Detector.cydsn\000"
+ 1569      6F725C52 
+ 1569      41444152 
+ 1569      5F4D6F76 
+ 1569      656D656E 
+ 1570              	.LASF12:
+ 1571 0438 45455F55 		.ascii	"EE_UINT16\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 40
 
 
- 1573      65725F52 
- 1573      414D00
- 1574              	.LASF72:
- 1575 03f3 45455F41 		.ascii	"EE_ApplicationMode\000"
- 1575      70706C69 
- 1575      63617469 
- 1575      6F6E4D6F 
- 1575      646500
- 1576              	.LASF5:
- 1577 0406 6C6F6E67 		.ascii	"long unsigned int\000"
- 1577      20756E73 
- 1577      69676E65 
- 1577      6420696E 
- 1577      7400
- 1578              	.LASF17:
- 1579 0418 45455F54 		.ascii	"EE_TYPEBOOL\000"
- 1579      59504542 
- 1579      4F4F4C00 
- 1580              	.LASF61:
- 1581 0424 45455F73 		.ascii	"EE_stkfirst\000"
- 1581      746B6669 
- 1581      72737400 
- 1582              	.LASF57:
- 1583 0430 45455F74 		.ascii	"EE_th_dispatch_prio\000"
- 1583      685F6469 
- 1583      73706174 
- 1583      63685F70 
- 1583      72696F00 
- 1584              	.LASF49:
- 1585 0444 436F756E 		.ascii	"CounterID\000"
- 1585      74657249 
- 1585      4400
- 1586              	.LASF31:
- 1587 044e 45455F41 		.ascii	"EE_ALARM\000"
- 1587      4C41524D 
- 1587      00
- 1588              	.LASF38:
- 1589 0457 75736564 		.ascii	"used\000"
+ 1571      494E5431 
+ 1571      3600
+ 1572              	.LASF44:
+ 1573 0442 45455F63 		.ascii	"EE_cortex_mx_resumeIRQ\000"
+ 1573      6F727465 
+ 1573      785F6D78 
+ 1573      5F726573 
+ 1573      756D6549 
+ 1574              	.LASF68:
+ 1575 0459 45455F63 		.ascii	"EE_counter_RAM\000"
+ 1575      6F756E74 
+ 1575      65725F52 
+ 1575      414D00
+ 1576              	.LASF72:
+ 1577 0468 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 1577      70706C69 
+ 1577      63617469 
+ 1577      6F6E4D6F 
+ 1577      646500
+ 1578              	.LASF5:
+ 1579 047b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1579      20756E73 
+ 1579      69676E65 
+ 1579      6420696E 
+ 1579      7400
+ 1580              	.LASF17:
+ 1581 048d 45455F54 		.ascii	"EE_TYPEBOOL\000"
+ 1581      59504542 
+ 1581      4F4F4C00 
+ 1582              	.LASF61:
+ 1583 0499 45455F73 		.ascii	"EE_stkfirst\000"
+ 1583      746B6669 
+ 1583      72737400 
+ 1584              	.LASF57:
+ 1585 04a5 45455F74 		.ascii	"EE_th_dispatch_prio\000"
+ 1585      685F6469 
+ 1585      73706174 
+ 1585      63685F70 
+ 1585      72696F00 
+ 1586              	.LASF49:
+ 1587 04b9 436F756E 		.ascii	"CounterID\000"
+ 1587      74657249 
+ 1587      4400
+ 1588              	.LASF31:
+ 1589 04c3 45455F41 		.ascii	"EE_ALARM\000"
+ 1589      4C41524D 
  1589      00
- 1590              	.LASF55:
- 1591 045c 73697A65 		.ascii	"sizetype\000"
- 1591      74797065 
+ 1590              	.LASF38:
+ 1591 04cc 75736564 		.ascii	"used\000"
  1591      00
- 1592              	.LASF23:
- 1593 0465 436F756E 		.ascii	"CounterType\000"
- 1593      74657254 
- 1593      79706500 
- 1594              	.LASF76:
- 1595 0471 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD_LAB\\MovementDete"
- 1595      73657273 
- 1595      5C7A616B 
- 1595      69735C44 
- 1595      6F63756D 
- 1596 049f 63746F72 		.ascii	"ctor\\40_Implementation\\20_SW\\10_work\\MovementDe"
- 1596      5C34305F 
- 1596      496D706C 
- 1596      656D656E 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccE4X5il.s 			page 41
+ 1592              	.LASF55:
+ 1593 04d1 73697A65 		.ascii	"sizetype\000"
+ 1593      74797065 
+ 1593      00
+ 1594              	.LASF23:
+ 1595 04da 436F756E 		.ascii	"CounterType\000"
+ 1595      74657254 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccZB6BDe.s 			page 41
 
 
- 1596      74617469 
- 1597 04ce 74656374 		.ascii	"tector\\RADAR_Movement_Detector.cydsn\000"
- 1597      6F725C52 
- 1597      41444152 
- 1597      5F4D6F76 
- 1597      656D656E 
+ 1595      79706500 
+ 1596              	.LASF58:
+ 1597 04e6 45455F74 		.ascii	"EE_th_status\000"
+ 1597      685F7374 
+ 1597      61747573 
+ 1597      00
  1598              	.LASF52:
  1599 04f3 666C6167 		.ascii	"flag\000"
  1599      00
