@@ -16,6 +16,8 @@
 
 #define UART_START_VARIABLE 's'
 #define UART_FINISH_VARIABLE 'o'
+#define UART_TARGET_VARIABLE 't'
+#define UART_NO_TARGET_VARIABLE 'n'
 
 //#define NO_OF_SAMPLES 1024
 
@@ -115,6 +117,10 @@ ISR2(isr_UART_Rx){
         SetEvent(tsk_control, ev_sReceived);
     } else if (data == UART_FINISH_VARIABLE){
         SetEvent(tsk_control, ev_oReceived); 
+    } else if (data == UART_TARGET_VARIABLE){
+        SetEvent(tsk_control, ev_tReceived); 
+    } else if (data == UART_NO_TARGET_VARIABLE){
+        SetEvent(tsk_control, ev_nReceived); 
     }
     
 }
@@ -142,6 +148,8 @@ ISR2(isr_DMA_FFT_UART){
     
 
 }
+
+
 
 
 

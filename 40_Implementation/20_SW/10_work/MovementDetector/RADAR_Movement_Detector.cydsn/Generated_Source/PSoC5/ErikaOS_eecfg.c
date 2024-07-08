@@ -406,10 +406,10 @@
          ,"ev_sendFFT"
     #endif
     #if EE_MAX_EVENT > 7
-         ,"ev_UARTOver"
+         ,"ev_tReceived"
     #endif
     #if EE_MAX_EVENT > 8
-         ,"Event_9"
+         ,"ev_nReceived"
     #endif
     #if EE_MAX_EVENT > 9
          ,"Event_10"
@@ -503,10 +503,10 @@
         ,ev_sendFFT
     #endif
     #if EE_MAX_EVENT > 7
-        ,ev_UARTOver
+        ,ev_tReceived
     #endif
     #if EE_MAX_EVENT > 8
-        ,Event_9
+        ,ev_nReceived
     #endif
     #if EE_MAX_EVENT > 9
         ,Event_10
@@ -1020,7 +1020,7 @@
         #endif
     #endif
     #if EE_MAX_TASK > 2
-        #if 7
+        #if 8
         ,1U
         #else
         ,0U

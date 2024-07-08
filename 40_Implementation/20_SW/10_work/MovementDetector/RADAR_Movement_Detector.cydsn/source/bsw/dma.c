@@ -98,8 +98,8 @@ RC_t DMA_Init(){
     CyDmaTdSetConfiguration(DMA_FFT_UART_TD[1], 4092, DMA_FFT_UART_TD[2],  CY_DMA_TD_INC_SRC_ADR);//
     CyDmaTdSetConfiguration(DMA_FFT_UART_TD[2], 8, CY_DMA_DISABLE_TD, DMA_FFT_UART__TD_TERMOUT_EN | CY_DMA_TD_INC_SRC_ADR);
     CyDmaTdSetAddress(DMA_FFT_UART_TD[0], LO16((uint32)fftBuffer), LO16((uint32)UART_LOG_TXDATA_PTR));
-    CyDmaTdSetAddress(DMA_FFT_UART_TD[1], LO16((uint32)fftBuffer + 1024), LO16((uint32)UART_LOG_TXDATA_PTR));
-    CyDmaTdSetAddress(DMA_FFT_UART_TD[2], LO16((uint32)fftBuffer + 2046), LO16((uint32)UART_LOG_TXDATA_PTR));
+    CyDmaTdSetAddress(DMA_FFT_UART_TD[1], LO16((uint32)fftBuffer + 4092), LO16((uint32)UART_LOG_TXDATA_PTR));
+    CyDmaTdSetAddress(DMA_FFT_UART_TD[2], LO16((uint32)fftBuffer + 8184), LO16((uint32)UART_LOG_TXDATA_PTR));
     CyDmaChSetInitialTd(DMA_FFT_UART_Chan, DMA_FFT_UART_TD[0]);
     
     

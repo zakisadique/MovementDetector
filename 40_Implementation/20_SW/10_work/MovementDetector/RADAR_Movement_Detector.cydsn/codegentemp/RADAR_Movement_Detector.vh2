@@ -2,7 +2,7 @@
 --	Conversion of RADAR_Movement_Detector.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Jul 08 14:24:18 2024
+--	Mon Jul 08 18:08:25 2024
 --
 
 USE cypress.cypress.all;
@@ -1681,7 +1681,7 @@ Clock_DMA_FFT_UART:cy_clock_v1_0
 		id=>"b5373b87-d286-4553-86c2-1eb1a9451215",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"2000000000000",
+		period=>"1000000000000",
 		is_direct=>'0',
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_92,

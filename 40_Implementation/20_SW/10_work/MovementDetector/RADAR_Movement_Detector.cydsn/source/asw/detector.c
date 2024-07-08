@@ -73,7 +73,7 @@ RC_t DETECTOR_init(Detector_t* detector){
     DETECTOR_initDrivers();
     
     detector->detectorState = IDLE;
-    DETECTOR_setLedState(IDLE);
+//    DETECTOR_setLedState(IDLE);
     
     detector->numberOfTransfers = 0;
     detector->samplingFinished = FALSE;
@@ -129,7 +129,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     ADC_Set(ADC_ON);
                     
                     detector -> detectorState = SAMPLING;
-                    DETECTOR_setLedState(SAMPLING);
+//                    DETECTOR_setLedState(SAMPLING);
                     
                 }
             }
@@ -175,12 +175,12 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                 }
                 if (ev & ev_send){
                     
-                    //DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
-                    //DMA_Set(DMA_MEMORY_TO_UART, DMA_ON); //
+                    DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
+                    DMA_Set(DMA_MEMORY_TO_UART, DMA_ON); //
                     
-                    fft_app(ADCBuffer,fftBuffer,1024); //
+                    //fft_app(ADCBuffer,fftBuffer,1024); //
                     //DMA_Set(DMA_FFT_TO_UART, DMA_ON);
-                    
+                    /*
                     for (int i = 0; i < 2048; ++i){
                         uint8_t byte0 = (fftBuffer[i] >> 24) & 0xFF; // Most significant byte
                         uint8_t byte1 = (fftBuffer[i] >> 16) & 0xFF;
@@ -194,12 +194,12 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                         UART_LOG_PutChar(byte0);
                     
                     }
-                    
+                    */
                     
                     
                     
                     detector -> detectorState = UART_TRANSFER;
-                    DETECTOR_setLedState(UART_TRANSFER);
+//                    DETECTOR_setLedState(UART_TRANSFER);
                     
 
                 }
@@ -222,6 +222,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     DMA_Set(DMA_MEMORY_TO_UART, DMA_OFF);
                     
                     #define DMA 1
+                    
                     #if DMA == 1
                     
                     fft_app(ADCBuffer,fftBuffer,1024); //
@@ -256,15 +257,15 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     
                     detector -> numberOfTransfers += 1;
-                    if (detector -> numberOfTransfers < 10){
+                    if (detector -> numberOfTransfers < 5){
                         detector -> detectorState = SAMPLING;
-                        DETECTOR_setLedState(SAMPLING);
+//                        DETECTOR_setLedState(SAMPLING);
                         
                         SetEvent(tsk_control, ev_reSample);
                     }
-                    else if (detector -> numberOfTransfers == 10){
+                    else if (detector -> numberOfTransfers == 5){
                         detector -> detectorState = IDLE;
-                        DETECTOR_setLedState(IDLE);
+//                        DETECTOR_setLedState(IDLE);
 
                         DAC_Set(DAC_OFF);
                         ADC_Set(ADC_OFF);
@@ -276,6 +277,12 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                         
                         
                     }
+                }
+                if (ev & ev_nReceived){
+                    LED_Set(LED_ALL, OFF);
+                }
+                if (ev & ev_tReceived){
+                    LED_Set(LED_ALL, ON);
                 }
             }
             break;

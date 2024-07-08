@@ -11976,26 +11976,26 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  646              	.set isr_DMA_MEM_UART__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
  647              	
  648              	/* Clock_DMA_FFT_UART */
- 649              	.set Clock_DMA_FFT_UART__CFG0, CYREG_CLKDIST_DCFG4_CFG0
- 650              	.set Clock_DMA_FFT_UART__CFG1, CYREG_CLKDIST_DCFG4_CFG1
- 651              	.set Clock_DMA_FFT_UART__CFG2, CYREG_CLKDIST_DCFG4_CFG2
+ 649              	.set Clock_DMA_FFT_UART__CFG0, CYREG_CLKDIST_DCFG3_CFG0
+ 650              	.set Clock_DMA_FFT_UART__CFG1, CYREG_CLKDIST_DCFG3_CFG1
+ 651              	.set Clock_DMA_FFT_UART__CFG2, CYREG_CLKDIST_DCFG3_CFG2
  652              	.set Clock_DMA_FFT_UART__CFG2_SRC_SEL_MASK, 0x07
- 653              	.set Clock_DMA_FFT_UART__INDEX, 0x04
+ 653              	.set Clock_DMA_FFT_UART__INDEX, 0x03
  654              	.set Clock_DMA_FFT_UART__PM_ACT_CFG, CYREG_PM_ACT_CFG2
- 655              	.set Clock_DMA_FFT_UART__PM_ACT_MSK, 0x10
+ 655              	.set Clock_DMA_FFT_UART__PM_ACT_MSK, 0x08
  656              	.set Clock_DMA_FFT_UART__PM_STBY_CFG, CYREG_PM_STBY_CFG2
- 657              	.set Clock_DMA_FFT_UART__PM_STBY_MSK, 0x10
+ 657              	.set Clock_DMA_FFT_UART__PM_STBY_MSK, 0x08
  658              	
  659              	/* Clock_DMA_MEM_UART */
- 660              	.set Clock_DMA_MEM_UART__CFG0, CYREG_CLKDIST_DCFG3_CFG0
- 661              	.set Clock_DMA_MEM_UART__CFG1, CYREG_CLKDIST_DCFG3_CFG1
- 662              	.set Clock_DMA_MEM_UART__CFG2, CYREG_CLKDIST_DCFG3_CFG2
+ 660              	.set Clock_DMA_MEM_UART__CFG0, CYREG_CLKDIST_DCFG4_CFG0
+ 661              	.set Clock_DMA_MEM_UART__CFG1, CYREG_CLKDIST_DCFG4_CFG1
+ 662              	.set Clock_DMA_MEM_UART__CFG2, CYREG_CLKDIST_DCFG4_CFG2
  663              	.set Clock_DMA_MEM_UART__CFG2_SRC_SEL_MASK, 0x07
- 664              	.set Clock_DMA_MEM_UART__INDEX, 0x03
+ 664              	.set Clock_DMA_MEM_UART__INDEX, 0x04
  665              	.set Clock_DMA_MEM_UART__PM_ACT_CFG, CYREG_PM_ACT_CFG2
- 666              	.set Clock_DMA_MEM_UART__PM_ACT_MSK, 0x08
+ 666              	.set Clock_DMA_MEM_UART__PM_ACT_MSK, 0x10
  667              	.set Clock_DMA_MEM_UART__PM_STBY_CFG, CYREG_PM_STBY_CFG2
- 668              	.set Clock_DMA_MEM_UART__PM_STBY_MSK, 0x08
+ 668              	.set Clock_DMA_MEM_UART__PM_STBY_MSK, 0x10
  669              	
  670              	/* Miscellaneous */
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 201

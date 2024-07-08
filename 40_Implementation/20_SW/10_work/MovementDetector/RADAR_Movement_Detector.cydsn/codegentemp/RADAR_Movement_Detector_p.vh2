@@ -1,5 +1,5 @@
 -- Project:   RADAR_Movement_Detector
--- Generated: 07/08/2024 14:24:19
+-- Generated: 07/08/2024 18:08:26
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS
@@ -576,10 +576,10 @@ BEGIN
             clk_a_dig_0 => \ADC_DelSig:Net_488_adig_local\,
             dclk_glb_2 => \WaveDAC8:Net_279\,
             dclk_2 => \WaveDAC8:Net_279_local\,
-            dclk_glb_3 => Net_44,
-            dclk_3 => Net_44_local,
-            dclk_glb_4 => Net_92,
-            dclk_4 => Net_92_local,
+            dclk_glb_3 => Net_92,
+            dclk_3 => Net_92_local,
+            dclk_glb_4 => Net_44,
+            dclk_4 => Net_44_local,
             aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
 
     LED_green:logicalport
