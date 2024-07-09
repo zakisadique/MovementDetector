@@ -13,6 +13,7 @@
 #include "global.h"
 #include "detector.h"
 #include "fft_application.h"
+#include "cfar.h"
 
 #define UART_START_VARIABLE 's'
 #define UART_FINISH_VARIABLE 'o'
@@ -22,6 +23,7 @@
 //#define NO_OF_SAMPLES 1024
 
 Detector_t movementDetector;
+
 
 
 //ISR which will increment the systick counter every ms
@@ -58,6 +60,7 @@ TASK(tsk_init)
     
     //Init MCAL Drivers   
     DETECTOR_init(&movementDetector);
+    
     
     //Reconfigure ISRs with OS parameters.
     //This line MUST be called after the hardware driver initialisation!

@@ -43,42 +43,39 @@
  *         - MISRA for C++: https://fromm.eit.h-da.de/intern/mimir/methods/eng_cpp_rules/method.htm 
  **/
  
-#ifndef MOVEMENT_DETECTOR_H
-#define MOVEMENT_DETECTOR_H
+#ifndef CFAR_H
+#define CFAR_H
 
 #include "project.h"
 #include "global.h"
 #include "led.h"
 #include "dac_adc.h"
-#include "cfar.h"
+    
+#include "stdio.h"
     
 /*****************************************************************************/
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
-    
-extern CFAR_input_t cfarInput;
-extern CFAR_output_t cfarOutput;
-    
-    
 
-// States of the statemachine
-enum eStates{
-    IDLE,    
-    SAMPLING,       
-    UART_TRANSFER
-};
-typedef enum eStates States_t;
+
 
 // Structure of the Detector object.
-struct sDetector{
-    States_t detectorState;          
-    uint8_t  numberOfTransfers; 
-    
-    boolean_t samplingFinished;
-    boolean_t readyToSend;
-    boolean_t memoryToUARTFinished;
+struct scfarInput{
+    uint16_t numberofBins;
+    double PFA; 
+    uint8_t  numberGuardCells; 
+    uint8_t numberReferenceCells;
 };
-typedef struct sDetector Detector_t;
+typedef struct scfarInput CFAR_input_t;
+
+struct scfarOutput{ 
+    uint16_t numberofBins;
+    double fft_psocPower[1024];
+    double  thresholds[1024]; 
+    uint8_t numberTargets;
+    uint8_t targetDetected[1024];
+};
+typedef struct scfarOutput CFAR_output_t;
 
 // Wrapper to allow representing the file in Together as class
 #ifdef TOGETHER
@@ -98,17 +95,10 @@ public:
 /* API functions                                                             */
 /*****************************************************************************/
 
-// INIT all low level drivers
-RC_t DETECTOR_initDrivers();
+void CFAR_init(CFAR_input_t* cfarInput);
+void CFAR_reset_output(CFAR_output_t* cfarOutput);
+void calculateCFAR(int32 *fftBuffer, CFAR_input_t *input, CFAR_output_t *output);
 
-// Init Detector object attributes and drivers used by the object
-RC_t DETECTOR_init(Detector_t* detector);
-
-// Process events as they get triggered based on a State Machine Architecture
-RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev);
-
-// Turns LED ON / OFF based on the detector state
-RC_t DETECTOR_setLedState(States_t state);
 
 /*****************************************************************************/
 /* Private stuff, only visible for Together, declared static in cpp - File   */
@@ -121,4 +111,4 @@ private:
 };
 #endif /* Together */
 
-#endif /* MOVEMENT_DETECTOR_H */
+#endif /* CFAR_H */
