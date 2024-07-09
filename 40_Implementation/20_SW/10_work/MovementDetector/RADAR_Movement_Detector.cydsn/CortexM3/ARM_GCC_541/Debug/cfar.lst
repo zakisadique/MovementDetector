@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
   28:source\asw/cfar.c **** 
   29:source\asw/cfar.c **** #include "fft_application.h"
   30:source\asw/cfar.c **** #include "cfar.h"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 2
 
 
   31:source\asw/cfar.c **** #include <math.h>
@@ -102,7 +102,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
   33              	.LVL0:
-  66:source\asw/cfar.c ****     cfarInput -> PFA = 0.1;
+  66:source\asw/cfar.c ****     cfarInput -> PFA = 0.01;
   34              		.loc 1 66 0
   35 0000 07A3     		adr	r3, .L2
   36 0002 D3E90023 		ldrd	r2, [r3]
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
   69:source\asw/cfar.c ****     cfarInput -> numberReferenceCells = 10;
   44              		.loc 1 69 0
   45 0014 0A23     		movs	r3, #10
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 3
 
 
   46 0016 4374     		strb	r3, [r0, #17]
@@ -127,8 +127,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
   49 001a 00BFAFF3 		.align	3
   49      0080
   50              	.L2:
-  51 0020 9A999999 		.word	-1717986918
-  52 0024 9999B93F 		.word	1069128089
+  51 0020 7B14AE47 		.word	1202590843
+  52 0024 E17A843F 		.word	1065646817
   53              		.cfi_endproc
   54              	.LFE167:
   55              		.size	CFAR_init, .-CFAR_init
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
   90 0018 0024     		movs	r4, #0
   91 001a 0025     		movs	r5, #0
   92 001c C2E90045 		strd	r4, [r2]
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 4
 
 
   79:source\asw/cfar.c ****         cfarOutput -> thresholds[i] = 0.0;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  138              		.cfi_startproc
  139              		@ args = 0, pretend = 0, frame = 24
  140              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 5
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 5
 
 
  141              	.LVL8:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
   92:source\asw/cfar.c ****     for (int i = 0; i < input -> numberofBins; i++) {
  189              		.loc 1 92 0
  190 0046 4FF00009 		mov	r9, #0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 6
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 6
 
 
  191 004a 27E0     		b	.L9
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  240              		.loc 1 92 0 discriminator 1
  241 009c BBF80030 		ldrh	r3, [fp]
  242 00a0 9945     		cmp	r9, r3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 7
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 7
 
 
  243 00a2 D3DB     		blt	.L10
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  106:source\asw/cfar.c ****             lagging_sum += output -> fft_psocPower[i - input -> numberReferenceCells - input -> num
  285              		.loc 1 106 0 discriminator 3
  286 00f0 0BF1010B 		add	fp, fp, #1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 8
 
 
  287              	.LVL35:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  336 013e FFF7FEFF 		bl	__aeabi_ddiv
  337              	.LVL45:
  113:source\asw/cfar.c **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 9
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 9
 
 
  114:source\asw/cfar.c ****         // Calculate threshold
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  379 0196 CAEB0303 		rsb	r3, r10, r3
  380 019a 9D42     		cmp	r5, r3
  381 019c ABDD     		ble	.L16
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 10
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 10
 
 
  382              	.LBE5:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  432 0026 01       		.byte	0x1
  433 0027 06       		.byte	0x6
  434 0028 BF010000 		.4byte	.LASF0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 11
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 11
 
 
  435 002c 03       		.uleb128 0x3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  489 0092 18       		.byte	0x18
  490 0093 2C000000 		.4byte	0x2c
  491 0097 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 12
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 12
 
 
  492 0098 EA010000 		.4byte	.LASF13
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  546 0108 D5000000 		.4byte	0xd5
  547 010c 02       		.uleb128 0x2
  548 010d 04       		.byte	0x4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 13
 
 
  549 010e 07       		.byte	0x7
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  603 017b A8010000 		.4byte	0x1a8
  604 017f 08       		.byte	0x8
  605 0180 0A       		.uleb128 0xa
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 14
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 14
 
 
  606 0181 D4020000 		.4byte	.LASF33
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  660 01f8 0F       		.uleb128 0xf
  661 01f9 04       		.byte	0x4
  662 01fa 50010000 		.4byte	0x150
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 15
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 15
 
 
  663 01fe 0D       		.uleb128 0xd
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  717 0277 55       		.byte	0x55
  718 0278 38020000 		.4byte	0x238
  719 027c AC000000 		.4byte	.LLST3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 16
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 16
 
 
  720 0280 14       		.uleb128 0x14
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  774 0306 69       		.byte	0x69
  775 0307 C0000000 		.4byte	0xc0
  776 030b 00020000 		.4byte	.LLST10
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 17
 
 
  777 030f 14       		.uleb128 0x14
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  831 0385 EB000000 		.4byte	0xeb
  832 0389 19       		.uleb128 0x19
  833 038a 06030000 		.4byte	.LASF57
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 18
 
 
  834 038e 0B       		.byte	0xb
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  888 0404 0F040000 		.4byte	0x40f
  889 0408 1C       		.uleb128 0x1c
  890 0409 0C010000 		.4byte	0x10c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 19
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 19
 
 
  891 040d 02       		.byte	0x2
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  945 0024 0B       		.uleb128 0xb
  946 0025 3B       		.uleb128 0x3b
  947 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 20
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 20
 
 
  948 0027 49       		.uleb128 0x49
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1002 005d 38       		.uleb128 0x38
  1003 005e 0B       		.uleb128 0xb
  1004 005f 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 21
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 21
 
 
  1005 0060 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1059 0096 00       		.byte	0
  1060 0097 0C       		.uleb128 0xc
  1061 0098 21       		.uleb128 0x21
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 22
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 22
 
 
  1062 0099 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1116 00d0 00       		.byte	0
  1117 00d1 00       		.byte	0
  1118 00d2 10       		.uleb128 0x10
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 23
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 23
 
 
  1119 00d3 0B       		.uleb128 0xb
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1173 010a 0B       		.uleb128 0xb
  1174 010b 3B       		.uleb128 0x3b
  1175 010c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 24
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 24
 
 
  1176 010d 49       		.uleb128 0x49
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1230 0145 0B       		.uleb128 0xb
  1231 0146 3B       		.uleb128 0x3b
  1232 0147 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 25
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 25
 
 
  1233 0148 49       		.uleb128 0x49
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1287 017e 2F       		.uleb128 0x2f
  1288 017f 0B       		.uleb128 0xb
  1289 0180 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 26
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 26
 
 
  1290 0181 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1344 0050 00000000 		.4byte	0
  1345              	.LLST1:
  1346 0054 00000000 		.4byte	.LVL8
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 27
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 27
 
 
  1347 0058 0E000000 		.4byte	.LVL9
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1401 00e2 54       		.byte	0x54
  1402 00e3 86010000 		.4byte	.LVL50
  1403 00e7 A4010000 		.4byte	.LVL51
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 28
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 28
 
 
  1404 00eb 0100     		.2byte	0x1
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1458 0167 00000000 		.4byte	0
  1459              	.LLST6:
  1460 016b 5C000000 		.4byte	.LVL18
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 29
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 29
 
 
  1461 016f 76000000 		.4byte	.LVL22
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1515 01e8 0200     		.2byte	0x2
  1516 01ea 7D       		.byte	0x7d
  1517 01eb 00       		.sleb128 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 30
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 30
 
 
  1518 01ec 0C010000 		.4byte	.LVL38
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1572 025b 93       		.byte	0x93
  1573 025c 04       		.uleb128 0x4
  1574 025d 51       		.byte	0x51
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 31
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 31
 
 
  1575 025e 93       		.byte	0x93
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1629              	.Ldebug_line0:
  1630 0000 2F030000 		.section	.debug_str,"MS",%progbits,1
  1630      02008D02 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 32
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 32
 
 
  1630      00000201 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1656 0084 73636661 		.ascii	"scfarInput\000"
  1656      72496E70 
  1656      757400
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 33
 
 
  1657              	.LASF41:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1680 012b 7265616C 		.ascii	"real\000"
  1680      00
  1681              	.LASF7:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 34
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 34
 
 
  1682 0130 6C6F6E67 		.ascii	"long int\000"
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1704      6661722E 
  1704      6300
  1705              	.LASF11:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 35
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 35
 
 
  1706 01dd 756E7369 		.ascii	"unsigned int\000"
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1730      63617469 
  1730      6F6E4D6F 
  1730      646500
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 36
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 36
 
 
  1731              	.LASF8:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 1
  1756      00
  1757              	.LASF64:
  1758 0313 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\cco5DHCH.s 			page 37
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccSspcGb.s 			page 37
 
 
  1758      43313120 

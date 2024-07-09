@@ -7,7 +7,7 @@ N  = 1024;   % Sample Size
 NG = 2;     % Guard Cells
 NR = 10;    % Reference Cells
 
-PFA = 0.1; % probablility of false detection
+PFA = 0.01; % probablility of false detection
 
 
 n = 0:(N-1);

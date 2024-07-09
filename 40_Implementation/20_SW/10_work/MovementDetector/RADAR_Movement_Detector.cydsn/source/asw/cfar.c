@@ -63,7 +63,7 @@
 
 
 void CFAR_init(CFAR_input_t *cfarInput){
-    cfarInput -> PFA = 0.1;
+    cfarInput -> PFA = 0.01;
     cfarInput -> numberGuardCells = 2;
     cfarInput -> numberofBins = 1024;
     cfarInput -> numberReferenceCells = 10;
