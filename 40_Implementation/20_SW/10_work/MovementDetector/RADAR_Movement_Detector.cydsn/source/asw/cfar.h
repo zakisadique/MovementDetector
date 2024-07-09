@@ -57,7 +57,7 @@
 /* Global pre-processor symbols/macros and type declarations                 */
 /*****************************************************************************/
 
-
+#define numberBins 1024
 
 // Structure of the Detector object.
 struct scfarInput{
@@ -70,10 +70,10 @@ typedef struct scfarInput CFAR_input_t;
 
 struct scfarOutput{ 
     uint16_t numberofBins;
-    double fft_psocPower[1024];
-    double  thresholds[1024]; 
+    double fft_psocPower[numberBins];
+    double  thresholds[numberBins]; 
     uint8_t numberTargets;
-    uint8_t targetDetected[1024];
+    uint8_t targetDetected[numberBins];
 };
 typedef struct scfarOutput CFAR_output_t;
 
