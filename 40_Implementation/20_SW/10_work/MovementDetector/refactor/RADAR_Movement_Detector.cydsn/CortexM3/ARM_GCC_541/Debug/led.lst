@@ -1,0 +1,2534 @@
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"led.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.LED_Set,"ax",%progbits
+  20              		.align	2
+  21              		.global	LED_Set
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	LED_Set, %function
+  25              	LED_Set:
+  26              	.LFB111:
+  27              		.file 1 "source\\bsw\\led.c"
+   1:source\bsw/led.c **** /**
+   2:source\bsw/led.c **** * \file <filename>
+   3:source\bsw/led.c **** * \author <author-name>
+   4:source\bsw/led.c **** * \date <date>
+   5:source\bsw/led.c **** *
+   6:source\bsw/led.c **** * \brief <Symbolic File name>
+   7:source\bsw/led.c **** *
+   8:source\bsw/led.c **** * \copyright Copyright ©2016
+   9:source\bsw/led.c **** * Department of electrical engineering and information technology, Hochschule Darmstadt - Universit
+  10:source\bsw/led.c **** * Permission to use, copy, modify, and distribute this software and its documentation for education
+  11:source\bsw/led.c **** * (unless permitted by h_da) and official h_da projects, is hereby granted for enrolled students of
+  12:source\bsw/led.c **** * this paragraph and the following paragraph appear in all copies, modifications, and distributions
+  13:source\bsw/led.c **** * Contact Prof.Dr.-Ing. Peter Fromm, peter.fromm@h-da.de, Birkenweg 8 64295 Darmstadt - GERMANY for
+  14:source\bsw/led.c **** *
+  15:source\bsw/led.c **** * \warning This software is a PROTOTYPE version and is not designed or intended for use in producti
+  16:source\bsw/led.c **** * The user represents and warrants that it will NOT use or redistribute the Software for such purpo
+  17:source\bsw/led.c **** * This prototype is for research purposes only. This software is provided "AS IS," without a warran
+  18:source\bsw/led.c **** */
+  19:source\bsw/led.c **** 
+  20:source\bsw/led.c **** /*****************************************************************************/
+  21:source\bsw/led.c **** /* Include files                                                             */
+  22:source\bsw/led.c **** /*****************************************************************************/
+  23:source\bsw/led.c **** 
+  24:source\bsw/led.c **** #include "project.h"
+  25:source\bsw/led.c **** #include "led.h"
+  26:source\bsw/led.c **** 
+  27:source\bsw/led.c **** 
+  28:source\bsw/led.c **** /*****************************************************************************/
+  29:source\bsw/led.c **** /* Local pre-processor symbols/macros ('#define')                            */
+  30:source\bsw/led.c **** /*****************************************************************************/
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 2
+
+
+  31:source\bsw/led.c **** 
+  32:source\bsw/led.c **** /*****************************************************************************/
+  33:source\bsw/led.c **** /* Global variable definitions (declared in header file with 'extern')       */
+  34:source\bsw/led.c **** /*****************************************************************************/
+  35:source\bsw/led.c **** 
+  36:source\bsw/led.c **** /*****************************************************************************/
+  37:source\bsw/led.c **** /* Local type definitions ('typedef')                                        */
+  38:source\bsw/led.c **** /*****************************************************************************/
+  39:source\bsw/led.c **** 
+  40:source\bsw/led.c **** 
+  41:source\bsw/led.c **** 
+  42:source\bsw/led.c **** /*****************************************************************************/
+  43:source\bsw/led.c **** /* Local variable definitions ('static')                                     */
+  44:source\bsw/led.c **** /*****************************************************************************/
+  45:source\bsw/led.c **** 
+  46:source\bsw/led.c **** 
+  47:source\bsw/led.c **** static LED_ONOFF_t LED__state[LED_ALL] = {LED_OFF, LED_OFF, LED_OFF}; /**< On/Off State of the LED,
+  48:source\bsw/led.c **** 
+  49:source\bsw/led.c **** 
+  50:source\bsw/led.c **** /*****************************************************************************/
+  51:source\bsw/led.c **** /* Local function prototypes ('static')                                      */
+  52:source\bsw/led.c **** /*****************************************************************************/
+  53:source\bsw/led.c **** 
+  54:source\bsw/led.c **** /**
+  55:source\bsw/led.c ****  * Inverts the parameter
+  56:source\bsw/led.c ****  * @param LED_ONOFF_t ledOnOff - Value to be inverted
+  57:source\bsw/led.c ****  * @return inverted parameter
+  58:source\bsw/led.c ****  */
+  59:source\bsw/led.c **** static inline LED_ONOFF_t LED__toggleValue(LED_ONOFF_t ledOnOff);
+  60:source\bsw/led.c **** 
+  61:source\bsw/led.c **** 
+  62:source\bsw/led.c **** /*****************************************************************************/
+  63:source\bsw/led.c **** /* Function implementation - global ('extern') and local ('static')          */
+  64:source\bsw/led.c **** /*****************************************************************************/
+  65:source\bsw/led.c **** 
+  66:source\bsw/led.c **** /**
+  67:source\bsw/led.c ****  * Initialises the LED's and turns them off
+  68:source\bsw/led.c ****  * @return RC_SUCCESS if function was executed as exepected, other error code in case of error
+  69:source\bsw/led.c ****  */
+  70:source\bsw/led.c **** RC_t LED_Init()
+  71:source\bsw/led.c **** {
+  72:source\bsw/led.c ****     RC_t result = RC_SUCCESS;
+  73:source\bsw/led.c ****     
+  74:source\bsw/led.c ****     for (LED_id_t i = LED_RED; i < LED_ALL; i++)
+  75:source\bsw/led.c ****     {
+  76:source\bsw/led.c ****         LED__state[i] = OFF;
+  77:source\bsw/led.c ****         
+  78:source\bsw/led.c ****         RC_t clearResult;
+  79:source\bsw/led.c ****         clearResult = LED_Set(i, LED_OFF);
+  80:source\bsw/led.c ****         
+  81:source\bsw/led.c ****         if (clearResult != RC_SUCCESS)
+  82:source\bsw/led.c ****         {
+  83:source\bsw/led.c ****             //memorize error
+  84:source\bsw/led.c ****             result = clearResult;
+  85:source\bsw/led.c ****         }
+  86:source\bsw/led.c ****     }
+  87:source\bsw/led.c **** 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 3
+
+
+  88:source\bsw/led.c ****     
+  89:source\bsw/led.c ****     return result;
+  90:source\bsw/led.c **** }
+  91:source\bsw/led.c **** 
+  92:source\bsw/led.c **** /**
+  93:source\bsw/led.c ****  * Sets the required LED
+  94:source\bsw/led.c ****  * @param LED_t ledId - Identifier for the LED, ALL will change all LED's
+  95:source\bsw/led.c ****  * @param LED_ONOFF_t ledOnOff - Trun the led on or off
+  96:source\bsw/led.c ****  * @return RC_SUCCESS if function was executed as exepected, other error code in case of error
+  97:source\bsw/led.c ****  */
+  98:source\bsw/led.c **** RC_t LED_Set(LED_id_t ledId, LED_ONOFF_t ledOnOff)
+  99:source\bsw/led.c **** {
+  28              		.loc 1 99 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 38B5     		push	{r3, r4, r5, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 3, -16
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0446     		mov	r4, r0
+  40 0004 0D46     		mov	r5, r1
+ 100:source\bsw/led.c ****     //set individual LED
+ 101:source\bsw/led.c ****     switch (ledId)
+  41              		.loc 1 101 0
+  42 0006 0528     		cmp	r0, #5
+  43 0008 2ED8     		bhi	.L10
+  44 000a DFE800F0 		tbb	[pc, r0]
+  45              	.L4:
+  46 000e 03       		.byte	(.L3-.L4)/2
+  47 000f 0A       		.byte	(.L5-.L4)/2
+  48 0010 11       		.byte	(.L6-.L4)/2
+  49 0011 24       		.byte	(.L7-.L4)/2
+  50 0012 2D       		.byte	(.L10-.L4)/2
+  51 0013 1F       		.byte	(.L11-.L4)/2
+  52              		.p2align 1
+  53              	.L3:
+ 102:source\bsw/led.c ****     {
+ 103:source\bsw/led.c ****         case LED_RED : 
+ 104:source\bsw/led.c ****             LED_red_Write(ledOnOff); 
+  54              		.loc 1 104 0
+  55 0014 0846     		mov	r0, r1
+  56              	.LVL1:
+  57 0016 FFF7FEFF 		bl	LED_red_Write
+  58              	.LVL2:
+ 105:source\bsw/led.c ****             LED__state[ledId] = ledOnOff; 
+  59              		.loc 1 105 0
+  60 001a 154B     		ldr	r3, .L13
+  61 001c 1D55     		strb	r5, [r3, r4]
+ 106:source\bsw/led.c ****             break;
+ 107:source\bsw/led.c ****         
+ 108:source\bsw/led.c ****         case LED_ORANGE : 
+ 109:source\bsw/led.c ****             LED_orange_Write(ledOnOff); 
+ 110:source\bsw/led.c ****             LED__state[ledId] = ledOnOff;
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 4
+
+
+ 111:source\bsw/led.c ****             break;
+ 112:source\bsw/led.c ****             
+ 113:source\bsw/led.c ****         case LED_GREEN : 
+ 114:source\bsw/led.c ****             LED_green_Write(ledOnOff); 
+ 115:source\bsw/led.c ****             LED__state[ledId] = ledOnOff;
+ 116:source\bsw/led.c ****             break;
+ 117:source\bsw/led.c ****            
+ 118:source\bsw/led.c ****         case LED_ALL : 
+ 119:source\bsw/led.c ****             for (LED_id_t i = LED_RED; i < LED_ALL; i++)
+ 120:source\bsw/led.c ****             {
+ 121:source\bsw/led.c ****                 LED_Set(i, ledOnOff);
+ 122:source\bsw/led.c ****             }
+ 123:source\bsw/led.c ****             break;
+ 124:source\bsw/led.c ****         case LED_TARGET : 
+ 125:source\bsw/led.c ****             LED_Set(LED_GREEN, ledOnOff); 
+ 126:source\bsw/led.c ****             LED_Set(LED_ORANGE, ledOnOff); 
+ 127:source\bsw/led.c ****             break;
+ 128:source\bsw/led.c ****         default: return RC_ERROR_BAD_PARAM;
+ 129:source\bsw/led.c ****     }
+ 130:source\bsw/led.c ****     
+ 131:source\bsw/led.c ****     return RC_SUCCESS;
+  62              		.loc 1 131 0
+  63 001e 0020     		movs	r0, #0
+ 106:source\bsw/led.c ****             break;
+  64              		.loc 1 106 0
+  65 0020 38BD     		pop	{r3, r4, r5, pc}
+  66              	.LVL3:
+  67              	.L5:
+ 109:source\bsw/led.c ****             LED__state[ledId] = ledOnOff;
+  68              		.loc 1 109 0
+  69 0022 0846     		mov	r0, r1
+  70              	.LVL4:
+  71 0024 FFF7FEFF 		bl	LED_orange_Write
+  72              	.LVL5:
+ 110:source\bsw/led.c ****             break;
+  73              		.loc 1 110 0
+  74 0028 114B     		ldr	r3, .L13
+  75 002a 1D55     		strb	r5, [r3, r4]
+  76              		.loc 1 131 0
+  77 002c 0020     		movs	r0, #0
+ 111:source\bsw/led.c ****             
+  78              		.loc 1 111 0
+  79 002e 38BD     		pop	{r3, r4, r5, pc}
+  80              	.LVL6:
+  81              	.L6:
+ 114:source\bsw/led.c ****             LED__state[ledId] = ledOnOff;
+  82              		.loc 1 114 0
+  83 0030 0846     		mov	r0, r1
+  84              	.LVL7:
+  85 0032 FFF7FEFF 		bl	LED_green_Write
+  86              	.LVL8:
+ 115:source\bsw/led.c ****             break;
+  87              		.loc 1 115 0
+  88 0036 0E4B     		ldr	r3, .L13
+  89 0038 1D55     		strb	r5, [r3, r4]
+  90              		.loc 1 131 0
+  91 003a 0020     		movs	r0, #0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 5
+
+
+ 116:source\bsw/led.c ****            
+  92              		.loc 1 116 0
+  93 003c 38BD     		pop	{r3, r4, r5, pc}
+  94              	.LVL9:
+  95              	.L9:
+  96              	.LBB9:
+ 121:source\bsw/led.c ****             }
+  97              		.loc 1 121 0 discriminator 3
+  98 003e 2946     		mov	r1, r5
+  99 0040 2046     		mov	r0, r4
+ 100 0042 FFF7FEFF 		bl	LED_Set
+ 101              	.LVL10:
+ 119:source\bsw/led.c ****             {
+ 102              		.loc 1 119 0 discriminator 3
+ 103 0046 0134     		adds	r4, r4, #1
+ 104              	.LVL11:
+ 105 0048 E4B2     		uxtb	r4, r4
+ 106              	.LVL12:
+ 107 004a 00E0     		b	.L8
+ 108              	.LVL13:
+ 109              	.L11:
+ 110              	.LBE9:
+ 101:source\bsw/led.c ****     {
+ 111              		.loc 1 101 0
+ 112 004c 0024     		movs	r4, #0
+ 113              	.LVL14:
+ 114              	.L8:
+ 115              	.LBB10:
+ 119:source\bsw/led.c ****             {
+ 116              		.loc 1 119 0 discriminator 1
+ 117 004e 042C     		cmp	r4, #4
+ 118 0050 F5D9     		bls	.L9
+ 119              	.LBE10:
+ 120              		.loc 1 131 0
+ 121 0052 0020     		movs	r0, #0
+ 122 0054 38BD     		pop	{r3, r4, r5, pc}
+ 123              	.LVL15:
+ 124              	.L7:
+ 125:source\bsw/led.c ****             LED_Set(LED_ORANGE, ledOnOff); 
+ 125              		.loc 1 125 0
+ 126 0056 0220     		movs	r0, #2
+ 127              	.LVL16:
+ 128 0058 FFF7FEFF 		bl	LED_Set
+ 129              	.LVL17:
+ 126:source\bsw/led.c ****             break;
+ 130              		.loc 1 126 0
+ 131 005c 2946     		mov	r1, r5
+ 132 005e 0120     		movs	r0, #1
+ 133 0060 FFF7FEFF 		bl	LED_Set
+ 134              	.LVL18:
+ 135              		.loc 1 131 0
+ 136 0064 0020     		movs	r0, #0
+ 127:source\bsw/led.c ****         default: return RC_ERROR_BAD_PARAM;
+ 137              		.loc 1 127 0
+ 138 0066 38BD     		pop	{r3, r4, r5, pc}
+ 139              	.LVL19:
+ 140              	.L10:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 6
+
+
+ 128:source\bsw/led.c ****     }
+ 141              		.loc 1 128 0
+ 142 0068 6FF01300 		mvn	r0, #19
+ 143              	.LVL20:
+ 132:source\bsw/led.c **** }
+ 144              		.loc 1 132 0
+ 145 006c 38BD     		pop	{r3, r4, r5, pc}
+ 146              	.L14:
+ 147 006e 00BF     		.align	2
+ 148              	.L13:
+ 149 0070 00000000 		.word	.LANCHOR0
+ 150              		.cfi_endproc
+ 151              	.LFE111:
+ 152              		.size	LED_Set, .-LED_Set
+ 153              		.section	.text.LED_Init,"ax",%progbits
+ 154              		.align	2
+ 155              		.global	LED_Init
+ 156              		.thumb
+ 157              		.thumb_func
+ 158              		.type	LED_Init, %function
+ 159              	LED_Init:
+ 160              	.LFB110:
+  71:source\bsw/led.c ****     RC_t result = RC_SUCCESS;
+ 161              		.loc 1 71 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165 0000 38B5     		push	{r3, r4, r5, lr}
+ 166              		.cfi_def_cfa_offset 16
+ 167              		.cfi_offset 3, -16
+ 168              		.cfi_offset 4, -12
+ 169              		.cfi_offset 5, -8
+ 170              		.cfi_offset 14, -4
+ 171              	.LVL21:
+ 172              	.LBB11:
+  74:source\bsw/led.c ****     {
+ 173              		.loc 1 74 0
+ 174 0002 0024     		movs	r4, #0
+ 175              	.LBE11:
+  72:source\bsw/led.c ****     
+ 176              		.loc 1 72 0
+ 177 0004 2546     		mov	r5, r4
+ 178              	.LBB13:
+  74:source\bsw/led.c ****     {
+ 179              		.loc 1 74 0
+ 180 0006 09E0     		b	.L16
+ 181              	.LVL22:
+ 182              	.L18:
+ 183              	.LBB12:
+  76:source\bsw/led.c ****         
+ 184              		.loc 1 76 0
+ 185 0008 0021     		movs	r1, #0
+ 186 000a 064B     		ldr	r3, .L21
+ 187 000c 1955     		strb	r1, [r3, r4]
+  79:source\bsw/led.c ****         
+ 188              		.loc 1 79 0
+ 189 000e 2046     		mov	r0, r4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 7
+
+
+ 190 0010 FFF7FEFF 		bl	LED_Set
+ 191              	.LVL23:
+  81:source\bsw/led.c ****         {
+ 192              		.loc 1 81 0
+ 193 0014 00B1     		cbz	r0, .L17
+  84:source\bsw/led.c ****         }
+ 194              		.loc 1 84 0
+ 195 0016 0546     		mov	r5, r0
+ 196              	.LVL24:
+ 197              	.L17:
+ 198              	.LBE12:
+  74:source\bsw/led.c ****     {
+ 199              		.loc 1 74 0 discriminator 2
+ 200 0018 0134     		adds	r4, r4, #1
+ 201              	.LVL25:
+ 202 001a E4B2     		uxtb	r4, r4
+ 203              	.LVL26:
+ 204              	.L16:
+  74:source\bsw/led.c ****     {
+ 205              		.loc 1 74 0 is_stmt 0 discriminator 1
+ 206 001c 042C     		cmp	r4, #4
+ 207 001e F3D9     		bls	.L18
+ 208              	.LBE13:
+  90:source\bsw/led.c **** 
+ 209              		.loc 1 90 0 is_stmt 1
+ 210 0020 2846     		mov	r0, r5
+ 211 0022 38BD     		pop	{r3, r4, r5, pc}
+ 212              	.LVL27:
+ 213              	.L22:
+ 214              		.align	2
+ 215              	.L21:
+ 216 0024 00000000 		.word	.LANCHOR0
+ 217              		.cfi_endproc
+ 218              	.LFE110:
+ 219              		.size	LED_Init, .-LED_Init
+ 220              		.section	.text.LED_Toggle,"ax",%progbits
+ 221              		.align	2
+ 222              		.global	LED_Toggle
+ 223              		.thumb
+ 224              		.thumb_func
+ 225              		.type	LED_Toggle, %function
+ 226              	LED_Toggle:
+ 227              	.LFB112:
+ 133:source\bsw/led.c **** 
+ 134:source\bsw/led.c **** 
+ 135:source\bsw/led.c **** 
+ 136:source\bsw/led.c **** /**
+ 137:source\bsw/led.c ****  * Toggle the required LED
+ 138:source\bsw/led.c ****  * @param LED_t ledId - Identifier for the LED, ALL will change all LED's
+ 139:source\bsw/led.c ****  * @return RC_SUCCESS if function was executed as exepected, other error code in case of error
+ 140:source\bsw/led.c ****  */
+ 141:source\bsw/led.c **** RC_t LED_Toggle(LED_id_t ledId)
+ 142:source\bsw/led.c **** {
+ 228              		.loc 1 142 0
+ 229              		.cfi_startproc
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 8
+
+
+ 232              	.LVL28:
+ 233 0000 10B5     		push	{r4, lr}
+ 234              		.cfi_def_cfa_offset 8
+ 235              		.cfi_offset 4, -8
+ 236              		.cfi_offset 14, -4
+ 143:source\bsw/led.c ****     //set individual LED
+ 144:source\bsw/led.c ****     switch (ledId)
+ 237              		.loc 1 144 0
+ 238 0002 0528     		cmp	r0, #5
+ 239 0004 39D8     		bhi	.L34
+ 240 0006 DFE800F0 		tbb	[pc, r0]
+ 241              	.L26:
+ 242 000a 03       		.byte	(.L25-.L26)/2
+ 243 000b 11       		.byte	(.L27-.L26)/2
+ 244 000c 1F       		.byte	(.L28-.L26)/2
+ 245 000d 38       		.byte	(.L34-.L26)/2
+ 246 000e 38       		.byte	(.L34-.L26)/2
+ 247 000f 33       		.byte	(.L35-.L26)/2
+ 248              		.p2align 1
+ 249              	.L25:
+ 145:source\bsw/led.c ****     {
+ 146:source\bsw/led.c ****         case LED_RED : 
+ 147:source\bsw/led.c ****             LED__state[ledId] = LED__toggleValue(LED__state[ledId]); 
+ 250              		.loc 1 147 0
+ 251 0010 1B4B     		ldr	r3, .L40
+ 252 0012 1B5C     		ldrb	r3, [r3, r0]	@ zero_extendqisi2
+ 253              	.LVL29:
+ 254              	.LBB14:
+ 255              	.LBB15:
+ 148:source\bsw/led.c ****             LED_red_Write(LED__state[ledId]);
+ 149:source\bsw/led.c ****             break;
+ 150:source\bsw/led.c ****         
+ 151:source\bsw/led.c ****         case LED_ORANGE : 
+ 152:source\bsw/led.c ****             LED__state[ledId] = LED__toggleValue(LED__state[ledId]); 
+ 153:source\bsw/led.c ****             LED_orange_Write(LED__state[ledId]);
+ 154:source\bsw/led.c ****             break;
+ 155:source\bsw/led.c ****             
+ 156:source\bsw/led.c ****         case LED_GREEN : 
+ 157:source\bsw/led.c ****             LED__state[ledId] = LED__toggleValue(LED__state[ledId]); 
+ 158:source\bsw/led.c ****             LED_green_Write(LED__state[ledId]);
+ 159:source\bsw/led.c ****             break;
+ 160:source\bsw/led.c ****            
+ 161:source\bsw/led.c ****         case LED_ALL : 
+ 162:source\bsw/led.c ****             for (LED_id_t i = LED_RED; i < LED_ALL; i++)
+ 163:source\bsw/led.c ****             {
+ 164:source\bsw/led.c ****                 LED_Toggle(i);
+ 165:source\bsw/led.c ****             }
+ 166:source\bsw/led.c ****             break;
+ 167:source\bsw/led.c ****         default: return RC_ERROR_BAD_PARAM;
+ 168:source\bsw/led.c ****     }
+ 169:source\bsw/led.c ****     
+ 170:source\bsw/led.c ****     return RC_SUCCESS;
+ 171:source\bsw/led.c **** }
+ 172:source\bsw/led.c **** 
+ 173:source\bsw/led.c **** 
+ 174:source\bsw/led.c **** /**
+ 175:source\bsw/led.c ****  * Inverts the parameter
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 9
+
+
+ 176:source\bsw/led.c ****  * @param LED_ONOFF_t ledOnOff - Value to be inverted
+ 177:source\bsw/led.c ****  * @return inverted parameter
+ 178:source\bsw/led.c ****  */
+ 179:source\bsw/led.c **** static inline LED_ONOFF_t LED__toggleValue(LED_ONOFF_t ledOnOff)
+ 180:source\bsw/led.c **** {
+ 181:source\bsw/led.c ****     if (ledOnOff == LED_ON) 
+ 256              		.loc 1 181 0
+ 257 0014 012B     		cmp	r3, #1
+ 258 0016 01D1     		bne	.L36
+ 182:source\bsw/led.c ****     {
+ 183:source\bsw/led.c ****         return LED_OFF;
+ 259              		.loc 1 183 0
+ 260 0018 0023     		movs	r3, #0
+ 261              	.LVL30:
+ 262 001a 00E0     		b	.L30
+ 263              	.LVL31:
+ 264              	.L36:
+ 184:source\bsw/led.c ****     }
+ 185:source\bsw/led.c ****     else
+ 186:source\bsw/led.c ****     {
+ 187:source\bsw/led.c ****         return LED_ON;
+ 265              		.loc 1 187 0
+ 266 001c 0123     		movs	r3, #1
+ 267              	.LVL32:
+ 268              	.L30:
+ 269              	.LBE15:
+ 270              	.LBE14:
+ 147:source\bsw/led.c ****             LED_red_Write(LED__state[ledId]);
+ 271              		.loc 1 147 0
+ 272 001e 184A     		ldr	r2, .L40
+ 273 0020 1354     		strb	r3, [r2, r0]
+ 148:source\bsw/led.c ****             break;
+ 274              		.loc 1 148 0
+ 275 0022 1846     		mov	r0, r3
+ 276              	.LVL33:
+ 277 0024 FFF7FEFF 		bl	LED_red_Write
+ 278              	.LVL34:
+ 170:source\bsw/led.c **** }
+ 279              		.loc 1 170 0
+ 280 0028 0020     		movs	r0, #0
+ 149:source\bsw/led.c ****         
+ 281              		.loc 1 149 0
+ 282 002a 10BD     		pop	{r4, pc}
+ 283              	.LVL35:
+ 284              	.L27:
+ 152:source\bsw/led.c ****             LED_orange_Write(LED__state[ledId]);
+ 285              		.loc 1 152 0
+ 286 002c 144B     		ldr	r3, .L40
+ 287 002e 1B5C     		ldrb	r3, [r3, r0]	@ zero_extendqisi2
+ 288              	.LVL36:
+ 289              	.LBB16:
+ 290              	.LBB17:
+ 181:source\bsw/led.c ****     {
+ 291              		.loc 1 181 0
+ 292 0030 012B     		cmp	r3, #1
+ 293 0032 01D1     		bne	.L37
+ 183:source\bsw/led.c ****     }
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 10
+
+
+ 294              		.loc 1 183 0
+ 295 0034 0023     		movs	r3, #0
+ 296              	.LVL37:
+ 297 0036 00E0     		b	.L31
+ 298              	.LVL38:
+ 299              	.L37:
+ 300              		.loc 1 187 0
+ 301 0038 0123     		movs	r3, #1
+ 302              	.LVL39:
+ 303              	.L31:
+ 304              	.LBE17:
+ 305              	.LBE16:
+ 152:source\bsw/led.c ****             LED_orange_Write(LED__state[ledId]);
+ 306              		.loc 1 152 0
+ 307 003a 114A     		ldr	r2, .L40
+ 308 003c 1354     		strb	r3, [r2, r0]
+ 153:source\bsw/led.c ****             break;
+ 309              		.loc 1 153 0
+ 310 003e 1846     		mov	r0, r3
+ 311              	.LVL40:
+ 312 0040 FFF7FEFF 		bl	LED_orange_Write
+ 313              	.LVL41:
+ 170:source\bsw/led.c **** }
+ 314              		.loc 1 170 0
+ 315 0044 0020     		movs	r0, #0
+ 154:source\bsw/led.c ****             
+ 316              		.loc 1 154 0
+ 317 0046 10BD     		pop	{r4, pc}
+ 318              	.LVL42:
+ 319              	.L28:
+ 157:source\bsw/led.c ****             LED_green_Write(LED__state[ledId]);
+ 320              		.loc 1 157 0
+ 321 0048 0D4B     		ldr	r3, .L40
+ 322 004a 1B5C     		ldrb	r3, [r3, r0]	@ zero_extendqisi2
+ 323              	.LVL43:
+ 324              	.LBB18:
+ 325              	.LBB19:
+ 181:source\bsw/led.c ****     {
+ 326              		.loc 1 181 0
+ 327 004c 012B     		cmp	r3, #1
+ 328 004e 01D1     		bne	.L38
+ 183:source\bsw/led.c ****     }
+ 329              		.loc 1 183 0
+ 330 0050 0023     		movs	r3, #0
+ 331              	.LVL44:
+ 332 0052 00E0     		b	.L32
+ 333              	.LVL45:
+ 334              	.L38:
+ 335              		.loc 1 187 0
+ 336 0054 0123     		movs	r3, #1
+ 337              	.LVL46:
+ 338              	.L32:
+ 339              	.LBE19:
+ 340              	.LBE18:
+ 157:source\bsw/led.c ****             LED_green_Write(LED__state[ledId]);
+ 341              		.loc 1 157 0
+ 342 0056 0A4A     		ldr	r2, .L40
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 11
+
+
+ 343 0058 1354     		strb	r3, [r2, r0]
+ 158:source\bsw/led.c ****             break;
+ 344              		.loc 1 158 0
+ 345 005a 1846     		mov	r0, r3
+ 346              	.LVL47:
+ 347 005c FFF7FEFF 		bl	LED_green_Write
+ 348              	.LVL48:
+ 170:source\bsw/led.c **** }
+ 349              		.loc 1 170 0
+ 350 0060 0020     		movs	r0, #0
+ 159:source\bsw/led.c ****            
+ 351              		.loc 1 159 0
+ 352 0062 10BD     		pop	{r4, pc}
+ 353              	.LVL49:
+ 354              	.L33:
+ 355              	.LBB20:
+ 164:source\bsw/led.c ****             }
+ 356              		.loc 1 164 0 discriminator 3
+ 357 0064 2046     		mov	r0, r4
+ 358 0066 FFF7FEFF 		bl	LED_Toggle
+ 359              	.LVL50:
+ 162:source\bsw/led.c ****             {
+ 360              		.loc 1 162 0 discriminator 3
+ 361 006a 0134     		adds	r4, r4, #1
+ 362              	.LVL51:
+ 363 006c E4B2     		uxtb	r4, r4
+ 364              	.LVL52:
+ 365 006e 00E0     		b	.L29
+ 366              	.LVL53:
+ 367              	.L35:
+ 368              	.LBE20:
+ 144:source\bsw/led.c ****     {
+ 369              		.loc 1 144 0
+ 370 0070 0024     		movs	r4, #0
+ 371              	.LVL54:
+ 372              	.L29:
+ 373              	.LBB21:
+ 162:source\bsw/led.c ****             {
+ 374              		.loc 1 162 0 discriminator 1
+ 375 0072 042C     		cmp	r4, #4
+ 376 0074 F6D9     		bls	.L33
+ 377              	.LBE21:
+ 170:source\bsw/led.c **** }
+ 378              		.loc 1 170 0
+ 379 0076 0020     		movs	r0, #0
+ 380              	.LBB22:
+ 381 0078 10BD     		pop	{r4, pc}
+ 382              	.LVL55:
+ 383              	.L34:
+ 384              	.LBE22:
+ 167:source\bsw/led.c ****     }
+ 385              		.loc 1 167 0
+ 386 007a 6FF01300 		mvn	r0, #19
+ 387              	.LVL56:
+ 171:source\bsw/led.c **** 
+ 388              		.loc 1 171 0
+ 389 007e 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 12
+
+
+ 390              	.L41:
+ 391              		.align	2
+ 392              	.L40:
+ 393 0080 00000000 		.word	.LANCHOR0
+ 394              		.cfi_endproc
+ 395              	.LFE112:
+ 396              		.size	LED_Toggle, .-LED_Toggle
+ 397              		.bss
+ 398              		.align	2
+ 399              		.set	.LANCHOR0,. + 0
+ 400              		.type	LED__state, %object
+ 401              		.size	LED__state, 5
+ 402              	LED__state:
+ 403 0000 00000000 		.space	5
+ 403      00
+ 404              		.text
+ 405              	.Letext0:
+ 406              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 407              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 408              		.file 4 "Generated_Source\\PSoC5/ErikaOS_common_ee_types.inc"
+ 409              		.file 5 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc"
+ 410              		.file 6 "source\\bsw\\global.h"
+ 411              		.file 7 "source\\bsw\\led.h"
+ 412              		.file 8 "Generated_Source\\PSoC5/ErikaOS_ee_oo_intfunc.inc"
+ 413              		.file 9 "Generated_Source\\PSoC5/ErikaOS_cortex_mx_ee_context.inc"
+ 414              		.file 10 "Generated_Source\\PSoC5/ErikaOS_common_ee_primitives.inc"
+ 415              		.file 11 "Generated_Source\\PSoC5/core_cm3.h"
+ 416              		.file 12 "Generated_Source\\PSoC5/LED_red.h"
+ 417              		.file 13 "Generated_Source\\PSoC5/LED_orange.h"
+ 418              		.file 14 "Generated_Source\\PSoC5/LED_green.h"
+ 419              		.section	.debug_info,"",%progbits
+ 420              	.Ldebug_info0:
+ 421 0000 8F040000 		.4byte	0x48f
+ 422 0004 0400     		.2byte	0x4
+ 423 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 424 000a 04       		.byte	0x4
+ 425 000b 01       		.uleb128 0x1
+ 426 000c A2030000 		.4byte	.LASF76
+ 427 0010 0C       		.byte	0xc
+ 428 0011 2B020000 		.4byte	.LASF77
+ 429 0015 4C000000 		.4byte	.LASF78
+ 430 0019 50000000 		.4byte	.Ldebug_ranges0+0x50
+ 431 001d 00000000 		.4byte	0
+ 432 0021 00000000 		.4byte	.Ldebug_line0
+ 433 0025 02       		.uleb128 0x2
+ 434 0026 01       		.byte	0x1
+ 435 0027 06       		.byte	0x6
+ 436 0028 F3020000 		.4byte	.LASF0
+ 437 002c 02       		.uleb128 0x2
+ 438 002d 01       		.byte	0x1
+ 439 002e 08       		.byte	0x8
+ 440 002f D9020000 		.4byte	.LASF1
+ 441 0033 02       		.uleb128 0x2
+ 442 0034 02       		.byte	0x2
+ 443 0035 05       		.byte	0x5
+ 444 0036 F9000000 		.4byte	.LASF2
+ 445 003a 02       		.uleb128 0x2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 13
+
+
+ 446 003b 02       		.byte	0x2
+ 447 003c 07       		.byte	0x7
+ 448 003d 8F030000 		.4byte	.LASF3
+ 449 0041 03       		.uleb128 0x3
+ 450 0042 C2040000 		.4byte	.LASF9
+ 451 0046 02       		.byte	0x2
+ 452 0047 3F       		.byte	0x3f
+ 453 0048 4C000000 		.4byte	0x4c
+ 454 004c 02       		.uleb128 0x2
+ 455 004d 04       		.byte	0x4
+ 456 004e 05       		.byte	0x5
+ 457 004f 60020000 		.4byte	.LASF4
+ 458 0053 02       		.uleb128 0x2
+ 459 0054 04       		.byte	0x4
+ 460 0055 07       		.byte	0x7
+ 461 0056 85040000 		.4byte	.LASF5
+ 462 005a 02       		.uleb128 0x2
+ 463 005b 08       		.byte	0x8
+ 464 005c 05       		.byte	0x5
+ 465 005d FC010000 		.4byte	.LASF6
+ 466 0061 02       		.uleb128 0x2
+ 467 0062 08       		.byte	0x8
+ 468 0063 07       		.byte	0x7
+ 469 0064 07030000 		.4byte	.LASF7
+ 470 0068 04       		.uleb128 0x4
+ 471 0069 04       		.byte	0x4
+ 472 006a 05       		.byte	0x5
+ 473 006b 696E7400 		.ascii	"int\000"
+ 474 006f 02       		.uleb128 0x2
+ 475 0070 04       		.byte	0x4
+ 476 0071 07       		.byte	0x7
+ 477 0072 2E030000 		.4byte	.LASF8
+ 478 0076 03       		.uleb128 0x3
+ 479 0077 FF020000 		.4byte	.LASF10
+ 480 007b 03       		.byte	0x3
+ 481 007c 2C       		.byte	0x2c
+ 482 007d 41000000 		.4byte	0x41
+ 483 0081 02       		.uleb128 0x2
+ 484 0082 04       		.byte	0x4
+ 485 0083 04       		.byte	0x4
+ 486 0084 DD010000 		.4byte	.LASF11
+ 487 0088 02       		.uleb128 0x2
+ 488 0089 08       		.byte	0x8
+ 489 008a 04       		.byte	0x4
+ 490 008b EC040000 		.4byte	.LASF12
+ 491 008f 02       		.uleb128 0x2
+ 492 0090 01       		.byte	0x1
+ 493 0091 08       		.byte	0x8
+ 494 0092 30040000 		.4byte	.LASF13
+ 495 0096 02       		.uleb128 0x2
+ 496 0097 08       		.byte	0x8
+ 497 0098 04       		.byte	0x4
+ 498 0099 BD020000 		.4byte	.LASF14
+ 499 009d 03       		.uleb128 0x3
+ 500 009e 7D030000 		.4byte	.LASF15
+ 501 00a2 04       		.byte	0x4
+ 502 00a3 53       		.byte	0x53
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 14
+
+
+ 503 00a4 68000000 		.4byte	0x68
+ 504 00a8 03       		.uleb128 0x3
+ 505 00a9 61010000 		.4byte	.LASF16
+ 506 00ad 04       		.byte	0x4
+ 507 00ae 54       		.byte	0x54
+ 508 00af 6F000000 		.4byte	0x6f
+ 509 00b3 03       		.uleb128 0x3
+ 510 00b4 B2040000 		.4byte	.LASF17
+ 511 00b8 05       		.byte	0x5
+ 512 00b9 4D       		.byte	0x4d
+ 513 00ba A8000000 		.4byte	0xa8
+ 514 00be 03       		.uleb128 0x3
+ 515 00bf 45010000 		.4byte	.LASF18
+ 516 00c3 05       		.byte	0x5
+ 517 00c4 4F       		.byte	0x4f
+ 518 00c5 A8000000 		.4byte	0xa8
+ 519 00c9 03       		.uleb128 0x3
+ 520 00ca 77010000 		.4byte	.LASF19
+ 521 00ce 05       		.byte	0x5
+ 522 00cf 78       		.byte	0x78
+ 523 00d0 9D000000 		.4byte	0x9d
+ 524 00d4 02       		.uleb128 0x2
+ 525 00d5 04       		.byte	0x4
+ 526 00d6 07       		.byte	0x7
+ 527 00d7 29010000 		.4byte	.LASF20
+ 528 00db 05       		.uleb128 0x5
+ 529 00dc 01       		.byte	0x1
+ 530 00dd 25000000 		.4byte	0x25
+ 531 00e1 06       		.byte	0x6
+ 532 00e2 CF       		.byte	0xcf
+ 533 00e3 84010000 		.4byte	0x184
+ 534 00e7 06       		.uleb128 0x6
+ 535 00e8 30000000 		.4byte	.LASF21
+ 536 00ec 00       		.byte	0
+ 537 00ed 07       		.uleb128 0x7
+ 538 00ee 00050000 		.4byte	.LASF22
+ 539 00f2 7F       		.sleb128 -1
+ 540 00f3 07       		.uleb128 0x7
+ 541 00f4 59030000 		.4byte	.LASF23
+ 542 00f8 7E       		.sleb128 -2
+ 543 00f9 07       		.uleb128 0x7
+ 544 00fa 37010000 		.4byte	.LASF24
+ 545 00fe 7D       		.sleb128 -3
+ 546 00ff 07       		.uleb128 0x7
+ 547 0100 11050000 		.4byte	.LASF25
+ 548 0104 7C       		.sleb128 -4
+ 549 0105 07       		.uleb128 0x7
+ 550 0106 CE010000 		.4byte	.LASF26
+ 551 010a 7B       		.sleb128 -5
+ 552 010b 07       		.uleb128 0x7
+ 553 010c 03010000 		.4byte	.LASF27
+ 554 0110 7A       		.sleb128 -6
+ 555 0111 07       		.uleb128 0x7
+ 556 0112 69020000 		.4byte	.LASF28
+ 557 0116 79       		.sleb128 -7
+ 558 0117 07       		.uleb128 0x7
+ 559 0118 35040000 		.4byte	.LASF29
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 15
+
+
+ 560 011c 78       		.sleb128 -8
+ 561 011d 07       		.uleb128 0x7
+ 562 011e 67030000 		.4byte	.LASF30
+ 563 0122 77       		.sleb128 -9
+ 564 0123 07       		.uleb128 0x7
+ 565 0124 7B020000 		.4byte	.LASF31
+ 566 0128 76       		.sleb128 -10
+ 567 0129 07       		.uleb128 0x7
+ 568 012a 4A050000 		.4byte	.LASF32
+ 569 012e 75       		.sleb128 -11
+ 570 012f 07       		.uleb128 0x7
+ 571 0130 3B030000 		.4byte	.LASF33
+ 572 0134 74       		.sleb128 -12
+ 573 0135 07       		.uleb128 0x7
+ 574 0136 A0040000 		.4byte	.LASF34
+ 575 013a 73       		.sleb128 -13
+ 576 013b 07       		.uleb128 0x7
+ 577 013c 1D000000 		.4byte	.LASF35
+ 578 0140 72       		.sleb128 -14
+ 579 0141 07       		.uleb128 0x7
+ 580 0142 E5000000 		.4byte	.LASF36
+ 581 0146 71       		.sleb128 -15
+ 582 0147 07       		.uleb128 0x7
+ 583 0148 8F020000 		.4byte	.LASF37
+ 584 014c 70       		.sleb128 -16
+ 585 014d 07       		.uleb128 0x7
+ 586 014e 4D010000 		.4byte	.LASF38
+ 587 0152 6F       		.sleb128 -17
+ 588 0153 07       		.uleb128 0x7
+ 589 0154 14010000 		.4byte	.LASF39
+ 590 0158 6E       		.sleb128 -18
+ 591 0159 07       		.uleb128 0x7
+ 592 015a 3C020000 		.4byte	.LASF40
+ 593 015e 6D       		.sleb128 -19
+ 594 015f 07       		.uleb128 0x7
+ 595 0160 55040000 		.4byte	.LASF41
+ 596 0164 6C       		.sleb128 -20
+ 597 0165 07       		.uleb128 0x7
+ 598 0166 AB020000 		.4byte	.LASF42
+ 599 016a 6B       		.sleb128 -21
+ 600 016b 07       		.uleb128 0x7
+ 601 016c DA040000 		.4byte	.LASF43
+ 602 0170 6A       		.sleb128 -22
+ 603 0171 07       		.uleb128 0x7
+ 604 0172 89010000 		.4byte	.LASF44
+ 605 0176 69       		.sleb128 -23
+ 606 0177 07       		.uleb128 0x7
+ 607 0178 4F020000 		.4byte	.LASF45
+ 608 017c 68       		.sleb128 -24
+ 609 017d 07       		.uleb128 0x7
+ 610 017e E3010000 		.4byte	.LASF46
+ 611 0182 67       		.sleb128 -25
+ 612 0183 00       		.byte	0
+ 613 0184 03       		.uleb128 0x3
+ 614 0185 32010000 		.4byte	.LASF47
+ 615 0189 06       		.byte	0x6
+ 616 018a EA       		.byte	0xea
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 16
+
+
+ 617 018b DB000000 		.4byte	0xdb
+ 618 018f 08       		.uleb128 0x8
+ 619 0190 0A020000 		.4byte	.LASF55
+ 620 0194 01       		.byte	0x1
+ 621 0195 2C000000 		.4byte	0x2c
+ 622 0199 07       		.byte	0x7
+ 623 019a 5A       		.byte	0x5a
+ 624 019b C4010000 		.4byte	0x1c4
+ 625 019f 06       		.uleb128 0x6
+ 626 01a0 09050000 		.4byte	.LASF48
+ 627 01a4 00       		.byte	0
+ 628 01a5 06       		.uleb128 0x6
+ 629 01a6 A0020000 		.4byte	.LASF49
+ 630 01aa 01       		.byte	0x1
+ 631 01ab 06       		.uleb128 0x6
+ 632 01ac 68040000 		.4byte	.LASF50
+ 633 01b0 02       		.byte	0x2
+ 634 01b1 06       		.uleb128 0x6
+ 635 01b2 4A040000 		.4byte	.LASF51
+ 636 01b6 03       		.byte	0x3
+ 637 01b7 06       		.uleb128 0x6
+ 638 01b8 CC040000 		.4byte	.LASF52
+ 639 01bc 04       		.byte	0x4
+ 640 01bd 06       		.uleb128 0x6
+ 641 01be BA040000 		.4byte	.LASF53
+ 642 01c2 05       		.byte	0x5
+ 643 01c3 00       		.byte	0
+ 644 01c4 03       		.uleb128 0x3
+ 645 01c5 25030000 		.4byte	.LASF54
+ 646 01c9 07       		.byte	0x7
+ 647 01ca 62       		.byte	0x62
+ 648 01cb 8F010000 		.4byte	0x18f
+ 649 01cf 08       		.uleb128 0x8
+ 650 01d0 7E010000 		.4byte	.LASF56
+ 651 01d4 01       		.byte	0x1
+ 652 01d5 2C000000 		.4byte	0x2c
+ 653 01d9 07       		.byte	0x7
+ 654 01da 64       		.byte	0x64
+ 655 01db EC010000 		.4byte	0x1ec
+ 656 01df 06       		.uleb128 0x6
+ 657 01e0 51030000 		.4byte	.LASF57
+ 658 01e4 00       		.byte	0
+ 659 01e5 06       		.uleb128 0x6
+ 660 01e6 1E030000 		.4byte	.LASF58
+ 661 01ea 01       		.byte	0x1
+ 662 01eb 00       		.byte	0
+ 663 01ec 03       		.uleb128 0x3
+ 664 01ed E7020000 		.4byte	.LASF59
+ 665 01f1 07       		.byte	0x7
+ 666 01f2 68       		.byte	0x68
+ 667 01f3 CF010000 		.4byte	0x1cf
+ 668 01f7 09       		.uleb128 0x9
+ 669 01f8 3B000000 		.4byte	.LASF79
+ 670 01fc 01       		.byte	0x1
+ 671 01fd B3       		.byte	0xb3
+ 672 01fe EC010000 		.4byte	0x1ec
+ 673 0202 03       		.byte	0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 17
+
+
+ 674 0203 13020000 		.4byte	0x213
+ 675 0207 0A       		.uleb128 0xa
+ 676 0208 86030000 		.4byte	.LASF61
+ 677 020c 01       		.byte	0x1
+ 678 020d B3       		.byte	0xb3
+ 679 020e EC010000 		.4byte	0x1ec
+ 680 0212 00       		.byte	0
+ 681 0213 0B       		.uleb128 0xb
+ 682 0214 49030000 		.4byte	.LASF64
+ 683 0218 01       		.byte	0x1
+ 684 0219 62       		.byte	0x62
+ 685 021a 84010000 		.4byte	0x184
+ 686 021e 00000000 		.4byte	.LFB111
+ 687 0222 74000000 		.4byte	.LFE111-.LFB111
+ 688 0226 01       		.uleb128 0x1
+ 689 0227 9C       		.byte	0x9c
+ 690 0228 DC020000 		.4byte	0x2dc
+ 691 022c 0C       		.uleb128 0xc
+ 692 022d 89020000 		.4byte	.LASF60
+ 693 0231 01       		.byte	0x1
+ 694 0232 62       		.byte	0x62
+ 695 0233 C4010000 		.4byte	0x1c4
+ 696 0237 00000000 		.4byte	.LLST0
+ 697 023b 0C       		.uleb128 0xc
+ 698 023c 86030000 		.4byte	.LASF61
+ 699 0240 01       		.byte	0x1
+ 700 0241 62       		.byte	0x62
+ 701 0242 EC010000 		.4byte	0x1ec
+ 702 0246 9E000000 		.4byte	.LLST1
+ 703 024a 0D       		.uleb128 0xd
+ 704 024b 00000000 		.4byte	.Ldebug_ranges0+0
+ 705 024f 77020000 		.4byte	0x277
+ 706 0253 0E       		.uleb128 0xe
+ 707 0254 6900     		.ascii	"i\000"
+ 708 0256 01       		.byte	0x1
+ 709 0257 77       		.byte	0x77
+ 710 0258 C4010000 		.4byte	0x1c4
+ 711 025c 2E010000 		.4byte	.LLST2
+ 712 0260 0F       		.uleb128 0xf
+ 713 0261 46000000 		.4byte	.LVL10
+ 714 0265 13020000 		.4byte	0x213
+ 715 0269 10       		.uleb128 0x10
+ 716 026a 01       		.uleb128 0x1
+ 717 026b 50       		.byte	0x50
+ 718 026c 02       		.uleb128 0x2
+ 719 026d 74       		.byte	0x74
+ 720 026e 00       		.sleb128 0
+ 721 026f 10       		.uleb128 0x10
+ 722 0270 01       		.uleb128 0x1
+ 723 0271 51       		.byte	0x51
+ 724 0272 02       		.uleb128 0x2
+ 725 0273 75       		.byte	0x75
+ 726 0274 00       		.sleb128 0
+ 727 0275 00       		.byte	0
+ 728 0276 00       		.byte	0
+ 729 0277 11       		.uleb128 0x11
+ 730 0278 1A000000 		.4byte	.LVL2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 18
+
+
+ 731 027c 71040000 		.4byte	0x471
+ 732 0280 8B020000 		.4byte	0x28b
+ 733 0284 10       		.uleb128 0x10
+ 734 0285 01       		.uleb128 0x1
+ 735 0286 50       		.byte	0x50
+ 736 0287 02       		.uleb128 0x2
+ 737 0288 75       		.byte	0x75
+ 738 0289 00       		.sleb128 0
+ 739 028a 00       		.byte	0
+ 740 028b 11       		.uleb128 0x11
+ 741 028c 28000000 		.4byte	.LVL5
+ 742 0290 7C040000 		.4byte	0x47c
+ 743 0294 9F020000 		.4byte	0x29f
+ 744 0298 10       		.uleb128 0x10
+ 745 0299 01       		.uleb128 0x1
+ 746 029a 50       		.byte	0x50
+ 747 029b 02       		.uleb128 0x2
+ 748 029c 75       		.byte	0x75
+ 749 029d 00       		.sleb128 0
+ 750 029e 00       		.byte	0
+ 751 029f 11       		.uleb128 0x11
+ 752 02a0 36000000 		.4byte	.LVL8
+ 753 02a4 87040000 		.4byte	0x487
+ 754 02a8 B3020000 		.4byte	0x2b3
+ 755 02ac 10       		.uleb128 0x10
+ 756 02ad 01       		.uleb128 0x1
+ 757 02ae 50       		.byte	0x50
+ 758 02af 02       		.uleb128 0x2
+ 759 02b0 75       		.byte	0x75
+ 760 02b1 00       		.sleb128 0
+ 761 02b2 00       		.byte	0
+ 762 02b3 11       		.uleb128 0x11
+ 763 02b4 5C000000 		.4byte	.LVL17
+ 764 02b8 13020000 		.4byte	0x213
+ 765 02bc C6020000 		.4byte	0x2c6
+ 766 02c0 10       		.uleb128 0x10
+ 767 02c1 01       		.uleb128 0x1
+ 768 02c2 50       		.byte	0x50
+ 769 02c3 01       		.uleb128 0x1
+ 770 02c4 32       		.byte	0x32
+ 771 02c5 00       		.byte	0
+ 772 02c6 0F       		.uleb128 0xf
+ 773 02c7 64000000 		.4byte	.LVL18
+ 774 02cb 13020000 		.4byte	0x213
+ 775 02cf 10       		.uleb128 0x10
+ 776 02d0 01       		.uleb128 0x1
+ 777 02d1 50       		.byte	0x50
+ 778 02d2 01       		.uleb128 0x1
+ 779 02d3 31       		.byte	0x31
+ 780 02d4 10       		.uleb128 0x10
+ 781 02d5 01       		.uleb128 0x1
+ 782 02d6 51       		.byte	0x51
+ 783 02d7 02       		.uleb128 0x2
+ 784 02d8 75       		.byte	0x75
+ 785 02d9 00       		.sleb128 0
+ 786 02da 00       		.byte	0
+ 787 02db 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 19
+
+
+ 788 02dc 12       		.uleb128 0x12
+ 789 02dd 97040000 		.4byte	.LASF80
+ 790 02e1 01       		.byte	0x1
+ 791 02e2 46       		.byte	0x46
+ 792 02e3 84010000 		.4byte	0x184
+ 793 02e7 00000000 		.4byte	.LFB110
+ 794 02eb 28000000 		.4byte	.LFE110-.LFB110
+ 795 02ef 01       		.uleb128 0x1
+ 796 02f0 9C       		.byte	0x9c
+ 797 02f1 46030000 		.4byte	0x346
+ 798 02f5 13       		.uleb128 0x13
+ 799 02f6 0B000000 		.4byte	.LASF62
+ 800 02fa 01       		.byte	0x1
+ 801 02fb 48       		.byte	0x48
+ 802 02fc 84010000 		.4byte	0x184
+ 803 0300 57010000 		.4byte	.LLST3
+ 804 0304 14       		.uleb128 0x14
+ 805 0305 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 806 0309 0E       		.uleb128 0xe
+ 807 030a 6900     		.ascii	"i\000"
+ 808 030c 01       		.byte	0x1
+ 809 030d 4A       		.byte	0x4a
+ 810 030e C4010000 		.4byte	0x1c4
+ 811 0312 76010000 		.4byte	.LLST4
+ 812 0316 15       		.uleb128 0x15
+ 813 0317 08000000 		.4byte	.LBB12
+ 814 031b 10000000 		.4byte	.LBE12-.LBB12
+ 815 031f 13       		.uleb128 0x13
+ 816 0320 6B010000 		.4byte	.LASF63
+ 817 0324 01       		.byte	0x1
+ 818 0325 4E       		.byte	0x4e
+ 819 0326 84010000 		.4byte	0x184
+ 820 032a A0010000 		.4byte	.LLST5
+ 821 032e 0F       		.uleb128 0xf
+ 822 032f 14000000 		.4byte	.LVL23
+ 823 0333 13020000 		.4byte	0x213
+ 824 0337 10       		.uleb128 0x10
+ 825 0338 01       		.uleb128 0x1
+ 826 0339 50       		.byte	0x50
+ 827 033a 02       		.uleb128 0x2
+ 828 033b 74       		.byte	0x74
+ 829 033c 00       		.sleb128 0
+ 830 033d 10       		.uleb128 0x10
+ 831 033e 01       		.uleb128 0x1
+ 832 033f 51       		.byte	0x51
+ 833 0340 01       		.uleb128 0x1
+ 834 0341 30       		.byte	0x30
+ 835 0342 00       		.byte	0
+ 836 0343 00       		.byte	0
+ 837 0344 00       		.byte	0
+ 838 0345 00       		.byte	0
+ 839 0346 0B       		.uleb128 0xb
+ 840 0347 00000000 		.4byte	.LASF65
+ 841 034b 01       		.byte	0x1
+ 842 034c 8D       		.byte	0x8d
+ 843 034d 84010000 		.4byte	0x184
+ 844 0351 00000000 		.4byte	.LFB112
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 20
+
+
+ 845 0355 84000000 		.4byte	.LFE112-.LFB112
+ 846 0359 01       		.uleb128 0x1
+ 847 035a 9C       		.byte	0x9c
+ 848 035b 08040000 		.4byte	0x408
+ 849 035f 0C       		.uleb128 0xc
+ 850 0360 89020000 		.4byte	.LASF60
+ 851 0364 01       		.byte	0x1
+ 852 0365 8D       		.byte	0x8d
+ 853 0366 C4010000 		.4byte	0x1c4
+ 854 036a B3010000 		.4byte	.LLST6
+ 855 036e 16       		.uleb128 0x16
+ 856 036f F7010000 		.4byte	0x1f7
+ 857 0373 14000000 		.4byte	.LBB14
+ 858 0377 0A000000 		.4byte	.LBE14-.LBB14
+ 859 037b 01       		.byte	0x1
+ 860 037c 93       		.byte	0x93
+ 861 037d 8B030000 		.4byte	0x38b
+ 862 0381 17       		.uleb128 0x17
+ 863 0382 07020000 		.4byte	0x207
+ 864 0386 38020000 		.4byte	.LLST7
+ 865 038a 00       		.byte	0
+ 866 038b 16       		.uleb128 0x16
+ 867 038c F7010000 		.4byte	0x1f7
+ 868 0390 30000000 		.4byte	.LBB16
+ 869 0394 0A000000 		.4byte	.LBE16-.LBB16
+ 870 0398 01       		.byte	0x1
+ 871 0399 98       		.byte	0x98
+ 872 039a A8030000 		.4byte	0x3a8
+ 873 039e 17       		.uleb128 0x17
+ 874 039f 07020000 		.4byte	0x207
+ 875 03a3 68020000 		.4byte	.LLST8
+ 876 03a7 00       		.byte	0
+ 877 03a8 16       		.uleb128 0x16
+ 878 03a9 F7010000 		.4byte	0x1f7
+ 879 03ad 4C000000 		.4byte	.LBB18
+ 880 03b1 0A000000 		.4byte	.LBE18-.LBB18
+ 881 03b5 01       		.byte	0x1
+ 882 03b6 9D       		.byte	0x9d
+ 883 03b7 C5030000 		.4byte	0x3c5
+ 884 03bb 17       		.uleb128 0x17
+ 885 03bc 07020000 		.4byte	0x207
+ 886 03c0 98020000 		.4byte	.LLST9
+ 887 03c4 00       		.byte	0
+ 888 03c5 0D       		.uleb128 0xd
+ 889 03c6 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 890 03ca EC030000 		.4byte	0x3ec
+ 891 03ce 0E       		.uleb128 0xe
+ 892 03cf 6900     		.ascii	"i\000"
+ 893 03d1 01       		.byte	0x1
+ 894 03d2 A2       		.byte	0xa2
+ 895 03d3 C4010000 		.4byte	0x1c4
+ 896 03d7 C8020000 		.4byte	.LLST10
+ 897 03db 0F       		.uleb128 0xf
+ 898 03dc 6A000000 		.4byte	.LVL50
+ 899 03e0 46030000 		.4byte	0x346
+ 900 03e4 10       		.uleb128 0x10
+ 901 03e5 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 21
+
+
+ 902 03e6 50       		.byte	0x50
+ 903 03e7 02       		.uleb128 0x2
+ 904 03e8 74       		.byte	0x74
+ 905 03e9 00       		.sleb128 0
+ 906 03ea 00       		.byte	0
+ 907 03eb 00       		.byte	0
+ 908 03ec 18       		.uleb128 0x18
+ 909 03ed 28000000 		.4byte	.LVL34
+ 910 03f1 71040000 		.4byte	0x471
+ 911 03f5 18       		.uleb128 0x18
+ 912 03f6 44000000 		.4byte	.LVL41
+ 913 03fa 7C040000 		.4byte	0x47c
+ 914 03fe 18       		.uleb128 0x18
+ 915 03ff 60000000 		.4byte	.LVL48
+ 916 0403 87040000 		.4byte	0x487
+ 917 0407 00       		.byte	0
+ 918 0408 19       		.uleb128 0x19
+ 919 0409 EC010000 		.4byte	0x1ec
+ 920 040d 18040000 		.4byte	0x418
+ 921 0411 1A       		.uleb128 0x1a
+ 922 0412 D4000000 		.4byte	0xd4
+ 923 0416 04       		.byte	0x4
+ 924 0417 00       		.byte	0
+ 925 0418 1B       		.uleb128 0x1b
+ 926 0419 12000000 		.4byte	.LASF66
+ 927 041d 01       		.byte	0x1
+ 928 041e 2F       		.byte	0x2f
+ 929 041f 08040000 		.4byte	0x408
+ 930 0423 05       		.uleb128 0x5
+ 931 0424 03       		.byte	0x3
+ 932 0425 00000000 		.4byte	LED__state
+ 933 0429 1C       		.uleb128 0x1c
+ 934 042a 21050000 		.4byte	.LASF67
+ 935 042e 08       		.byte	0x8
+ 936 042f 40       		.byte	0x40
+ 937 0430 B3000000 		.4byte	0xb3
+ 938 0434 1C       		.uleb128 0x1c
+ 939 0435 12020000 		.4byte	.LASF68
+ 940 0439 08       		.byte	0x8
+ 941 043a 47       		.byte	0x47
+ 942 043b BE000000 		.4byte	0xbe
+ 943 043f 1C       		.uleb128 0x1c
+ 944 0440 72040000 		.4byte	.LASF69
+ 945 0444 08       		.byte	0x8
+ 946 0445 4A       		.byte	0x4a
+ 947 0446 B3000000 		.4byte	0xb3
+ 948 044a 1C       		.uleb128 0x1c
+ 949 044b B5010000 		.4byte	.LASF70
+ 950 044f 09       		.byte	0x9
+ 951 0450 48       		.byte	0x48
+ 952 0451 C9000000 		.4byte	0xc9
+ 953 0455 1C       		.uleb128 0x1c
+ 954 0456 A0010000 		.4byte	.LASF71
+ 955 045a 0A       		.byte	0xa
+ 956 045b 44       		.byte	0x44
+ 957 045c B3000000 		.4byte	0xb3
+ 958 0460 1D       		.uleb128 0x1d
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 22
+
+
+ 959 0461 F3040000 		.4byte	.LASF72
+ 960 0465 0B       		.byte	0xb
+ 961 0466 1207     		.2byte	0x712
+ 962 0468 6C040000 		.4byte	0x46c
+ 963 046c 1E       		.uleb128 0x1e
+ 964 046d 76000000 		.4byte	0x76
+ 965 0471 1F       		.uleb128 0x1f
+ 966 0472 D7000000 		.4byte	.LASF73
+ 967 0476 D7000000 		.4byte	.LASF73
+ 968 047a 0C       		.byte	0xc
+ 969 047b 26       		.byte	0x26
+ 970 047c 1F       		.uleb128 0x1f
+ 971 047d 39050000 		.4byte	.LASF74
+ 972 0481 39050000 		.4byte	.LASF74
+ 973 0485 0D       		.byte	0xd
+ 974 0486 26       		.byte	0x26
+ 975 0487 1F       		.uleb128 0x1f
+ 976 0488 C9020000 		.4byte	.LASF75
+ 977 048c C9020000 		.4byte	.LASF75
+ 978 0490 0E       		.byte	0xe
+ 979 0491 26       		.byte	0x26
+ 980 0492 00       		.byte	0
+ 981              		.section	.debug_abbrev,"",%progbits
+ 982              	.Ldebug_abbrev0:
+ 983 0000 01       		.uleb128 0x1
+ 984 0001 11       		.uleb128 0x11
+ 985 0002 01       		.byte	0x1
+ 986 0003 25       		.uleb128 0x25
+ 987 0004 0E       		.uleb128 0xe
+ 988 0005 13       		.uleb128 0x13
+ 989 0006 0B       		.uleb128 0xb
+ 990 0007 03       		.uleb128 0x3
+ 991 0008 0E       		.uleb128 0xe
+ 992 0009 1B       		.uleb128 0x1b
+ 993 000a 0E       		.uleb128 0xe
+ 994 000b 55       		.uleb128 0x55
+ 995 000c 17       		.uleb128 0x17
+ 996 000d 11       		.uleb128 0x11
+ 997 000e 01       		.uleb128 0x1
+ 998 000f 10       		.uleb128 0x10
+ 999 0010 17       		.uleb128 0x17
+ 1000 0011 00       		.byte	0
+ 1001 0012 00       		.byte	0
+ 1002 0013 02       		.uleb128 0x2
+ 1003 0014 24       		.uleb128 0x24
+ 1004 0015 00       		.byte	0
+ 1005 0016 0B       		.uleb128 0xb
+ 1006 0017 0B       		.uleb128 0xb
+ 1007 0018 3E       		.uleb128 0x3e
+ 1008 0019 0B       		.uleb128 0xb
+ 1009 001a 03       		.uleb128 0x3
+ 1010 001b 0E       		.uleb128 0xe
+ 1011 001c 00       		.byte	0
+ 1012 001d 00       		.byte	0
+ 1013 001e 03       		.uleb128 0x3
+ 1014 001f 16       		.uleb128 0x16
+ 1015 0020 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 23
+
+
+ 1016 0021 03       		.uleb128 0x3
+ 1017 0022 0E       		.uleb128 0xe
+ 1018 0023 3A       		.uleb128 0x3a
+ 1019 0024 0B       		.uleb128 0xb
+ 1020 0025 3B       		.uleb128 0x3b
+ 1021 0026 0B       		.uleb128 0xb
+ 1022 0027 49       		.uleb128 0x49
+ 1023 0028 13       		.uleb128 0x13
+ 1024 0029 00       		.byte	0
+ 1025 002a 00       		.byte	0
+ 1026 002b 04       		.uleb128 0x4
+ 1027 002c 24       		.uleb128 0x24
+ 1028 002d 00       		.byte	0
+ 1029 002e 0B       		.uleb128 0xb
+ 1030 002f 0B       		.uleb128 0xb
+ 1031 0030 3E       		.uleb128 0x3e
+ 1032 0031 0B       		.uleb128 0xb
+ 1033 0032 03       		.uleb128 0x3
+ 1034 0033 08       		.uleb128 0x8
+ 1035 0034 00       		.byte	0
+ 1036 0035 00       		.byte	0
+ 1037 0036 05       		.uleb128 0x5
+ 1038 0037 04       		.uleb128 0x4
+ 1039 0038 01       		.byte	0x1
+ 1040 0039 0B       		.uleb128 0xb
+ 1041 003a 0B       		.uleb128 0xb
+ 1042 003b 49       		.uleb128 0x49
+ 1043 003c 13       		.uleb128 0x13
+ 1044 003d 3A       		.uleb128 0x3a
+ 1045 003e 0B       		.uleb128 0xb
+ 1046 003f 3B       		.uleb128 0x3b
+ 1047 0040 0B       		.uleb128 0xb
+ 1048 0041 01       		.uleb128 0x1
+ 1049 0042 13       		.uleb128 0x13
+ 1050 0043 00       		.byte	0
+ 1051 0044 00       		.byte	0
+ 1052 0045 06       		.uleb128 0x6
+ 1053 0046 28       		.uleb128 0x28
+ 1054 0047 00       		.byte	0
+ 1055 0048 03       		.uleb128 0x3
+ 1056 0049 0E       		.uleb128 0xe
+ 1057 004a 1C       		.uleb128 0x1c
+ 1058 004b 0B       		.uleb128 0xb
+ 1059 004c 00       		.byte	0
+ 1060 004d 00       		.byte	0
+ 1061 004e 07       		.uleb128 0x7
+ 1062 004f 28       		.uleb128 0x28
+ 1063 0050 00       		.byte	0
+ 1064 0051 03       		.uleb128 0x3
+ 1065 0052 0E       		.uleb128 0xe
+ 1066 0053 1C       		.uleb128 0x1c
+ 1067 0054 0D       		.uleb128 0xd
+ 1068 0055 00       		.byte	0
+ 1069 0056 00       		.byte	0
+ 1070 0057 08       		.uleb128 0x8
+ 1071 0058 04       		.uleb128 0x4
+ 1072 0059 01       		.byte	0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 24
+
+
+ 1073 005a 03       		.uleb128 0x3
+ 1074 005b 0E       		.uleb128 0xe
+ 1075 005c 0B       		.uleb128 0xb
+ 1076 005d 0B       		.uleb128 0xb
+ 1077 005e 49       		.uleb128 0x49
+ 1078 005f 13       		.uleb128 0x13
+ 1079 0060 3A       		.uleb128 0x3a
+ 1080 0061 0B       		.uleb128 0xb
+ 1081 0062 3B       		.uleb128 0x3b
+ 1082 0063 0B       		.uleb128 0xb
+ 1083 0064 01       		.uleb128 0x1
+ 1084 0065 13       		.uleb128 0x13
+ 1085 0066 00       		.byte	0
+ 1086 0067 00       		.byte	0
+ 1087 0068 09       		.uleb128 0x9
+ 1088 0069 2E       		.uleb128 0x2e
+ 1089 006a 01       		.byte	0x1
+ 1090 006b 03       		.uleb128 0x3
+ 1091 006c 0E       		.uleb128 0xe
+ 1092 006d 3A       		.uleb128 0x3a
+ 1093 006e 0B       		.uleb128 0xb
+ 1094 006f 3B       		.uleb128 0x3b
+ 1095 0070 0B       		.uleb128 0xb
+ 1096 0071 27       		.uleb128 0x27
+ 1097 0072 19       		.uleb128 0x19
+ 1098 0073 49       		.uleb128 0x49
+ 1099 0074 13       		.uleb128 0x13
+ 1100 0075 20       		.uleb128 0x20
+ 1101 0076 0B       		.uleb128 0xb
+ 1102 0077 01       		.uleb128 0x1
+ 1103 0078 13       		.uleb128 0x13
+ 1104 0079 00       		.byte	0
+ 1105 007a 00       		.byte	0
+ 1106 007b 0A       		.uleb128 0xa
+ 1107 007c 05       		.uleb128 0x5
+ 1108 007d 00       		.byte	0
+ 1109 007e 03       		.uleb128 0x3
+ 1110 007f 0E       		.uleb128 0xe
+ 1111 0080 3A       		.uleb128 0x3a
+ 1112 0081 0B       		.uleb128 0xb
+ 1113 0082 3B       		.uleb128 0x3b
+ 1114 0083 0B       		.uleb128 0xb
+ 1115 0084 49       		.uleb128 0x49
+ 1116 0085 13       		.uleb128 0x13
+ 1117 0086 00       		.byte	0
+ 1118 0087 00       		.byte	0
+ 1119 0088 0B       		.uleb128 0xb
+ 1120 0089 2E       		.uleb128 0x2e
+ 1121 008a 01       		.byte	0x1
+ 1122 008b 3F       		.uleb128 0x3f
+ 1123 008c 19       		.uleb128 0x19
+ 1124 008d 03       		.uleb128 0x3
+ 1125 008e 0E       		.uleb128 0xe
+ 1126 008f 3A       		.uleb128 0x3a
+ 1127 0090 0B       		.uleb128 0xb
+ 1128 0091 3B       		.uleb128 0x3b
+ 1129 0092 0B       		.uleb128 0xb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 25
+
+
+ 1130 0093 27       		.uleb128 0x27
+ 1131 0094 19       		.uleb128 0x19
+ 1132 0095 49       		.uleb128 0x49
+ 1133 0096 13       		.uleb128 0x13
+ 1134 0097 11       		.uleb128 0x11
+ 1135 0098 01       		.uleb128 0x1
+ 1136 0099 12       		.uleb128 0x12
+ 1137 009a 06       		.uleb128 0x6
+ 1138 009b 40       		.uleb128 0x40
+ 1139 009c 18       		.uleb128 0x18
+ 1140 009d 9742     		.uleb128 0x2117
+ 1141 009f 19       		.uleb128 0x19
+ 1142 00a0 01       		.uleb128 0x1
+ 1143 00a1 13       		.uleb128 0x13
+ 1144 00a2 00       		.byte	0
+ 1145 00a3 00       		.byte	0
+ 1146 00a4 0C       		.uleb128 0xc
+ 1147 00a5 05       		.uleb128 0x5
+ 1148 00a6 00       		.byte	0
+ 1149 00a7 03       		.uleb128 0x3
+ 1150 00a8 0E       		.uleb128 0xe
+ 1151 00a9 3A       		.uleb128 0x3a
+ 1152 00aa 0B       		.uleb128 0xb
+ 1153 00ab 3B       		.uleb128 0x3b
+ 1154 00ac 0B       		.uleb128 0xb
+ 1155 00ad 49       		.uleb128 0x49
+ 1156 00ae 13       		.uleb128 0x13
+ 1157 00af 02       		.uleb128 0x2
+ 1158 00b0 17       		.uleb128 0x17
+ 1159 00b1 00       		.byte	0
+ 1160 00b2 00       		.byte	0
+ 1161 00b3 0D       		.uleb128 0xd
+ 1162 00b4 0B       		.uleb128 0xb
+ 1163 00b5 01       		.byte	0x1
+ 1164 00b6 55       		.uleb128 0x55
+ 1165 00b7 17       		.uleb128 0x17
+ 1166 00b8 01       		.uleb128 0x1
+ 1167 00b9 13       		.uleb128 0x13
+ 1168 00ba 00       		.byte	0
+ 1169 00bb 00       		.byte	0
+ 1170 00bc 0E       		.uleb128 0xe
+ 1171 00bd 34       		.uleb128 0x34
+ 1172 00be 00       		.byte	0
+ 1173 00bf 03       		.uleb128 0x3
+ 1174 00c0 08       		.uleb128 0x8
+ 1175 00c1 3A       		.uleb128 0x3a
+ 1176 00c2 0B       		.uleb128 0xb
+ 1177 00c3 3B       		.uleb128 0x3b
+ 1178 00c4 0B       		.uleb128 0xb
+ 1179 00c5 49       		.uleb128 0x49
+ 1180 00c6 13       		.uleb128 0x13
+ 1181 00c7 02       		.uleb128 0x2
+ 1182 00c8 17       		.uleb128 0x17
+ 1183 00c9 00       		.byte	0
+ 1184 00ca 00       		.byte	0
+ 1185 00cb 0F       		.uleb128 0xf
+ 1186 00cc 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 26
+
+
+ 1187 00cf 01       		.byte	0x1
+ 1188 00d0 11       		.uleb128 0x11
+ 1189 00d1 01       		.uleb128 0x1
+ 1190 00d2 31       		.uleb128 0x31
+ 1191 00d3 13       		.uleb128 0x13
+ 1192 00d4 00       		.byte	0
+ 1193 00d5 00       		.byte	0
+ 1194 00d6 10       		.uleb128 0x10
+ 1195 00d7 8A8201   		.uleb128 0x410a
+ 1196 00da 00       		.byte	0
+ 1197 00db 02       		.uleb128 0x2
+ 1198 00dc 18       		.uleb128 0x18
+ 1199 00dd 9142     		.uleb128 0x2111
+ 1200 00df 18       		.uleb128 0x18
+ 1201 00e0 00       		.byte	0
+ 1202 00e1 00       		.byte	0
+ 1203 00e2 11       		.uleb128 0x11
+ 1204 00e3 898201   		.uleb128 0x4109
+ 1205 00e6 01       		.byte	0x1
+ 1206 00e7 11       		.uleb128 0x11
+ 1207 00e8 01       		.uleb128 0x1
+ 1208 00e9 31       		.uleb128 0x31
+ 1209 00ea 13       		.uleb128 0x13
+ 1210 00eb 01       		.uleb128 0x1
+ 1211 00ec 13       		.uleb128 0x13
+ 1212 00ed 00       		.byte	0
+ 1213 00ee 00       		.byte	0
+ 1214 00ef 12       		.uleb128 0x12
+ 1215 00f0 2E       		.uleb128 0x2e
+ 1216 00f1 01       		.byte	0x1
+ 1217 00f2 3F       		.uleb128 0x3f
+ 1218 00f3 19       		.uleb128 0x19
+ 1219 00f4 03       		.uleb128 0x3
+ 1220 00f5 0E       		.uleb128 0xe
+ 1221 00f6 3A       		.uleb128 0x3a
+ 1222 00f7 0B       		.uleb128 0xb
+ 1223 00f8 3B       		.uleb128 0x3b
+ 1224 00f9 0B       		.uleb128 0xb
+ 1225 00fa 49       		.uleb128 0x49
+ 1226 00fb 13       		.uleb128 0x13
+ 1227 00fc 11       		.uleb128 0x11
+ 1228 00fd 01       		.uleb128 0x1
+ 1229 00fe 12       		.uleb128 0x12
+ 1230 00ff 06       		.uleb128 0x6
+ 1231 0100 40       		.uleb128 0x40
+ 1232 0101 18       		.uleb128 0x18
+ 1233 0102 9742     		.uleb128 0x2117
+ 1234 0104 19       		.uleb128 0x19
+ 1235 0105 01       		.uleb128 0x1
+ 1236 0106 13       		.uleb128 0x13
+ 1237 0107 00       		.byte	0
+ 1238 0108 00       		.byte	0
+ 1239 0109 13       		.uleb128 0x13
+ 1240 010a 34       		.uleb128 0x34
+ 1241 010b 00       		.byte	0
+ 1242 010c 03       		.uleb128 0x3
+ 1243 010d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 27
+
+
+ 1244 010e 3A       		.uleb128 0x3a
+ 1245 010f 0B       		.uleb128 0xb
+ 1246 0110 3B       		.uleb128 0x3b
+ 1247 0111 0B       		.uleb128 0xb
+ 1248 0112 49       		.uleb128 0x49
+ 1249 0113 13       		.uleb128 0x13
+ 1250 0114 02       		.uleb128 0x2
+ 1251 0115 17       		.uleb128 0x17
+ 1252 0116 00       		.byte	0
+ 1253 0117 00       		.byte	0
+ 1254 0118 14       		.uleb128 0x14
+ 1255 0119 0B       		.uleb128 0xb
+ 1256 011a 01       		.byte	0x1
+ 1257 011b 55       		.uleb128 0x55
+ 1258 011c 17       		.uleb128 0x17
+ 1259 011d 00       		.byte	0
+ 1260 011e 00       		.byte	0
+ 1261 011f 15       		.uleb128 0x15
+ 1262 0120 0B       		.uleb128 0xb
+ 1263 0121 01       		.byte	0x1
+ 1264 0122 11       		.uleb128 0x11
+ 1265 0123 01       		.uleb128 0x1
+ 1266 0124 12       		.uleb128 0x12
+ 1267 0125 06       		.uleb128 0x6
+ 1268 0126 00       		.byte	0
+ 1269 0127 00       		.byte	0
+ 1270 0128 16       		.uleb128 0x16
+ 1271 0129 1D       		.uleb128 0x1d
+ 1272 012a 01       		.byte	0x1
+ 1273 012b 31       		.uleb128 0x31
+ 1274 012c 13       		.uleb128 0x13
+ 1275 012d 11       		.uleb128 0x11
+ 1276 012e 01       		.uleb128 0x1
+ 1277 012f 12       		.uleb128 0x12
+ 1278 0130 06       		.uleb128 0x6
+ 1279 0131 58       		.uleb128 0x58
+ 1280 0132 0B       		.uleb128 0xb
+ 1281 0133 59       		.uleb128 0x59
+ 1282 0134 0B       		.uleb128 0xb
+ 1283 0135 01       		.uleb128 0x1
+ 1284 0136 13       		.uleb128 0x13
+ 1285 0137 00       		.byte	0
+ 1286 0138 00       		.byte	0
+ 1287 0139 17       		.uleb128 0x17
+ 1288 013a 05       		.uleb128 0x5
+ 1289 013b 00       		.byte	0
+ 1290 013c 31       		.uleb128 0x31
+ 1291 013d 13       		.uleb128 0x13
+ 1292 013e 02       		.uleb128 0x2
+ 1293 013f 17       		.uleb128 0x17
+ 1294 0140 00       		.byte	0
+ 1295 0141 00       		.byte	0
+ 1296 0142 18       		.uleb128 0x18
+ 1297 0143 898201   		.uleb128 0x4109
+ 1298 0146 00       		.byte	0
+ 1299 0147 11       		.uleb128 0x11
+ 1300 0148 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 28
+
+
+ 1301 0149 31       		.uleb128 0x31
+ 1302 014a 13       		.uleb128 0x13
+ 1303 014b 00       		.byte	0
+ 1304 014c 00       		.byte	0
+ 1305 014d 19       		.uleb128 0x19
+ 1306 014e 01       		.uleb128 0x1
+ 1307 014f 01       		.byte	0x1
+ 1308 0150 49       		.uleb128 0x49
+ 1309 0151 13       		.uleb128 0x13
+ 1310 0152 01       		.uleb128 0x1
+ 1311 0153 13       		.uleb128 0x13
+ 1312 0154 00       		.byte	0
+ 1313 0155 00       		.byte	0
+ 1314 0156 1A       		.uleb128 0x1a
+ 1315 0157 21       		.uleb128 0x21
+ 1316 0158 00       		.byte	0
+ 1317 0159 49       		.uleb128 0x49
+ 1318 015a 13       		.uleb128 0x13
+ 1319 015b 2F       		.uleb128 0x2f
+ 1320 015c 0B       		.uleb128 0xb
+ 1321 015d 00       		.byte	0
+ 1322 015e 00       		.byte	0
+ 1323 015f 1B       		.uleb128 0x1b
+ 1324 0160 34       		.uleb128 0x34
+ 1325 0161 00       		.byte	0
+ 1326 0162 03       		.uleb128 0x3
+ 1327 0163 0E       		.uleb128 0xe
+ 1328 0164 3A       		.uleb128 0x3a
+ 1329 0165 0B       		.uleb128 0xb
+ 1330 0166 3B       		.uleb128 0x3b
+ 1331 0167 0B       		.uleb128 0xb
+ 1332 0168 49       		.uleb128 0x49
+ 1333 0169 13       		.uleb128 0x13
+ 1334 016a 02       		.uleb128 0x2
+ 1335 016b 18       		.uleb128 0x18
+ 1336 016c 00       		.byte	0
+ 1337 016d 00       		.byte	0
+ 1338 016e 1C       		.uleb128 0x1c
+ 1339 016f 34       		.uleb128 0x34
+ 1340 0170 00       		.byte	0
+ 1341 0171 03       		.uleb128 0x3
+ 1342 0172 0E       		.uleb128 0xe
+ 1343 0173 3A       		.uleb128 0x3a
+ 1344 0174 0B       		.uleb128 0xb
+ 1345 0175 3B       		.uleb128 0x3b
+ 1346 0176 0B       		.uleb128 0xb
+ 1347 0177 49       		.uleb128 0x49
+ 1348 0178 13       		.uleb128 0x13
+ 1349 0179 3F       		.uleb128 0x3f
+ 1350 017a 19       		.uleb128 0x19
+ 1351 017b 3C       		.uleb128 0x3c
+ 1352 017c 19       		.uleb128 0x19
+ 1353 017d 00       		.byte	0
+ 1354 017e 00       		.byte	0
+ 1355 017f 1D       		.uleb128 0x1d
+ 1356 0180 34       		.uleb128 0x34
+ 1357 0181 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 29
+
+
+ 1358 0182 03       		.uleb128 0x3
+ 1359 0183 0E       		.uleb128 0xe
+ 1360 0184 3A       		.uleb128 0x3a
+ 1361 0185 0B       		.uleb128 0xb
+ 1362 0186 3B       		.uleb128 0x3b
+ 1363 0187 05       		.uleb128 0x5
+ 1364 0188 49       		.uleb128 0x49
+ 1365 0189 13       		.uleb128 0x13
+ 1366 018a 3F       		.uleb128 0x3f
+ 1367 018b 19       		.uleb128 0x19
+ 1368 018c 3C       		.uleb128 0x3c
+ 1369 018d 19       		.uleb128 0x19
+ 1370 018e 00       		.byte	0
+ 1371 018f 00       		.byte	0
+ 1372 0190 1E       		.uleb128 0x1e
+ 1373 0191 35       		.uleb128 0x35
+ 1374 0192 00       		.byte	0
+ 1375 0193 49       		.uleb128 0x49
+ 1376 0194 13       		.uleb128 0x13
+ 1377 0195 00       		.byte	0
+ 1378 0196 00       		.byte	0
+ 1379 0197 1F       		.uleb128 0x1f
+ 1380 0198 2E       		.uleb128 0x2e
+ 1381 0199 00       		.byte	0
+ 1382 019a 3F       		.uleb128 0x3f
+ 1383 019b 19       		.uleb128 0x19
+ 1384 019c 3C       		.uleb128 0x3c
+ 1385 019d 19       		.uleb128 0x19
+ 1386 019e 6E       		.uleb128 0x6e
+ 1387 019f 0E       		.uleb128 0xe
+ 1388 01a0 03       		.uleb128 0x3
+ 1389 01a1 0E       		.uleb128 0xe
+ 1390 01a2 3A       		.uleb128 0x3a
+ 1391 01a3 0B       		.uleb128 0xb
+ 1392 01a4 3B       		.uleb128 0x3b
+ 1393 01a5 0B       		.uleb128 0xb
+ 1394 01a6 00       		.byte	0
+ 1395 01a7 00       		.byte	0
+ 1396 01a8 00       		.byte	0
+ 1397              		.section	.debug_loc,"",%progbits
+ 1398              	.Ldebug_loc0:
+ 1399              	.LLST0:
+ 1400 0000 00000000 		.4byte	.LVL0
+ 1401 0004 16000000 		.4byte	.LVL1
+ 1402 0008 0100     		.2byte	0x1
+ 1403 000a 50       		.byte	0x50
+ 1404 000b 16000000 		.4byte	.LVL1
+ 1405 000f 22000000 		.4byte	.LVL3
+ 1406 0013 0400     		.2byte	0x4
+ 1407 0015 F3       		.byte	0xf3
+ 1408 0016 01       		.uleb128 0x1
+ 1409 0017 50       		.byte	0x50
+ 1410 0018 9F       		.byte	0x9f
+ 1411 0019 22000000 		.4byte	.LVL3
+ 1412 001d 24000000 		.4byte	.LVL4
+ 1413 0021 0100     		.2byte	0x1
+ 1414 0023 50       		.byte	0x50
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 30
+
+
+ 1415 0024 24000000 		.4byte	.LVL4
+ 1416 0028 30000000 		.4byte	.LVL6
+ 1417 002c 0400     		.2byte	0x4
+ 1418 002e F3       		.byte	0xf3
+ 1419 002f 01       		.uleb128 0x1
+ 1420 0030 50       		.byte	0x50
+ 1421 0031 9F       		.byte	0x9f
+ 1422 0032 30000000 		.4byte	.LVL6
+ 1423 0036 32000000 		.4byte	.LVL7
+ 1424 003a 0100     		.2byte	0x1
+ 1425 003c 50       		.byte	0x50
+ 1426 003d 32000000 		.4byte	.LVL7
+ 1427 0041 4C000000 		.4byte	.LVL13
+ 1428 0045 0400     		.2byte	0x4
+ 1429 0047 F3       		.byte	0xf3
+ 1430 0048 01       		.uleb128 0x1
+ 1431 0049 50       		.byte	0x50
+ 1432 004a 9F       		.byte	0x9f
+ 1433 004b 4C000000 		.4byte	.LVL13
+ 1434 004f 4E000000 		.4byte	.LVL14
+ 1435 0053 0100     		.2byte	0x1
+ 1436 0055 50       		.byte	0x50
+ 1437 0056 4E000000 		.4byte	.LVL14
+ 1438 005a 56000000 		.4byte	.LVL15
+ 1439 005e 0400     		.2byte	0x4
+ 1440 0060 F3       		.byte	0xf3
+ 1441 0061 01       		.uleb128 0x1
+ 1442 0062 50       		.byte	0x50
+ 1443 0063 9F       		.byte	0x9f
+ 1444 0064 56000000 		.4byte	.LVL15
+ 1445 0068 58000000 		.4byte	.LVL16
+ 1446 006c 0100     		.2byte	0x1
+ 1447 006e 50       		.byte	0x50
+ 1448 006f 58000000 		.4byte	.LVL16
+ 1449 0073 68000000 		.4byte	.LVL19
+ 1450 0077 0400     		.2byte	0x4
+ 1451 0079 F3       		.byte	0xf3
+ 1452 007a 01       		.uleb128 0x1
+ 1453 007b 50       		.byte	0x50
+ 1454 007c 9F       		.byte	0x9f
+ 1455 007d 68000000 		.4byte	.LVL19
+ 1456 0081 6C000000 		.4byte	.LVL20
+ 1457 0085 0100     		.2byte	0x1
+ 1458 0087 50       		.byte	0x50
+ 1459 0088 6C000000 		.4byte	.LVL20
+ 1460 008c 74000000 		.4byte	.LFE111
+ 1461 0090 0400     		.2byte	0x4
+ 1462 0092 F3       		.byte	0xf3
+ 1463 0093 01       		.uleb128 0x1
+ 1464 0094 50       		.byte	0x50
+ 1465 0095 9F       		.byte	0x9f
+ 1466 0096 00000000 		.4byte	0
+ 1467 009a 00000000 		.4byte	0
+ 1468              	.LLST1:
+ 1469 009e 00000000 		.4byte	.LVL0
+ 1470 00a2 19000000 		.4byte	.LVL2-1
+ 1471 00a6 0100     		.2byte	0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 31
+
+
+ 1472 00a8 51       		.byte	0x51
+ 1473 00a9 19000000 		.4byte	.LVL2-1
+ 1474 00ad 22000000 		.4byte	.LVL3
+ 1475 00b1 0400     		.2byte	0x4
+ 1476 00b3 F3       		.byte	0xf3
+ 1477 00b4 01       		.uleb128 0x1
+ 1478 00b5 51       		.byte	0x51
+ 1479 00b6 9F       		.byte	0x9f
+ 1480 00b7 22000000 		.4byte	.LVL3
+ 1481 00bb 27000000 		.4byte	.LVL5-1
+ 1482 00bf 0100     		.2byte	0x1
+ 1483 00c1 51       		.byte	0x51
+ 1484 00c2 27000000 		.4byte	.LVL5-1
+ 1485 00c6 30000000 		.4byte	.LVL6
+ 1486 00ca 0400     		.2byte	0x4
+ 1487 00cc F3       		.byte	0xf3
+ 1488 00cd 01       		.uleb128 0x1
+ 1489 00ce 51       		.byte	0x51
+ 1490 00cf 9F       		.byte	0x9f
+ 1491 00d0 30000000 		.4byte	.LVL6
+ 1492 00d4 35000000 		.4byte	.LVL8-1
+ 1493 00d8 0100     		.2byte	0x1
+ 1494 00da 51       		.byte	0x51
+ 1495 00db 35000000 		.4byte	.LVL8-1
+ 1496 00df 4C000000 		.4byte	.LVL13
+ 1497 00e3 0400     		.2byte	0x4
+ 1498 00e5 F3       		.byte	0xf3
+ 1499 00e6 01       		.uleb128 0x1
+ 1500 00e7 51       		.byte	0x51
+ 1501 00e8 9F       		.byte	0x9f
+ 1502 00e9 4C000000 		.4byte	.LVL13
+ 1503 00ed 4E000000 		.4byte	.LVL14
+ 1504 00f1 0100     		.2byte	0x1
+ 1505 00f3 51       		.byte	0x51
+ 1506 00f4 4E000000 		.4byte	.LVL14
+ 1507 00f8 56000000 		.4byte	.LVL15
+ 1508 00fc 0400     		.2byte	0x4
+ 1509 00fe F3       		.byte	0xf3
+ 1510 00ff 01       		.uleb128 0x1
+ 1511 0100 51       		.byte	0x51
+ 1512 0101 9F       		.byte	0x9f
+ 1513 0102 56000000 		.4byte	.LVL15
+ 1514 0106 5B000000 		.4byte	.LVL17-1
+ 1515 010a 0100     		.2byte	0x1
+ 1516 010c 51       		.byte	0x51
+ 1517 010d 5B000000 		.4byte	.LVL17-1
+ 1518 0111 68000000 		.4byte	.LVL19
+ 1519 0115 0400     		.2byte	0x4
+ 1520 0117 F3       		.byte	0xf3
+ 1521 0118 01       		.uleb128 0x1
+ 1522 0119 51       		.byte	0x51
+ 1523 011a 9F       		.byte	0x9f
+ 1524 011b 68000000 		.4byte	.LVL19
+ 1525 011f 74000000 		.4byte	.LFE111
+ 1526 0123 0100     		.2byte	0x1
+ 1527 0125 51       		.byte	0x51
+ 1528 0126 00000000 		.4byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 32
+
+
+ 1529 012a 00000000 		.4byte	0
+ 1530              	.LLST2:
+ 1531 012e 3E000000 		.4byte	.LVL9
+ 1532 0132 48000000 		.4byte	.LVL11
+ 1533 0136 0100     		.2byte	0x1
+ 1534 0138 54       		.byte	0x54
+ 1535 0139 4A000000 		.4byte	.LVL12
+ 1536 013d 4C000000 		.4byte	.LVL13
+ 1537 0141 0100     		.2byte	0x1
+ 1538 0143 54       		.byte	0x54
+ 1539 0144 4E000000 		.4byte	.LVL14
+ 1540 0148 56000000 		.4byte	.LVL15
+ 1541 014c 0100     		.2byte	0x1
+ 1542 014e 54       		.byte	0x54
+ 1543 014f 00000000 		.4byte	0
+ 1544 0153 00000000 		.4byte	0
+ 1545              	.LLST3:
+ 1546 0157 02000000 		.4byte	.LVL21
+ 1547 015b 08000000 		.4byte	.LVL22
+ 1548 015f 0200     		.2byte	0x2
+ 1549 0161 30       		.byte	0x30
+ 1550 0162 9F       		.byte	0x9f
+ 1551 0163 08000000 		.4byte	.LVL22
+ 1552 0167 24000000 		.4byte	.LVL27
+ 1553 016b 0100     		.2byte	0x1
+ 1554 016d 55       		.byte	0x55
+ 1555 016e 00000000 		.4byte	0
+ 1556 0172 00000000 		.4byte	0
+ 1557              	.LLST4:
+ 1558 0176 02000000 		.4byte	.LVL21
+ 1559 017a 08000000 		.4byte	.LVL22
+ 1560 017e 0200     		.2byte	0x2
+ 1561 0180 30       		.byte	0x30
+ 1562 0181 9F       		.byte	0x9f
+ 1563 0182 08000000 		.4byte	.LVL22
+ 1564 0186 1A000000 		.4byte	.LVL25
+ 1565 018a 0100     		.2byte	0x1
+ 1566 018c 54       		.byte	0x54
+ 1567 018d 1C000000 		.4byte	.LVL26
+ 1568 0191 24000000 		.4byte	.LVL27
+ 1569 0195 0100     		.2byte	0x1
+ 1570 0197 54       		.byte	0x54
+ 1571 0198 00000000 		.4byte	0
+ 1572 019c 00000000 		.4byte	0
+ 1573              	.LLST5:
+ 1574 01a0 14000000 		.4byte	.LVL23
+ 1575 01a4 1C000000 		.4byte	.LVL26
+ 1576 01a8 0100     		.2byte	0x1
+ 1577 01aa 50       		.byte	0x50
+ 1578 01ab 00000000 		.4byte	0
+ 1579 01af 00000000 		.4byte	0
+ 1580              	.LLST6:
+ 1581 01b3 00000000 		.4byte	.LVL28
+ 1582 01b7 24000000 		.4byte	.LVL33
+ 1583 01bb 0100     		.2byte	0x1
+ 1584 01bd 50       		.byte	0x50
+ 1585 01be 24000000 		.4byte	.LVL33
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 33
+
+
+ 1586 01c2 2C000000 		.4byte	.LVL35
+ 1587 01c6 0400     		.2byte	0x4
+ 1588 01c8 F3       		.byte	0xf3
+ 1589 01c9 01       		.uleb128 0x1
+ 1590 01ca 50       		.byte	0x50
+ 1591 01cb 9F       		.byte	0x9f
+ 1592 01cc 2C000000 		.4byte	.LVL35
+ 1593 01d0 40000000 		.4byte	.LVL40
+ 1594 01d4 0100     		.2byte	0x1
+ 1595 01d6 50       		.byte	0x50
+ 1596 01d7 40000000 		.4byte	.LVL40
+ 1597 01db 48000000 		.4byte	.LVL42
+ 1598 01df 0400     		.2byte	0x4
+ 1599 01e1 F3       		.byte	0xf3
+ 1600 01e2 01       		.uleb128 0x1
+ 1601 01e3 50       		.byte	0x50
+ 1602 01e4 9F       		.byte	0x9f
+ 1603 01e5 48000000 		.4byte	.LVL42
+ 1604 01e9 5C000000 		.4byte	.LVL47
+ 1605 01ed 0100     		.2byte	0x1
+ 1606 01ef 50       		.byte	0x50
+ 1607 01f0 5C000000 		.4byte	.LVL47
+ 1608 01f4 70000000 		.4byte	.LVL53
+ 1609 01f8 0400     		.2byte	0x4
+ 1610 01fa F3       		.byte	0xf3
+ 1611 01fb 01       		.uleb128 0x1
+ 1612 01fc 50       		.byte	0x50
+ 1613 01fd 9F       		.byte	0x9f
+ 1614 01fe 70000000 		.4byte	.LVL53
+ 1615 0202 72000000 		.4byte	.LVL54
+ 1616 0206 0100     		.2byte	0x1
+ 1617 0208 50       		.byte	0x50
+ 1618 0209 72000000 		.4byte	.LVL54
+ 1619 020d 7A000000 		.4byte	.LVL55
+ 1620 0211 0400     		.2byte	0x4
+ 1621 0213 F3       		.byte	0xf3
+ 1622 0214 01       		.uleb128 0x1
+ 1623 0215 50       		.byte	0x50
+ 1624 0216 9F       		.byte	0x9f
+ 1625 0217 7A000000 		.4byte	.LVL55
+ 1626 021b 7E000000 		.4byte	.LVL56
+ 1627 021f 0100     		.2byte	0x1
+ 1628 0221 50       		.byte	0x50
+ 1629 0222 7E000000 		.4byte	.LVL56
+ 1630 0226 84000000 		.4byte	.LFE112
+ 1631 022a 0400     		.2byte	0x4
+ 1632 022c F3       		.byte	0xf3
+ 1633 022d 01       		.uleb128 0x1
+ 1634 022e 50       		.byte	0x50
+ 1635 022f 9F       		.byte	0x9f
+ 1636 0230 00000000 		.4byte	0
+ 1637 0234 00000000 		.4byte	0
+ 1638              	.LLST7:
+ 1639 0238 14000000 		.4byte	.LVL29
+ 1640 023c 1A000000 		.4byte	.LVL30
+ 1641 0240 0100     		.2byte	0x1
+ 1642 0242 53       		.byte	0x53
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 34
+
+
+ 1643 0243 1A000000 		.4byte	.LVL30
+ 1644 0247 1C000000 		.4byte	.LVL31
+ 1645 024b 0800     		.2byte	0x8
+ 1646 024d 70       		.byte	0x70
+ 1647 024e 00       		.sleb128 0
+ 1648 024f 03       		.byte	0x3
+ 1649 0250 00000000 		.4byte	.LANCHOR0
+ 1650 0254 22       		.byte	0x22
+ 1651 0255 1C000000 		.4byte	.LVL31
+ 1652 0259 1E000000 		.4byte	.LVL32
+ 1653 025d 0100     		.2byte	0x1
+ 1654 025f 53       		.byte	0x53
+ 1655 0260 00000000 		.4byte	0
+ 1656 0264 00000000 		.4byte	0
+ 1657              	.LLST8:
+ 1658 0268 30000000 		.4byte	.LVL36
+ 1659 026c 36000000 		.4byte	.LVL37
+ 1660 0270 0100     		.2byte	0x1
+ 1661 0272 53       		.byte	0x53
+ 1662 0273 36000000 		.4byte	.LVL37
+ 1663 0277 38000000 		.4byte	.LVL38
+ 1664 027b 0800     		.2byte	0x8
+ 1665 027d 70       		.byte	0x70
+ 1666 027e 00       		.sleb128 0
+ 1667 027f 03       		.byte	0x3
+ 1668 0280 00000000 		.4byte	.LANCHOR0
+ 1669 0284 22       		.byte	0x22
+ 1670 0285 38000000 		.4byte	.LVL38
+ 1671 0289 3A000000 		.4byte	.LVL39
+ 1672 028d 0100     		.2byte	0x1
+ 1673 028f 53       		.byte	0x53
+ 1674 0290 00000000 		.4byte	0
+ 1675 0294 00000000 		.4byte	0
+ 1676              	.LLST9:
+ 1677 0298 4C000000 		.4byte	.LVL43
+ 1678 029c 52000000 		.4byte	.LVL44
+ 1679 02a0 0100     		.2byte	0x1
+ 1680 02a2 53       		.byte	0x53
+ 1681 02a3 52000000 		.4byte	.LVL44
+ 1682 02a7 54000000 		.4byte	.LVL45
+ 1683 02ab 0800     		.2byte	0x8
+ 1684 02ad 70       		.byte	0x70
+ 1685 02ae 00       		.sleb128 0
+ 1686 02af 03       		.byte	0x3
+ 1687 02b0 00000000 		.4byte	.LANCHOR0
+ 1688 02b4 22       		.byte	0x22
+ 1689 02b5 54000000 		.4byte	.LVL45
+ 1690 02b9 56000000 		.4byte	.LVL46
+ 1691 02bd 0100     		.2byte	0x1
+ 1692 02bf 53       		.byte	0x53
+ 1693 02c0 00000000 		.4byte	0
+ 1694 02c4 00000000 		.4byte	0
+ 1695              	.LLST10:
+ 1696 02c8 64000000 		.4byte	.LVL49
+ 1697 02cc 6C000000 		.4byte	.LVL51
+ 1698 02d0 0100     		.2byte	0x1
+ 1699 02d2 54       		.byte	0x54
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 35
+
+
+ 1700 02d3 6E000000 		.4byte	.LVL52
+ 1701 02d7 70000000 		.4byte	.LVL53
+ 1702 02db 0100     		.2byte	0x1
+ 1703 02dd 54       		.byte	0x54
+ 1704 02de 72000000 		.4byte	.LVL54
+ 1705 02e2 7A000000 		.4byte	.LVL55
+ 1706 02e6 0100     		.2byte	0x1
+ 1707 02e8 54       		.byte	0x54
+ 1708 02e9 00000000 		.4byte	0
+ 1709 02ed 00000000 		.4byte	0
+ 1710              		.section	.debug_aranges,"",%progbits
+ 1711 0000 2C000000 		.4byte	0x2c
+ 1712 0004 0200     		.2byte	0x2
+ 1713 0006 00000000 		.4byte	.Ldebug_info0
+ 1714 000a 04       		.byte	0x4
+ 1715 000b 00       		.byte	0
+ 1716 000c 0000     		.2byte	0
+ 1717 000e 0000     		.2byte	0
+ 1718 0010 00000000 		.4byte	.LFB111
+ 1719 0014 74000000 		.4byte	.LFE111-.LFB111
+ 1720 0018 00000000 		.4byte	.LFB110
+ 1721 001c 28000000 		.4byte	.LFE110-.LFB110
+ 1722 0020 00000000 		.4byte	.LFB112
+ 1723 0024 84000000 		.4byte	.LFE112-.LFB112
+ 1724 0028 00000000 		.4byte	0
+ 1725 002c 00000000 		.4byte	0
+ 1726              		.section	.debug_ranges,"",%progbits
+ 1727              	.Ldebug_ranges0:
+ 1728 0000 3E000000 		.4byte	.LBB9
+ 1729 0004 4C000000 		.4byte	.LBE9
+ 1730 0008 4E000000 		.4byte	.LBB10
+ 1731 000c 52000000 		.4byte	.LBE10
+ 1732 0010 00000000 		.4byte	0
+ 1733 0014 00000000 		.4byte	0
+ 1734 0018 02000000 		.4byte	.LBB11
+ 1735 001c 04000000 		.4byte	.LBE11
+ 1736 0020 06000000 		.4byte	.LBB13
+ 1737 0024 20000000 		.4byte	.LBE13
+ 1738 0028 00000000 		.4byte	0
+ 1739 002c 00000000 		.4byte	0
+ 1740 0030 64000000 		.4byte	.LBB20
+ 1741 0034 70000000 		.4byte	.LBE20
+ 1742 0038 72000000 		.4byte	.LBB21
+ 1743 003c 76000000 		.4byte	.LBE21
+ 1744 0040 78000000 		.4byte	.LBB22
+ 1745 0044 7A000000 		.4byte	.LBE22
+ 1746 0048 00000000 		.4byte	0
+ 1747 004c 00000000 		.4byte	0
+ 1748 0050 00000000 		.4byte	.LFB111
+ 1749 0054 74000000 		.4byte	.LFE111
+ 1750 0058 00000000 		.4byte	.LFB110
+ 1751 005c 28000000 		.4byte	.LFE110
+ 1752 0060 00000000 		.4byte	.LFB112
+ 1753 0064 84000000 		.4byte	.LFE112
+ 1754 0068 00000000 		.4byte	0
+ 1755 006c 00000000 		.4byte	0
+ 1756              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 36
+
+
+ 1757              	.Ldebug_line0:
+ 1758 0000 FC020000 		.section	.debug_str,"MS",%progbits,1
+ 1758      02002E02 
+ 1758      00000201 
+ 1758      FB0E0D00 
+ 1758      01010101 
+ 1759              	.LASF65:
+ 1760 0000 4C45445F 		.ascii	"LED_Toggle\000"
+ 1760      546F6767 
+ 1760      6C6500
+ 1761              	.LASF62:
+ 1762 000b 72657375 		.ascii	"result\000"
+ 1762      6C7400
+ 1763              	.LASF66:
+ 1764 0012 4C45445F 		.ascii	"LED__state\000"
+ 1764      5F737461 
+ 1764      746500
+ 1765              	.LASF35:
+ 1766 001d 52435F45 		.ascii	"RC_ERROR_READ_ONLY\000"
+ 1766      52524F52 
+ 1766      5F524541 
+ 1766      445F4F4E 
+ 1766      4C5900
+ 1767              	.LASF21:
+ 1768 0030 52435F53 		.ascii	"RC_SUCCESS\000"
+ 1768      55434345 
+ 1768      535300
+ 1769              	.LASF79:
+ 1770 003b 4C45445F 		.ascii	"LED__toggleValue\000"
+ 1770      5F746F67 
+ 1770      676C6556 
+ 1770      616C7565 
+ 1770      00
+ 1771              	.LASF78:
+ 1772 004c 433A5C55 		.ascii	"C:\\Users\\zakis\\Documents\\SDHD_LAB\\MovementDete"
+ 1772      73657273 
+ 1772      5C7A616B 
+ 1772      69735C44 
+ 1772      6F63756D 
+ 1773 007a 63746F72 		.ascii	"ctor\\40_Implementation\\20_SW\\10_work\\MovementDe"
+ 1773      5C34305F 
+ 1773      496D706C 
+ 1773      656D656E 
+ 1773      74617469 
+ 1774 00a9 74656374 		.ascii	"tector\\refactor\\RADAR_Movement_Detector.cydsn\000"
+ 1774      6F725C72 
+ 1774      65666163 
+ 1774      746F725C 
+ 1774      52414441 
+ 1775              	.LASF73:
+ 1776 00d7 4C45445F 		.ascii	"LED_red_Write\000"
+ 1776      7265645F 
+ 1776      57726974 
+ 1776      6500
+ 1777              	.LASF36:
+ 1778 00e5 52435F45 		.ascii	"RC_ERROR_WRITE_ONLY\000"
+ 1778      52524F52 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 37
+
+
+ 1778      5F575249 
+ 1778      54455F4F 
+ 1778      4E4C5900 
+ 1779              	.LASF2:
+ 1780 00f9 73686F72 		.ascii	"short int\000"
+ 1780      7420696E 
+ 1780      7400
+ 1781              	.LASF27:
+ 1782 0103 52435F45 		.ascii	"RC_ERROR_OVERRUN\000"
+ 1782      52524F52 
+ 1782      5F4F5645 
+ 1782      5252554E 
+ 1782      00
+ 1783              	.LASF39:
+ 1784 0114 52435F45 		.ascii	"RC_ERROR_WRITE_FAILS\000"
+ 1784      52524F52 
+ 1784      5F575249 
+ 1784      54455F46 
+ 1784      41494C53 
+ 1785              	.LASF20:
+ 1786 0129 73697A65 		.ascii	"sizetype\000"
+ 1786      74797065 
+ 1786      00
+ 1787              	.LASF47:
+ 1788 0132 52435F74 		.ascii	"RC_t\000"
+ 1788      00
+ 1789              	.LASF24:
+ 1790 0137 52435F45 		.ascii	"RC_ERROR_ZERO\000"
+ 1790      52524F52 
+ 1790      5F5A4552 
+ 1790      4F00
+ 1791              	.LASF18:
+ 1792 0145 45455F46 		.ascii	"EE_FREG\000"
+ 1792      52454700 
+ 1793              	.LASF38:
+ 1794 014d 52435F45 		.ascii	"RC_ERROR_READ_FAILS\000"
+ 1794      52524F52 
+ 1794      5F524541 
+ 1794      445F4641 
+ 1794      494C5300 
+ 1795              	.LASF16:
+ 1796 0161 45455F55 		.ascii	"EE_UINT32\000"
+ 1796      494E5433 
+ 1796      3200
+ 1797              	.LASF63:
+ 1798 016b 636C6561 		.ascii	"clearResult\000"
+ 1798      72526573 
+ 1798      756C7400 
+ 1799              	.LASF19:
+ 1800 0177 45455F54 		.ascii	"EE_TID\000"
+ 1800      494400
+ 1801              	.LASF56:
+ 1802 017e 654C4544 		.ascii	"eLED_ONOFF\000"
+ 1802      5F4F4E4F 
+ 1802      464600
+ 1803              	.LASF44:
+ 1804 0189 52435F45 		.ascii	"RC_ERROR_INVALID_STATE\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 38
+
+
+ 1804      52524F52 
+ 1804      5F494E56 
+ 1804      414C4944 
+ 1804      5F535441 
+ 1805              	.LASF71:
+ 1806 01a0 45455F49 		.ascii	"EE_IRQ_nesting_level\000"
+ 1806      52515F6E 
+ 1806      65737469 
+ 1806      6E675F6C 
+ 1806      6576656C 
+ 1807              	.LASF70:
+ 1808 01b5 45455F73 		.ascii	"EE_std_endcycle_next_tid\000"
+ 1808      74645F65 
+ 1808      6E646379 
+ 1808      636C655F 
+ 1808      6E657874 
+ 1809              	.LASF26:
+ 1810 01ce 52435F45 		.ascii	"RC_ERROR_RANGE\000"
+ 1810      52524F52 
+ 1810      5F52414E 
+ 1810      474500
+ 1811              	.LASF11:
+ 1812 01dd 666C6F61 		.ascii	"float\000"
+ 1812      7400
+ 1813              	.LASF46:
+ 1814 01e3 52435F45 		.ascii	"RC_ERROR_NOT_IMPLEMENTED\000"
+ 1814      52524F52 
+ 1814      5F4E4F54 
+ 1814      5F494D50 
+ 1814      4C454D45 
+ 1815              	.LASF6:
+ 1816 01fc 6C6F6E67 		.ascii	"long long int\000"
+ 1816      206C6F6E 
+ 1816      6720696E 
+ 1816      7400
+ 1817              	.LASF55:
+ 1818 020a 654C4544 		.ascii	"eLED_id\000"
+ 1818      5F696400 
+ 1819              	.LASF68:
+ 1820 0212 45455F6F 		.ascii	"EE_oo_IRQ_suspend_status\000"
+ 1820      6F5F4952 
+ 1820      515F7375 
+ 1820      7370656E 
+ 1820      645F7374 
+ 1821              	.LASF77:
+ 1822 022b 736F7572 		.ascii	"source\\bsw\\led.c\000"
+ 1822      63655C62 
+ 1822      73775C6C 
+ 1822      65642E63 
+ 1822      00
+ 1823              	.LASF40:
+ 1824 023c 52435F45 		.ascii	"RC_ERROR_NOT_MATCH\000"
+ 1824      52524F52 
+ 1824      5F4E4F54 
+ 1824      5F4D4154 
+ 1824      434800
+ 1825              	.LASF45:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 39
+
+
+ 1826 024f 52435F45 		.ascii	"RC_ERROR_UNKNOWN\000"
+ 1826      52524F52 
+ 1826      5F554E4B 
+ 1826      4E4F574E 
+ 1826      00
+ 1827              	.LASF4:
+ 1828 0260 6C6F6E67 		.ascii	"long int\000"
+ 1828      20696E74 
+ 1828      00
+ 1829              	.LASF28:
+ 1830 0269 52435F45 		.ascii	"RC_ERROR_UNDERRUN\000"
+ 1830      52524F52 
+ 1830      5F554E44 
+ 1830      45525255 
+ 1830      4E00
+ 1831              	.LASF31:
+ 1832 027b 52435F45 		.ascii	"RC_ERROR_BUSY\000"
+ 1832      52524F52 
+ 1832      5F425553 
+ 1832      5900
+ 1833              	.LASF60:
+ 1834 0289 6C656449 		.ascii	"ledId\000"
+ 1834      6400
+ 1835              	.LASF37:
+ 1836 028f 52435F45 		.ascii	"RC_ERROR_INVALID\000"
+ 1836      52524F52 
+ 1836      5F494E56 
+ 1836      414C4944 
+ 1836      00
+ 1837              	.LASF49:
+ 1838 02a0 4C45445F 		.ascii	"LED_ORANGE\000"
+ 1838      4F52414E 
+ 1838      474500
+ 1839              	.LASF42:
+ 1840 02ab 52435F45 		.ascii	"RC_ERROR_BAD_DATA\000"
+ 1840      52524F52 
+ 1840      5F424144 
+ 1840      5F444154 
+ 1840      4100
+ 1841              	.LASF14:
+ 1842 02bd 6C6F6E67 		.ascii	"long double\000"
+ 1842      20646F75 
+ 1842      626C6500 
+ 1843              	.LASF75:
+ 1844 02c9 4C45445F 		.ascii	"LED_green_Write\000"
+ 1844      67726565 
+ 1844      6E5F5772 
+ 1844      69746500 
+ 1845              	.LASF1:
+ 1846 02d9 756E7369 		.ascii	"unsigned char\000"
+ 1846      676E6564 
+ 1846      20636861 
+ 1846      7200
+ 1847              	.LASF59:
+ 1848 02e7 4C45445F 		.ascii	"LED_ONOFF_t\000"
+ 1848      4F4E4F46 
+ 1848      465F7400 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 40
+
+
+ 1849              	.LASF0:
+ 1850 02f3 7369676E 		.ascii	"signed char\000"
+ 1850      65642063 
+ 1850      68617200 
+ 1851              	.LASF10:
+ 1852 02ff 696E7433 		.ascii	"int32_t\000"
+ 1852      325F7400 
+ 1853              	.LASF7:
+ 1854 0307 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1854      206C6F6E 
+ 1854      6720756E 
+ 1854      7369676E 
+ 1854      65642069 
+ 1855              	.LASF58:
+ 1856 031e 4C45445F 		.ascii	"LED_ON\000"
+ 1856      4F4E00
+ 1857              	.LASF54:
+ 1858 0325 4C45445F 		.ascii	"LED_id_t\000"
+ 1858      69645F74 
+ 1858      00
+ 1859              	.LASF8:
+ 1860 032e 756E7369 		.ascii	"unsigned int\000"
+ 1860      676E6564 
+ 1860      20696E74 
+ 1860      00
+ 1861              	.LASF33:
+ 1862 033b 52435F45 		.ascii	"RC_ERROR_OPEN\000"
+ 1862      52524F52 
+ 1862      5F4F5045 
+ 1862      4E00
+ 1863              	.LASF64:
+ 1864 0349 4C45445F 		.ascii	"LED_Set\000"
+ 1864      53657400 
+ 1865              	.LASF57:
+ 1866 0351 4C45445F 		.ascii	"LED_OFF\000"
+ 1866      4F464600 
+ 1867              	.LASF23:
+ 1868 0359 52435F45 		.ascii	"RC_ERROR_NULL\000"
+ 1868      52524F52 
+ 1868      5F4E554C 
+ 1868      4C00
+ 1869              	.LASF30:
+ 1870 0367 52435F45 		.ascii	"RC_ERROR_BUFFER_EMTPY\000"
+ 1870      52524F52 
+ 1870      5F425546 
+ 1870      4645525F 
+ 1870      454D5450 
+ 1871              	.LASF15:
+ 1872 037d 45455F49 		.ascii	"EE_INT32\000"
+ 1872      4E543332 
+ 1872      00
+ 1873              	.LASF61:
+ 1874 0386 6C65644F 		.ascii	"ledOnOff\000"
+ 1874      6E4F6666 
+ 1874      00
+ 1875              	.LASF3:
+ 1876 038f 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 41
+
+
+ 1876      7420756E 
+ 1876      7369676E 
+ 1876      65642069 
+ 1876      6E7400
+ 1877              	.LASF76:
+ 1878 03a2 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1878      43313120 
+ 1878      352E342E 
+ 1878      31203230 
+ 1878      31363036 
+ 1879 03d5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1879      20726576 
+ 1879      6973696F 
+ 1879      6E203233 
+ 1879      37373135 
+ 1880 0408 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1880      66756E63 
+ 1880      74696F6E 
+ 1880      2D736563 
+ 1880      74696F6E 
+ 1881              	.LASF13:
+ 1882 0430 63686172 		.ascii	"char\000"
+ 1882      00
+ 1883              	.LASF29:
+ 1884 0435 52435F45 		.ascii	"RC_ERROR_BUFFER_FULL\000"
+ 1884      52524F52 
+ 1884      5F425546 
+ 1884      4645525F 
+ 1884      46554C4C 
+ 1885              	.LASF51:
+ 1886 044a 4C45445F 		.ascii	"LED_TARGET\000"
+ 1886      54415247 
+ 1886      455400
+ 1887              	.LASF41:
+ 1888 0455 52435F45 		.ascii	"RC_ERROR_BAD_PARAM\000"
+ 1888      52524F52 
+ 1888      5F424144 
+ 1888      5F504152 
+ 1888      414D00
+ 1889              	.LASF50:
+ 1890 0468 4C45445F 		.ascii	"LED_GREEN\000"
+ 1890      47524545 
+ 1890      4E00
+ 1891              	.LASF69:
+ 1892 0472 45455F41 		.ascii	"EE_ApplicationMode\000"
+ 1892      70706C69 
+ 1892      63617469 
+ 1892      6F6E4D6F 
+ 1892      646500
+ 1893              	.LASF5:
+ 1894 0485 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1894      20756E73 
+ 1894      69676E65 
+ 1894      6420696E 
+ 1894      7400
+ 1895              	.LASF80:
+ 1896 0497 4C45445F 		.ascii	"LED_Init\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 42
+
+
+ 1896      496E6974 
+ 1896      00
+ 1897              	.LASF34:
+ 1898 04a0 52435F45 		.ascii	"RC_ERROR_CHECKSUM\000"
+ 1898      52524F52 
+ 1898      5F434845 
+ 1898      434B5355 
+ 1898      4D00
+ 1899              	.LASF17:
+ 1900 04b2 45455F55 		.ascii	"EE_UREG\000"
+ 1900      52454700 
+ 1901              	.LASF53:
+ 1902 04ba 4C45445F 		.ascii	"LED_ALL\000"
+ 1902      414C4C00 
+ 1903              	.LASF9:
+ 1904 04c2 5F5F696E 		.ascii	"__int32_t\000"
+ 1904      7433325F 
+ 1904      7400
+ 1905              	.LASF52:
+ 1906 04cc 4C45445F 		.ascii	"LED_NO_TARGET\000"
+ 1906      4E4F5F54 
+ 1906      41524745 
+ 1906      5400
+ 1907              	.LASF43:
+ 1908 04da 52435F45 		.ascii	"RC_ERROR_CANCELED\000"
+ 1908      52524F52 
+ 1908      5F43414E 
+ 1908      43454C45 
+ 1908      4400
+ 1909              	.LASF12:
+ 1910 04ec 646F7562 		.ascii	"double\000"
+ 1910      6C6500
+ 1911              	.LASF72:
+ 1912 04f3 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1912      52784275 
+ 1912      66666572 
+ 1912      00
+ 1913              	.LASF22:
+ 1914 0500 52435F45 		.ascii	"RC_ERROR\000"
+ 1914      52524F52 
+ 1914      00
+ 1915              	.LASF48:
+ 1916 0509 4C45445F 		.ascii	"LED_RED\000"
+ 1916      52454400 
+ 1917              	.LASF25:
+ 1918 0511 52435F45 		.ascii	"RC_ERROR_MEMORY\000"
+ 1918      52524F52 
+ 1918      5F4D454D 
+ 1918      4F525900 
+ 1919              	.LASF67:
+ 1920 0521 45455F6F 		.ascii	"EE_oo_IRQ_disable_count\000"
+ 1920      6F5F4952 
+ 1920      515F6469 
+ 1920      7361626C 
+ 1920      655F636F 
+ 1921              	.LASF74:
+ 1922 0539 4C45445F 		.ascii	"LED_orange_Write\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccxCXNFd.s 			page 43
+
+
+ 1922      6F72616E 
+ 1922      67655F57 
+ 1922      72697465 
+ 1922      00
+ 1923              	.LASF32:
+ 1924 054a 52435F45 		.ascii	"RC_ERROR_TIME_OUT\000"
+ 1924      52524F52 
+ 1924      5F54494D 
+ 1924      455F4F55 
+ 1924      5400
+ 1925              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

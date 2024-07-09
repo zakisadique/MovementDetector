@@ -197,13 +197,13 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     detector -> detectorState = UART_TRANSFER;
                     DETECTOR_setLedState(UART_TRANSFER);
-                    #define DMA_2 0
+                    #define DMA_Samples 1
                     
-                    #if DMA_2 == 1
+                    #if DMA_Samples == 1
                         DMA_Set(DMA_MEMORY_TO_UART, DMA_ON); //
                     #endif
                     
-                    #if DMA_2 == 0
+                    #if DMA_Samples == 0
                     for (int i = 0; i < 1024; ++i){
                         uint8_t byte0 = (ADCBuffer[i] >> 8) & 0xFF; // MSB
                         uint8_t byte1 = ADCBuffer[i] & 0xFF;         // LAB
@@ -240,14 +240,14 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                    
                     DMA_Set(DMA_MEMORY_TO_UART, DMA_OFF);
                     
-                    #define DMA 0
+                    #define DMA_FFT 1
                     
-                    #if DMA == 1
+                    #if DMA_FFT == 1
 
                     DMA_Set(DMA_FFT_TO_UART, DMA_ON); //
                     #endif 
                     
-                    #if DMA == 0
+                    #if DMA_FFT == 0
                     
                     fft_app(ADCBuffer,fftBuffer,1024); //
                     for (int i = 0; i < 2048; ++i){

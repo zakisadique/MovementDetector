@@ -128,12 +128,14 @@ while(flg_data_avai == 0)
     end
 
     if count == 11
-
+        fwrite(PSoC,'s','uchar') % means send, I am ready to receive
         break;
     end
 
     fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 end
+fwrite(PSoC,'o','uchar') % means send, I am ready to receive
+fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 fclose(PSoC);
 
 fprintf(" Scipt End \n");
