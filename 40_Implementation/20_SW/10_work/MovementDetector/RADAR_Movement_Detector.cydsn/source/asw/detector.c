@@ -100,6 +100,7 @@ RC_t DETECTOR_setLedState(States_t state){
             //LED_Set(LED_ALL, LED_OFF);
             //LED_Set(LED_ORANGE, LED_ON);
             LED_Set(LED_RED, LED_OFF);
+            
         }
         break;
         
@@ -107,6 +108,7 @@ RC_t DETECTOR_setLedState(States_t state){
             //LED_Set(LED_ALL, LED_OFF);
             //LED_Set(LED_GREEN, LED_ON);
             LED_Set(LED_RED, LED_OFF);
+            
         }
         break;
     }
@@ -135,6 +137,8 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     detector -> detectorState = SAMPLING;
                     DETECTOR_setLedState(SAMPLING);
+                    LED_Set(LED_ORANGE, LED_OFF);
+                    LED_Set(LED_GREEN, LED_OFF);
                     
                 }
             }
@@ -151,9 +155,6 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
             */
             case (SAMPLING):
             {
-
-                
-                
                 if (ev & ev_sReceived){
                     
                     detector -> readyToSend = TRUE;
@@ -180,9 +181,6 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                 }
                 if (ev & ev_send){
                     
-                    
-                    
-                    
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
                     fft_app(ADCBuffer,fftBuffer,1024); //
                     
@@ -190,13 +188,12 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     calculateCFAR(fftBuffer, &cfarInput, &cfarOutput); 
                     if (cfarOutput.numberTargets > 0){
                         LED_Set(LED_GREEN, LED_ON);
-                    
                     } else {
                         LED_Set(LED_GREEN, LED_OFF);
                     }
-                    
                     detector -> detectorState = UART_TRANSFER;
                     DETECTOR_setLedState(UART_TRANSFER);
+                    
                     #define DMA_Samples 1
                     
                     #if DMA_Samples == 1
@@ -296,11 +293,9 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     }
                 }
                 if (ev & ev_nReceived){
-                    //LED_Set(LED_ALL, OFF);
                     LED_Set(LED_ORANGE, LED_OFF);
                 }
                 if (ev & ev_tReceived){
-                    //LED_Set(LED_ALL, ON);
                     LED_Set(LED_ORANGE, LED_ON);
                 }
             }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 1
 
 
    1              		.syntax unified
@@ -50,19 +50,17 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   20:source\asw/main.c **** #define UART_TARGET_VARIABLE 't'
   21:source\asw/main.c **** #define UART_NO_TARGET_VARIABLE 'n'
   22:source\asw/main.c **** 
-  23:source\asw/main.c **** //#define NO_OF_SAMPLES 1024
+  23:source\asw/main.c **** Detector_t movementDetector;
   24:source\asw/main.c **** 
-  25:source\asw/main.c **** Detector_t movementDetector;
+  25:source\asw/main.c **** 
   26:source\asw/main.c **** 
-  27:source\asw/main.c **** 
-  28:source\asw/main.c **** 
-  29:source\asw/main.c **** //ISR which will increment the systick counter every ms
-  30:source\asw/main.c **** ISR(systick_handler)
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 2
+  27:source\asw/main.c **** //ISR which will increment the systick counter every ms
+  28:source\asw/main.c **** ISR(systick_handler)
+  29:source\asw/main.c **** {
+  28              		.loc 1 29 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 2
 
 
-  31:source\asw/main.c **** {
-  28              		.loc 1 31 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -70,8 +68,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
-  32:source\asw/main.c ****     CounterTick(cnt_systick);
-  36              		.loc 1 32 0
+  30:source\asw/main.c ****     CounterTick(cnt_systick);
+  36              		.loc 1 30 0
   37 0002 0020     		movs	r0, #0
   38 0004 FFF7FEFF 		bl	EE_oo_IncrementCounter
   39              	.LVL0:
@@ -87,8 +85,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   49              		.type	systick_handler, %function
   50              	systick_handler:
   51              	.LFB167:
-  30:source\asw/main.c **** {
-  52              		.loc 1 30 0
+  28:source\asw/main.c **** {
+  52              		.loc 1 28 0
   53              		.cfi_startproc
   54              		@ Stack Align: May be called with mis-aligned SP.
   55              		@ args = 0, pretend = 0, frame = 0
@@ -118,11 +116,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
    9:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * and/or modify it under the terms of the GNU General Public License
   10:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * version 2 as published by the Free Software Foundation, 
   11:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * (with a special exception described below).
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 3
-
-
   12:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *
   13:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * Linking this code statically or dynamically with other modules is
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 3
+
+
   14:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * making a combined work based on this code.  Thus, the terms and
   15:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * conditions of the GNU General Public License cover the whole
   16:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  * combination.
@@ -178,11 +176,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   66:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifndef CORTEX_MX_INIT_TOS_OFFSET
   67:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define CORTEX_MX_INIT_TOS_OFFSET 10
   68:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 4
-
-
   69:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
   70:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /*************************************************************************
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 4
+
+
   71:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  HAL Types and structures
   72:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****  *************************************************************************/
   73:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
@@ -238,11 +236,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  123:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** typedef EE_UINT32 EE_UTID;
  124:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  125:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* Used by the common layer to decide whether to start a new thread */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 5
-
-
  126:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #define TID_IS_STACKED_MARK 0x80000000
  127:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 5
+
+
  128:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* EE_TYPEIRQ is currently unused */
  129:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  130:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** /* XXX: define EE_TIME? */
@@ -298,11 +296,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  180:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** __INLINE__ void  EE_cortex_mx_enableIRQ(void)
  181:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** {
  182:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __IAR__
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 6
-
-
  183:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("cpsie i");
  184:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __IAR__ */
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 6
+
+
  185:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
  186:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("    cpsie    i\n");
  187:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __CCS__ */
@@ -358,11 +356,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  226:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("    msr    primask, r0\n");
  227:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __CCS__ */
  228:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __KEIL__
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 7
-
-
  229:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	register EE_FREG PRIMASK __ASM("primask");
  230:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	PRIMASK = f;
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 7
+
+
  231:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __KEIL__ */
  232:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM volatile("msr primask, %0" :: "r" (f));
  233:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
@@ -418,11 +416,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  283:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
  284:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	__ASM ("    MRS     r0, PRIMASK\n"
  285:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	       "    EOR     r0, #1\n"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 8
-
-
  286:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	       "    bx      lr\n");
  287:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else	/* __CCS__ */
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 8
+
+
  288:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __KEIL__
  289:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	register EE_FREG PRIMASK __ASM("primask");
  290:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	ie = PRIMASK;
@@ -478,11 +476,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  328:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__GNU__ */
  329:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
  330:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__CCS__ */
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 9
-
-
  331:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
  332:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #ifdef __CCS__
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 9
+
+
  333:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	return 0;
  334:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else
  335:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 	return prio >> NVIC_INT_PRI_S;
@@ -538,11 +536,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  102              		.loc 2 376 0
  103 001a 103B     		subs	r3, r3, #16
  104              	.LVL4:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 10
-
-
  377:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****     prio = NVIC_GET_PRI(vectact);
  105              		.loc 2 377 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 10
+
+
  106 001c 23F00302 		bic	r2, r3, #3
  107 0020 02F16042 		add	r2, r2, #-536870912
  108 0024 02F56442 		add	r2, r2, #58368
@@ -598,11 +596,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  152              		.file 3 "Generated_Source\\PSoC5/ErikaOS_common_ee_irqstub.inc"
    1:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** /* ###*B*###
    2:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 11
-
-
    3:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  *
    4:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * Copyright (C) 2002-2010  Evidence Srl
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 11
+
+
    5:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  *
    6:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  * This file is part of ERIKA Enterprise.
    7:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  *
@@ -658,11 +656,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   57:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc ****  ******************************************************************************/
   58:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** 
   59:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** #ifndef PKG_CPU_COMMON_INC_EE_IRQSTUB_H
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 12
-
-
   60:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** #define PKG_CPU_COMMON_INC_EE_IRQSTUB_H
   61:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 12
+
+
   62:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** /* this bring EE_IRQ_nesting_level definition */
   63:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** #include "ErikaOS_common_ee_primitives.inc"
   64:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** 
@@ -694,12 +692,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  157 0054 1360     		str	r3, [r2]
  158              	.LBE185:
  159              	.LBE184:
-  30:source\asw/main.c **** {
- 160              		.loc 1 30 0
+  28:source\asw/main.c **** {
+ 160              		.loc 1 28 0
  161 0056 012B     		cmp	r3, #1
  162 0058 01D1     		bne	.L6
-  30:source\asw/main.c **** {
- 163              		.loc 1 30 0 is_stmt 0 discriminator 1
+  28:source\asw/main.c **** {
+ 163              		.loc 1 28 0 is_stmt 0 discriminator 1
  164 005a FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack
  165              	.LVL12:
  166              	.L6:
@@ -715,14 +713,14 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  175              		.syntax unified
  176              	.LBE187:
  177              	.LBE186:
-  30:source\asw/main.c **** {
- 178              		.loc 1 30 0 discriminator 3
+  28:source\asw/main.c **** {
+ 178              		.loc 1 28 0 discriminator 3
  179 0060 FFF7FEFF 		bl	ISR2_systick_handler
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 13
-
-
  180              	.LVL13:
  181              	.LBB188:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 13
+
+
  182              	.LBB189:
  211:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
  183              		.loc 2 211 0 discriminator 3
@@ -778,18 +776,18 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  214              		.loc 3 84 0 discriminator 3
  215 006e 094A     		ldr	r2, .L9+8
  216 0070 1368     		ldr	r3, [r2]
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 14
-
-
  217 0072 013B     		subs	r3, r3, #1
  218 0074 1360     		str	r3, [r2]
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 14
+
+
  219              	.LBE195:
  220              	.LBE194:
-  30:source\asw/main.c **** {
- 221              		.loc 1 30 0 discriminator 3
+  28:source\asw/main.c **** {
+ 221              		.loc 1 28 0 discriminator 3
  222 0076 1BB9     		cbnz	r3, .L7
-  30:source\asw/main.c **** {
- 223              		.loc 1 30 0 is_stmt 0 discriminator 4
+  28:source\asw/main.c **** {
+ 223              		.loc 1 28 0 is_stmt 0 discriminator 4
  224 0078 FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack_back
  225              	.LVL17:
  226              	.LBB196:
@@ -838,11 +836,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   41:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc ****  /** 
   42:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	
   43:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@file	ee_irq_cng_cont.h
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 15
-
-
   44:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@brief	Function active the context change interrupt
   45:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@author	Gianluca Franchino
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 15
+
+
   46:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@author	Giuseppe Serano
   47:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** 	@date	2012
   48:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_irq_cng_cont.inc **** */ 
@@ -884,8 +882,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  243              		.syntax unified
  244              	.LBE199:
  245              	.LBE198:
-  30:source\asw/main.c **** {
- 246              		.loc 1 30 0 discriminator 6
+  28:source\asw/main.c **** {
+ 246              		.loc 1 28 0 discriminator 6
  247 0082 BDE81940 		pop	{r0, r3, r4, lr}
  248              		.cfi_restore 14
  249              		.cfi_restore 4
@@ -898,11 +896,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  256 008a 00BF     		.align	2
  257              	.L9:
  258 008c 04ED00E0 		.word	-536810236
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 16
-
-
  259 0090 20ED00E0 		.word	-536810208
  260 0094 00000000 		.word	EE_IRQ_nesting_level
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 16
+
+
  261              		.cfi_endproc
  262              	.LFE167:
  263              		.size	systick_handler, .-systick_handler
@@ -914,11 +912,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  269              		.type	main, %function
  270              	main:
  271              	.LFB169:
-  33:source\asw/main.c **** }
-  34:source\asw/main.c **** 
-  35:source\asw/main.c **** int main()
-  36:source\asw/main.c **** {
- 272              		.loc 1 36 0
+  31:source\asw/main.c **** }
+  32:source\asw/main.c **** 
+  33:source\asw/main.c **** int main()
+  34:source\asw/main.c **** {
+ 272              		.loc 1 34 0
  273              		.cfi_startproc
  274              		@ Volatile: function does not return.
  275              		@ args = 0, pretend = 0, frame = 0
@@ -927,10 +925,10 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  278              		.cfi_def_cfa_offset 8
  279              		.cfi_offset 3, -8
  280              		.cfi_offset 14, -4
-  37:source\asw/main.c ****     CyGlobalIntEnable; /* Enable global interrupts. */
- 281              		.loc 1 37 0
+  35:source\asw/main.c ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 281              		.loc 1 35 0
  282              		.syntax unified
- 283              	@ 37 "source\asw\main.c" 1
+ 283              	@ 35 "source\asw\main.c" 1
  284 0002 62B6     		CPSIE   i
  285              	@ 0 "" 2
  286              	.LVL19:
@@ -958,11 +956,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   17:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  *
   18:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  * As a special exception, the copyright holders of this library give you
   19:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  * permission to link this code with independent modules to produce an
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 17
-
-
   20:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  * executable, regardless of the license terms of these independent
   21:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  * modules, and to copy and distribute the resulting executable under
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 17
+
+
   22:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  * terms of your choice, provided that you also meet, for each linked
   23:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  * independent module, the terms and conditions of the license of that
   24:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  * module.  An independent module is a module which is not derived from
@@ -1018,11 +1016,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
   74:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     If an immediate reload is required, the \b NVIC_ST_CURRENT register must be
   75:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     written to force this.  Any write to this register clears the SysTick
   76:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     counter to 0 and will cause a reload with the supplied period on the next
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 18
-
-
   77:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     clock.
   78:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  */
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 18
+
+
   79:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc **** __INLINE__ void  EE_systick_start(void)
   80:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc **** {
   81:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****   NVIC_ST_CTRL_R |= NVIC_ST_CTRL_CLK_SRC | NVIC_ST_CTRL_ENABLE;
@@ -1078,11 +1076,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  131:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     @note Calling this function does not cause the SysTick counter to reload
  132:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     immediately.  If an immediate reload is required, the \b NVIC_ST_CURRENT
  133:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     register must be written.  Any write to this register clears the SysTick
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 19
-
-
  134:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     counter to 0 and will cause a reload with the \e period supplied here on
  135:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****     the next clock after the SysTick is enabled.
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 19
+
+
  136:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc ****  */
  137:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc **** __INLINE__ EE_UREG  EE_systick_set_period(EE_UREG period)
  138:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_systick.inc **** {
@@ -1108,15 +1106,15 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  306              	.L12:
  307              	.LBE203:
  308              	.LBE202:
-  38:source\asw/main.c ****    
-  39:source\asw/main.c ****     //Set systick period to 1 ms. Enable the INT and start it.
-  40:source\asw/main.c **** 	EE_systick_set_period(MILLISECONDS_TO_TICKS(1, BCLK__BUS_CLK__HZ));
-  41:source\asw/main.c **** 	EE_systick_enable_int();
-  42:source\asw/main.c ****     
-  43:source\asw/main.c ****     // Start Operating System
-  44:source\asw/main.c ****     for(;;)	    
-  45:source\asw/main.c ****     	StartOS(OSDEFAULTAPPMODE);
- 309              		.loc 1 45 0 discriminator 1
+  36:source\asw/main.c ****    
+  37:source\asw/main.c ****     //Set systick period to 1 ms. Enable the INT and start it.
+  38:source\asw/main.c **** 	EE_systick_set_period(MILLISECONDS_TO_TICKS(1, BCLK__BUS_CLK__HZ));
+  39:source\asw/main.c **** 	EE_systick_enable_int();
+  40:source\asw/main.c ****     
+  41:source\asw/main.c ****     // Start Operating System
+  42:source\asw/main.c ****     for(;;)	    
+  43:source\asw/main.c ****     	StartOS(OSDEFAULTAPPMODE);
+ 309              		.loc 1 43 0 discriminator 1
  310 0016 0020     		movs	r0, #0
  311 0018 FFF7FEFF 		bl	EE_oo_StartOS
  312              	.LVL21:
@@ -1137,23 +1135,23 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  327              		.type	unhandledException, %function
  328              	unhandledException:
  329              	.LFB170:
-  46:source\asw/main.c **** }
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 20
+  44:source\asw/main.c **** }
+  45:source\asw/main.c **** 
+  46:source\asw/main.c **** void unhandledException()
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 20
 
 
-  47:source\asw/main.c **** 
-  48:source\asw/main.c **** void unhandledException()
-  49:source\asw/main.c **** {
- 330              		.loc 1 49 0
+  47:source\asw/main.c **** {
+ 330              		.loc 1 47 0
  331              		.cfi_startproc
  332              		@ args = 0, pretend = 0, frame = 0
  333              		@ frame_needed = 0, uses_anonymous_args = 0
  334              		@ link register save eliminated.
-  50:source\asw/main.c ****     //Ooops, something terrible happened....check the call stack to see how we got here...
-  51:source\asw/main.c ****     __asm("bkpt");
- 335              		.loc 1 51 0
+  48:source\asw/main.c ****     //Ooops, something terrible happened....check the call stack to see how we got here...
+  49:source\asw/main.c ****     __asm("bkpt");
+ 335              		.loc 1 49 0
  336              		.syntax unified
- 337              	@ 51 "source\asw\main.c" 1
+ 337              	@ 49 "source\asw\main.c" 1
  338 0000 00BE     		bkpt
  339              	@ 0 "" 2
  340              		.thumb
@@ -1170,15 +1168,15 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  351              		.type	Functsk_init, %function
  352              	Functsk_init:
  353              	.LFB171:
-  52:source\asw/main.c **** }
-  53:source\asw/main.c **** 
-  54:source\asw/main.c **** /********************************************************************************
-  55:source\asw/main.c ****  * Task Definitions
-  56:source\asw/main.c ****  ********************************************************************************/
-  57:source\asw/main.c **** 
-  58:source\asw/main.c **** TASK(tsk_init)
-  59:source\asw/main.c **** {
- 354              		.loc 1 59 0
+  50:source\asw/main.c **** }
+  51:source\asw/main.c **** 
+  52:source\asw/main.c **** /********************************************************************************
+  53:source\asw/main.c ****  * Task Definitions
+  54:source\asw/main.c ****  ********************************************************************************/
+  55:source\asw/main.c **** 
+  56:source\asw/main.c **** TASK(tsk_init)
+  57:source\asw/main.c **** {
+ 354              		.loc 1 57 0
  355              		.cfi_startproc
  356              		@ args = 0, pretend = 0, frame = 0
  357              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1186,23 +1184,23 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  359              		.cfi_def_cfa_offset 8
  360              		.cfi_offset 3, -8
  361              		.cfi_offset 14, -4
-  60:source\asw/main.c ****     
-  61:source\asw/main.c ****     //Init MCAL Drivers   
-  62:source\asw/main.c ****     DETECTOR_init(&movementDetector);
- 362              		.loc 1 62 0
+  58:source\asw/main.c ****     
+  59:source\asw/main.c ****     //Init MCAL Drivers   
+  60:source\asw/main.c ****     DETECTOR_init(&movementDetector);
+ 362              		.loc 1 60 0
  363 0002 0948     		ldr	r0, .L19
  364 0004 FFF7FEFF 		bl	DETECTOR_init
  365              	.LVL22:
-  63:source\asw/main.c ****     
-  64:source\asw/main.c ****     
-  65:source\asw/main.c ****     //Reconfigure ISRs with OS parameters.
-  66:source\asw/main.c ****     //This line MUST be called after the hardware driver initialisation!
-  67:source\asw/main.c ****     EE_system_init();
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 21
-
-
- 366              		.loc 1 67 0
+  61:source\asw/main.c ****     
+  62:source\asw/main.c ****     
+  63:source\asw/main.c ****     //Reconfigure ISRs with OS parameters.
+  64:source\asw/main.c ****     //This line MUST be called after the hardware driver initialisation!
+  65:source\asw/main.c ****     EE_system_init();
+ 366              		.loc 1 65 0
  367 0008 FFF7FEFF 		bl	EE_system_init
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 21
+
+
  368              	.LVL23:
  369              	.LBB204:
  370              	.LBB205:
@@ -1214,25 +1212,25 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  375 0014 1360     		str	r3, [r2]
  376              	.LBE205:
  377              	.LBE204:
-  68:source\asw/main.c **** 	
-  69:source\asw/main.c ****     //Start SysTick
-  70:source\asw/main.c **** 	//Must be done here, because otherwise the isr vector is not overwritten yet
-  71:source\asw/main.c ****     EE_systick_start();  
-  72:source\asw/main.c ****     
-  73:source\asw/main.c ****     //Activate tasks
-  74:source\asw/main.c ****     ActivateTask(tsk_control);
- 378              		.loc 1 74 0
+  66:source\asw/main.c **** 	
+  67:source\asw/main.c ****     //Start SysTick
+  68:source\asw/main.c **** 	//Must be done here, because otherwise the isr vector is not overwritten yet
+  69:source\asw/main.c ****     EE_systick_start();  
+  70:source\asw/main.c ****     
+  71:source\asw/main.c ****     //Activate tasks
+  72:source\asw/main.c ****     ActivateTask(tsk_control);
+ 378              		.loc 1 72 0
  379 0016 0220     		movs	r0, #2
  380 0018 FFF7FEFF 		bl	EE_oo_ActivateTask
  381              	.LVL24:
-  75:source\asw/main.c ****     ActivateTask(tsk_background);
- 382              		.loc 1 75 0
+  73:source\asw/main.c ****     ActivateTask(tsk_background);
+ 382              		.loc 1 73 0
  383 001c 0120     		movs	r0, #1
  384 001e FFF7FEFF 		bl	EE_oo_ActivateTask
  385              	.LVL25:
-  76:source\asw/main.c **** 
-  77:source\asw/main.c ****     TerminateTask();
- 386              		.loc 1 77 0
+  74:source\asw/main.c **** 
+  75:source\asw/main.c ****     TerminateTask();
+ 386              		.loc 1 75 0
  387 0022 FFF7FEFF 		bl	EE_oo_TerminateTask
  388              	.LVL26:
  389 0026 08BD     		pop	{r3, pc}
@@ -1252,18 +1250,18 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  403              		.type	Functsk_control, %function
  404              	Functsk_control:
  405              	.LFB172:
-  78:source\asw/main.c ****     
-  79:source\asw/main.c **** }
+  76:source\asw/main.c ****     
+  77:source\asw/main.c **** }
+  78:source\asw/main.c **** 
+  79:source\asw/main.c **** 
   80:source\asw/main.c **** 
   81:source\asw/main.c **** 
-  82:source\asw/main.c **** 
-  83:source\asw/main.c **** 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 22
+  82:source\asw/main.c **** TASK(tsk_control)
+  83:source\asw/main.c **** {
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 22
 
 
-  84:source\asw/main.c **** TASK(tsk_control)
-  85:source\asw/main.c **** {
- 406              		.loc 1 85 0
+ 406              		.loc 1 83 0
  407              		.cfi_startproc
  408              		@ args = 0, pretend = 0, frame = 8
  409              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1272,34 +1270,34 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  412              		.cfi_offset 14, -4
  413 0002 83B0     		sub	sp, sp, #12
  414              		.cfi_def_cfa_offset 16
-  86:source\asw/main.c ****     //Initialize an event and wait for its trigger
-  87:source\asw/main.c ****     EventMaskType ev = 0;
- 415              		.loc 1 87 0
+  84:source\asw/main.c ****     //Initialize an event and wait for its trigger
+  85:source\asw/main.c ****     EventMaskType ev = 0;
+ 415              		.loc 1 85 0
  416 0004 0023     		movs	r3, #0
  417 0006 0193     		str	r3, [sp, #4]
  418              	.L22:
-  88:source\asw/main.c ****     
-  89:source\asw/main.c ****     while (1){
-  90:source\asw/main.c ****         WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived | ev_sendFFT 
- 419              		.loc 1 90 0 discriminator 1
+  86:source\asw/main.c ****     
+  87:source\asw/main.c ****     while (1){
+  88:source\asw/main.c ****         WaitEvent(ev_pushButton | ev_reSample | ev_sReceived | ev_send | ev_oReceived | ev_sendFFT 
+ 419              		.loc 1 88 0 discriminator 1
  420 0008 40F2FB10 		movw	r0, #507
  421 000c FFF7FEFF 		bl	EE_oo_WaitEvent
  422              	.LVL27:
-  91:source\asw/main.c ****         GetEvent(tsk_control, &ev);
- 423              		.loc 1 91 0 discriminator 1
+  89:source\asw/main.c ****         GetEvent(tsk_control, &ev);
+ 423              		.loc 1 89 0 discriminator 1
  424 0010 01A9     		add	r1, sp, #4
  425 0012 0220     		movs	r0, #2
  426 0014 FFF7FEFF 		bl	EE_oo_GetEvent
  427              	.LVL28:
-  92:source\asw/main.c ****         ClearEvent(ev);
- 428              		.loc 1 92 0 discriminator 1
+  90:source\asw/main.c ****         ClearEvent(ev);
+ 428              		.loc 1 90 0 discriminator 1
  429 0018 0198     		ldr	r0, [sp, #4]
  430 001a FFF7FEFF 		bl	EE_oo_ClearEvent
  431              	.LVL29:
-  93:source\asw/main.c ****         
-  94:source\asw/main.c ****         // Process the event received
-  95:source\asw/main.c ****         DETECTOR_processEvents(&movementDetector, ev);
- 432              		.loc 1 95 0 discriminator 1
+  91:source\asw/main.c ****         
+  92:source\asw/main.c ****         // Process the event received
+  93:source\asw/main.c ****         DETECTOR_processEvents(&movementDetector, ev);
+ 432              		.loc 1 93 0 discriminator 1
  433 001e 0199     		ldr	r1, [sp, #4]
  434 0020 0148     		ldr	r0, .L24
  435 0022 FFF7FEFF 		bl	DETECTOR_processEvents
@@ -1318,21 +1316,21 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  448              		.thumb
  449              		.thumb_func
  450              		.type	Functsk_background, %function
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 23
-
-
  451              	Functsk_background:
  452              	.LFB173:
-  96:source\asw/main.c ****         
-  97:source\asw/main.c ****     }
-  98:source\asw/main.c **** 
-  99:source\asw/main.c ****     TerminateTask();
- 100:source\asw/main.c **** }
- 101:source\asw/main.c **** 
- 102:source\asw/main.c **** // Idle task
- 103:source\asw/main.c **** TASK(tsk_background)
- 104:source\asw/main.c **** {
- 453              		.loc 1 104 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 23
+
+
+  94:source\asw/main.c ****         
+  95:source\asw/main.c ****     }
+  96:source\asw/main.c **** 
+  97:source\asw/main.c ****     TerminateTask();
+  98:source\asw/main.c **** }
+  99:source\asw/main.c **** 
+ 100:source\asw/main.c **** // Idle task
+ 101:source\asw/main.c **** TASK(tsk_background)
+ 102:source\asw/main.c **** {
+ 453              		.loc 1 102 0
  454              		.cfi_startproc
  455              		@ Volatile: function does not return.
  456              		@ args = 0, pretend = 0, frame = 0
@@ -1351,42 +1349,42 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  469              		.type	ISR2_isr_UART_Rx, %function
  470              	ISR2_isr_UART_Rx:
  471              	.LFB175:
- 105:source\asw/main.c ****     
- 106:source\asw/main.c ****     while(1)
- 107:source\asw/main.c ****     {
- 108:source\asw/main.c **** 
- 109:source\asw/main.c ****     }
- 110:source\asw/main.c ****     TerminateTask();
- 111:source\asw/main.c ****     
- 112:source\asw/main.c **** }
- 113:source\asw/main.c **** 
- 114:source\asw/main.c **** // Process interrupts received on UART
- 115:source\asw/main.c **** ISR2(isr_UART_Rx){
- 472              		.loc 1 115 0
+ 103:source\asw/main.c ****     
+ 104:source\asw/main.c ****     while(1)
+ 105:source\asw/main.c ****     {
+ 106:source\asw/main.c **** 
+ 107:source\asw/main.c ****     }
+ 108:source\asw/main.c ****     TerminateTask();
+ 109:source\asw/main.c ****     
+ 110:source\asw/main.c **** }
+ 111:source\asw/main.c **** 
+ 112:source\asw/main.c **** // Process interrupts received on UART
+ 113:source\asw/main.c **** ISR2(isr_UART_Rx){
+ 472              		.loc 1 113 0
  473              		.cfi_startproc
  474              		@ args = 0, pretend = 0, frame = 0
  475              		@ frame_needed = 0, uses_anonymous_args = 0
- 476              		.loc 1 115 0
+ 476              		.loc 1 113 0
  477 0000 08B5     		push	{r3, lr}
  478              		.cfi_def_cfa_offset 8
  479              		.cfi_offset 3, -8
  480              		.cfi_offset 14, -4
- 116:source\asw/main.c ****     
- 117:source\asw/main.c ****     uint8_t data = UART_LOG_GetByte();
- 481              		.loc 1 117 0
+ 114:source\asw/main.c ****     
+ 115:source\asw/main.c ****     uint8_t data = UART_LOG_GetByte();
+ 481              		.loc 1 115 0
  482 0002 FFF7FEFF 		bl	UART_LOG_GetByte
  483              	.LVL31:
  484 0006 C0B2     		uxtb	r0, r0
  485              	.LVL32:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 24
+ 116:source\asw/main.c ****     if (data ==  UART_START_VARIABLE){
+ 486              		.loc 1 116 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 24
 
 
- 118:source\asw/main.c ****     if (data ==  UART_START_VARIABLE){
- 486              		.loc 1 118 0
  487 0008 7328     		cmp	r0, #115
  488 000a 04D1     		bne	.L29
- 119:source\asw/main.c ****         SetEvent(tsk_control, ev_sReceived);
- 489              		.loc 1 119 0
+ 117:source\asw/main.c ****         SetEvent(tsk_control, ev_sReceived);
+ 489              		.loc 1 117 0
  490 000c 0221     		movs	r1, #2
  491 000e 0846     		mov	r0, r1
  492              	.LVL33:
@@ -1395,12 +1393,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  495 0014 08BD     		pop	{r3, pc}
  496              	.LVL35:
  497              	.L29:
- 120:source\asw/main.c ****     } else if (data == UART_FINISH_VARIABLE){
- 498              		.loc 1 120 0
+ 118:source\asw/main.c ****     } else if (data == UART_FINISH_VARIABLE){
+ 498              		.loc 1 118 0
  499 0016 6F28     		cmp	r0, #111
  500 0018 04D1     		bne	.L31
- 121:source\asw/main.c ****         SetEvent(tsk_control, ev_oReceived); 
- 501              		.loc 1 121 0
+ 119:source\asw/main.c ****         SetEvent(tsk_control, ev_oReceived); 
+ 501              		.loc 1 119 0
  502 001a 1021     		movs	r1, #16
  503 001c 0220     		movs	r0, #2
  504              	.LVL36:
@@ -1409,12 +1407,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  507 0022 08BD     		pop	{r3, pc}
  508              	.LVL38:
  509              	.L31:
- 122:source\asw/main.c ****     } else if (data == UART_TARGET_VARIABLE){
- 510              		.loc 1 122 0
+ 120:source\asw/main.c ****     } else if (data == UART_TARGET_VARIABLE){
+ 510              		.loc 1 120 0
  511 0024 7428     		cmp	r0, #116
  512 0026 04D1     		bne	.L32
- 123:source\asw/main.c ****         SetEvent(tsk_control, ev_tReceived); 
- 513              		.loc 1 123 0
+ 121:source\asw/main.c ****         SetEvent(tsk_control, ev_tReceived); 
+ 513              		.loc 1 121 0
  514 0028 8021     		movs	r1, #128
  515 002a 0220     		movs	r0, #2
  516              	.LVL39:
@@ -1423,12 +1421,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  519 0030 08BD     		pop	{r3, pc}
  520              	.LVL41:
  521              	.L32:
- 124:source\asw/main.c ****     } else if (data == UART_NO_TARGET_VARIABLE){
- 522              		.loc 1 124 0
+ 122:source\asw/main.c ****     } else if (data == UART_NO_TARGET_VARIABLE){
+ 522              		.loc 1 122 0
  523 0032 6E28     		cmp	r0, #110
  524 0034 04D1     		bne	.L28
- 125:source\asw/main.c ****         SetEvent(tsk_control, ev_nReceived); 
- 525              		.loc 1 125 0
+ 123:source\asw/main.c ****         SetEvent(tsk_control, ev_nReceived); 
+ 525              		.loc 1 123 0
  526 0036 4FF48071 		mov	r1, #256
  527 003a 0220     		movs	r0, #2
  528              	.LVL42:
@@ -1438,11 +1436,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  532 0040 08BD     		pop	{r3, pc}
  533              		.cfi_endproc
  534              	.LFE175:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 25
-
-
  535              		.size	ISR2_isr_UART_Rx, .-ISR2_isr_UART_Rx
  536 0042 00BF     		.section	.text.isr_UART_Rx,"ax",%progbits
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 25
+
+
  537              		.align	2
  538              		.global	isr_UART_Rx
  539              		.thumb
@@ -1450,8 +1448,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  541              		.type	isr_UART_Rx, %function
  542              	isr_UART_Rx:
  543              	.LFB174:
- 115:source\asw/main.c ****     
- 544              		.loc 1 115 0
+ 113:source\asw/main.c ****     
+ 544              		.loc 1 113 0
  545              		.cfi_startproc
  546              		@ Stack Align: May be called with mis-aligned SP.
  547              		@ args = 0, pretend = 0, frame = 0
@@ -1498,11 +1496,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  585              		.loc 2 372 0
  586 0010 1E4B     		ldr	r3, .L40
  587 0012 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 26
-
-
  588 0014 DBB2     		uxtb	r3, r3
  589              	.LVL46:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 26
+
+
  375:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****     vectact -= EE_CORTEX_MX_SYSTICK_EXC_NUM + 1;
  590              		.loc 2 375 0
  591 0016 0F2B     		cmp	r3, #15
@@ -1558,11 +1556,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  636              	@ 0 "" 2
  637              		.thumb
  638              		.syntax unified
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 27
-
-
  639              	.LBE237:
  640              	.LBE236:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 27
+
+
  641              	.LBB238:
  642              	.LBB239:
   85:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** /*  EE_std_enableIRQ_nested() and EE_std_disableIRQ_nested() must be defined in
@@ -1573,12 +1571,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  647 0054 1360     		str	r3, [r2]
  648              	.LBE239:
  649              	.LBE238:
- 115:source\asw/main.c ****     
- 650              		.loc 1 115 0
+ 113:source\asw/main.c ****     
+ 650              		.loc 1 113 0
  651 0056 012B     		cmp	r3, #1
  652 0058 01D1     		bne	.L37
- 115:source\asw/main.c ****     
- 653              		.loc 1 115 0 is_stmt 0 discriminator 1
+ 113:source\asw/main.c ****     
+ 653              		.loc 1 113 0 is_stmt 0 discriminator 1
  654 005a FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack
  655              	.LVL55:
  656              	.L37:
@@ -1594,8 +1592,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  665              		.syntax unified
  666              	.LBE241:
  667              	.LBE240:
- 115:source\asw/main.c ****     
- 668              		.loc 1 115 0 discriminator 3
+ 113:source\asw/main.c ****     
+ 668              		.loc 1 113 0 discriminator 3
  669 0060 FFF7FEFF 		bl	ISR2_isr_UART_Rx
  670              	.LVL56:
  671              	.LBB242:
@@ -1618,11 +1616,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  686              		.syntax unified
  687              	@ 358 "Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc" 1
  688 0066 84F31188 		MSR BASEPRI, r4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 28
-
-
  689              	@ 0 "" 2
  690              	.LVL58:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 28
+
+
  691              		.thumb
  692              		.syntax unified
  693              	.LBE245:
@@ -1644,11 +1642,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  708 0074 1360     		str	r3, [r2]
  709              	.LBE249:
  710              	.LBE248:
- 115:source\asw/main.c ****     
- 711              		.loc 1 115 0 discriminator 3
+ 113:source\asw/main.c ****     
+ 711              		.loc 1 113 0 discriminator 3
  712 0076 1BB9     		cbnz	r3, .L38
- 115:source\asw/main.c ****     
- 713              		.loc 1 115 0 is_stmt 0 discriminator 4
+ 113:source\asw/main.c ****     
+ 713              		.loc 1 113 0 is_stmt 0 discriminator 4
  714 0078 FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack_back
  715              	.LVL60:
  716              	.LBB250:
@@ -1671,18 +1669,18 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  732              		.syntax unified
  733              	.LBE253:
  734              	.LBE252:
- 115:source\asw/main.c ****     
- 735              		.loc 1 115 0 discriminator 6
+ 113:source\asw/main.c ****     
+ 735              		.loc 1 113 0 discriminator 6
  736 0082 BDE81940 		pop	{r0, r3, r4, lr}
  737              		.cfi_restore 14
  738              		.cfi_restore 4
  739              		.cfi_restore 3
  740              		.cfi_restore 0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 29
-
-
  741              		.cfi_def_cfa_offset 0
  742 0086 8546     		mov	sp, r0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 29
+
+
  743 0088 7047     		bx	lr
  744              	.L41:
  745 008a 00BF     		.align	2
@@ -1701,13 +1699,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  758              		.type	ISR2_isr_DMA_ADC_MEM, %function
  759              	ISR2_isr_DMA_ADC_MEM:
  760              	.LFB177:
- 126:source\asw/main.c ****     }
- 127:source\asw/main.c ****     
- 128:source\asw/main.c **** }
- 129:source\asw/main.c **** 
- 130:source\asw/main.c **** // Process interrupts when transfer from ADC to memory is completed
- 131:source\asw/main.c **** ISR2(isr_DMA_ADC_MEM){
- 761              		.loc 1 131 0
+ 124:source\asw/main.c ****     }
+ 125:source\asw/main.c ****     
+ 126:source\asw/main.c **** }
+ 127:source\asw/main.c **** 
+ 128:source\asw/main.c **** // Process interrupts when transfer from ADC to memory is completed
+ 129:source\asw/main.c **** ISR2(isr_DMA_ADC_MEM){
+ 761              		.loc 1 129 0
  762              		.cfi_startproc
  763              		@ args = 0, pretend = 0, frame = 0
  764              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1715,9 +1713,9 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  766              		.cfi_def_cfa_offset 8
  767              		.cfi_offset 3, -8
  768              		.cfi_offset 14, -4
- 132:source\asw/main.c ****     
- 133:source\asw/main.c ****     SetEvent(tsk_control, ev_samplingFinished);
- 769              		.loc 1 133 0
+ 130:source\asw/main.c ****     
+ 131:source\asw/main.c ****     SetEvent(tsk_control, ev_samplingFinished);
+ 769              		.loc 1 131 0
  770 0002 0421     		movs	r1, #4
  771 0004 0220     		movs	r0, #2
  772 0006 FFF7FEFF 		bl	EE_oo_SetEvent
@@ -1734,15 +1732,15 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  783              		.type	isr_DMA_ADC_MEM, %function
  784              	isr_DMA_ADC_MEM:
  785              	.LFB176:
- 131:source\asw/main.c ****     
- 786              		.loc 1 131 0
+ 129:source\asw/main.c ****     
+ 786              		.loc 1 129 0
  787              		.cfi_startproc
  788              		@ Stack Align: May be called with mis-aligned SP.
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 30
-
-
  789              		@ args = 0, pretend = 0, frame = 0
  790              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 30
+
+
  791 0000 6846     		mov	r0, sp
  792              		.cfi_register 13, 0
  793 0002 20F00701 		bic	r1, r0, #7
@@ -1798,11 +1796,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  377:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****   }
  838              		.loc 2 377 0
  839 001c 23F00302 		bic	r2, r3, #3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 31
-
-
  840 0020 02F16042 		add	r2, r2, #-536870912
  841 0024 02F56442 		add	r2, r2, #58368
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 31
+
+
  842 0028 1168     		ldr	r1, [r2]
  843 002a DB00     		lsls	r3, r3, #3
  844              	.LVL67:
@@ -1857,15 +1855,15 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  889 0054 1360     		str	r3, [r2]
  890              	.LBE287:
  891              	.LBE286:
- 131:source\asw/main.c ****     
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 32
-
-
- 892              		.loc 1 131 0
+ 129:source\asw/main.c ****     
+ 892              		.loc 1 129 0
  893 0056 012B     		cmp	r3, #1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 32
+
+
  894 0058 01D1     		bne	.L47
- 131:source\asw/main.c ****     
- 895              		.loc 1 131 0 is_stmt 0 discriminator 1
+ 129:source\asw/main.c ****     
+ 895              		.loc 1 129 0 is_stmt 0 discriminator 1
  896 005a FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack
  897              	.LVL74:
  898              	.L47:
@@ -1881,8 +1879,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  907              		.syntax unified
  908              	.LBE289:
  909              	.LBE288:
- 131:source\asw/main.c ****     
- 910              		.loc 1 131 0 discriminator 3
+ 129:source\asw/main.c ****     
+ 910              		.loc 1 129 0 discriminator 3
  911 0060 FFF7FEFF 		bl	ISR2_isr_DMA_ADC_MEM
  912              	.LVL75:
  913              	.LBB290:
@@ -1918,11 +1916,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  941              	.LVL78:
  942              	.LBE295:
  943              	.LBE294:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 33
-
-
  944              	.LBB296:
  945              	.LBB297:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 33
+
+
   84:Generated_Source\PSoC5/ErikaOS_common_ee_irqstub.inc **** __INLINE__ void  EE_increment_IRQ_nesting_level(void) { ++EE_IRQ_nesting_level; }
  946              		.loc 3 84 0 discriminator 3
  947 006e 094A     		ldr	r2, .L50+8
@@ -1931,11 +1929,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  950 0074 1360     		str	r3, [r2]
  951              	.LBE297:
  952              	.LBE296:
- 131:source\asw/main.c ****     
- 953              		.loc 1 131 0 discriminator 3
+ 129:source\asw/main.c ****     
+ 953              		.loc 1 129 0 discriminator 3
  954 0076 1BB9     		cbnz	r3, .L48
- 131:source\asw/main.c ****     
- 955              		.loc 1 131 0 is_stmt 0 discriminator 4
+ 129:source\asw/main.c ****     
+ 955              		.loc 1 129 0 is_stmt 0 discriminator 4
  956 0078 FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack_back
  957              	.LVL79:
  958              	.LBB298:
@@ -1958,8 +1956,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  974              		.syntax unified
  975              	.LBE301:
  976              	.LBE300:
- 131:source\asw/main.c ****     
- 977              		.loc 1 131 0 discriminator 6
+ 129:source\asw/main.c ****     
+ 977              		.loc 1 129 0 discriminator 6
  978 0082 BDE81940 		pop	{r0, r3, r4, lr}
  979              		.cfi_restore 14
  980              		.cfi_restore 4
@@ -1978,21 +1976,21 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  993              	.LFE176:
  994              		.size	isr_DMA_ADC_MEM, .-isr_DMA_ADC_MEM
  995              		.section	.text.ISR2_isr_pushButton,"ax",%progbits
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 34
-
-
  996              		.align	2
  997              		.global	ISR2_isr_pushButton
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 34
+
+
  998              		.thumb
  999              		.thumb_func
  1000              		.type	ISR2_isr_pushButton, %function
  1001              	ISR2_isr_pushButton:
  1002              	.LFB179:
- 134:source\asw/main.c **** }
- 135:source\asw/main.c **** 
- 136:source\asw/main.c **** // Process interrupts when button is pressed
- 137:source\asw/main.c **** ISR2(isr_pushButton){
- 1003              		.loc 1 137 0
+ 132:source\asw/main.c **** }
+ 133:source\asw/main.c **** 
+ 134:source\asw/main.c **** // Process interrupts when button is pressed
+ 135:source\asw/main.c **** ISR2(isr_pushButton){
+ 1003              		.loc 1 135 0
  1004              		.cfi_startproc
  1005              		@ args = 0, pretend = 0, frame = 0
  1006              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2000,9 +1998,9 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1008              		.cfi_def_cfa_offset 8
  1009              		.cfi_offset 3, -8
  1010              		.cfi_offset 14, -4
- 138:source\asw/main.c ****     
- 139:source\asw/main.c ****     SetEvent(tsk_control, ev_pushButton);
- 1011              		.loc 1 139 0
+ 136:source\asw/main.c ****     
+ 137:source\asw/main.c ****     SetEvent(tsk_control, ev_pushButton);
+ 1011              		.loc 1 137 0
  1012 0002 0121     		movs	r1, #1
  1013 0004 0220     		movs	r0, #2
  1014 0006 FFF7FEFF 		bl	EE_oo_SetEvent
@@ -2019,8 +2017,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1025              		.type	isr_pushButton, %function
  1026              	isr_pushButton:
  1027              	.LFB178:
- 137:source\asw/main.c ****     
- 1028              		.loc 1 137 0
+ 135:source\asw/main.c ****     
+ 1028              		.loc 1 135 0
  1029              		.cfi_startproc
  1030              		@ Stack Align: May be called with mis-aligned SP.
  1031              		@ args = 0, pretend = 0, frame = 0
@@ -2038,11 +2036,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1043              	.LVL82:
  1044              	.LBB326:
  1045              	.LBB327:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 35
-
-
  211:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
  1046              		.loc 2 211 0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 35
+
+
  1047              		.syntax unified
  1048              	@ 211 "Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc" 1
  1049 000a 72B6     		cpsid i
@@ -2098,11 +2096,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1094              	.LVL88:
  1095              	.L55:
  380:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****     prio = NVIC_SYS_PRI3_R >> NVIC_SYS_PRI3_TICK_S;
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 36
-
-
  1096              		.loc 2 380 0
  1097 003c 0F2B     		cmp	r3, #15
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 36
+
+
  1098 003e 03D1     		bne	.L59
  1099              		.loc 2 381 0
  1100 0040 134B     		ldr	r3, .L60+4
@@ -2142,12 +2140,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1131 0054 1360     		str	r3, [r2]
  1132              	.LBE335:
  1133              	.LBE334:
- 137:source\asw/main.c ****     
- 1134              		.loc 1 137 0
+ 135:source\asw/main.c ****     
+ 1134              		.loc 1 135 0
  1135 0056 012B     		cmp	r3, #1
  1136 0058 01D1     		bne	.L57
- 137:source\asw/main.c ****     
- 1137              		.loc 1 137 0 is_stmt 0 discriminator 1
+ 135:source\asw/main.c ****     
+ 1137              		.loc 1 135 0 is_stmt 0 discriminator 1
  1138 005a FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack
  1139              	.LVL93:
  1140              	.L57:
@@ -2158,16 +2156,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1144              		.syntax unified
  1145              	@ 191 "Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc" 1
  1146 005e 62B6     		cpsie i
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 37
-
-
  1147              	@ 0 "" 2
  1148              		.thumb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 37
+
+
  1149              		.syntax unified
  1150              	.LBE337:
  1151              	.LBE336:
- 137:source\asw/main.c ****     
- 1152              		.loc 1 137 0 discriminator 3
+ 135:source\asw/main.c ****     
+ 1152              		.loc 1 135 0 discriminator 3
  1153 0060 FFF7FEFF 		bl	ISR2_isr_pushButton
  1154              	.LVL94:
  1155              	.LBB338:
@@ -2213,16 +2211,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1192 0074 1360     		str	r3, [r2]
  1193              	.LBE345:
  1194              	.LBE344:
- 137:source\asw/main.c ****     
- 1195              		.loc 1 137 0 discriminator 3
+ 135:source\asw/main.c ****     
+ 1195              		.loc 1 135 0 discriminator 3
  1196 0076 1BB9     		cbnz	r3, .L58
- 137:source\asw/main.c ****     
- 1197              		.loc 1 137 0 is_stmt 0 discriminator 4
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 38
-
-
+ 135:source\asw/main.c ****     
+ 1197              		.loc 1 135 0 is_stmt 0 discriminator 4
  1198 0078 FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack_back
  1199              	.LVL98:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 38
+
+
  1200              	.LBB346:
  1201              	.LBB347:
  1202              		.loc 4 68 0 is_stmt 1 discriminator 4
@@ -2243,8 +2241,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1216              		.syntax unified
  1217              	.LBE349:
  1218              	.LBE348:
- 137:source\asw/main.c ****     
- 1219              		.loc 1 137 0 discriminator 6
+ 135:source\asw/main.c ****     
+ 1219              		.loc 1 135 0 discriminator 6
  1220 0082 BDE81940 		pop	{r0, r3, r4, lr}
  1221              		.cfi_restore 14
  1222              		.cfi_restore 4
@@ -2270,28 +2268,28 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1242              		.type	ISR2_isr_DMA_MEM_UART, %function
  1243              	ISR2_isr_DMA_MEM_UART:
  1244              	.LFB181:
- 140:source\asw/main.c **** }
- 141:source\asw/main.c **** 
- 142:source\asw/main.c **** ISR2(isr_DMA_MEM_UART){
- 1245              		.loc 1 142 0
+ 138:source\asw/main.c **** }
+ 139:source\asw/main.c **** 
+ 140:source\asw/main.c **** ISR2(isr_DMA_MEM_UART){
+ 1245              		.loc 1 140 0
  1246              		.cfi_startproc
  1247              		@ args = 0, pretend = 0, frame = 0
  1248              		@ frame_needed = 0, uses_anonymous_args = 0
  1249 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 39
-
-
  1250              		.cfi_def_cfa_offset 8
  1251              		.cfi_offset 3, -8
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 39
+
+
  1252              		.cfi_offset 14, -4
- 143:source\asw/main.c ****     
- 144:source\asw/main.c ****     CyDelay(1000);
- 1253              		.loc 1 144 0
+ 141:source\asw/main.c ****     
+ 142:source\asw/main.c ****     CyDelay(1000);
+ 1253              		.loc 1 142 0
  1254 0002 4FF47A70 		mov	r0, #1000
  1255 0006 FFF7FEFF 		bl	CyDelay
  1256              	.LVL100:
- 145:source\asw/main.c ****     SetEvent(tsk_control, ev_sendFFT);
- 1257              		.loc 1 145 0
+ 143:source\asw/main.c ****     SetEvent(tsk_control, ev_sendFFT);
+ 1257              		.loc 1 143 0
  1258 000a 4021     		movs	r1, #64
  1259 000c 0220     		movs	r0, #2
  1260 000e FFF7FEFF 		bl	EE_oo_SetEvent
@@ -2308,8 +2306,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1271              		.type	isr_DMA_MEM_UART, %function
  1272              	isr_DMA_MEM_UART:
  1273              	.LFB180:
- 142:source\asw/main.c ****     
- 1274              		.loc 1 142 0
+ 140:source\asw/main.c ****     
+ 1274              		.loc 1 140 0
  1275              		.cfi_startproc
  1276              		@ Stack Align: May be called with mis-aligned SP.
  1277              		@ args = 0, pretend = 0, frame = 0
@@ -2338,11 +2336,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1299              	.LBE375:
  1300              	.LBE374:
  1301              	.LBB376:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 40
-
-
  1302              	.LBB377:
  325:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #else
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 40
+
+
  1303              		.loc 2 325 0
  1304              		.syntax unified
  1305              	@ 325 "Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc" 1
@@ -2398,11 +2396,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1350              	.LVL110:
  1351 0046 00E0     		b	.L66
  1352              	.LVL111:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 41
-
-
  1353              	.L69:
  373:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 41
+
+
  1354              		.loc 2 373 0
  1355 0048 0023     		movs	r3, #0
  1356              	.LVL112:
@@ -2431,12 +2429,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1377 0054 1360     		str	r3, [r2]
  1378              	.LBE383:
  1379              	.LBE382:
- 142:source\asw/main.c ****     
- 1380              		.loc 1 142 0
+ 140:source\asw/main.c ****     
+ 1380              		.loc 1 140 0
  1381 0056 012B     		cmp	r3, #1
  1382 0058 01D1     		bne	.L67
- 142:source\asw/main.c ****     
- 1383              		.loc 1 142 0 is_stmt 0 discriminator 1
+ 140:source\asw/main.c ****     
+ 1383              		.loc 1 140 0 is_stmt 0 discriminator 1
  1384 005a FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack
  1385              	.LVL113:
  1386              	.L67:
@@ -2452,17 +2450,17 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1395              		.syntax unified
  1396              	.LBE385:
  1397              	.LBE384:
- 142:source\asw/main.c ****     
- 1398              		.loc 1 142 0 discriminator 3
+ 140:source\asw/main.c ****     
+ 1398              		.loc 1 140 0 discriminator 3
  1399 0060 FFF7FEFF 		bl	ISR2_isr_DMA_MEM_UART
  1400              	.LVL114:
  1401              	.LBB386:
  1402              	.LBB387:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 42
-
-
  211:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
  1403              		.loc 2 211 0 discriminator 3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 42
+
+
  1404              		.syntax unified
  1405              	@ 211 "Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc" 1
  1406 0064 72B6     		cpsid i
@@ -2502,11 +2500,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1438 0074 1360     		str	r3, [r2]
  1439              	.LBE393:
  1440              	.LBE392:
- 142:source\asw/main.c ****     
- 1441              		.loc 1 142 0 discriminator 3
+ 140:source\asw/main.c ****     
+ 1441              		.loc 1 140 0 discriminator 3
  1442 0076 1BB9     		cbnz	r3, .L68
- 142:source\asw/main.c ****     
- 1443              		.loc 1 142 0 is_stmt 0 discriminator 4
+ 140:source\asw/main.c ****     
+ 1443              		.loc 1 140 0 is_stmt 0 discriminator 4
  1444 0078 FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack_back
  1445              	.LVL118:
  1446              	.LBB394:
@@ -2518,11 +2516,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1452              	.LBE395:
  1453              	.LBE394:
  1454              	.LBB396:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 43
-
-
  1455              	.LBB397:
  191:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 43
+
+
  1456              		.loc 2 191 0 discriminator 6
  1457              		.syntax unified
  1458              	@ 191 "Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc" 1
@@ -2532,8 +2530,8 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1462              		.syntax unified
  1463              	.LBE397:
  1464              	.LBE396:
- 142:source\asw/main.c ****     
- 1465              		.loc 1 142 0 discriminator 6
+ 140:source\asw/main.c ****     
+ 1465              		.loc 1 140 0 discriminator 6
  1466 0082 BDE81940 		pop	{r0, r3, r4, lr}
  1467              		.cfi_restore 14
  1468              		.cfi_restore 4
@@ -2559,12 +2557,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1488              		.type	isr_DMA_FFT_UART, %function
  1489              	isr_DMA_FFT_UART:
  1490              	.LFB182:
- 146:source\asw/main.c ****     
+ 144:source\asw/main.c ****     
+ 145:source\asw/main.c **** 
+ 146:source\asw/main.c **** }
  147:source\asw/main.c **** 
- 148:source\asw/main.c **** }
- 149:source\asw/main.c **** 
- 150:source\asw/main.c **** ISR2(isr_DMA_FFT_UART){
- 1491              		.loc 1 150 0
+ 148:source\asw/main.c **** ISR2(isr_DMA_FFT_UART){
+ 1491              		.loc 1 148 0
  1492              		.cfi_startproc
  1493              		@ Stack Align: May be called with mis-aligned SP.
  1494              		@ args = 0, pretend = 0, frame = 0
@@ -2578,11 +2576,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1502              		.cfi_offset 13, -16
  1503              		.cfi_offset 3, -12
  1504              		.cfi_offset 4, -8
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 44
-
-
  1505              		.cfi_offset 14, -4
  1506              	.LVL120:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 44
+
+
  1507              	.LBB422:
  1508              	.LBB423:
  211:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
@@ -2638,11 +2636,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1553 0034 0A40     		ands	r2, r2, r1
  1554 0036 22FA03F3 		lsr	r3, r2, r3
  1555              	.LVL125:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 45
-
-
  1556 003a 06E0     		b	.L74
  1557              	.LVL126:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 45
+
+
  1558              	.L73:
  380:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc ****     prio = NVIC_SYS_PRI3_R >> NVIC_SYS_PRI3_TICK_S;
  1559              		.loc 2 380 0
@@ -2686,10 +2684,10 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1594 0054 1360     		str	r3, [r2]
  1595              	.LBE431:
  1596              	.LBE430:
- 1597              		.loc 1 150 0
+ 1597              		.loc 1 148 0
  1598 0056 012B     		cmp	r3, #1
  1599 0058 01D1     		bne	.L75
- 1600              		.loc 1 150 0 is_stmt 0 discriminator 1
+ 1600              		.loc 1 148 0 is_stmt 0 discriminator 1
  1601 005a FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack
  1602              	.LVL131:
  1603              	.L75:
@@ -2698,11 +2696,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  191:Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc **** #endif	/* !__KEIL__ */
  1606              		.loc 2 191 0 is_stmt 1 discriminator 3
  1607              		.syntax unified
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 46
-
-
  1608              	@ 191 "Generated_Source\PSoC5/ErikaOS_cortex_mx_ee_cpu.inc" 1
  1609 005e 62B6     		cpsie i
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 46
+
+
  1610              	@ 0 "" 2
  1611              		.thumb
  1612              		.syntax unified
@@ -2751,18 +2749,18 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1652 0070 1360     		str	r3, [r2]
  1653              	.LBE441:
  1654              	.LBE440:
- 1655              		.loc 1 150 0 discriminator 3
+ 1655              		.loc 1 148 0 discriminator 3
  1656 0072 1BB9     		cbnz	r3, .L76
- 1657              		.loc 1 150 0 is_stmt 0 discriminator 4
+ 1657              		.loc 1 148 0 is_stmt 0 discriminator 4
  1658 0074 FFF7FEFF 		bl	EE_cortex_mx_change_IRQ_stack_back
  1659              	.LVL135:
  1660              	.LBB442:
  1661              	.LBB443:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 47
-
-
  1662              		.loc 4 68 0 is_stmt 1 discriminator 4
  1663 0078 FFF7FEFF 		bl	EE_switch_context
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 47
+
+
  1664              	.LVL136:
  1665              	.L76:
  1666              	.LBE443:
@@ -2779,7 +2777,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1676              		.syntax unified
  1677              	.LBE445:
  1678              	.LBE444:
- 1679              		.loc 1 150 0 discriminator 6
+ 1679              		.loc 1 148 0 discriminator 6
  1680 007e BDE81940 		pop	{r0, r3, r4, lr}
  1681              		.cfi_restore 14
  1682              		.cfi_restore 4
@@ -2805,7 +2803,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1702              		.type	ISR2_isr_DMA_FFT_UART, %function
  1703              	ISR2_isr_DMA_FFT_UART:
  1704              	.LFB183:
- 1705              		.loc 1 150 0
+ 1705              		.loc 1 148 0
  1706              		.cfi_startproc
  1707              		@ args = 0, pretend = 0, frame = 0
  1708              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2818,11 +2816,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1715 0002 00BF     		.text
  1716              	.Letext0:
  1717              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 48
-
-
  1718              		.file 7 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  1719              		.file 8 "Generated_Source\\PSoC5/ErikaOS_common_ee_types.inc"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 48
+
+
  1720              		.file 9 "Generated_Source\\PSoC5/ErikaOS_ee_oo_common.inc"
  1721              		.file 10 ".\\source\\bsw/global.h"
  1722              		.file 11 "source\\asw\\detector.h"
@@ -2878,11 +2876,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1772 0057 02       		.uleb128 0x2
  1773 0058 04       		.byte	0x4
  1774 0059 05       		.byte	0x5
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 49
-
-
  1775 005a B8010000 		.4byte	.LASF6
  1776 005e 02       		.uleb128 0x2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 49
+
+
  1777 005f 04       		.byte	0x4
  1778 0060 07       		.byte	0x7
  1779 0061 87040000 		.4byte	.LASF7
@@ -2938,11 +2936,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1829 00c3 08       		.byte	0x8
  1830 00c4 54       		.byte	0x54
  1831 00c5 7A000000 		.4byte	0x7a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 50
-
-
  1832 00c9 03       		.uleb128 0x3
  1833 00ca 4E000000 		.4byte	.LASF19
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 50
+
+
  1834 00ce 02       		.byte	0x2
  1835 00cf 4D       		.byte	0x4d
  1836 00d0 BE000000 		.4byte	0xbe
@@ -2998,11 +2996,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1886 013f 02       		.byte	0x2
  1887 0140 00       		.byte	0
  1888 0141 03       		.uleb128 0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 51
-
-
  1889 0142 38050000 		.4byte	.LASF30
  1890 0146 0B       		.byte	0xb
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 51
+
+
  1891 0147 46       		.byte	0x46
  1892 0148 1E010000 		.4byte	0x11e
  1893 014c 08       		.uleb128 0x8
@@ -3058,11 +3056,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  1943 01ae 5701     		.2byte	0x157
  1944 01b0 03       		.byte	0x3
  1945 01b1 C2010000 		.4byte	0x1c2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 52
-
-
  1946 01b5 0C       		.uleb128 0xc
  1947 01b6 EA060000 		.4byte	.LASF45
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 52
+
+
  1948 01ba 02       		.byte	0x2
  1949 01bb 5801     		.2byte	0x158
  1950 01bd EA000000 		.4byte	0xea
@@ -3118,11 +3116,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2000 021b 03       		.byte	0x3
  2001 021c 11       		.uleb128 0x11
  2002 021d DC030000 		.4byte	.LASF44
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 53
-
-
  2003 0221 05       		.byte	0x5
  2004 0222 89       		.byte	0x89
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 53
+
+
  2005 0223 C9000000 		.4byte	0xc9
  2006 0227 03       		.byte	0x3
  2007 0228 38020000 		.4byte	0x238
@@ -3140,7 +3138,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2019 0240 13       		.uleb128 0x13
  2020 0241 CA040000 		.4byte	.LASF50
  2021 0245 01       		.byte	0x1
- 2022 0246 1E       		.byte	0x1e
+ 2022 0246 1C       		.byte	0x1c
  2023 0247 00000000 		.4byte	.LFB168
  2024 024b 0A000000 		.4byte	.LFE168-.LFB168
  2025 024f 01       		.uleb128 0x1
@@ -3177,19 +3175,19 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2056 028f 13       		.uleb128 0x13
  2057 0290 FF050000 		.4byte	.LASF51
  2058 0294 01       		.byte	0x1
- 2059 0295 1E       		.byte	0x1e
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 54
-
-
+ 2059 0295 1C       		.byte	0x1c
  2060 0296 00000000 		.4byte	.LFB167
  2061 029a 98000000 		.4byte	.LFE167-.LFB167
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 54
+
+
  2062 029e 01       		.uleb128 0x1
  2063 029f 9C       		.byte	0x9c
  2064 02a0 EC030000 		.4byte	0x3ec
  2065 02a4 16       		.uleb128 0x16
  2066 02a5 69706C00 		.ascii	"ipl\000"
  2067 02a9 01       		.byte	0x1
- 2068 02aa 1E       		.byte	0x1e
+ 2068 02aa 1C       		.byte	0x1c
  2069 02ab C9000000 		.4byte	0xc9
  2070 02af 00000000 		.4byte	.LLST0
  2071 02b3 17       		.uleb128 0x17
@@ -3197,13 +3195,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2073 02b8 0A000000 		.4byte	.LBB176
  2074 02bc 02000000 		.4byte	.LBE176-.LBB176
  2075 02c0 01       		.byte	0x1
- 2076 02c1 1E       		.byte	0x1e
+ 2076 02c1 1C       		.byte	0x1c
  2077 02c2 18       		.uleb128 0x18
  2078 02c3 C2010000 		.4byte	0x1c2
  2079 02c7 0C000000 		.4byte	.LBB178
  2080 02cb 04000000 		.4byte	.LBE178-.LBB178
  2081 02cf 01       		.byte	0x1
- 2082 02d0 1E       		.byte	0x1e
+ 2082 02d0 1C       		.byte	0x1c
  2083 02d1 E5020000 		.4byte	0x2e5
  2084 02d5 19       		.uleb128 0x19
  2085 02d6 0C000000 		.4byte	.LBB179
@@ -3217,7 +3215,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2093 02ea 10000000 		.4byte	.LBB180
  2094 02ee 3A000000 		.4byte	.LBE180-.LBB180
  2095 02f2 01       		.byte	0x1
- 2096 02f3 1E       		.byte	0x1e
+ 2096 02f3 1C       		.byte	0x1c
  2097 02f4 15030000 		.4byte	0x315
  2098 02f8 19       		.uleb128 0x19
  2099 02f9 10000000 		.4byte	.LBB181
@@ -3235,38 +3233,38 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2111 031a 4A000000 		.4byte	.LBB182
  2112 031e 04000000 		.4byte	.LBE182-.LBB182
  2113 0322 01       		.byte	0x1
- 2114 0323 1E       		.byte	0x1e
+ 2114 0323 1C       		.byte	0x1c
  2115 0324 2E030000 		.4byte	0x32e
  2116 0328 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 55
-
-
  2117 0329 B5010000 		.4byte	0x1b5
  2118 032d 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 55
+
+
  2119 032e 17       		.uleb128 0x17
  2120 032f A0010000 		.4byte	0x1a0
  2121 0333 4E000000 		.4byte	.LBB184
  2122 0337 08000000 		.4byte	.LBE184-.LBB184
  2123 033b 01       		.byte	0x1
- 2124 033c 1E       		.byte	0x1e
+ 2124 033c 1C       		.byte	0x1c
  2125 033d 17       		.uleb128 0x17
  2126 033e 04020000 		.4byte	0x204
  2127 0342 5E000000 		.4byte	.LBB186
  2128 0346 02000000 		.4byte	.LBE186-.LBB186
  2129 034a 01       		.byte	0x1
- 2130 034b 1E       		.byte	0x1e
+ 2130 034b 1C       		.byte	0x1c
  2131 034c 17       		.uleb128 0x17
  2132 034d E0010000 		.4byte	0x1e0
  2133 0351 64000000 		.4byte	.LBB188
  2134 0355 02000000 		.4byte	.LBE188-.LBB188
  2135 0359 01       		.byte	0x1
- 2136 035a 1E       		.byte	0x1e
+ 2136 035a 1C       		.byte	0x1c
  2137 035b 18       		.uleb128 0x18
  2138 035c A8010000 		.4byte	0x1a8
  2139 0360 66000000 		.4byte	.LBB190
  2140 0364 04000000 		.4byte	.LBE190-.LBB190
  2141 0368 01       		.byte	0x1
- 2142 0369 1E       		.byte	0x1e
+ 2142 0369 1C       		.byte	0x1c
  2143 036a 78030000 		.4byte	0x378
  2144 036e 1D       		.uleb128 0x1d
  2145 036f B5010000 		.4byte	0x1b5
@@ -3277,7 +3275,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2150 037d 6A000000 		.4byte	.LBB192
  2151 0381 04000000 		.4byte	.LBE192-.LBB192
  2152 0385 01       		.byte	0x1
- 2153 0386 1E       		.byte	0x1e
+ 2153 0386 1C       		.byte	0x1c
  2154 0387 95030000 		.4byte	0x395
  2155 038b 1E       		.uleb128 0x1e
  2156 038c 6E000000 		.4byte	.LVL16
@@ -3288,27 +3286,27 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2161 039a 6E000000 		.4byte	.LBB194
  2162 039e 08000000 		.4byte	.LBE194-.LBB194
  2163 03a2 01       		.byte	0x1
- 2164 03a3 1E       		.byte	0x1e
+ 2164 03a3 1C       		.byte	0x1c
  2165 03a4 18       		.uleb128 0x18
  2166 03a5 0C020000 		.4byte	0x20c
  2167 03a9 7C000000 		.4byte	.LBB196
  2168 03ad 04000000 		.4byte	.LBE196-.LBB196
  2169 03b1 01       		.byte	0x1
- 2170 03b2 1E       		.byte	0x1e
+ 2170 03b2 1C       		.byte	0x1c
  2171 03b3 C1030000 		.4byte	0x3c1
  2172 03b7 1E       		.uleb128 0x1e
  2173 03b8 80000000 		.4byte	.LVL18
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 56
-
-
  2174 03bc AE0D0000 		.4byte	0xdae
  2175 03c0 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 56
+
+
  2176 03c1 17       		.uleb128 0x17
  2177 03c2 04020000 		.4byte	0x204
  2178 03c6 80000000 		.4byte	.LBB198
  2179 03ca 02000000 		.4byte	.LBE198-.LBB198
  2180 03ce 01       		.byte	0x1
- 2181 03cf 1E       		.byte	0x1e
+ 2181 03cf 1C       		.byte	0x1c
  2182 03d0 1E       		.uleb128 0x1e
  2183 03d1 5E000000 		.4byte	.LVL12
  2184 03d5 B90D0000 		.4byte	0xdb9
@@ -3322,7 +3320,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2192 03ec 1F       		.uleb128 0x1f
  2193 03ed BB000000 		.4byte	.LASF53
  2194 03f1 01       		.byte	0x1
- 2195 03f2 23       		.byte	0x23
+ 2195 03f2 21       		.byte	0x21
  2196 03f3 73000000 		.4byte	0x73
  2197 03f7 00000000 		.4byte	.LFB169
  2198 03fb 28000000 		.4byte	.LFE169-.LFB169
@@ -3334,7 +3332,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2204 040a 04000000 		.4byte	.LBB200
  2205 040e 08000000 		.4byte	.LBE200-.LBB200
  2206 0412 01       		.byte	0x1
- 2207 0413 28       		.byte	0x28
+ 2207 0413 26       		.byte	0x26
  2208 0414 22040000 		.4byte	0x422
  2209 0418 1D       		.uleb128 0x1d
  2210 0419 2C020000 		.4byte	0x22c
@@ -3345,7 +3343,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2215 0427 0C000000 		.4byte	.LBB202
  2216 042b 0A000000 		.4byte	.LBE202-.LBB202
  2217 042f 01       		.byte	0x1
- 2218 0430 29       		.byte	0x29
+ 2218 0430 27       		.byte	0x27
  2219 0431 14       		.uleb128 0x14
  2220 0432 1C000000 		.4byte	.LVL21
  2221 0436 CF0D0000 		.4byte	0xdcf
@@ -3358,11 +3356,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2228 0440 00       		.byte	0
  2229 0441 20       		.uleb128 0x20
  2230 0442 26040000 		.4byte	.LASF97
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 57
-
-
  2231 0446 01       		.byte	0x1
- 2232 0447 30       		.byte	0x30
+ 2232 0447 2E       		.byte	0x2e
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 57
+
+
  2233 0448 00000000 		.4byte	.LFB170
  2234 044c 04000000 		.4byte	.LFE170-.LFB170
  2235 0450 01       		.uleb128 0x1
@@ -3370,7 +3368,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2237 0452 13       		.uleb128 0x13
  2238 0453 25020000 		.4byte	.LASF52
  2239 0457 01       		.byte	0x1
- 2240 0458 3A       		.byte	0x3a
+ 2240 0458 38       		.byte	0x38
  2241 0459 00000000 		.4byte	.LFB171
  2242 045d 30000000 		.4byte	.LFE171-.LFB171
  2243 0461 01       		.uleb128 0x1
@@ -3381,7 +3379,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2248 046c 0C000000 		.4byte	.LBB204
  2249 0470 0A000000 		.4byte	.LBE204-.LBB204
  2250 0474 01       		.byte	0x1
- 2251 0475 47       		.byte	0x47
+ 2251 0475 45       		.byte	0x45
  2252 0476 21       		.uleb128 0x21
  2253 0477 08000000 		.4byte	.LVL22
  2254 047b DB0D0000 		.4byte	0xddb
@@ -3418,15 +3416,15 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2285 04bb 00       		.byte	0
  2286 04bc 1E       		.uleb128 0x1e
  2287 04bd 26000000 		.4byte	.LVL26
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 58
-
-
  2288 04c1 FD0D0000 		.4byte	0xdfd
  2289 04c5 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 58
+
+
  2290 04c6 22       		.uleb128 0x22
  2291 04c7 99040000 		.4byte	.LASF54
  2292 04cb 01       		.byte	0x1
- 2293 04cc 54       		.byte	0x54
+ 2293 04cc 52       		.byte	0x52
  2294 04cd 00000000 		.4byte	.LFB172
  2295 04d1 2C000000 		.4byte	.LFE172-.LFB172
  2296 04d5 01       		.uleb128 0x1
@@ -3435,7 +3433,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2299 04db 23       		.uleb128 0x23
  2300 04dc 657600   		.ascii	"ev\000"
  2301 04df 01       		.byte	0x1
- 2302 04e0 57       		.byte	0x57
+ 2302 04e0 55       		.byte	0x55
  2303 04e1 00010000 		.4byte	0x100
  2304 04e5 02       		.uleb128 0x2
  2305 04e6 91       		.byte	0x91
@@ -3478,16 +3476,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2342 052a 50       		.byte	0x50
  2343 052b 05       		.uleb128 0x5
  2344 052c 03       		.byte	0x3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 59
-
-
  2345 052d 00000000 		.4byte	movementDetector
  2346 0531 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 59
+
+
  2347 0532 00       		.byte	0
  2348 0533 24       		.uleb128 0x24
  2349 0534 A9040000 		.4byte	.LASF98
  2350 0538 01       		.byte	0x1
- 2351 0539 67       		.byte	0x67
+ 2351 0539 65       		.byte	0x65
  2352 053a 00000000 		.4byte	.LFB173
  2353 053e 02000000 		.4byte	.LFE173-.LFB173
  2354 0542 01       		.uleb128 0x1
@@ -3495,7 +3493,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2356 0544 13       		.uleb128 0x13
  2357 0545 A7010000 		.4byte	.LASF55
  2358 0549 01       		.byte	0x1
- 2359 054a 73       		.byte	0x73
+ 2359 054a 71       		.byte	0x71
  2360 054b 00000000 		.4byte	.LFB175
  2361 054f 42000000 		.4byte	.LFE175-.LFB175
  2362 0553 01       		.uleb128 0x1
@@ -3504,7 +3502,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2365 0559 25       		.uleb128 0x25
  2366 055a 5D040000 		.4byte	.LASF56
  2367 055e 01       		.byte	0x1
- 2368 055f 75       		.byte	0x75
+ 2368 055f 73       		.byte	0x73
  2369 0560 81000000 		.4byte	0x81
  2370 0564 A8000000 		.4byte	.LLST5
  2371 0568 1E       		.uleb128 0x1e
@@ -3538,11 +3536,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2399 059c 01       		.uleb128 0x1
  2400 059d 51       		.byte	0x51
  2401 059e 01       		.uleb128 0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 60
-
-
  2402 059f 40       		.byte	0x40
  2403 05a0 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 60
+
+
  2404 05a1 21       		.uleb128 0x21
  2405 05a2 30000000 		.4byte	.LVL40
  2406 05a6 420E0000 		.4byte	0xe42
@@ -3578,7 +3576,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2436 05d1 13       		.uleb128 0x13
  2437 05d2 16000000 		.4byte	.LASF57
  2438 05d6 01       		.byte	0x1
- 2439 05d7 73       		.byte	0x73
+ 2439 05d7 71       		.byte	0x71
  2440 05d8 00000000 		.4byte	.LFB174
  2441 05dc 98000000 		.4byte	.LFE174-.LFB174
  2442 05e0 01       		.uleb128 0x1
@@ -3587,7 +3585,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2445 05e6 16       		.uleb128 0x16
  2446 05e7 69706C00 		.ascii	"ipl\000"
  2447 05eb 01       		.byte	0x1
- 2448 05ec 73       		.byte	0x73
+ 2448 05ec 71       		.byte	0x71
  2449 05ed C9000000 		.4byte	0xc9
  2450 05f1 DC000000 		.4byte	.LLST6
  2451 05f5 17       		.uleb128 0x17
@@ -3595,16 +3593,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2453 05fa 0A000000 		.4byte	.LBB230
  2454 05fe 02000000 		.4byte	.LBE230-.LBB230
  2455 0602 01       		.byte	0x1
- 2456 0603 73       		.byte	0x73
+ 2456 0603 71       		.byte	0x71
  2457 0604 18       		.uleb128 0x18
  2458 0605 C2010000 		.4byte	0x1c2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 61
-
-
  2459 0609 0C000000 		.4byte	.LBB232
  2460 060d 04000000 		.4byte	.LBE232-.LBB232
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 61
+
+
  2461 0611 01       		.byte	0x1
- 2462 0612 73       		.byte	0x73
+ 2462 0612 71       		.byte	0x71
  2463 0613 27060000 		.4byte	0x627
  2464 0617 19       		.uleb128 0x19
  2465 0618 0C000000 		.4byte	.LBB233
@@ -3618,7 +3616,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2473 062c 10000000 		.4byte	.LBB234
  2474 0630 3A000000 		.4byte	.LBE234-.LBB234
  2475 0634 01       		.byte	0x1
- 2476 0635 73       		.byte	0x73
+ 2476 0635 71       		.byte	0x71
  2477 0636 57060000 		.4byte	0x657
  2478 063a 19       		.uleb128 0x19
  2479 063b 10000000 		.4byte	.LBB235
@@ -3636,7 +3634,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2491 065c 4A000000 		.4byte	.LBB236
  2492 0660 04000000 		.4byte	.LBE236-.LBB236
  2493 0664 01       		.byte	0x1
- 2494 0665 73       		.byte	0x73
+ 2494 0665 71       		.byte	0x71
  2495 0666 70060000 		.4byte	0x670
  2496 066a 1C       		.uleb128 0x1c
  2497 066b B5010000 		.4byte	0x1b5
@@ -3646,28 +3644,28 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2501 0675 4E000000 		.4byte	.LBB238
  2502 0679 08000000 		.4byte	.LBE238-.LBB238
  2503 067d 01       		.byte	0x1
- 2504 067e 73       		.byte	0x73
+ 2504 067e 71       		.byte	0x71
  2505 067f 17       		.uleb128 0x17
  2506 0680 04020000 		.4byte	0x204
  2507 0684 5E000000 		.4byte	.LBB240
  2508 0688 02000000 		.4byte	.LBE240-.LBB240
  2509 068c 01       		.byte	0x1
- 2510 068d 73       		.byte	0x73
+ 2510 068d 71       		.byte	0x71
  2511 068e 17       		.uleb128 0x17
  2512 068f E0010000 		.4byte	0x1e0
  2513 0693 64000000 		.4byte	.LBB242
  2514 0697 02000000 		.4byte	.LBE242-.LBB242
  2515 069b 01       		.byte	0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 62
-
-
- 2516 069c 73       		.byte	0x73
+ 2516 069c 71       		.byte	0x71
  2517 069d 18       		.uleb128 0x18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 62
+
+
  2518 069e A8010000 		.4byte	0x1a8
  2519 06a2 66000000 		.4byte	.LBB244
  2520 06a6 04000000 		.4byte	.LBE244-.LBB244
  2521 06aa 01       		.byte	0x1
- 2522 06ab 73       		.byte	0x73
+ 2522 06ab 71       		.byte	0x71
  2523 06ac BA060000 		.4byte	0x6ba
  2524 06b0 1D       		.uleb128 0x1d
  2525 06b1 B5010000 		.4byte	0x1b5
@@ -3678,7 +3676,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2530 06bf 6A000000 		.4byte	.LBB246
  2531 06c3 04000000 		.4byte	.LBE246-.LBB246
  2532 06c7 01       		.byte	0x1
- 2533 06c8 73       		.byte	0x73
+ 2533 06c8 71       		.byte	0x71
  2534 06c9 D7060000 		.4byte	0x6d7
  2535 06cd 1E       		.uleb128 0x1e
  2536 06ce 6E000000 		.4byte	.LVL59
@@ -3689,13 +3687,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2541 06dc 6E000000 		.4byte	.LBB248
  2542 06e0 08000000 		.4byte	.LBE248-.LBB248
  2543 06e4 01       		.byte	0x1
- 2544 06e5 73       		.byte	0x73
+ 2544 06e5 71       		.byte	0x71
  2545 06e6 18       		.uleb128 0x18
  2546 06e7 0C020000 		.4byte	0x20c
  2547 06eb 7C000000 		.4byte	.LBB250
  2548 06ef 04000000 		.4byte	.LBE250-.LBB250
  2549 06f3 01       		.byte	0x1
- 2550 06f4 73       		.byte	0x73
+ 2550 06f4 71       		.byte	0x71
  2551 06f5 03070000 		.4byte	0x703
  2552 06f9 1E       		.uleb128 0x1e
  2553 06fa 80000000 		.4byte	.LVL61
@@ -3706,7 +3704,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2558 0708 80000000 		.4byte	.LBB252
  2559 070c 02000000 		.4byte	.LBE252-.LBB252
  2560 0710 01       		.byte	0x1
- 2561 0711 73       		.byte	0x73
+ 2561 0711 71       		.byte	0x71
  2562 0712 1E       		.uleb128 0x1e
  2563 0713 5E000000 		.4byte	.LVL55
  2564 0717 B90D0000 		.4byte	0xdb9
@@ -3718,12 +3716,12 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2570 0729 C40D0000 		.4byte	0xdc4
  2571 072d 00       		.byte	0
  2572 072e 13       		.uleb128 0x13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 63
-
-
  2573 072f 06020000 		.4byte	.LASF58
  2574 0733 01       		.byte	0x1
- 2575 0734 83       		.byte	0x83
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 63
+
+
+ 2575 0734 81       		.byte	0x81
  2576 0735 00000000 		.4byte	.LFB177
  2577 0739 0C000000 		.4byte	.LFE177-.LFB177
  2578 073d 01       		.uleb128 0x1
@@ -3747,7 +3745,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2596 0758 13       		.uleb128 0x13
  2597 0759 12030000 		.4byte	.LASF59
  2598 075d 01       		.byte	0x1
- 2599 075e 83       		.byte	0x83
+ 2599 075e 81       		.byte	0x81
  2600 075f 00000000 		.4byte	.LFB176
  2601 0763 98000000 		.4byte	.LFE176-.LFB176
  2602 0767 01       		.uleb128 0x1
@@ -3756,7 +3754,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2605 076d 16       		.uleb128 0x16
  2606 076e 69706C00 		.ascii	"ipl\000"
  2607 0772 01       		.byte	0x1
- 2608 0773 83       		.byte	0x83
+ 2608 0773 81       		.byte	0x81
  2609 0774 C9000000 		.4byte	0xc9
  2610 0778 6E010000 		.4byte	.LLST10
  2611 077c 17       		.uleb128 0x17
@@ -3764,13 +3762,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2613 0781 0A000000 		.4byte	.LBB278
  2614 0785 02000000 		.4byte	.LBE278-.LBB278
  2615 0789 01       		.byte	0x1
- 2616 078a 83       		.byte	0x83
+ 2616 078a 81       		.byte	0x81
  2617 078b 18       		.uleb128 0x18
  2618 078c C2010000 		.4byte	0x1c2
  2619 0790 0C000000 		.4byte	.LBB280
  2620 0794 04000000 		.4byte	.LBE280-.LBB280
  2621 0798 01       		.byte	0x1
- 2622 0799 83       		.byte	0x83
+ 2622 0799 81       		.byte	0x81
  2623 079a AE070000 		.4byte	0x7ae
  2624 079e 19       		.uleb128 0x19
  2625 079f 0C000000 		.4byte	.LBB281
@@ -3778,16 +3776,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2627 07a7 1A       		.uleb128 0x1a
  2628 07a8 D3010000 		.4byte	0x1d3
  2629 07ac 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 64
-
-
  2630 07ad 00       		.byte	0
  2631 07ae 18       		.uleb128 0x18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 64
+
+
  2632 07af 65020000 		.4byte	0x265
  2633 07b3 10000000 		.4byte	.LBB282
  2634 07b7 3A000000 		.4byte	.LBE282-.LBB282
  2635 07bb 01       		.byte	0x1
- 2636 07bc 83       		.byte	0x83
+ 2636 07bc 81       		.byte	0x81
  2637 07bd DE070000 		.4byte	0x7de
  2638 07c1 19       		.uleb128 0x19
  2639 07c2 10000000 		.4byte	.LBB283
@@ -3805,7 +3803,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2651 07e3 4A000000 		.4byte	.LBB284
  2652 07e7 04000000 		.4byte	.LBE284-.LBB284
  2653 07eb 01       		.byte	0x1
- 2654 07ec 83       		.byte	0x83
+ 2654 07ec 81       		.byte	0x81
  2655 07ed F7070000 		.4byte	0x7f7
  2656 07f1 1C       		.uleb128 0x1c
  2657 07f2 B5010000 		.4byte	0x1b5
@@ -3815,39 +3813,39 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2661 07fc 4E000000 		.4byte	.LBB286
  2662 0800 08000000 		.4byte	.LBE286-.LBB286
  2663 0804 01       		.byte	0x1
- 2664 0805 83       		.byte	0x83
+ 2664 0805 81       		.byte	0x81
  2665 0806 17       		.uleb128 0x17
  2666 0807 04020000 		.4byte	0x204
  2667 080b 5E000000 		.4byte	.LBB288
  2668 080f 02000000 		.4byte	.LBE288-.LBB288
  2669 0813 01       		.byte	0x1
- 2670 0814 83       		.byte	0x83
+ 2670 0814 81       		.byte	0x81
  2671 0815 17       		.uleb128 0x17
  2672 0816 E0010000 		.4byte	0x1e0
  2673 081a 64000000 		.4byte	.LBB290
  2674 081e 02000000 		.4byte	.LBE290-.LBB290
  2675 0822 01       		.byte	0x1
- 2676 0823 83       		.byte	0x83
+ 2676 0823 81       		.byte	0x81
  2677 0824 18       		.uleb128 0x18
  2678 0825 A8010000 		.4byte	0x1a8
  2679 0829 66000000 		.4byte	.LBB292
  2680 082d 04000000 		.4byte	.LBE292-.LBB292
  2681 0831 01       		.byte	0x1
- 2682 0832 83       		.byte	0x83
+ 2682 0832 81       		.byte	0x81
  2683 0833 41080000 		.4byte	0x841
  2684 0837 1D       		.uleb128 0x1d
  2685 0838 B5010000 		.4byte	0x1b5
  2686 083c ED010000 		.4byte	.LLST13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 65
-
-
  2687 0840 00       		.byte	0
  2688 0841 18       		.uleb128 0x18
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 65
+
+
  2689 0842 FC010000 		.4byte	0x1fc
  2690 0846 6A000000 		.4byte	.LBB294
  2691 084a 04000000 		.4byte	.LBE294-.LBB294
  2692 084e 01       		.byte	0x1
- 2693 084f 83       		.byte	0x83
+ 2693 084f 81       		.byte	0x81
  2694 0850 5E080000 		.4byte	0x85e
  2695 0854 1E       		.uleb128 0x1e
  2696 0855 6E000000 		.4byte	.LVL78
@@ -3858,13 +3856,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2701 0863 6E000000 		.4byte	.LBB296
  2702 0867 08000000 		.4byte	.LBE296-.LBB296
  2703 086b 01       		.byte	0x1
- 2704 086c 83       		.byte	0x83
+ 2704 086c 81       		.byte	0x81
  2705 086d 18       		.uleb128 0x18
  2706 086e 0C020000 		.4byte	0x20c
  2707 0872 7C000000 		.4byte	.LBB298
  2708 0876 04000000 		.4byte	.LBE298-.LBB298
  2709 087a 01       		.byte	0x1
- 2710 087b 83       		.byte	0x83
+ 2710 087b 81       		.byte	0x81
  2711 087c 8A080000 		.4byte	0x88a
  2712 0880 1E       		.uleb128 0x1e
  2713 0881 80000000 		.4byte	.LVL80
@@ -3875,7 +3873,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2718 088f 80000000 		.4byte	.LBB300
  2719 0893 02000000 		.4byte	.LBE300-.LBB300
  2720 0897 01       		.byte	0x1
- 2721 0898 83       		.byte	0x83
+ 2721 0898 81       		.byte	0x81
  2722 0899 1E       		.uleb128 0x1e
  2723 089a 5E000000 		.4byte	.LVL74
  2724 089e B90D0000 		.4byte	0xdb9
@@ -3889,7 +3887,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2732 08b5 13       		.uleb128 0x13
  2733 08b6 65000000 		.4byte	.LASF60
  2734 08ba 01       		.byte	0x1
- 2735 08bb 89       		.byte	0x89
+ 2735 08bb 87       		.byte	0x87
  2736 08bc 00000000 		.4byte	.LFB179
  2737 08c0 0C000000 		.4byte	.LFE179-.LFB179
  2738 08c4 01       		.uleb128 0x1
@@ -3898,11 +3896,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2741 08ca 14       		.uleb128 0x14
  2742 08cb 0A000000 		.4byte	.LVL81
  2743 08cf 420E0000 		.4byte	0xe42
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 66
-
-
  2744 08d3 15       		.uleb128 0x15
  2745 08d4 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 66
+
+
  2746 08d5 50       		.byte	0x50
  2747 08d6 01       		.uleb128 0x1
  2748 08d7 32       		.byte	0x32
@@ -3916,7 +3914,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2756 08df 13       		.uleb128 0x13
  2757 08e0 CD030000 		.4byte	.LASF61
  2758 08e4 01       		.byte	0x1
- 2759 08e5 89       		.byte	0x89
+ 2759 08e5 87       		.byte	0x87
  2760 08e6 00000000 		.4byte	.LFB178
  2761 08ea 98000000 		.4byte	.LFE178-.LFB178
  2762 08ee 01       		.uleb128 0x1
@@ -3925,7 +3923,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2765 08f4 16       		.uleb128 0x16
  2766 08f5 69706C00 		.ascii	"ipl\000"
  2767 08f9 01       		.byte	0x1
- 2768 08fa 89       		.byte	0x89
+ 2768 08fa 87       		.byte	0x87
  2769 08fb C9000000 		.4byte	0xc9
  2770 08ff 00020000 		.4byte	.LLST14
  2771 0903 17       		.uleb128 0x17
@@ -3933,13 +3931,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2773 0908 0A000000 		.4byte	.LBB326
  2774 090c 02000000 		.4byte	.LBE326-.LBB326
  2775 0910 01       		.byte	0x1
- 2776 0911 89       		.byte	0x89
+ 2776 0911 87       		.byte	0x87
  2777 0912 18       		.uleb128 0x18
  2778 0913 C2010000 		.4byte	0x1c2
  2779 0917 0C000000 		.4byte	.LBB328
  2780 091b 04000000 		.4byte	.LBE328-.LBB328
  2781 091f 01       		.byte	0x1
- 2782 0920 89       		.byte	0x89
+ 2782 0920 87       		.byte	0x87
  2783 0921 35090000 		.4byte	0x935
  2784 0925 19       		.uleb128 0x19
  2785 0926 0C000000 		.4byte	.LBB329
@@ -3953,16 +3951,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2793 093a 10000000 		.4byte	.LBB330
  2794 093e 3A000000 		.4byte	.LBE330-.LBB330
  2795 0942 01       		.byte	0x1
- 2796 0943 89       		.byte	0x89
+ 2796 0943 87       		.byte	0x87
  2797 0944 65090000 		.4byte	0x965
  2798 0948 19       		.uleb128 0x19
  2799 0949 10000000 		.4byte	.LBB331
  2800 094d 3A000000 		.4byte	.LBE331-.LBB331
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 67
-
-
  2801 0951 1B       		.uleb128 0x1b
  2802 0952 76020000 		.4byte	0x276
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 67
+
+
  2803 0956 14020000 		.4byte	.LLST15
  2804 095a 1B       		.uleb128 0x1b
  2805 095b 82020000 		.4byte	0x282
@@ -3974,7 +3972,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2811 096a 4A000000 		.4byte	.LBB332
  2812 096e 04000000 		.4byte	.LBE332-.LBB332
  2813 0972 01       		.byte	0x1
- 2814 0973 89       		.byte	0x89
+ 2814 0973 87       		.byte	0x87
  2815 0974 7E090000 		.4byte	0x97e
  2816 0978 1C       		.uleb128 0x1c
  2817 0979 B5010000 		.4byte	0x1b5
@@ -3984,25 +3982,25 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2821 0983 4E000000 		.4byte	.LBB334
  2822 0987 08000000 		.4byte	.LBE334-.LBB334
  2823 098b 01       		.byte	0x1
- 2824 098c 89       		.byte	0x89
+ 2824 098c 87       		.byte	0x87
  2825 098d 17       		.uleb128 0x17
  2826 098e 04020000 		.4byte	0x204
  2827 0992 5E000000 		.4byte	.LBB336
  2828 0996 02000000 		.4byte	.LBE336-.LBB336
  2829 099a 01       		.byte	0x1
- 2830 099b 89       		.byte	0x89
+ 2830 099b 87       		.byte	0x87
  2831 099c 17       		.uleb128 0x17
  2832 099d E0010000 		.4byte	0x1e0
  2833 09a1 64000000 		.4byte	.LBB338
  2834 09a5 02000000 		.4byte	.LBE338-.LBB338
  2835 09a9 01       		.byte	0x1
- 2836 09aa 89       		.byte	0x89
+ 2836 09aa 87       		.byte	0x87
  2837 09ab 18       		.uleb128 0x18
  2838 09ac A8010000 		.4byte	0x1a8
  2839 09b0 66000000 		.4byte	.LBB340
  2840 09b4 04000000 		.4byte	.LBE340-.LBB340
  2841 09b8 01       		.byte	0x1
- 2842 09b9 89       		.byte	0x89
+ 2842 09b9 87       		.byte	0x87
  2843 09ba C8090000 		.4byte	0x9c8
  2844 09be 1D       		.uleb128 0x1d
  2845 09bf B5010000 		.4byte	0x1b5
@@ -4013,27 +4011,27 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2850 09cd 6A000000 		.4byte	.LBB342
  2851 09d1 04000000 		.4byte	.LBE342-.LBB342
  2852 09d5 01       		.byte	0x1
- 2853 09d6 89       		.byte	0x89
+ 2853 09d6 87       		.byte	0x87
  2854 09d7 E5090000 		.4byte	0x9e5
  2855 09db 1E       		.uleb128 0x1e
  2856 09dc 6E000000 		.4byte	.LVL97
  2857 09e0 A30D0000 		.4byte	0xda3
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 68
-
-
  2858 09e4 00       		.byte	0
  2859 09e5 17       		.uleb128 0x17
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 68
+
+
  2860 09e6 F4010000 		.4byte	0x1f4
  2861 09ea 6E000000 		.4byte	.LBB344
  2862 09ee 08000000 		.4byte	.LBE344-.LBB344
  2863 09f2 01       		.byte	0x1
- 2864 09f3 89       		.byte	0x89
+ 2864 09f3 87       		.byte	0x87
  2865 09f4 18       		.uleb128 0x18
  2866 09f5 0C020000 		.4byte	0x20c
  2867 09f9 7C000000 		.4byte	.LBB346
  2868 09fd 04000000 		.4byte	.LBE346-.LBB346
  2869 0a01 01       		.byte	0x1
- 2870 0a02 89       		.byte	0x89
+ 2870 0a02 87       		.byte	0x87
  2871 0a03 110A0000 		.4byte	0xa11
  2872 0a07 1E       		.uleb128 0x1e
  2873 0a08 80000000 		.4byte	.LVL99
@@ -4044,7 +4042,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2878 0a16 80000000 		.4byte	.LBB348
  2879 0a1a 02000000 		.4byte	.LBE348-.LBB348
  2880 0a1e 01       		.byte	0x1
- 2881 0a1f 89       		.byte	0x89
+ 2881 0a1f 87       		.byte	0x87
  2882 0a20 1E       		.uleb128 0x1e
  2883 0a21 5E000000 		.4byte	.LVL93
  2884 0a25 B90D0000 		.4byte	0xdb9
@@ -4058,7 +4056,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2892 0a3c 13       		.uleb128 0x13
  2893 0a3d 22050000 		.4byte	.LASF62
  2894 0a41 01       		.byte	0x1
- 2895 0a42 8E       		.byte	0x8e
+ 2895 0a42 8C       		.byte	0x8c
  2896 0a43 00000000 		.4byte	.LFB181
  2897 0a47 14000000 		.4byte	.LFE181-.LFB181
  2898 0a4b 01       		.uleb128 0x1
@@ -4078,11 +4076,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2912 0a66 14       		.uleb128 0x14
  2913 0a67 12000000 		.4byte	.LVL101
  2914 0a6b 420E0000 		.4byte	0xe42
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 69
-
-
  2915 0a6f 15       		.uleb128 0x15
  2916 0a70 01       		.uleb128 0x1
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 69
+
+
  2917 0a71 50       		.byte	0x50
  2918 0a72 01       		.uleb128 0x1
  2919 0a73 32       		.byte	0x32
@@ -4097,7 +4095,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2928 0a7c 13       		.uleb128 0x13
  2929 0a7d 7B020000 		.4byte	.LASF63
  2930 0a81 01       		.byte	0x1
- 2931 0a82 8E       		.byte	0x8e
+ 2931 0a82 8C       		.byte	0x8c
  2932 0a83 00000000 		.4byte	.LFB180
  2933 0a87 98000000 		.4byte	.LFE180-.LFB180
  2934 0a8b 01       		.uleb128 0x1
@@ -4106,7 +4104,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2937 0a91 16       		.uleb128 0x16
  2938 0a92 69706C00 		.ascii	"ipl\000"
  2939 0a96 01       		.byte	0x1
- 2940 0a97 8E       		.byte	0x8e
+ 2940 0a97 8C       		.byte	0x8c
  2941 0a98 C9000000 		.4byte	0xc9
  2942 0a9c 92020000 		.4byte	.LLST18
  2943 0aa0 17       		.uleb128 0x17
@@ -4114,13 +4112,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2945 0aa5 0A000000 		.4byte	.LBB374
  2946 0aa9 02000000 		.4byte	.LBE374-.LBB374
  2947 0aad 01       		.byte	0x1
- 2948 0aae 8E       		.byte	0x8e
+ 2948 0aae 8C       		.byte	0x8c
  2949 0aaf 18       		.uleb128 0x18
  2950 0ab0 C2010000 		.4byte	0x1c2
  2951 0ab4 0C000000 		.4byte	.LBB376
  2952 0ab8 04000000 		.4byte	.LBE376-.LBB376
  2953 0abc 01       		.byte	0x1
- 2954 0abd 8E       		.byte	0x8e
+ 2954 0abd 8C       		.byte	0x8c
  2955 0abe D20A0000 		.4byte	0xad2
  2956 0ac2 19       		.uleb128 0x19
  2957 0ac3 0C000000 		.4byte	.LBB377
@@ -4134,15 +4132,15 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2965 0ad7 10000000 		.4byte	.LBB378
  2966 0adb 3A000000 		.4byte	.LBE378-.LBB378
  2967 0adf 01       		.byte	0x1
- 2968 0ae0 8E       		.byte	0x8e
+ 2968 0ae0 8C       		.byte	0x8c
  2969 0ae1 020B0000 		.4byte	0xb02
  2970 0ae5 19       		.uleb128 0x19
  2971 0ae6 10000000 		.4byte	.LBB379
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 70
-
-
  2972 0aea 3A000000 		.4byte	.LBE379-.LBB379
  2973 0aee 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 70
+
+
  2974 0aef 76020000 		.4byte	0x276
  2975 0af3 A6020000 		.4byte	.LLST19
  2976 0af7 1B       		.uleb128 0x1b
@@ -4155,7 +4153,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2983 0b07 4A000000 		.4byte	.LBB380
  2984 0b0b 04000000 		.4byte	.LBE380-.LBB380
  2985 0b0f 01       		.byte	0x1
- 2986 0b10 8E       		.byte	0x8e
+ 2986 0b10 8C       		.byte	0x8c
  2987 0b11 1B0B0000 		.4byte	0xb1b
  2988 0b15 1C       		.uleb128 0x1c
  2989 0b16 B5010000 		.4byte	0x1b5
@@ -4165,25 +4163,25 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  2993 0b20 4E000000 		.4byte	.LBB382
  2994 0b24 08000000 		.4byte	.LBE382-.LBB382
  2995 0b28 01       		.byte	0x1
- 2996 0b29 8E       		.byte	0x8e
+ 2996 0b29 8C       		.byte	0x8c
  2997 0b2a 17       		.uleb128 0x17
  2998 0b2b 04020000 		.4byte	0x204
  2999 0b2f 5E000000 		.4byte	.LBB384
  3000 0b33 02000000 		.4byte	.LBE384-.LBB384
  3001 0b37 01       		.byte	0x1
- 3002 0b38 8E       		.byte	0x8e
+ 3002 0b38 8C       		.byte	0x8c
  3003 0b39 17       		.uleb128 0x17
  3004 0b3a E0010000 		.4byte	0x1e0
  3005 0b3e 64000000 		.4byte	.LBB386
  3006 0b42 02000000 		.4byte	.LBE386-.LBB386
  3007 0b46 01       		.byte	0x1
- 3008 0b47 8E       		.byte	0x8e
+ 3008 0b47 8C       		.byte	0x8c
  3009 0b48 18       		.uleb128 0x18
  3010 0b49 A8010000 		.4byte	0x1a8
  3011 0b4d 66000000 		.4byte	.LBB388
  3012 0b51 04000000 		.4byte	.LBE388-.LBB388
  3013 0b55 01       		.byte	0x1
- 3014 0b56 8E       		.byte	0x8e
+ 3014 0b56 8C       		.byte	0x8c
  3015 0b57 650B0000 		.4byte	0xb65
  3016 0b5b 1D       		.uleb128 0x1d
  3017 0b5c B5010000 		.4byte	0x1b5
@@ -4194,27 +4192,27 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3022 0b6a 6A000000 		.4byte	.LBB390
  3023 0b6e 04000000 		.4byte	.LBE390-.LBB390
  3024 0b72 01       		.byte	0x1
- 3025 0b73 8E       		.byte	0x8e
+ 3025 0b73 8C       		.byte	0x8c
  3026 0b74 820B0000 		.4byte	0xb82
  3027 0b78 1E       		.uleb128 0x1e
  3028 0b79 6E000000 		.4byte	.LVL117
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 71
-
-
  3029 0b7d A30D0000 		.4byte	0xda3
  3030 0b81 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 71
+
+
  3031 0b82 17       		.uleb128 0x17
  3032 0b83 F4010000 		.4byte	0x1f4
  3033 0b87 6E000000 		.4byte	.LBB392
  3034 0b8b 08000000 		.4byte	.LBE392-.LBB392
  3035 0b8f 01       		.byte	0x1
- 3036 0b90 8E       		.byte	0x8e
+ 3036 0b90 8C       		.byte	0x8c
  3037 0b91 18       		.uleb128 0x18
  3038 0b92 0C020000 		.4byte	0x20c
  3039 0b96 7C000000 		.4byte	.LBB394
  3040 0b9a 04000000 		.4byte	.LBE394-.LBB394
  3041 0b9e 01       		.byte	0x1
- 3042 0b9f 8E       		.byte	0x8e
+ 3042 0b9f 8C       		.byte	0x8c
  3043 0ba0 AE0B0000 		.4byte	0xbae
  3044 0ba4 1E       		.uleb128 0x1e
  3045 0ba5 80000000 		.4byte	.LVL119
@@ -4225,7 +4223,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3050 0bb3 80000000 		.4byte	.LBB396
  3051 0bb7 02000000 		.4byte	.LBE396-.LBB396
  3052 0bbb 01       		.byte	0x1
- 3053 0bbc 8E       		.byte	0x8e
+ 3053 0bbc 8C       		.byte	0x8c
  3054 0bbd 1E       		.uleb128 0x1e
  3055 0bbe 5E000000 		.4byte	.LVL113
  3056 0bc2 B90D0000 		.4byte	0xdb9
@@ -4239,7 +4237,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3064 0bd9 13       		.uleb128 0x13
  3065 0bda D2010000 		.4byte	.LASF64
  3066 0bde 01       		.byte	0x1
- 3067 0bdf 96       		.byte	0x96
+ 3067 0bdf 94       		.byte	0x94
  3068 0be0 00000000 		.4byte	.LFB182
  3069 0be4 94000000 		.4byte	.LFE182-.LFB182
  3070 0be8 01       		.uleb128 0x1
@@ -4248,7 +4246,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3073 0bee 16       		.uleb128 0x16
  3074 0bef 69706C00 		.ascii	"ipl\000"
  3075 0bf3 01       		.byte	0x1
- 3076 0bf4 96       		.byte	0x96
+ 3076 0bf4 94       		.byte	0x94
  3077 0bf5 C9000000 		.4byte	0xc9
  3078 0bf9 24030000 		.4byte	.LLST22
  3079 0bfd 17       		.uleb128 0x17
@@ -4256,16 +4254,16 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3081 0c02 0A000000 		.4byte	.LBB422
  3082 0c06 02000000 		.4byte	.LBE422-.LBB422
  3083 0c0a 01       		.byte	0x1
- 3084 0c0b 96       		.byte	0x96
+ 3084 0c0b 94       		.byte	0x94
  3085 0c0c 18       		.uleb128 0x18
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 72
-
-
  3086 0c0d C2010000 		.4byte	0x1c2
  3087 0c11 0C000000 		.4byte	.LBB424
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 72
+
+
  3088 0c15 04000000 		.4byte	.LBE424-.LBB424
  3089 0c19 01       		.byte	0x1
- 3090 0c1a 96       		.byte	0x96
+ 3090 0c1a 94       		.byte	0x94
  3091 0c1b 2F0C0000 		.4byte	0xc2f
  3092 0c1f 19       		.uleb128 0x19
  3093 0c20 0C000000 		.4byte	.LBB425
@@ -4279,7 +4277,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3101 0c34 10000000 		.4byte	.LBB426
  3102 0c38 3A000000 		.4byte	.LBE426-.LBB426
  3103 0c3c 01       		.byte	0x1
- 3104 0c3d 96       		.byte	0x96
+ 3104 0c3d 94       		.byte	0x94
  3105 0c3e 5F0C0000 		.4byte	0xc5f
  3106 0c42 19       		.uleb128 0x19
  3107 0c43 10000000 		.4byte	.LBB427
@@ -4297,7 +4295,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3119 0c64 4A000000 		.4byte	.LBB428
  3120 0c68 04000000 		.4byte	.LBE428-.LBB428
  3121 0c6c 01       		.byte	0x1
- 3122 0c6d 96       		.byte	0x96
+ 3122 0c6d 94       		.byte	0x94
  3123 0c6e 780C0000 		.4byte	0xc78
  3124 0c72 1C       		.uleb128 0x1c
  3125 0c73 B5010000 		.4byte	0x1b5
@@ -4307,28 +4305,28 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3129 0c7d 4E000000 		.4byte	.LBB430
  3130 0c81 08000000 		.4byte	.LBE430-.LBB430
  3131 0c85 01       		.byte	0x1
- 3132 0c86 96       		.byte	0x96
+ 3132 0c86 94       		.byte	0x94
  3133 0c87 17       		.uleb128 0x17
  3134 0c88 04020000 		.4byte	0x204
  3135 0c8c 5E000000 		.4byte	.LBB432
  3136 0c90 02000000 		.4byte	.LBE432-.LBB432
  3137 0c94 01       		.byte	0x1
- 3138 0c95 96       		.byte	0x96
+ 3138 0c95 94       		.byte	0x94
  3139 0c96 17       		.uleb128 0x17
  3140 0c97 E0010000 		.4byte	0x1e0
  3141 0c9b 60000000 		.4byte	.LBB434
  3142 0c9f 02000000 		.4byte	.LBE434-.LBB434
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 73
-
-
  3143 0ca3 01       		.byte	0x1
- 3144 0ca4 96       		.byte	0x96
+ 3144 0ca4 94       		.byte	0x94
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 73
+
+
  3145 0ca5 18       		.uleb128 0x18
  3146 0ca6 A8010000 		.4byte	0x1a8
  3147 0caa 62000000 		.4byte	.LBB436
  3148 0cae 04000000 		.4byte	.LBE436-.LBB436
  3149 0cb2 01       		.byte	0x1
- 3150 0cb3 96       		.byte	0x96
+ 3150 0cb3 94       		.byte	0x94
  3151 0cb4 C20C0000 		.4byte	0xcc2
  3152 0cb8 1D       		.uleb128 0x1d
  3153 0cb9 B5010000 		.4byte	0x1b5
@@ -4339,7 +4337,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3158 0cc7 66000000 		.4byte	.LBB438
  3159 0ccb 04000000 		.4byte	.LBE438-.LBB438
  3160 0ccf 01       		.byte	0x1
- 3161 0cd0 96       		.byte	0x96
+ 3161 0cd0 94       		.byte	0x94
  3162 0cd1 DF0C0000 		.4byte	0xcdf
  3163 0cd5 1E       		.uleb128 0x1e
  3164 0cd6 6A000000 		.4byte	.LVL134
@@ -4350,13 +4348,13 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3169 0ce4 6A000000 		.4byte	.LBB440
  3170 0ce8 08000000 		.4byte	.LBE440-.LBB440
  3171 0cec 01       		.byte	0x1
- 3172 0ced 96       		.byte	0x96
+ 3172 0ced 94       		.byte	0x94
  3173 0cee 18       		.uleb128 0x18
  3174 0cef 0C020000 		.4byte	0x20c
  3175 0cf3 78000000 		.4byte	.LBB442
  3176 0cf7 04000000 		.4byte	.LBE442-.LBB442
  3177 0cfb 01       		.byte	0x1
- 3178 0cfc 96       		.byte	0x96
+ 3178 0cfc 94       		.byte	0x94
  3179 0cfd 0B0D0000 		.4byte	0xd0b
  3180 0d01 1E       		.uleb128 0x1e
  3181 0d02 7C000000 		.4byte	.LVL136
@@ -4367,7 +4365,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3186 0d10 7C000000 		.4byte	.LBB444
  3187 0d14 02000000 		.4byte	.LBE444-.LBB444
  3188 0d18 01       		.byte	0x1
- 3189 0d19 96       		.byte	0x96
+ 3189 0d19 94       		.byte	0x94
  3190 0d1a 1E       		.uleb128 0x1e
  3191 0d1b 5E000000 		.4byte	.LVL131
  3192 0d1f B90D0000 		.4byte	0xdb9
@@ -4378,11 +4376,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3197 0d2d 26       		.uleb128 0x26
  3198 0d2e 00000000 		.4byte	.LASF99
  3199 0d32 01       		.byte	0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 74
-
-
- 3200 0d33 96       		.byte	0x96
+ 3200 0d33 94       		.byte	0x94
  3201 0d34 00000000 		.4byte	.LFB183
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 74
+
+
  3202 0d38 02000000 		.4byte	.LFE183-.LFB183
  3203 0d3c 01       		.uleb128 0x1
  3204 0d3d 9C       		.byte	0x9c
@@ -4421,7 +4419,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3237 0d86 2A       		.uleb128 0x2a
  3238 0d87 0F060000 		.4byte	.LASF71
  3239 0d8b 01       		.byte	0x1
- 3240 0d8c 19       		.byte	0x19
+ 3240 0d8c 17       		.byte	0x17
  3241 0d8d 95010000 		.4byte	0x195
  3242 0d91 05       		.uleb128 0x5
  3243 0d92 03       		.byte	0x3
@@ -4438,11 +4436,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3254 0dad 4B       		.byte	0x4b
  3255 0dae 2C       		.uleb128 0x2c
  3256 0daf 3C000000 		.4byte	.LASF74
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 75
-
-
  3257 0db3 3C000000 		.4byte	.LASF74
  3258 0db7 04       		.byte	0x4
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 75
+
+
  3259 0db8 40       		.byte	0x40
  3260 0db9 2C       		.uleb128 0x2c
  3261 0dba D1020000 		.4byte	.LASF75
@@ -4498,11 +4496,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3311 0e2d 10010000 		.4byte	.LASF85
  3312 0e31 10010000 		.4byte	.LASF85
  3313 0e35 0B       		.byte	0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 76
-
-
  3314 0e36 6C       		.byte	0x6c
  3315 0e37 2C       		.uleb128 0x2c
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 76
+
+
  3316 0e38 F2030000 		.4byte	.LASF86
  3317 0e3c F2030000 		.4byte	.LASF86
  3318 0e40 13       		.byte	0x13
@@ -4558,11 +4556,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3368 0023 3A       		.uleb128 0x3a
  3369 0024 0B       		.uleb128 0xb
  3370 0025 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 77
-
-
  3371 0026 0B       		.uleb128 0xb
  3372 0027 49       		.uleb128 0x49
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 77
+
+
  3373 0028 13       		.uleb128 0x13
  3374 0029 00       		.byte	0
  3375 002a 00       		.byte	0
@@ -4618,11 +4616,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3425 005c 00       		.byte	0
  3426 005d 08       		.uleb128 0x8
  3427 005e 13       		.uleb128 0x13
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 78
-
-
  3428 005f 01       		.byte	0x1
  3429 0060 03       		.uleb128 0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 78
+
+
  3430 0061 0E       		.uleb128 0xe
  3431 0062 0B       		.uleb128 0xb
  3432 0063 0B       		.uleb128 0xb
@@ -4678,11 +4676,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3482 0095 20       		.uleb128 0x20
  3483 0096 0B       		.uleb128 0xb
  3484 0097 01       		.uleb128 0x1
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 79
-
-
  3485 0098 13       		.uleb128 0x13
  3486 0099 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 79
+
+
  3487 009a 00       		.byte	0
  3488 009b 0C       		.uleb128 0xc
  3489 009c 05       		.uleb128 0x5
@@ -4738,11 +4736,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3539 00ce 0B       		.uleb128 0xb
  3540 00cf 3B       		.uleb128 0x3b
  3541 00d0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 80
-
-
  3542 00d1 27       		.uleb128 0x27
  3543 00d2 19       		.uleb128 0x19
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 80
+
+
  3544 00d3 49       		.uleb128 0x49
  3545 00d4 13       		.uleb128 0x13
  3546 00d5 20       		.uleb128 0x20
@@ -4798,11 +4796,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3596 0107 2E       		.uleb128 0x2e
  3597 0108 01       		.byte	0x1
  3598 0109 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 81
-
-
  3599 010a 19       		.uleb128 0x19
  3600 010b 03       		.uleb128 0x3
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 81
+
+
  3601 010c 0E       		.uleb128 0xe
  3602 010d 3A       		.uleb128 0x3a
  3603 010e 0B       		.uleb128 0xb
@@ -4858,11 +4856,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3653 0146 17       		.uleb128 0x17
  3654 0147 1D       		.uleb128 0x1d
  3655 0148 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 82
-
-
  3656 0149 31       		.uleb128 0x31
  3657 014a 13       		.uleb128 0x13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 82
+
+
  3658 014b 11       		.uleb128 0x11
  3659 014c 01       		.uleb128 0x1
  3660 014d 12       		.uleb128 0x12
@@ -4918,11 +4916,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3710 017f 1C       		.uleb128 0x1c
  3711 0180 05       		.uleb128 0x5
  3712 0181 00       		.byte	0
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 83
-
-
  3713 0182 31       		.uleb128 0x31
  3714 0183 13       		.uleb128 0x13
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 83
+
+
  3715 0184 00       		.byte	0
  3716 0185 00       		.byte	0
  3717 0186 1D       		.uleb128 0x1d
@@ -4978,11 +4976,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3767 01bc 03       		.uleb128 0x3
  3768 01bd 0E       		.uleb128 0xe
  3769 01be 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 84
-
-
  3770 01bf 0B       		.uleb128 0xb
  3771 01c0 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 84
+
+
  3772 01c1 0B       		.uleb128 0xb
  3773 01c2 11       		.uleb128 0x11
  3774 01c3 01       		.uleb128 0x1
@@ -5038,11 +5036,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3824 01fa 03       		.uleb128 0x3
  3825 01fb 08       		.uleb128 0x8
  3826 01fc 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 85
-
-
  3827 01fd 0B       		.uleb128 0xb
  3828 01fe 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 85
+
+
  3829 01ff 0B       		.uleb128 0xb
  3830 0200 49       		.uleb128 0x49
  3831 0201 13       		.uleb128 0x13
@@ -5098,11 +5096,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3881 0235 03       		.uleb128 0x3
  3882 0236 0E       		.uleb128 0xe
  3883 0237 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 86
-
-
  3884 0238 0B       		.uleb128 0xb
  3885 0239 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 86
+
+
  3886 023a 0B       		.uleb128 0xb
  3887 023b 27       		.uleb128 0x27
  3888 023c 19       		.uleb128 0x19
@@ -5158,11 +5156,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3938 026f 00       		.byte	0
  3939 0270 00       		.byte	0
  3940 0271 2A       		.uleb128 0x2a
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 87
-
-
  3941 0272 34       		.uleb128 0x34
  3942 0273 00       		.byte	0
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 87
+
+
  3943 0274 03       		.uleb128 0x3
  3944 0275 0E       		.uleb128 0xe
  3945 0276 3A       		.uleb128 0x3a
@@ -5218,11 +5216,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  3995 0000 0A000000 		.4byte	.LVL1
  3996 0004 10000000 		.4byte	.LVL2
  3997 0008 0200     		.2byte	0x2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 88
-
-
  3998 000a 30       		.byte	0x30
  3999 000b 9F       		.byte	0x9f
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 88
+
+
  4000 000c 00000000 		.4byte	0
  4001 0010 00000000 		.4byte	0
  4002              	.LLST1:
@@ -5278,11 +5276,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4052 0096 0C000000 		.4byte	.LVL20
  4053 009a 0400     		.2byte	0x4
  4054 009c 0A       		.byte	0xa
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 89
-
-
  4055 009d C05D     		.2byte	0x5dc0
  4056 009f 9F       		.byte	0x9f
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 89
+
+
  4057 00a0 00000000 		.4byte	0
  4058 00a4 00000000 		.4byte	0
  4059              	.LLST5:
@@ -5338,11 +5336,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4109 012d 0100     		.2byte	0x1
  4110 012f 53       		.byte	0x53
  4111 0130 3C000000 		.4byte	.LVL50
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 90
-
-
  4112 0134 46000000 		.4byte	.LVL52
  4113 0138 0200     		.2byte	0x2
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 90
+
+
  4114 013a 30       		.byte	0x30
  4115 013b 9F       		.byte	0x9f
  4116 013c 46000000 		.4byte	.LVL52
@@ -5398,11 +5396,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4166 01c1 53       		.byte	0x53
  4167 01c2 3C000000 		.4byte	.LVL69
  4168 01c6 46000000 		.4byte	.LVL71
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 91
-
-
  4169 01ca 0200     		.2byte	0x2
  4170 01cc 30       		.byte	0x30
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 91
+
+
  4171 01cd 9F       		.byte	0x9f
  4172 01ce 46000000 		.4byte	.LVL71
  4173 01d2 48000000 		.4byte	.LVL72
@@ -5458,11 +5456,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4223 0254 3C000000 		.4byte	.LVL88
  4224 0258 46000000 		.4byte	.LVL90
  4225 025c 0200     		.2byte	0x2
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 92
-
-
  4226 025e 30       		.byte	0x30
  4227 025f 9F       		.byte	0x9f
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 92
+
+
  4228 0260 46000000 		.4byte	.LVL90
  4229 0264 48000000 		.4byte	.LVL91
  4230 0268 0100     		.2byte	0x1
@@ -5518,11 +5516,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4280 02ea 46000000 		.4byte	.LVL110
  4281 02ee 0200     		.2byte	0x2
  4282 02f0 30       		.byte	0x30
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 93
-
-
  4283 02f1 9F       		.byte	0x9f
  4284 02f2 46000000 		.4byte	.LVL110
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 93
+
+
  4285 02f6 48000000 		.4byte	.LVL111
  4286 02fa 0100     		.2byte	0x1
  4287 02fc 53       		.byte	0x53
@@ -5578,11 +5576,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4337 0380 0200     		.2byte	0x2
  4338 0382 30       		.byte	0x30
  4339 0383 9F       		.byte	0x9f
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 94
-
-
  4340 0384 46000000 		.4byte	.LVL128
  4341 0388 48000000 		.4byte	.LVL129
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 94
+
+
  4342 038c 0100     		.2byte	0x1
  4343 038e 53       		.byte	0x53
  4344 038f 48000000 		.4byte	.LVL129
@@ -5638,11 +5636,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4394 0080 00000000 		.4byte	.LFB180
  4395 0084 98000000 		.4byte	.LFE180-.LFB180
  4396 0088 00000000 		.4byte	.LFB182
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 95
-
-
  4397 008c 94000000 		.4byte	.LFE182-.LFB182
  4398 0090 00000000 		.4byte	.LFB183
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 95
+
+
  4399 0094 02000000 		.4byte	.LFE183-.LFB183
  4400 0098 00000000 		.4byte	0
  4401 009c 00000000 		.4byte	0
@@ -5686,7 +5684,7 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4439 008c 00000000 		.4byte	0
  4440              		.section	.debug_line,"",%progbits
  4441              	.Ldebug_line0:
- 4442 0000 A4070000 		.section	.debug_str,"MS",%progbits,1
+ 4442 0000 A3070000 		.section	.debug_str,"MS",%progbits,1
  4442      02000D03 
  4442      00000201 
  4442      FB0E0D00 
@@ -5698,11 +5696,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4444      5F464654 
  4444      5F554152 
  4445              	.LASF57:
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 96
-
-
  4446 0016 6973725F 		.ascii	"isr_UART_Rx\000"
  4446      55415254 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 96
+
+
  4446      5F527800 
  4447              	.LASF24:
  4448 0022 4576656E 		.ascii	"EventMaskType\000"
@@ -5758,11 +5756,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4469              	.LASF53:
  4470 00bb 6D61696E 		.ascii	"main\000"
  4470      00
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 97
-
-
  4471              	.LASF18:
  4472 00c0 45455F55 		.ascii	"EE_UINT32\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 97
+
+
  4472      494E5433 
  4472      3200
  4473              	.LASF73:
@@ -5818,11 +5816,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4493              	.LASF27:
  4494 0171 49444C45 		.ascii	"IDLE\000"
  4494      00
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 98
-
-
  4495              	.LASF83:
  4496 0176 45455F6F 		.ascii	"EE_oo_GetEvent\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 98
+
+
  4496      6F5F4765 
  4496      74457665 
  4496      6E7400
@@ -5878,11 +5876,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4518      5F697372 
  4518      5F444D41 
  4518      5F414443 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 99
-
-
  4518      5F4D454D 
  4519              	.LASF26:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 99
+
+
  4520 021b 626F6F6C 		.ascii	"boolean_t\000"
  4520      65616E5F 
  4520      7400
@@ -5938,11 +5936,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4539              	.LASF75:
  4540 02d1 45455F63 		.ascii	"EE_cortex_mx_change_IRQ_stack\000"
  4540      6F727465 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 100
-
-
  4540      785F6D78 
  4540      5F636861 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 100
+
+
  4540      6E67655F 
  4541              	.LASF0:
  4542 02ef 7369676E 		.ascii	"signed char\000"
@@ -5998,11 +5996,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4562      785F6D78 
  4562      5F495251 
  4562      5F616374 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 101
-
-
  4563              	.LASF3:
  4564 03ae 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 101
+
+
  4564      7420756E 
  4564      7369676E 
  4564      65642069 
@@ -6058,11 +6056,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4584      00
  4585              	.LASF90:
  4586 0462 736F7572 		.ascii	"source\\asw\\main.c\000"
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 102
-
-
  4586      63655C61 
  4586      73775C6D 
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 102
+
+
  4586      61696E2E 
  4586      6300
  4587              	.LASF67:
@@ -6118,11 +6116,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4606      6F5F496E 
  4606      6372656D 
  4606      656E7443 
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 103
-
-
  4606      6F756E74 
  4607              	.LASF62:
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 103
+
+
  4608 0522 49535232 		.ascii	"ISR2_isr_DMA_MEM_UART\000"
  4608      5F697372 
  4608      5F444D41 
@@ -6178,11 +6176,11 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4626      44657465 
  4626      63746F72 
  4626      00
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 104
-
-
  4627              	.LASF87:
  4628 0620 45455F6F 		.ascii	"EE_oo_SetEvent\000"
+ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccic5d6d.s 			page 104
+
+
  4628      6F5F5365 
  4628      74457665 
  4628      6E7400
@@ -6238,6 +6236,3 @@ ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 1
  4646      46696E69 
  4646      73686564 
  4647              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
-ARM GAS  C:\Users\zakis\AppData\Local\Temp\ccHteIPE.s 			page 105
-
-

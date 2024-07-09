@@ -1,5 +1,5 @@
 # RADAR_Movement_Detector
-# 2024-07-09 12:18:11Z
+# 2024-07-09 18:26:09Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -39,8 +39,8 @@ set_location "isr_pushButton" interrupt -1 -1 4
 set_location "DMA_ADC_MEM" drqcell -1 -1 10
 set_location "DMA_MEM_UART" drqcell -1 -1 1
 set_location "isr_DMA_MEM_UART" interrupt -1 -1 2
-set_location "DMA_FFT_UART" drqcell -1 -1 0
 set_location "isr_DMA_FFT_UART" interrupt -1 -1 1
+set_location "DMA_FFT_UART" drqcell -1 -1 0
 set_location "\UART_LOG:BUART:txn\" 0 5 0 0
 set_location "\UART_LOG:BUART:tx_state_1\" 1 5 1 1
 set_location "\UART_LOG:BUART:tx_state_0\" 0 5 1 1

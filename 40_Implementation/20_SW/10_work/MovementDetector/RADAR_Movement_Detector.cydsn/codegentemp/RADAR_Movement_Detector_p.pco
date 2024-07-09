@@ -35,8 +35,8 @@ set_location "\UART_LOG:BUART:rx_status_5\" macrocell 1 4 1 2
 set_location "DMA_FFT_UART" drqcell -1 -1 0
 set_location "DMA_ADC_MEM" drqcell -1 -1 10
 set_location "DMA_MEM_UART" drqcell -1 -1 1
-set_location "isr_DMA_FFT_UART" interrupt -1 -1 1
 set_location "isr_DMA_MEM_UART" interrupt -1 -1 2
+set_location "isr_DMA_FFT_UART" interrupt -1 -1 1
 set_location "isr_DMA_ADC_MEM" interrupt -1 -1 0
 set_location "\ADC_DelSig:DSM\" dsmodcell -1 -1 0
 set_location "\ADC_DelSig:DEC\" decimatorcell -1 -1 0

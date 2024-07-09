@@ -1,6 +1,6 @@
 // ======================================================================
 // RADAR_Movement_Detector.v generated from TopDesign.cysch
-// 07/09/2024 at 14:18
+// 07/09/2024 at 20:26
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -545,10 +545,10 @@ endmodule
 // top
 module top ;
 
-          wire  Net_96;
-          wire  Net_93;
-          wire  Net_94;
-          wire  Net_92;
+          wire  Net_99;
+          wire  Net_101;
+          wire  Net_97;
+          wire  Net_98;
     electrical  Net_70;
           wire  Net_72;
           wire  Net_74;
@@ -1205,12 +1205,10 @@ module top ;
 	assign tmpOE__ADC_In_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
-	cy_dma_v1_0
-		#(.drq_type(2'b10))
-		DMA_FFT_UART
-		 (.drq(Net_92),
-		  .nrq(Net_94),
-		  .trq(1'b0));
+	cy_isr_v1_0
+		#(.int_type(2'b10))
+		isr_DMA_FFT_UART
+		 (.int_signal(Net_98));
 
 
 
@@ -1222,14 +1220,16 @@ module top ;
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock_DMA_FFT_UART
-		 (.clock_out(Net_92));
+		 (.clock_out(Net_97));
 
 
 
-	cy_isr_v1_0
-		#(.int_type(2'b10))
-		isr_DMA_FFT_UART
-		 (.int_signal(Net_94));
+	cy_dma_v1_0
+		#(.drq_type(2'b10))
+		DMA_FFT_UART
+		 (.drq(Net_97),
+		  .nrq(Net_98),
+		  .trq(1'b0));
 
 
 

@@ -2,7 +2,7 @@
 --	Conversion of RADAR_Movement_Detector.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Jul 09 14:18:09 2024
+--	Tue Jul 09 20:26:08 2024
 --
 
 USE cypress.cypress.all;
@@ -429,8 +429,8 @@ SIGNAL tmpIO_0__ADC_In_net_0 : bit;
 TERMINAL tmpSIOVREF__ADC_In_net_0 : bit;
 TERMINAL Net_70 : bit;
 SIGNAL tmpINTERRUPT_0__ADC_In_net_0 : bit;
-SIGNAL Net_92 : bit;
-SIGNAL Net_94 : bit;
+SIGNAL Net_98 : bit;
+SIGNAL Net_97 : bit;
 SIGNAL \UART_LOG:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART_LOG:BUART:txn\\D\ : bit;
 SIGNAL \UART_LOG:BUART:tx_state_1\\D\ : bit;
@@ -1512,12 +1512,10 @@ ADC_In:cy_psoc3_pins_v1_10
 		out_clock_en=>tmpOE__LED_green_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__ADC_In_net_0);
-DMA_FFT_UART:cy_dma_v1_0
-	GENERIC MAP(drq_type=>"10",
-		num_tds=>0)
-	PORT MAP(drq=>Net_92,
-		trq=>zero,
-		nrq=>Net_94);
+isr_DMA_FFT_UART:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_98);
 Clock_DMA_FFT_UART:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"b5373b87-d286-4553-86c2-1eb1a9451215",
@@ -1526,12 +1524,14 @@ Clock_DMA_FFT_UART:cy_clock_v1_0
 		period=>"1000000000000",
 		is_direct=>'0',
 		is_digital=>'1')
-	PORT MAP(clock_out=>Net_92,
+	PORT MAP(clock_out=>Net_97,
 		dig_domain_out=>open);
-isr_DMA_FFT_UART:cy_isr_v1_0
-	GENERIC MAP(int_type=>"10",
-		is_nmi=>'0')
-	PORT MAP(int_signal=>Net_94);
+DMA_FFT_UART:cy_dma_v1_0
+	GENERIC MAP(drq_type=>"10",
+		num_tds=>0)
+	PORT MAP(drq=>Net_97,
+		trq=>zero,
+		nrq=>Net_98);
 \UART_LOG:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART_LOG:BUART:clock_op\,

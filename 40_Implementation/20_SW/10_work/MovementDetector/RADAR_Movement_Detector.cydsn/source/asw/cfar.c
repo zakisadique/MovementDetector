@@ -84,22 +84,20 @@ void CFAR_reset_output(CFAR_output_t* cfarOutput){
 
 void calculateCFAR(int32 *fftBuffer, CFAR_input_t *input, CFAR_output_t *output){
     double alpha = input -> numberReferenceCells * (pow(input -> PFA, -1.0/input -> numberReferenceCells) - 1.0);
-    
-//    memset(fft_psocPower, 0, sizeof(fft_psocPower)); // Clear fft_magnitude array
    
-    
     
     for (int i = 0; i < input -> numberofBins; i++) {
         double real = (double)fftBuffer [2 * i];     // Real component
         double imag = (double)fftBuffer [2 * i + 1]; // Imaginary component
 
-        output -> fft_psocPower[i] = real * real + imag * imag; // Calculate the power directly
+        output -> fft_psocPower[i] = real * real + imag * imag;
     }
 
-    //fft_psocPower[0] = 0.0; // Set the first element to 0
+    output -> fft_psocPower[0] = 0.0; // Set the DC element to 0
     
 
-    for (int i = input -> numberReferenceCells + input -> numberGuardCells + 1; i <= input ->numberofBins  - input -> numberReferenceCells - input -> numberGuardCells; i++) { // Loop through CUT (Cell Under Test)
+    for (int i = input -> numberReferenceCells + input -> numberGuardCells + 1; 
+        i <= input ->numberofBins  - input -> numberReferenceCells - input -> numberGuardCells; i++) { // Loop through CUT
         // Calculate sum of lagging and leading cells
         double lagging_sum = 0.0;
         double leading_sum = 0.0;

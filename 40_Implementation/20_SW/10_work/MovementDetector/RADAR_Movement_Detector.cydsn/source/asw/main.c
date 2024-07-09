@@ -20,8 +20,6 @@
 #define UART_TARGET_VARIABLE 't'
 #define UART_NO_TARGET_VARIABLE 'n'
 
-//#define NO_OF_SAMPLES 1024
-
 Detector_t movementDetector;
 
 
