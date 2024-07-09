@@ -109,11 +109,12 @@ while(flg_data_avai == 0)
             num_targets = sum(targets > 0);
             disp(['Number of targets detected: ', num2str(num_targets)]);
 
-            if (count == 3)
+            %if (count == 10)
                 hold on;
                 plot(n, thresholds, 'r', 'LineWidth', 1);
                 legend('Spectrum', 'Threshold')
-            end
+                hold off;
+            %end
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
              % Save the received data
@@ -129,13 +130,13 @@ while(flg_data_avai == 0)
              fwrite(PSoC,'o','uchar') % means I received all expected data
        end
 
-       if count == 4
+       if count == 11
+           
            break;
        end
 
        fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 end
-
 fclose(PSoC);
 
 fprintf(" Scipt End \n");

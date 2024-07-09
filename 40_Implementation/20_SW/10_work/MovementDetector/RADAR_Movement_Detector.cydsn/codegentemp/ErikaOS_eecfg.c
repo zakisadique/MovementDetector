@@ -16,12 +16,12 @@
     #define TASK_1_STACK_SIZE 0/4 // size = 0 bytes
     int EE_cortex_mx_stack_1[TASK_1_STACK_SIZE];	/* Task 1 (tsk_init) */
     #endif
-    #if ((2 == 2) && (EE_MAX_TASK > 1))
+    #if ((1 == 2) && (EE_MAX_TASK > 1))
     #define TASK_2_STACK_SIZE 500/4 // size = 500 bytes
     int EE_cortex_mx_stack_2[TASK_2_STACK_SIZE];	/* Task 2 (tsk_background) */
     #endif
     #if ((2 == 2) && (EE_MAX_TASK > 2))
-    #define TASK_3_STACK_SIZE 1000/4 // size = 1000 bytes
+    #define TASK_3_STACK_SIZE 8192/4 // size = 8192 bytes
     int EE_cortex_mx_stack_3[TASK_3_STACK_SIZE];	/* Task 3 (tsk_control) */
     #endif
     #if ((1 == 2) && (EE_MAX_TASK > 3))
@@ -46,7 +46,7 @@
     #endif
     
     #if 1
-    #define IRQ_STACK_SIZE    512/4 // size = 512 bytes
+    #define IRQ_STACK_SIZE    1024/4 // size = 1024 bytes
     int EE_cortex_mx_stack_9[IRQ_STACK_SIZE];	/* IRQ Stack */
     #endif
 

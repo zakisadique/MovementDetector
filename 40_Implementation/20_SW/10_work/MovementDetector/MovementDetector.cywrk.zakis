@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="MovementDetector\RADAR_Movement_Detector\Source Files\asw\cfar.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="MovementDetector\RADAR_Movement_Detector\TopDesign">
 <ExpandedNodeIds>
 <v>MovementDetector</v>
 <v>MovementDetector\RADAR_Movement_Detector</v>
@@ -60,8 +60,39 @@
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\uart.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5</v>
+<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\UART_LOG</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>MovementDetector</v>
+<v>MovementDetector\RADAR_Movement_Detector</v>
+<v>MovementDetector\RADAR_Movement_Detector\TopDesign</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\Pins</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\Analog</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\Clocks</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\Interrupts</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\DMA</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\System</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\Directives</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\Flash Security</v>
+<v>MovementDetector\RADAR_Movement_Detector\RADAR_Movement_Detector.cydwr\EEPROM</v>
+<v>MovementDetector\RADAR_Movement_Detector\Header Files</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\asw</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\cfar.c</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\cfar.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\cyapicallbacks.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\detector.c</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\detector.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\asw\main.c</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\arm_common_tables.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\arm_const_structs.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\arm_math.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\fft_application\fft_application.h</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\dac_adc.c</v>
+<v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\dac_adc.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\derivate.h</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\dma.c</v>
 <v>MovementDetector\RADAR_Movement_Detector\Source Files\bsw\dma.h</v>
@@ -86,36 +117,6 @@
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\DMA_MEM_UART</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
 <v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\ErikaOS</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_DMA_ADC_MEM</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_DMA_FFT_UART</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_DMA_MEM_UART</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_pushButton</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\isr_UART_Rx</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\LED_green</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\LED_orange</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\LED_red</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\Push_Button</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\UART_LOG</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\UART_LOG_IntClock</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cycodeshareexport.ld</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cycodeshareimport.ld</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cycodeshareimport.scat</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydevice.h</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydevice_trm.h</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydevicegnu.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydeviceiar.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydevicerv.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cydisabledsheets.h</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cyfitter.h</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cyfitter_cfg.c</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cyfitter_cfg.h</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cyfittergnu.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cyfitteriar.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cyfitterrv.inc</v>
-<v>MovementDetector\RADAR_Movement_Detector\Generated_Source\PSoC5\cymetadata.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="MovementDetector\RADAR_Movement_Detector">

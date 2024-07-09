@@ -174,7 +174,7 @@ EE_oo_IRQ_disable_count
                     0x4               .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
 errno               0x4               c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
 EE_cortex_mx_stack_3
-                    0x3e8             .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+                    0x2000            .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
 EE_rq_pairs_tid     0xc               .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
 EE_terminate_data   0xc               .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
 DMA_ADC_MEM_TD      0x1               .\CortexM3\ARM_GCC_541\Debug\detector.o
@@ -186,8 +186,6 @@ EE_oo_counter_object_RAM
 EE_oo_started       0x4               .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
 EE_IRQ_nesting_level
                     0x4               .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
-EE_cortex_mx_stack_2
-                    0x1f4             .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
 ADCBuffer           0x800             .\CortexM3\ARM_GCC_541\Debug\dma.o
 DMA_MEM_UART_TD     0x1               .\CortexM3\ARM_GCC_541\Debug\detector.o
 EE_ApplicationMode  0x4               .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
@@ -205,7 +203,7 @@ DMA_FFT_UART_Chan   0x1               .\CortexM3\ARM_GCC_541\Debug\detector.o
 EE_oo_IRQ_suspend_status
                     0x4               .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
 EE_cortex_mx_stack_9
-                    0x200             .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+                    0x400             .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
 
 Discarded input sections
 
@@ -368,7 +366,6 @@ Discarded input sections
                 0x00000000       0x58 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
  .text.CySoftwareReset
                 0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
- .text.CyDelay  0x00000000       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
  .text.CyXTAL_32KHZ_SetPowerMode
                 0x00000000       0x84 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
  .text.CyXTAL_32KHZ_Start
@@ -584,8 +581,6 @@ Discarded input sections
                 0x00000000       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
  .text.UART_LOG_ReadTxStatus
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
- .text.UART_LOG_PutChar
-                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
  .text.UART_LOG_PutString
                 0x00000000       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
  .text.UART_LOG_PutArray
@@ -1216,7 +1211,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 [!provide]                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x593c
+.text           0x00000000     0x59ec
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -1269,648 +1264,651 @@ END GROUP
                 0x0000033c       0x98 .\CortexM3\ARM_GCC_541\Debug\main.o
                 0x0000033c                isr_pushButton
  .text.ISR2_isr_DMA_MEM_UART
-                0x000003d4        0xc .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x000003d4       0x14 .\CortexM3\ARM_GCC_541\Debug\main.o
                 0x000003d4                ISR2_isr_DMA_MEM_UART
  .text.isr_DMA_MEM_UART
-                0x000003e0       0x98 .\CortexM3\ARM_GCC_541\Debug\main.o
-                0x000003e0                isr_DMA_MEM_UART
+                0x000003e8       0x98 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x000003e8                isr_DMA_MEM_UART
  .text.isr_DMA_FFT_UART
-                0x00000478       0x94 .\CortexM3\ARM_GCC_541\Debug\main.o
-                0x00000478                isr_DMA_FFT_UART
+                0x00000480       0x94 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x00000480                isr_DMA_FFT_UART
  .text.DETECTOR_initDrivers
-                0x0000050c       0x14 .\CortexM3\ARM_GCC_541\Debug\detector.o
-                0x0000050c                DETECTOR_initDrivers
+                0x00000514       0x14 .\CortexM3\ARM_GCC_541\Debug\detector.o
+                0x00000514                DETECTOR_initDrivers
  .text.DETECTOR_setLedState
-                0x00000520       0x30 .\CortexM3\ARM_GCC_541\Debug\detector.o
-                0x00000520                DETECTOR_setLedState
+                0x00000528       0x30 .\CortexM3\ARM_GCC_541\Debug\detector.o
+                0x00000528                DETECTOR_setLedState
  .text.DETECTOR_init
-                0x00000550       0x28 .\CortexM3\ARM_GCC_541\Debug\detector.o
-                0x00000550                DETECTOR_init
+                0x00000558       0x28 .\CortexM3\ARM_GCC_541\Debug\detector.o
+                0x00000558                DETECTOR_init
  .text.DETECTOR_processEvents
-                0x00000578      0x16c .\CortexM3\ARM_GCC_541\Debug\detector.o
-                0x00000578                DETECTOR_processEvents
- *fill*         0x000006e4        0x4 
+                0x00000580      0x1d8 .\CortexM3\ARM_GCC_541\Debug\detector.o
+                0x00000580                DETECTOR_processEvents
  .text.CFAR_init
-                0x000006e8       0x28 .\CortexM3\ARM_GCC_541\Debug\cfar.o
-                0x000006e8                CFAR_init
+                0x00000758       0x28 .\CortexM3\ARM_GCC_541\Debug\cfar.o
+                0x00000758                CFAR_init
  .text.CFAR_reset_output
-                0x00000710       0x44 .\CortexM3\ARM_GCC_541\Debug\cfar.o
-                0x00000710                CFAR_reset_output
+                0x00000780       0x44 .\CortexM3\ARM_GCC_541\Debug\cfar.o
+                0x00000780                CFAR_reset_output
  .text.calculateCFAR
-                0x00000754      0x1a8 .\CortexM3\ARM_GCC_541\Debug\cfar.o
-                0x00000754                calculateCFAR
- .text.LED_Set  0x000008fc       0x60 .\CortexM3\ARM_GCC_541\Debug\led.o
-                0x000008fc                LED_Set
+                0x000007c4      0x1a8 .\CortexM3\ARM_GCC_541\Debug\cfar.o
+                0x000007c4                calculateCFAR
+ .text.LED_Set  0x0000096c       0x60 .\CortexM3\ARM_GCC_541\Debug\led.o
+                0x0000096c                LED_Set
  .text.UART_init
-                0x0000095c        0xc .\CortexM3\ARM_GCC_541\Debug\uart.o
-                0x0000095c                UART_init
+                0x000009cc        0xc .\CortexM3\ARM_GCC_541\Debug\uart.o
+                0x000009cc                UART_init
  .text.DMA_Init
-                0x00000968      0x134 .\CortexM3\ARM_GCC_541\Debug\dma.o
-                0x00000968                DMA_Init
- .text.DMA_Set  0x00000a9c       0xa4 .\CortexM3\ARM_GCC_541\Debug\dma.o
-                0x00000a9c                DMA_Set
+                0x000009d8      0x134 .\CortexM3\ARM_GCC_541\Debug\dma.o
+                0x000009d8                DMA_Init
+ .text.DMA_Set  0x00000b0c       0xa4 .\CortexM3\ARM_GCC_541\Debug\dma.o
+                0x00000b0c                DMA_Set
  .text.ADC_Init
-                0x00000b40        0x8 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
-                0x00000b40                ADC_Init
- .text.ADC_Set  0x00000b48       0x18 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
-                0x00000b48                ADC_Set
+                0x00000bb0        0x8 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+                0x00000bb0                ADC_Init
+ .text.ADC_Set  0x00000bb8       0x18 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+                0x00000bb8                ADC_Set
  .text.CyClockStartupError
-                0x00000b60        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000bd0        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cfg_write_bytes32
-                0x00000b64       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000bd4       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.AnalogSetDefault
-                0x00000b98       0x38 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c08       0x38 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x00000bd0        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c40        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYCONFIGCPY
-                0x00000bdc        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c4c        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ClockSetup
-                0x00000be4      0x108 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000c54      0x108 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ADC_DelSig_AMux_Set
-                0x00000cec       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00000cec                ADC_DelSig_AMux_Set
+                0x00000d5c       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000d5c                ADC_DelSig_AMux_Set
  .text.ADC_DelSig_AMux_Unset
-                0x00000d08       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00000d08                ADC_DelSig_AMux_Unset
+                0x00000d78       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000d78                ADC_DelSig_AMux_Unset
  .text.cyfitter_cfg
-                0x00000d24      0x128 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00000d24                cyfitter_cfg
+                0x00000d94      0x128 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000d94                cyfitter_cfg
  .text.IntDefaultHandler
-                0x00000e4c       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000e4c                IntDefaultHandler
- .text._sbrk    0x00000e5c       0x30 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000e5c                _sbrk
- .text.Start_c  0x00000e8c       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000e8c                Start_c
+                0x00000ebc       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000ebc                IntDefaultHandler
+ .text._sbrk    0x00000ecc       0x30 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000ecc                _sbrk
+ .text.Start_c  0x00000efc       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000efc                Start_c
  .text.initialize_psoc
-                0x00000ed8       0x6c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000ed8                initialize_psoc
+                0x00000f48       0x6c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000f48                initialize_psoc
  .text.CyDmacConfigure
-                0x00000f44       0x34 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x00000f44                CyDmacConfigure
+                0x00000fb4       0x34 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x00000fb4                CyDmacConfigure
  .text.CyDmaChEnable
-                0x00000f78       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x00000f78                CyDmaChEnable
+                0x00000fe8       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x00000fe8                CyDmaChEnable
  .text.CyDmaChDisable
-                0x00000fb0       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x00000fb0                CyDmaChDisable
+                0x00001020       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x00001020                CyDmaChDisable
  .text.CyDmaChPriority
-                0x00000fd4       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x00000fd4                CyDmaChPriority
+                0x00001044       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x00001044                CyDmaChPriority
  .text.CyDmaChSetExtendedAddress
-                0x00000ff8       0x34 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x00000ff8                CyDmaChSetExtendedAddress
+                0x00001068       0x34 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x00001068                CyDmaChSetExtendedAddress
  .text.CyDmaChSetInitialTd
-                0x0000102c       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x0000102c                CyDmaChSetInitialTd
+                0x0000109c       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x0000109c                CyDmaChSetInitialTd
  .text.CyDmaChSetConfiguration
-                0x00001044       0x44 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x00001044                CyDmaChSetConfiguration
+                0x000010b4       0x44 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x000010b4                CyDmaChSetConfiguration
  .text.CyDmaTdAllocate
-                0x00001088       0x34 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x00001088                CyDmaTdAllocate
+                0x000010f8       0x34 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x000010f8                CyDmaTdAllocate
  .text.CyDmaTdSetConfiguration
-                0x000010bc       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x000010bc                CyDmaTdSetConfiguration
+                0x0000112c       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x0000112c                CyDmaTdSetConfiguration
  .text.CyDmaTdSetAddress
-                0x000010e4       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
-                0x000010e4                CyDmaTdSetAddress
- .text.CyHalt   0x00001100        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
-                0x00001100                CyHalt
+                0x00001154       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+                0x00001154                CyDmaTdSetAddress
+ .text.CyHalt   0x00001170        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+                0x00001170                CyHalt
+ .text.CyDelay  0x00001174       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+                0x00001174                CyDelay
  .text.CyDelayUs
-                0x00001104       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
-                0x00001104                CyDelayUs
+                0x000011a0       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+                0x000011a0                CyDelayUs
  .text.CyIntSetVector
-                0x00001118       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
-                0x00001118                CyIntSetVector
+                0x000011b4       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+                0x000011b4                CyIntSetVector
  .text.CyIntSetPriority
-                0x00001140       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
-                0x00001140                CyIntSetPriority
+                0x000011dc       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+                0x000011dc                CyIntSetPriority
  .text.EE_oo_ActivateTask
-                0x00001170       0xe8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
-                0x00001170                EE_oo_ActivateTask
+                0x0000120c       0xe8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
+                0x0000120c                EE_oo_ActivateTask
  .text.EE_oo_handle_action_callback
-                0x00001258        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+                0x000012f4        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
  .text.EE_oo_handle_action_task
-                0x00001264       0x4c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+                0x00001300       0x4c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
  .text.EE_oo_handle_action_event
-                0x000012b0       0x60 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+                0x0000134c       0x60 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
  .text.EE_oo_handle_action
-                0x00001310       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+                0x000013ac       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
  .text.EE_oo_counter_object_insert
-                0x00001338       0x9c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
-                0x00001338                EE_oo_counter_object_insert
+                0x000013d4       0x9c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+                0x000013d4                EE_oo_counter_object_insert
  .text.EE_oo_IncrementCounterImplementation
-                0x000013d4      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
-                0x000013d4                EE_oo_IncrementCounterImplementation
+                0x00001470      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+                0x00001470                EE_oo_IncrementCounterImplementation
  .text.EE_oo_IncrementCounter
-                0x000014d4       0xb0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
-                0x000014d4                EE_oo_IncrementCounter
+                0x00001570       0xb0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+                0x00001570                EE_oo_IncrementCounter
  .text.EE_oo_ClearEvent
-                0x00001584       0x5c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
-                0x00001584                EE_oo_ClearEvent
+                0x00001620       0x5c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
+                0x00001620                EE_oo_ClearEvent
  .text.EE_oo_GetEvent
-                0x000015e0       0x40 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
-                0x000015e0                EE_oo_GetEvent
+                0x0000167c       0x40 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
+                0x0000167c                EE_oo_GetEvent
  .text.EE_oo_SetEvent
-                0x00001620      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
-                0x00001620                EE_oo_SetEvent
+                0x000016bc      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
+                0x000016bc                EE_oo_SetEvent
  .text.EE_oo_WaitEvent
-                0x00001720      0x110 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
-                0x00001720                EE_oo_WaitEvent
+                0x000017bc      0x110 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
+                0x000017bc                EE_oo_WaitEvent
  .text.EE_IRQ_run_next_task
-                0x00001830       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+                0x000018cc       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
  .text.EE_IRQ_end_instance
-                0x00001860       0x68 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
-                0x00001860                EE_IRQ_end_instance
+                0x000018fc       0x68 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+                0x000018fc                EE_IRQ_end_instance
  .text.EE_IRQ_end_post_stub
-                0x000018c8       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
-                0x000018c8                EE_IRQ_end_post_stub
+                0x00001964       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+                0x00001964                EE_IRQ_end_post_stub
  .text.EE_rq2stk_exchange
-                0x000018dc       0x88 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
-                0x000018dc                EE_rq2stk_exchange
+                0x00001978       0x88 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
+                0x00001978                EE_rq2stk_exchange
  .text.EE_rq_queryfirst
-                0x00001964       0x44 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
-                0x00001964                EE_rq_queryfirst
+                0x00001a00       0x44 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
+                0x00001a00                EE_rq_queryfirst
  .text.EE_rq_insert
-                0x000019a8       0x74 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
-                0x000019a8                EE_rq_insert
+                0x00001a44       0x74 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
+                0x00001a44                EE_rq_insert
  .text.compute_task_tid
-                0x00001a1c       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+                0x00001ab8       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
  .text.EE_oo_start_os
-                0x00001a2c        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+                0x00001ac8        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
  .text.EE_oo_autostart_tasks
-                0x00001a38       0x60 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+                0x00001ad4       0x60 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
  .text.EE_oo_autostart_os
-                0x00001a98        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+                0x00001b34        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
  .text.EE_oo_StartOS
-                0x00001aa4       0x8c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
-                0x00001aa4                EE_oo_StartOS
+                0x00001b40       0x8c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+                0x00001b40                EE_oo_StartOS
  .text.EE_oo_TerminateTask
-                0x00001b30       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
-                0x00001b30                EE_oo_TerminateTask
+                0x00001bcc       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
+                0x00001bcc                EE_oo_TerminateTask
  .text.EE_system_init
-                0x00001b6c       0xa8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
-                0x00001b6c                EE_system_init
+                0x00001c08       0xa8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
+                0x00001c08                EE_system_init
  .text.LED_green_Write
-                0x00001c14       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
-                0x00001c14                LED_green_Write
+                0x00001cb0       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
+                0x00001cb0                LED_green_Write
  .text.LED_orange_Write
-                0x00001c2c       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
-                0x00001c2c                LED_orange_Write
+                0x00001cc8       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
+                0x00001cc8                LED_orange_Write
  .text.LED_red_Write
-                0x00001c44       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
-                0x00001c44                LED_red_Write
+                0x00001ce0       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
+                0x00001ce0                LED_red_Write
  .text.UART_LOG_Init
-                0x00001c5c       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
-                0x00001c5c                UART_LOG_Init
+                0x00001cf8       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+                0x00001cf8                UART_LOG_Init
  .text.UART_LOG_Enable
-                0x00001c80       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
-                0x00001c80                UART_LOG_Enable
+                0x00001d1c       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+                0x00001d1c                UART_LOG_Enable
  .text.UART_LOG_Start
-                0x00001cb8       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
-                0x00001cb8                UART_LOG_Start
+                0x00001d54       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+                0x00001d54                UART_LOG_Start
  .text.UART_LOG_ReadRxData
-                0x00001cd4        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
-                0x00001cd4                UART_LOG_ReadRxData
+                0x00001d70        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+                0x00001d70                UART_LOG_ReadRxData
  .text.UART_LOG_ReadRxStatus
-                0x00001ce0       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
-                0x00001ce0                UART_LOG_ReadRxStatus
+                0x00001d7c       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+                0x00001d7c                UART_LOG_ReadRxStatus
  .text.UART_LOG_GetByte
-                0x00001cf0       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
-                0x00001cf0                UART_LOG_GetByte
+                0x00001d8c       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+                0x00001d8c                UART_LOG_GetByte
+ .text.UART_LOG_PutChar
+                0x00001da0       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+                0x00001da0                UART_LOG_PutChar
  .text.UART_LOG_IntClock_Start
-                0x00001d04       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
-                0x00001d04                UART_LOG_IntClock_Start
+                0x00001db8       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
+                0x00001db8                UART_LOG_IntClock_Start
  .text.ADC_DelSig_GainCompensation
-                0x00001d20       0xdc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x00001dd4       0xdc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
  .text.ADC_DelSig_SetDSMRef0Reg
-                0x00001dfc       0x4c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x00001eb0       0x4c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
  .text.ADC_DelSig_InitConfig
-                0x00001e48       0xe8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x00001efc       0xe8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
  .text.ADC_DelSig_Init
-                0x00001f30       0xc4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
-                0x00001f30                ADC_DelSig_Init
+                0x00001fe4       0xc4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x00001fe4                ADC_DelSig_Init
  .text.ADC_DelSig_Enable
-                0x00001ff4       0xd8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
-                0x00001ff4                ADC_DelSig_Enable
+                0x000020a8       0xd8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x000020a8                ADC_DelSig_Enable
  .text.ADC_DelSig_Start
-                0x000020cc       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
-                0x000020cc                ADC_DelSig_Start
+                0x00002180       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x00002180                ADC_DelSig_Start
  .text.ADC_DelSig_StartConvert
-                0x000020f4       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
-                0x000020f4                ADC_DelSig_StartConvert
+                0x000021a8       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x000021a8                ADC_DelSig_StartConvert
  .text.ADC_DelSig_StopConvert
-                0x00002104       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
-                0x00002104                ADC_DelSig_StopConvert
+                0x000021b8       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x000021b8                ADC_DelSig_StopConvert
  .text.ADC_DelSig_ISR1
-                0x00002114        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
-                0x00002114                ADC_DelSig_ISR1
+                0x000021c8        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
+                0x000021c8                ADC_DelSig_ISR1
  .text.ADC_DelSig_AMux_Start
-                0x00002118       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
-                0x00002118                ADC_DelSig_AMux_Start
+                0x000021cc       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+                0x000021cc                ADC_DelSig_AMux_Start
  .text.ADC_DelSig_AMux_Select
-                0x00002138       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
-                0x00002138                ADC_DelSig_AMux_Select
+                0x000021ec       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+                0x000021ec                ADC_DelSig_AMux_Select
  .text.ADC_DelSig_Ext_CP_Clk_GetDividerRegister
-                0x00002150        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
-                0x00002150                ADC_DelSig_Ext_CP_Clk_GetDividerRegister
+                0x00002204        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+                0x00002204                ADC_DelSig_Ext_CP_Clk_GetDividerRegister
  .text.ADC_DelSig_Ext_CP_Clk_SetModeRegister
-                0x0000215c       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
-                0x0000215c                ADC_DelSig_Ext_CP_Clk_SetModeRegister
+                0x00002210       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+                0x00002210                ADC_DelSig_Ext_CP_Clk_SetModeRegister
  .text.ADC_DelSig_Ext_CP_Clk_GetSourceRegister
-                0x00002170       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
-                0x00002170                ADC_DelSig_Ext_CP_Clk_GetSourceRegister
+                0x00002224       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+                0x00002224                ADC_DelSig_Ext_CP_Clk_GetSourceRegister
  .text.ADC_DelSig_Ext_CP_Clk_SetDividerRegister
-                0x00002180       0xd8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
-                0x00002180                ADC_DelSig_Ext_CP_Clk_SetDividerRegister
+                0x00002234       0xd8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+                0x00002234                ADC_DelSig_Ext_CP_Clk_SetDividerRegister
  .text.ADC_DelSig_theACLK_GetDividerRegister
-                0x00002258        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
-                0x00002258                ADC_DelSig_theACLK_GetDividerRegister
+                0x0000230c        0xc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+                0x0000230c                ADC_DelSig_theACLK_GetDividerRegister
  .text.ADC_DelSig_theACLK_SetModeRegister
-                0x00002264       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
-                0x00002264                ADC_DelSig_theACLK_SetModeRegister
+                0x00002318       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+                0x00002318                ADC_DelSig_theACLK_SetModeRegister
  .text.ADC_DelSig_theACLK_GetSourceRegister
-                0x00002278       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
-                0x00002278                ADC_DelSig_theACLK_GetSourceRegister
+                0x0000232c       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+                0x0000232c                ADC_DelSig_theACLK_GetSourceRegister
  .text.ADC_DelSig_theACLK_SetDividerRegister
-                0x00002288       0xd8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
-                0x00002288                ADC_DelSig_theACLK_SetDividerRegister
+                0x0000233c       0xd8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+                0x0000233c                ADC_DelSig_theACLK_SetDividerRegister
  .text.DMA_ADC_MEM_DmaInitialize
-                0x00002360       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
-                0x00002360                DMA_ADC_MEM_DmaInitialize
+                0x00002414       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+                0x00002414                DMA_ADC_MEM_DmaInitialize
  .text.DMA_MEM_UART_DmaInitialize
-                0x0000239c       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
-                0x0000239c                DMA_MEM_UART_DmaInitialize
+                0x00002450       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+                0x00002450                DMA_MEM_UART_DmaInitialize
  .text.Clock_DMA_MEM_UART_Start
-                0x000023d8       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
-                0x000023d8                Clock_DMA_MEM_UART_Start
+                0x0000248c       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
+                0x0000248c                Clock_DMA_MEM_UART_Start
  .text.DMA_FFT_UART_DmaInitialize
-                0x000023f4       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
-                0x000023f4                DMA_FFT_UART_DmaInitialize
+                0x000024a8       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+                0x000024a8                DMA_FFT_UART_DmaInitialize
  .text.Clock_DMA_FFT_UART_Start
-                0x00002430       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
-                0x00002430                Clock_DMA_FFT_UART_Start
- *fill*         0x0000244c        0x4 
- .text          0x00002450       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
-                0x00002450                CyDelayCycles
-                0x00002460                CyEnterCriticalSection
-                0x00002468                CyExitCriticalSection
- .text          0x00002470       0x7c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
-                0x00002470                EE_set_switch_context_pri
-                0x0000248a                EE_switch_context
-                0x00002494                EE_cortex_mx_pendsv_ISR
-                0x000024d0                EE_cortex_mx_svc_ISR
- .text          0x000024ec       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
-                0x000024ec                EE_cortex_mx_change_IRQ_stack
-                0x000024fe                EE_cortex_mx_change_IRQ_stack_back
- .text          0x00002510       0x68 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
-                0x00002510                EE_cortex_mx_change_context
- .text          0x00002578       0x80 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
-                0x00002578                EE_hal_terminate_savestk
-                0x000025c2                EE_hal_terminate_task
+                0x000024e4       0x1c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
+                0x000024e4                Clock_DMA_FFT_UART_Start
+ .text          0x00002500       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
+                0x00002500                CyDelayCycles
+                0x00002510                CyEnterCriticalSection
+                0x00002518                CyExitCriticalSection
+ .text          0x00002520       0x7c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
+                0x00002520                EE_set_switch_context_pri
+                0x0000253a                EE_switch_context
+                0x00002544                EE_cortex_mx_pendsv_ISR
+                0x00002580                EE_cortex_mx_svc_ISR
+ .text          0x0000259c       0x24 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
+                0x0000259c                EE_cortex_mx_change_IRQ_stack
+                0x000025ae                EE_cortex_mx_change_IRQ_stack_back
+ .text          0x000025c0       0x68 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
+                0x000025c0                EE_cortex_mx_change_context
+ .text          0x00002628       0x80 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
+                0x00002628                EE_hal_terminate_savestk
+                0x00002672                EE_hal_terminate_task
  .text.EE_thread_not_terminated
-                0x000025f8       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
-                0x000025f8                EE_thread_not_terminated
+                0x000026a8       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
+                0x000026a8                EE_thread_not_terminated
  .text.EE_oo_thread_stub
-                0x00002608       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
-                0x00002608                EE_oo_thread_stub
+                0x000026b8       0x10 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
+                0x000026b8                EE_oo_thread_stub
  .text.EE_std_run_task_code
-                0x00002618       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
-                0x00002618                EE_std_run_task_code
+                0x000026c8       0x18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+                0x000026c8                EE_std_run_task_code
  .text.EE_std_need_context_change
-                0x00002630       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
-                0x00002630                EE_std_need_context_change
+                0x000026e0       0x28 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+                0x000026e0                EE_std_need_context_change
  .text.EE_thread_rnact_max
-                0x00002658       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+                0x00002708       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
  .text.EE_thread_endcycle_next
-                0x00002678       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+                0x00002728       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
  .text.EE_thread_end_instance
-                0x000026a8      0x108 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
-                0x000026a8                EE_thread_end_instance
- .text.fft_app  0x000027b0       0x44 .\source\bsw\fft_application\libfft_application.a(fft_application.o)
-                0x000027b0                fft_app
+                0x00002758      0x108 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+                0x00002758                EE_thread_end_instance
+ .text.fft_app  0x00002860       0x44 .\source\bsw\fft_application\libfft_application.a(fft_application.o)
+                0x00002860                fft_app
  .text.arm_split_rfft_q31
-                0x000027f4      0x21c .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
-                0x000027f4                arm_split_rfft_q31
+                0x000028a4      0x21c .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+                0x000028a4                arm_split_rfft_q31
  .text.arm_split_rifft_q31
-                0x00002a10      0x1bc .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
-                0x00002a10                arm_split_rifft_q31
+                0x00002ac0      0x1bc .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+                0x00002ac0                arm_split_rifft_q31
  .text.arm_rfft_q31
-                0x00002bcc       0x70 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
-                0x00002bcc                arm_rfft_q31
+                0x00002c7c       0x70 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+                0x00002c7c                arm_rfft_q31
  .text.arm_rfft_init_q31
-                0x00002c3c       0xf0 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
-                0x00002c3c                arm_rfft_init_q31
+                0x00002cec       0xf0 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+                0x00002cec                arm_rfft_init_q31
  .text.arm_cfft_radix4by2_q31
-                0x00002d2c      0x18c .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
-                0x00002d2c                arm_cfft_radix4by2_q31
+                0x00002ddc      0x18c .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+                0x00002ddc                arm_cfft_radix4by2_q31
  .text.arm_cfft_radix4by2_inverse_q31
-                0x00002eb8      0x18c .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
-                0x00002eb8                arm_cfft_radix4by2_inverse_q31
+                0x00002f68      0x18c .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+                0x00002f68                arm_cfft_radix4by2_inverse_q31
  .text.arm_cfft_q31
-                0x00003044       0xbc .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
-                0x00003044                arm_cfft_q31
+                0x000030f4       0xbc .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+                0x000030f4                arm_cfft_q31
  .text.arm_radix4_butterfly_q31
-                0x00003100      0x570 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
-                0x00003100                arm_radix4_butterfly_q31
+                0x000031b0      0x570 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+                0x000031b0                arm_radix4_butterfly_q31
  .text.arm_radix4_butterfly_inverse_q31
-                0x00003670      0x570 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
-                0x00003670                arm_radix4_butterfly_inverse_q31
- .text          0x00003be0       0xc0 .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
-                0x00003be0                arm_bitreversal_32
-                0x00003c4a                arm_bitreversal_16
- .text.pow      0x00003ca0      0x330 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-w_pow.o)
-                0x00003ca0                pow
+                0x00003720      0x570 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+                0x00003720                arm_radix4_butterfly_inverse_q31
+ .text          0x00003c90       0xc0 .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
+                0x00003c90                arm_bitreversal_32
+                0x00003cfa                arm_bitreversal_16
+ .text.pow      0x00003d50      0x330 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-w_pow.o)
+                0x00003d50                pow
  .text.__ieee754_pow
-                0x00003fd0      0xac4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_pow.o)
-                0x00003fd0                __ieee754_pow
+                0x00004080      0xac4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_pow.o)
+                0x00004080                __ieee754_pow
  .text.__ieee754_sqrt
-                0x00004a94      0x188 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_sqrt.o)
-                0x00004a94                __ieee754_sqrt
- .text.fabs     0x00004c1c        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
-                0x00004c1c                fabs
- .text.finite   0x00004c24        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_finite.o)
-                0x00004c24                finite
- .text.matherr  0x00004c30        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_matherr.o)
-                0x00004c30                matherr
- .text.nan      0x00004c34        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_nan.o)
-                0x00004c34                nan
- .text.rint     0x00004c40      0x120 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_rint.o)
-                0x00004c40                rint
- .text.scalbn   0x00004d60       0xe4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
-                0x00004d60                scalbn
+                0x00004b44      0x188 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_sqrt.o)
+                0x00004b44                __ieee754_sqrt
+ .text.fabs     0x00004ccc        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+                0x00004ccc                fabs
+ .text.finite   0x00004cd4        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_finite.o)
+                0x00004cd4                finite
+ .text.matherr  0x00004ce0        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_matherr.o)
+                0x00004ce0                matherr
+ .text.nan      0x00004ce4        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_nan.o)
+                0x00004ce4                nan
+ .text.rint     0x00004cf0      0x120 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_rint.o)
+                0x00004cf0                rint
+ .text.scalbn   0x00004e10       0xe4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+                0x00004e10                scalbn
  .text.copysign
-                0x00004e44       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
-                0x00004e44                copysign
- .text          0x00004e54      0x370 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
-                0x00004e54                __aeabi_drsub
-                0x00004e5c                __aeabi_dsub
-                0x00004e5c                __subdf3
-                0x00004e60                __aeabi_dadd
-                0x00004e60                __adddf3
-                0x000050d8                __floatunsidf
-                0x000050d8                __aeabi_ui2d
-                0x000050f8                __floatsidf
-                0x000050f8                __aeabi_i2d
-                0x0000511c                __aeabi_f2d
-                0x0000511c                __extendsfdf2
-                0x00005158                __floatundidf
-                0x00005158                __aeabi_ul2d
-                0x00005168                __floatdidf
-                0x00005168                __aeabi_l2d
- .text          0x000051c4      0x424 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
-                0x000051c4                __aeabi_dmul
-                0x000051c4                __muldf3
-                0x00005418                __divdf3
-                0x00005418                __aeabi_ddiv
- .text          0x000055e8      0x110 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
-                0x000055e8                __gtdf2
-                0x000055e8                __gedf2
-                0x000055f0                __ltdf2
-                0x000055f0                __ledf2
-                0x000055f8                __nedf2
-                0x000055f8                __eqdf2
-                0x000055f8                __cmpdf2
-                0x00005674                __aeabi_cdrcmple
-                0x00005684                __aeabi_cdcmpeq
-                0x00005684                __aeabi_cdcmple
-                0x00005694                __aeabi_dcmpeq
-                0x000056a8                __aeabi_dcmplt
-                0x000056bc                __aeabi_dcmple
-                0x000056d0                __aeabi_dcmpge
-                0x000056e4                __aeabi_dcmpgt
- .text          0x000056f8       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_unorddf2.o)
-                0x000056f8                __unorddf2
-                0x000056f8                __aeabi_dcmpun
- .text.__errno  0x00005724        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x00005724                __errno
+                0x00004ef4       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
+                0x00004ef4                copysign
+ .text          0x00004f04      0x370 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                0x00004f04                __aeabi_drsub
+                0x00004f0c                __aeabi_dsub
+                0x00004f0c                __subdf3
+                0x00004f10                __aeabi_dadd
+                0x00004f10                __adddf3
+                0x00005188                __floatunsidf
+                0x00005188                __aeabi_ui2d
+                0x000051a8                __floatsidf
+                0x000051a8                __aeabi_i2d
+                0x000051cc                __aeabi_f2d
+                0x000051cc                __extendsfdf2
+                0x00005208                __floatundidf
+                0x00005208                __aeabi_ul2d
+                0x00005218                __floatdidf
+                0x00005218                __aeabi_l2d
+ .text          0x00005274      0x424 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivdf3.o)
+                0x00005274                __aeabi_dmul
+                0x00005274                __muldf3
+                0x000054c8                __divdf3
+                0x000054c8                __aeabi_ddiv
+ .text          0x00005698      0x110 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
+                0x00005698                __gtdf2
+                0x00005698                __gedf2
+                0x000056a0                __ltdf2
+                0x000056a0                __ledf2
+                0x000056a8                __nedf2
+                0x000056a8                __eqdf2
+                0x000056a8                __cmpdf2
+                0x00005724                __aeabi_cdrcmple
+                0x00005734                __aeabi_cdcmpeq
+                0x00005734                __aeabi_cdcmple
+                0x00005744                __aeabi_dcmpeq
+                0x00005758                __aeabi_dcmplt
+                0x0000576c                __aeabi_dcmple
+                0x00005780                __aeabi_dcmpge
+                0x00005794                __aeabi_dcmpgt
+ .text          0x000057a8       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_unorddf2.o)
+                0x000057a8                __unorddf2
+                0x000057a8                __aeabi_dcmpun
+ .text.__errno  0x000057d4        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x000057d4                __errno
  .text.__libc_init_array
-                0x00005730       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x00005730                __libc_init_array
- .text.malloc   0x0000577c       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
-                0x0000577c                malloc
- .text.free     0x0000578c       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
-                0x0000578c                free
- .text.memcpy   0x0000579c       0x16 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x0000579c                memcpy
- .text.memset   0x000057b2       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x000057b2                memset
- *fill*         0x000057c2        0x2 
- .text._free_r  0x000057c4       0x98 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
-                0x000057c4                _free_r
+                0x000057e0       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x000057e0                __libc_init_array
+ .text.malloc   0x0000582c       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+                0x0000582c                malloc
+ .text.free     0x0000583c       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+                0x0000583c                free
+ .text.memcpy   0x0000584c       0x16 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x0000584c                memcpy
+ .text.memset   0x00005862       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x00005862                memset
+ *fill*         0x00005872        0x2 
+ .text._free_r  0x00005874       0x98 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+                0x00005874                _free_r
  .text._malloc_r
-                0x0000585c       0xbc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x0000585c                _malloc_r
- .text._sbrk_r  0x00005918       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
-                0x00005918                _sbrk_r
+                0x0000590c       0xbc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x0000590c                _malloc_r
+ .text._sbrk_r  0x000059c8       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+                0x000059c8                _sbrk_r
  .text.__malloc_lock
-                0x00005938        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
-                0x00005938                __malloc_lock
+                0x000059e8        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                0x000059e8                __malloc_lock
  .text.__malloc_unlock
-                0x0000593a        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
-                0x0000593a                __malloc_unlock
+                0x000059ea        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+                0x000059ea                __malloc_unlock
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x0000593c        0x0 linker stubs
+ .glue_7t       0x000059ec        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000593c        0x0 linker stubs
+ .glue_7        0x000059ec        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x0000593c        0x0 linker stubs
+ .vfp11_veneer  0x000059ec        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x0000593c        0x0
- .v4_bx         0x0000593c        0x0 linker stubs
+.v4_bx          0x000059ec        0x0
+ .v4_bx         0x000059ec        0x0 linker stubs
 
-.iplt           0x0000593c        0x0
- .iplt          0x0000593c        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.iplt           0x000059ec        0x0
+ .iplt          0x000059ec        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x0000593c        0x4
+.eh_frame       0x000059ec        0x4
  *(.eh_frame)
- .eh_frame      0x0000593c        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .eh_frame      0x0000593c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .eh_frame      0x000059ec        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x000059ec        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00005940                __exidx_end = .
+                0x000059f0                __exidx_end = .
 
-.rodata         0x00005940    0x20128
+.rodata         0x000059f0    0x20128
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00005940       0x3c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00005940                ADC_DelSig_AMux__addrTable
-                0x00005948                ADC_DelSig_AMux__maskTable
- .rodata        0x0000597c      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
-                0x0000597c                EE_rq_lookup
- .rodata        0x00005a7c       0xbc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
-                0x00005a7c                EE_oo_autostart_task_data
-                0x00005a88                EE_oo_action_ROM
-                0x00005a9c                EE_oo_counter_object_ROM
-                0x00005aa8                EE_ALARM_ID
-                0x00005aac                EE_alarm_ROM
-                0x00005ab0                EE_counter_ROM
-                0x00005abc                EE_th_is_extended
-                0x00005ac8                EE_th_rnact_max
-                0x00005ad4                EE_th_dispatch_prio
-                0x00005ae0                EE_EVENT_ID
-                0x00005b04                EE_th_ready_prio
-                0x00005b10                EE_terminate_real_th_body
-                0x00005b1c                EE_hal_thread_body
-                0x00005b28                EE_std_thread_tos
+ .rodata        0x000059f0       0x3c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000059f0                ADC_DelSig_AMux__addrTable
+                0x000059f8                ADC_DelSig_AMux__maskTable
+ .rodata        0x00005a2c      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
+                0x00005a2c                EE_rq_lookup
+ .rodata        0x00005b2c       0xbc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+                0x00005b2c                EE_oo_autostart_task_data
+                0x00005b38                EE_oo_action_ROM
+                0x00005b4c                EE_oo_counter_object_ROM
+                0x00005b58                EE_ALARM_ID
+                0x00005b5c                EE_alarm_ROM
+                0x00005b60                EE_counter_ROM
+                0x00005b6c                EE_th_is_extended
+                0x00005b78                EE_th_rnact_max
+                0x00005b84                EE_th_dispatch_prio
+                0x00005b90                EE_EVENT_ID
+                0x00005bb4                EE_th_ready_prio
+                0x00005bc0                EE_terminate_real_th_body
+                0x00005bcc                EE_hal_thread_body
+                0x00005bd8                EE_std_thread_tos
  .rodata.str1.4
-                0x00005b38       0xb8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+                0x00005be8       0xb8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
  .rodata.realCoefAQ31
-                0x00005bf0     0x8000 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
-                0x00005bf0                realCoefAQ31
+                0x00005ca0     0x8000 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+                0x00005ca0                realCoefAQ31
  .rodata.realCoefBQ31
-                0x0000dbf0     0x8000 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
-                0x0000dbf0                realCoefBQ31
+                0x0000dca0     0x8000 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+                0x0000dca0                realCoefBQ31
  .rodata.arm_cfft_sR_q31_len32
-                0x00015bf0       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015bf0                arm_cfft_sR_q31_len32
+                0x00015ca0       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015ca0                arm_cfft_sR_q31_len32
  .rodata.arm_cfft_sR_q31_len512
-                0x00015c00       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c00                arm_cfft_sR_q31_len512
+                0x00015cb0       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015cb0                arm_cfft_sR_q31_len512
  .rodata.arm_cfft_sR_q31_len16
-                0x00015c10       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c10                arm_cfft_sR_q31_len16
+                0x00015cc0       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015cc0                arm_cfft_sR_q31_len16
  .rodata.arm_cfft_sR_q31_len256
-                0x00015c20       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c20                arm_cfft_sR_q31_len256
+                0x00015cd0       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015cd0                arm_cfft_sR_q31_len256
  .rodata.arm_cfft_sR_q31_len1024
-                0x00015c30       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c30                arm_cfft_sR_q31_len1024
+                0x00015ce0       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015ce0                arm_cfft_sR_q31_len1024
  .rodata.arm_cfft_sR_q31_len64
-                0x00015c40       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c40                arm_cfft_sR_q31_len64
+                0x00015cf0       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015cf0                arm_cfft_sR_q31_len64
  .rodata.arm_cfft_sR_q31_len128
-                0x00015c50       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c50                arm_cfft_sR_q31_len128
+                0x00015d00       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015d00                arm_cfft_sR_q31_len128
  .rodata.arm_cfft_sR_q31_len2048
-                0x00015c60       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c60                arm_cfft_sR_q31_len2048
+                0x00015d10       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015d10                arm_cfft_sR_q31_len2048
  .rodata.arm_cfft_sR_q31_len4096
-                0x00015c70       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
-                0x00015c70                arm_cfft_sR_q31_len4096
+                0x00015d20       0x10 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+                0x00015d20                arm_cfft_sR_q31_len4096
  .rodata.armBitRevIndexTable_fixed_128
-                0x00015c80       0xe0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00015c80                armBitRevIndexTable_fixed_128
+                0x00015d30       0xe0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00015d30                armBitRevIndexTable_fixed_128
  .rodata.armBitRevIndexTable_fixed_2048
-                0x00015d60      0xf80 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00015d60                armBitRevIndexTable_fixed_2048
+                0x00015e10      0xf80 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00015e10                armBitRevIndexTable_fixed_2048
  .rodata.twiddleCoef_32_q31
-                0x00016ce0       0xc0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00016ce0                twiddleCoef_32_q31
+                0x00016d90       0xc0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00016d90                twiddleCoef_32_q31
  .rodata.armBitRevIndexTable_fixed_4096
-                0x00016da0     0x1f80 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00016da0                armBitRevIndexTable_fixed_4096
+                0x00016e50     0x1f80 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00016e50                armBitRevIndexTable_fixed_4096
  .rodata.armBitRevIndexTable_fixed_1024
-                0x00018d20      0x7c0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00018d20                armBitRevIndexTable_fixed_1024
+                0x00018dd0      0x7c0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00018dd0                armBitRevIndexTable_fixed_1024
  .rodata.twiddleCoef_1024_q31
-                0x000194e0     0x1800 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x000194e0                twiddleCoef_1024_q31
+                0x00019590     0x1800 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00019590                twiddleCoef_1024_q31
  .rodata.twiddleCoef_4096_q31
-                0x0001ace0     0x6000 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x0001ace0                twiddleCoef_4096_q31
+                0x0001ad90     0x6000 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x0001ad90                twiddleCoef_4096_q31
  .rodata.twiddleCoef_16_q31
-                0x00020ce0       0x60 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00020ce0                twiddleCoef_16_q31
+                0x00020d90       0x60 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00020d90                twiddleCoef_16_q31
  .rodata.twiddleCoef_64_q31
-                0x00020d40      0x180 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00020d40                twiddleCoef_64_q31
+                0x00020df0      0x180 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00020df0                twiddleCoef_64_q31
  .rodata.twiddleCoef_2048_q31
-                0x00020ec0     0x3000 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00020ec0                twiddleCoef_2048_q31
+                0x00020f70     0x3000 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00020f70                twiddleCoef_2048_q31
  .rodata.twiddleCoef_256_q31
-                0x00023ec0      0x600 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00023ec0                twiddleCoef_256_q31
+                0x00023f70      0x600 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00023f70                twiddleCoef_256_q31
  .rodata.twiddleCoef_512_q31
-                0x000244c0      0xc00 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x000244c0                twiddleCoef_512_q31
+                0x00024570      0xc00 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00024570                twiddleCoef_512_q31
  .rodata.armBitRevIndexTable_fixed_512
-                0x000250c0      0x3c0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x000250c0                armBitRevIndexTable_fixed_512
+                0x00025170      0x3c0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00025170                armBitRevIndexTable_fixed_512
  .rodata.armBitRevIndexTable_fixed_16
-                0x00025480       0x18 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00025480                armBitRevIndexTable_fixed_16
+                0x00025530       0x18 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00025530                armBitRevIndexTable_fixed_16
  .rodata.armBitRevIndexTable_fixed_32
-                0x00025498       0x30 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00025498                armBitRevIndexTable_fixed_32
+                0x00025548       0x30 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00025548                armBitRevIndexTable_fixed_32
  .rodata.armBitRevIndexTable_fixed_256
-                0x000254c8      0x1e0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x000254c8                armBitRevIndexTable_fixed_256
+                0x00025578      0x1e0 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00025578                armBitRevIndexTable_fixed_256
  .rodata.armBitRevIndexTable_fixed_64
-                0x000256a8       0x70 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x000256a8                armBitRevIndexTable_fixed_64
+                0x00025758       0x70 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x00025758                armBitRevIndexTable_fixed_64
  .rodata.twiddleCoef_128_q31
-                0x00025718      0x300 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
-                0x00025718                twiddleCoef_128_q31
+                0x000257c8      0x300 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+                0x000257c8                twiddleCoef_128_q31
  .rodata.str1.4
-                0x00025a18        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-w_pow.o)
+                0x00025ac8        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-w_pow.o)
  .rodata.str1.4
-                0x00025a1c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_pow.o)
+                0x00025acc        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_pow.o)
                                   0x1 (size before relaxing)
- *fill*         0x00025a1c        0x4 
- .rodata.TWO52  0x00025a20       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_rint.o)
+ *fill*         0x00025acc        0x4 
+ .rodata.TWO52  0x00025ad0       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_rint.o)
  .rodata.str1.1
-                0x00025a30        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x00025a34                . = ALIGN (0x4)
- *fill*         0x00025a32        0x2 
+                0x00025ae0        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x00025ae4                . = ALIGN (0x4)
+ *fill*         0x00025ae2        0x2 
  *(.init)
- .init          0x00025a34        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x00025a34                _init
- .init          0x00025a38        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x00025a40                . = ALIGN (0x4)
-                0x00025a40                __preinit_array_start = .
+ .init          0x00025ae4        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00025ae4                _init
+ .init          0x00025ae8        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00025af0                . = ALIGN (0x4)
+                0x00025af0                __preinit_array_start = .
  *(.preinit_array)
-                0x00025a40                __preinit_array_end = .
-                0x00025a40                . = ALIGN (0x4)
-                0x00025a40                __init_array_start = .
+                0x00025af0                __preinit_array_end = .
+                0x00025af0                . = ALIGN (0x4)
+                0x00025af0                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00025a40        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .init_array    0x00025a44        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00025a48                __init_array_end = .
-                0x00025a48                . = ALIGN (0x4)
+ .init_array    0x00025af0        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .init_array    0x00025af4        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00025af8                __init_array_end = .
+                0x00025af8                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00025a48        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x00025a48                _fini
- .fini          0x00025a4c        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x00025a54                . = ALIGN (0x4)
-                0x00025a54                __fini_array_start = .
+ .fini          0x00025af8        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00025af8                _fini
+ .fini          0x00025afc        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00025b04                . = ALIGN (0x4)
+                0x00025b04                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00025a54        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .fini_array    0x00025b04        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00025a58                __fini_array_end = .
-                0x00025a58                . = ALIGN (0x4)
+                0x00025b08                __fini_array_end = .
+                0x00025b08                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00025a58                . = ALIGN (0x4)
+                0x00025b08                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00025a58                . = ALIGN (0x4)
-                0x00025a58                __cy_regions = .
-                0x00025a58        0x4 LONG 0x25a68 __cy_region_init_ram
-                0x00025a5c        0x4 LONG 0x1fff80c8 __cy_region_start_data
-                0x00025a60        0x4 LONG 0x1a8 __cy_region_init_size_ram
-                0x00025a64        0x4 LONG 0x94d8 __cy_region_zero_size_ram
-                0x00025a68                __cy_regions_end = .
-                0x00025a68                . = ALIGN (0x8)
-                0x00025a68                _etext = .
+                0x00025b08                . = ALIGN (0x4)
+                0x00025b08                __cy_regions = .
+                0x00025b08        0x4 LONG 0x25b18 __cy_region_init_ram
+                0x00025b0c        0x4 LONG 0x1fff80c8 __cy_region_start_data
+                0x00025b10        0x4 LONG 0x1a8 __cy_region_init_size_ram
+                0x00025b14        0x4 LONG 0xb100 __cy_region_zero_size_ram
+                0x00025b18                __cy_regions_end = .
+                0x00025b18                . = ALIGN (0x8)
+                0x00025b18                _etext = .
 
 .cy_checksum_exclude
-                0x00025a68        0x0
+                0x00025b18        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000       0xc0
@@ -1924,7 +1922,7 @@ END GROUP
  .noinit        0x1fff80c0        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
                 0x1fff80c0                CyResetStatus
 
-.data           0x1fff80c8      0x1a8 load address 0x00025a68
+.data           0x1fff80c8      0x1a8 load address 0x00025b18
                 0x1fff80c8                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff80c8        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
@@ -1940,7 +1938,7 @@ END GROUP
                 0x1fff80dc                cydelay_freq_khz
                 0x1fff80e0                cydelay_freq_mhz
                 0x1fff80e4                cydelay_freq_hz
- .data          0x1fff80e8      0x118 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+ .data          0x1fff80e8      0x114 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
                 0x1fff80e8                EE_ALARM_NAME
                 0x1fff80ec                EE_counter_RAM
                 0x1fff80f4                EE_th_terminate_nextask
@@ -1956,33 +1954,34 @@ END GROUP
                 0x1fff81e4                EE_TASK_NAME
                 0x1fff81f0                EE_cortex_mx_IRQ_tos
                 0x1fff81f4                EE_cortex_mx_system_tos
- .data          0x1fff8200        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
-                0x1fff8200                ADC_DelSig_Config
- .data          0x1fff8201        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
- .data          0x1fff8202        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
-                0x1fff8202                DMA_ADC_MEM_DmaHandle
- .data          0x1fff8203        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
-                0x1fff8203                DMA_MEM_UART_DmaHandle
- .data          0x1fff8204        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
-                0x1fff8204                DMA_FFT_UART_DmaHandle
- .data          0x1fff8205        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
+ .data          0x1fff81fc        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x1fff81fc                ADC_DelSig_Config
+ .data          0x1fff81fd        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+ .data          0x1fff81fe        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+                0x1fff81fe                DMA_ADC_MEM_DmaHandle
+ .data          0x1fff81ff        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+                0x1fff81ff                DMA_MEM_UART_DmaHandle
+ .data          0x1fff8200        0x1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+                0x1fff8200                DMA_FFT_UART_DmaHandle
+ .data          0x1fff8201        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
  .data.__fdlib_version
-                0x1fff8209        0x1 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_lib_ver.o)
-                0x1fff8209                __fdlib_version
- *fill*         0x1fff820a        0x2 
+                0x1fff8205        0x1 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_lib_ver.o)
+                0x1fff8205                __fdlib_version
+ *fill*         0x1fff8206        0x2 
  .data.impure_data
-                0x1fff820c       0x60 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x1fff8208       0x60 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .data._impure_ptr
-                0x1fff826c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x1fff826c                _impure_ptr
+                0x1fff8268        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x1fff8268                _impure_ptr
                 0x1fff8270                . = ALIGN (0x8)
+ *fill*         0x1fff826c        0x4 
  *(.ram)
                 0x1fff8270                _edata = .
 
-.igot.plt       0x1fff8270        0x0 load address 0x00025c10
+.igot.plt       0x1fff8270        0x0 load address 0x00025cc0
  .igot.plt      0x1fff8270        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.bss            0x1fff8270     0x94d8 load address 0x00025c10
+.bss            0x1fff8270     0xb100 load address 0x00025cc0
                 0x1fff8270                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -2038,33 +2037,33 @@ END GROUP
  COMMON         0x20000f30        0x8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
                 0x20000f30                EE_IRQ_nesting_level
                 0x20000f34                EE_std_endcycle_next_tid
- COMMON         0x20000f38      0x808 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+ COMMON         0x20000f38     0x242c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
                 0x20000f38                EE_cortex_mx_stack_3
-                0x20001320                EE_rq_pairs_tid
-                0x2000132c                EE_terminate_data
-                0x20001338                EE_oo_counter_object_RAM
-                0x20001348                EE_cortex_mx_stack_2
-                0x2000153c                EE_ApplicationMode
-                0x20001540                EE_cortex_mx_stack_9
- COMMON         0x20001740        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
-                0x20001740                ADC_DelSig_CountsPerVolt
- COMMON         0x20001744        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
-                0x20001744                errno
-                0x20001748                . = ALIGN (0x8)
+                0x20002f38                EE_rq_pairs_tid
+                0x20002f44                EE_terminate_data
+                0x20002f50                EE_oo_counter_object_RAM
+                0x20002f60                EE_ApplicationMode
+                0x20002f64                EE_cortex_mx_stack_9
+ COMMON         0x20003364        0x4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+                0x20003364                ADC_DelSig_CountsPerVolt
+ COMMON         0x20003368        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+                0x20003368                errno
+                0x20003370                . = ALIGN (0x8)
+ *fill*         0x2000336c        0x4 
  *(.ram.b)
-                0x20001748                _end = .
-                0x20001748                __end = .
-                0x20001748                PROVIDE (end, .)
-                0x20001748                PROVIDE (__bss_end__, .)
-                0x00025a68                __cy_region_init_ram = LOADADDR (.data)
+                0x20003370                _end = .
+                0x20003370                __end = .
+                0x20003370                PROVIDE (end, .)
+                0x20003370                PROVIDE (__bss_end__, .)
+                0x00025b18                __cy_region_init_ram = LOADADDR (.data)
                 0x000001a8                __cy_region_init_size_ram = (_edata - ADDR (.data))
-                0x000094d8                __cy_region_zero_size_ram = (_end - _edata)
+                0x0000b100                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x20001748     0x2000 load address 0x00025c10
-                0x20001748                . = _end
-                0x20003748                . = (. + 0x2000)
- *fill*         0x20001748     0x2000 
-                0x20003748                __cy_heap_limit = .
+.heap           0x20003370     0x2000 load address 0x00025cc0
+                0x20003370                . = _end
+                0x20005370                . = (. + 0x2000)
+ *fill*         0x20003370     0x2000 
+                0x20005370                __cy_heap_limit = .
 
 .stack          0x20007800      0x800
                 0x20007800                __cy_stack_limit = .
@@ -2111,8 +2110,8 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00025c10        0x0 load address 0x9050000c
- .rel.iplt      0x00025c10        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x00025cc0        0x0 load address 0x9050000c
+ .rel.iplt      0x00025cc0        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -2264,445 +2263,445 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x15774
+.debug_info     0x00000000    0x1586b
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0xe3a .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_info    0x00000e3a      0x8e1 .\CortexM3\ARM_GCC_541\Debug\detector.o
- .debug_info    0x0000171b      0x42c .\CortexM3\ARM_GCC_541\Debug\cfar.o
- .debug_info    0x00001b47      0x45b .\CortexM3\ARM_GCC_541\Debug\led.o
- .debug_info    0x00001fa2      0x2b3 .\CortexM3\ARM_GCC_541\Debug\uart.o
- .debug_info    0x00002255      0x68b .\CortexM3\ARM_GCC_541\Debug\dma.o
- .debug_info    0x000028e0      0x347 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
- .debug_info    0x00002c27      0x602 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00003229      0x136 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x0000335f      0x3cf .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_info    0x0000372e      0x94e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
- .debug_info    0x0000407c     0x1374 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
- .debug_info    0x000053f0      0xa2a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
- .debug_info    0x00005e1a      0x80d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
- .debug_info    0x00006627      0xc3b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
- .debug_info    0x00007262      0x5a7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
- .debug_info    0x00007809      0x4ca .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
- .debug_info    0x00007cd3      0x7c3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
- .debug_info    0x00008496      0x84e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
- .debug_info    0x00008ce4      0x5cb .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
- .debug_info    0x000092af      0x3d0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
- .debug_info    0x0000967f      0x46f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
- .debug_info    0x00009aee      0x421 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
- .debug_info    0x00009f0f      0x475 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
- .debug_info    0x0000a384     0x2040 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
- .debug_info    0x0000c3c4      0x589 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
- .debug_info    0x0000c94d      0x573 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
- .debug_info    0x0000cec0      0x3cb .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
- .debug_info    0x0000d28b      0x8d7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
- .debug_info    0x0000db62      0x11f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
- .debug_info    0x0000dc81      0x11f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
- .debug_info    0x0000dda0      0x11f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
- .debug_info    0x0000debf      0x60c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
- .debug_info    0x0000e4cb      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
- .debug_info    0x0000e74e      0xa18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
- .debug_info    0x0000f166       0xd3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
- .debug_info    0x0000f239      0x165 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
- .debug_info    0x0000f39e      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_info    0x0000f621      0x2c4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
- .debug_info    0x0000f8e5      0x1a8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
- .debug_info    0x0000fa8d      0x1a8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
- .debug_info    0x0000fc35      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
- .debug_info    0x0000feb8      0x1aa .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
- .debug_info    0x00010062      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
- .debug_info    0x000102e5       0xd0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
- .debug_info    0x000103b5       0xe5 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
- .debug_info    0x0001049a       0xdc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
- .debug_info    0x00010576       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
- .debug_info    0x00010656       0xd5 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
- .debug_info    0x0001072b      0x64d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
- .debug_info    0x00010d78      0x550 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
- .debug_info    0x000112c8      0x43d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
- .debug_info    0x00011705      0x487 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
- .debug_info    0x00011b8c      0x501 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
- .debug_info    0x0001208d      0x6f9 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
- .debug_info    0x00012786      0x36c .\source\bsw\fft_application\libfft_application.a(fft_application.o)
- .debug_info    0x00012af2      0x4f7 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
- .debug_info    0x00012fe9      0x327 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
- .debug_info    0x00013310      0x4a3 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
- .debug_info    0x000137b3      0x815 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
- .debug_info    0x00013fc8      0xd8a .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
- .debug_info    0x00014d52       0xac .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
- .debug_info    0x00014dfe      0x976 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+ .debug_info    0x00000000      0xe5a .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_info    0x00000e5a      0x9d8 .\CortexM3\ARM_GCC_541\Debug\detector.o
+ .debug_info    0x00001832      0x42c .\CortexM3\ARM_GCC_541\Debug\cfar.o
+ .debug_info    0x00001c5e      0x45b .\CortexM3\ARM_GCC_541\Debug\led.o
+ .debug_info    0x000020b9      0x2b3 .\CortexM3\ARM_GCC_541\Debug\uart.o
+ .debug_info    0x0000236c      0x68b .\CortexM3\ARM_GCC_541\Debug\dma.o
+ .debug_info    0x000029f7      0x347 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+ .debug_info    0x00002d3e      0x602 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00003340      0x136 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00003476      0x3cf .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x00003845      0x94e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+ .debug_info    0x00004193     0x1374 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+ .debug_info    0x00005507      0xa2a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
+ .debug_info    0x00005f31      0x80d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
+ .debug_info    0x0000673e      0xc3b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+ .debug_info    0x00007379      0x5a7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
+ .debug_info    0x00007920      0x4ca .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
+ .debug_info    0x00007dea      0x7c3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
+ .debug_info    0x000085ad      0x84e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
+ .debug_info    0x00008dfb      0x5cb .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+ .debug_info    0x000093c6      0x3d0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
+ .debug_info    0x00009796      0x46f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
+ .debug_info    0x00009c05      0x421 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
+ .debug_info    0x0000a026      0x475 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
+ .debug_info    0x0000a49b     0x2040 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+ .debug_info    0x0000c4db      0x589 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
+ .debug_info    0x0000ca64      0x573 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
+ .debug_info    0x0000cfd7      0x3cb .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
+ .debug_info    0x0000d3a2      0x8b7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+ .debug_info    0x0000dc59      0x11f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
+ .debug_info    0x0000dd78      0x11f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
+ .debug_info    0x0000de97      0x11f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
+ .debug_info    0x0000dfb6      0x60c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+ .debug_info    0x0000e5c2      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
+ .debug_info    0x0000e845      0xa18 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+ .debug_info    0x0000f25d       0xd3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
+ .debug_info    0x0000f330      0x165 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+ .debug_info    0x0000f495      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_info    0x0000f718      0x2c4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+ .debug_info    0x0000f9dc      0x1a8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+ .debug_info    0x0000fb84      0x1a8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+ .debug_info    0x0000fd2c      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
+ .debug_info    0x0000ffaf      0x1aa .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+ .debug_info    0x00010159      0x283 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
+ .debug_info    0x000103dc       0xd0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
+ .debug_info    0x000104ac       0xe5 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
+ .debug_info    0x00010591       0xdc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
+ .debug_info    0x0001066d       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
+ .debug_info    0x0001074d       0xd5 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
+ .debug_info    0x00010822      0x64d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
+ .debug_info    0x00010e6f      0x550 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
+ .debug_info    0x000113bf      0x43d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
+ .debug_info    0x000117fc      0x487 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
+ .debug_info    0x00011c83      0x501 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+ .debug_info    0x00012184      0x6f9 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+ .debug_info    0x0001287d      0x36c .\source\bsw\fft_application\libfft_application.a(fft_application.o)
+ .debug_info    0x00012be9      0x4f7 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+ .debug_info    0x000130e0      0x327 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+ .debug_info    0x00013407      0x4a3 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+ .debug_info    0x000138aa      0x815 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+ .debug_info    0x000140bf      0xd8a .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+ .debug_info    0x00014e49       0xac .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
+ .debug_info    0x00014ef5      0x976 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
 
-.debug_abbrev   0x00000000     0x5278
+.debug_abbrev   0x00000000     0x52d1
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x2a5 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_abbrev  0x000002a5      0x1c4 .\CortexM3\ARM_GCC_541\Debug\detector.o
- .debug_abbrev  0x00000469      0x194 .\CortexM3\ARM_GCC_541\Debug\cfar.o
- .debug_abbrev  0x000005fd      0x1a9 .\CortexM3\ARM_GCC_541\Debug\led.o
- .debug_abbrev  0x000007a6       0xb6 .\CortexM3\ARM_GCC_541\Debug\uart.o
- .debug_abbrev  0x0000085c      0x145 .\CortexM3\ARM_GCC_541\Debug\dma.o
- .debug_abbrev  0x000009a1      0x137 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
- .debug_abbrev  0x00000ad8      0x21e .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x00000cf6       0x77 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x00000d6d      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_abbrev  0x00000f55      0x1b2 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
- .debug_abbrev  0x00001107      0x254 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
- .debug_abbrev  0x0000135b      0x1ab .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
- .debug_abbrev  0x00001506      0x284 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
- .debug_abbrev  0x0000178a      0x362 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
- .debug_abbrev  0x00001aec      0x1e0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
- .debug_abbrev  0x00001ccc      0x150 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
- .debug_abbrev  0x00001e1c      0x27f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
- .debug_abbrev  0x0000209b      0x25d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
- .debug_abbrev  0x000022f8      0x1da .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
- .debug_abbrev  0x000024d2       0xcf .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
- .debug_abbrev  0x000025a1       0xfc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
- .debug_abbrev  0x0000269d       0xed .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
- .debug_abbrev  0x0000278a      0x109 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
- .debug_abbrev  0x00002893      0x4a7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
- .debug_abbrev  0x00002d3a      0x1de .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
- .debug_abbrev  0x00002f18      0x1f0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
- .debug_abbrev  0x00003108       0xcf .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
- .debug_abbrev  0x000031d7      0x127 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
- .debug_abbrev  0x000032fe       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
- .debug_abbrev  0x0000338e       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
- .debug_abbrev  0x0000341e       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
- .debug_abbrev  0x000034ae      0x175 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
- .debug_abbrev  0x00003623      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
- .debug_abbrev  0x0000375c      0x1eb .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
- .debug_abbrev  0x00003947       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
- .debug_abbrev  0x00003989       0xb1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
- .debug_abbrev  0x00003a3a      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_abbrev  0x00003b73      0x121 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
- .debug_abbrev  0x00003c94       0xcd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
- .debug_abbrev  0x00003d61       0xcd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
- .debug_abbrev  0x00003e2e      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
- .debug_abbrev  0x00003f67       0xcd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
- .debug_abbrev  0x00004034      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
- .debug_abbrev  0x0000416d       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00004181       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
- .debug_abbrev  0x00004195       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
- .debug_abbrev  0x000041a9       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
- .debug_abbrev  0x000041bd       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
- .debug_abbrev  0x000041d1      0x1a7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
- .debug_abbrev  0x00004378      0x194 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
- .debug_abbrev  0x0000450c      0x157 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
- .debug_abbrev  0x00004663      0x143 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
- .debug_abbrev  0x000047a6      0x156 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
- .debug_abbrev  0x000048fc      0x229 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
- .debug_abbrev  0x00004b25      0x15d .\source\bsw\fft_application\libfft_application.a(fft_application.o)
- .debug_abbrev  0x00004c82      0x128 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
- .debug_abbrev  0x00004daa      0x12e .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
- .debug_abbrev  0x00004ed8       0xfb .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
- .debug_abbrev  0x00004fd3      0x142 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
- .debug_abbrev  0x00005115       0xcb .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
- .debug_abbrev  0x000051e0       0x14 .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
- .debug_abbrev  0x000051f4       0x84 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+ .debug_abbrev  0x000002a5      0x214 .\CortexM3\ARM_GCC_541\Debug\detector.o
+ .debug_abbrev  0x000004b9      0x194 .\CortexM3\ARM_GCC_541\Debug\cfar.o
+ .debug_abbrev  0x0000064d      0x1a9 .\CortexM3\ARM_GCC_541\Debug\led.o
+ .debug_abbrev  0x000007f6       0xb6 .\CortexM3\ARM_GCC_541\Debug\uart.o
+ .debug_abbrev  0x000008ac      0x145 .\CortexM3\ARM_GCC_541\Debug\dma.o
+ .debug_abbrev  0x000009f1      0x137 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+ .debug_abbrev  0x00000b28      0x21e .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x00000d46       0x77 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x00000dbd      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_abbrev  0x00000fa5      0x1b2 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+ .debug_abbrev  0x00001157      0x254 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+ .debug_abbrev  0x000013ab      0x1ab .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
+ .debug_abbrev  0x00001556      0x284 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
+ .debug_abbrev  0x000017da      0x362 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+ .debug_abbrev  0x00001b3c      0x1e0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
+ .debug_abbrev  0x00001d1c      0x150 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
+ .debug_abbrev  0x00001e6c      0x27f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
+ .debug_abbrev  0x000020eb      0x25d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
+ .debug_abbrev  0x00002348      0x1da .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+ .debug_abbrev  0x00002522       0xcf .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
+ .debug_abbrev  0x000025f1       0xfc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
+ .debug_abbrev  0x000026ed       0xed .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
+ .debug_abbrev  0x000027da      0x109 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
+ .debug_abbrev  0x000028e3      0x4a7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+ .debug_abbrev  0x00002d8a      0x1de .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
+ .debug_abbrev  0x00002f68      0x1f0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
+ .debug_abbrev  0x00003158       0xcf .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
+ .debug_abbrev  0x00003227      0x130 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+ .debug_abbrev  0x00003357       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
+ .debug_abbrev  0x000033e7       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
+ .debug_abbrev  0x00003477       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
+ .debug_abbrev  0x00003507      0x175 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+ .debug_abbrev  0x0000367c      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
+ .debug_abbrev  0x000037b5      0x1eb .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+ .debug_abbrev  0x000039a0       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
+ .debug_abbrev  0x000039e2       0xb1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+ .debug_abbrev  0x00003a93      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_abbrev  0x00003bcc      0x121 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+ .debug_abbrev  0x00003ced       0xcd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+ .debug_abbrev  0x00003dba       0xcd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+ .debug_abbrev  0x00003e87      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
+ .debug_abbrev  0x00003fc0       0xcd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+ .debug_abbrev  0x0000408d      0x139 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
+ .debug_abbrev  0x000041c6       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x000041da       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
+ .debug_abbrev  0x000041ee       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
+ .debug_abbrev  0x00004202       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
+ .debug_abbrev  0x00004216       0x14 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
+ .debug_abbrev  0x0000422a      0x1a7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
+ .debug_abbrev  0x000043d1      0x194 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
+ .debug_abbrev  0x00004565      0x157 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
+ .debug_abbrev  0x000046bc      0x143 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
+ .debug_abbrev  0x000047ff      0x156 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+ .debug_abbrev  0x00004955      0x229 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+ .debug_abbrev  0x00004b7e      0x15d .\source\bsw\fft_application\libfft_application.a(fft_application.o)
+ .debug_abbrev  0x00004cdb      0x128 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+ .debug_abbrev  0x00004e03      0x12e .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+ .debug_abbrev  0x00004f31       0xfb .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+ .debug_abbrev  0x0000502c      0x142 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+ .debug_abbrev  0x0000516e       0xcb .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+ .debug_abbrev  0x00005239       0x14 .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
+ .debug_abbrev  0x0000524d       0x84 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
 
-.debug_line     0x00000000     0x7a1b
+.debug_line     0x00000000     0x7a8a
  *(.debug_line)
- .debug_line    0x00000000      0x79c .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_line    0x0000079c      0x35e .\CortexM3\ARM_GCC_541\Debug\detector.o
- .debug_line    0x00000afa      0x333 .\CortexM3\ARM_GCC_541\Debug\cfar.o
- .debug_line    0x00000e2d      0x2f8 .\CortexM3\ARM_GCC_541\Debug\led.o
- .debug_line    0x00001125       0x75 .\CortexM3\ARM_GCC_541\Debug\uart.o
- .debug_line    0x0000119a      0x2f9 .\CortexM3\ARM_GCC_541\Debug\dma.o
- .debug_line    0x00001493      0x270 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
- .debug_line    0x00001703      0x20b .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x0000190e      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00001a4f      0x241 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_line    0x00001c90      0x2e4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
- .debug_line    0x00001f74      0x816 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
- .debug_line    0x0000278a      0x367 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
- .debug_line    0x00002af1      0x1e6 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
- .debug_line    0x00002cd7      0x2f1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
- .debug_line    0x00002fc8      0x1c1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
- .debug_line    0x00003189      0x14b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
- .debug_line    0x000032d4      0x1e3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
- .debug_line    0x000034b7      0x1ef .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
- .debug_line    0x000036a6      0x190 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
- .debug_line    0x00003836      0x10b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
- .debug_line    0x00003941      0x14b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
- .debug_line    0x00003a8c      0x142 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
- .debug_line    0x00003bce      0x146 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
- .debug_line    0x00003d14      0x3e8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
- .debug_line    0x000040fc      0x1ac .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
- .debug_line    0x000042a8      0x180 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
- .debug_line    0x00004428       0xed .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
- .debug_line    0x00004515      0x12c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
- .debug_line    0x00004641       0x96 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
- .debug_line    0x000046d7       0x97 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
- .debug_line    0x0000476e       0x94 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
- .debug_line    0x00004802      0x2c4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
- .debug_line    0x00004ac6      0x180 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
- .debug_line    0x00004c46      0x372 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
- .debug_line    0x00004fb8       0x87 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
- .debug_line    0x0000503f       0xb3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
- .debug_line    0x000050f2      0x184 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_line    0x00005276      0x1a4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
- .debug_line    0x0000541a       0x88 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
- .debug_line    0x000054a2       0x89 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
- .debug_line    0x0000552b      0x181 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
- .debug_line    0x000056ac       0x89 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
- .debug_line    0x00005735      0x181 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
- .debug_line    0x000058b6       0x66 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
- .debug_line    0x0000591c       0xac .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
- .debug_line    0x000059c8       0x72 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
- .debug_line    0x00005a3a       0x9b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
- .debug_line    0x00005ad5       0x97 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
- .debug_line    0x00005b6c      0x21a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
- .debug_line    0x00005d86      0x260 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
- .debug_line    0x00005fe6      0x169 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
- .debug_line    0x0000614f      0x160 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
- .debug_line    0x000062af      0x19a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
- .debug_line    0x00006449      0x1b7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
- .debug_line    0x00006600      0x22f .\source\bsw\fft_application\libfft_application.a(fft_application.o)
- .debug_line    0x0000682f      0x1ff .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
- .debug_line    0x00006a2e      0x1dd .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
- .debug_line    0x00006c0b      0x2f5 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
- .debug_line    0x00006f00      0x792 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
- .debug_line    0x00007692      0x17c .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
- .debug_line    0x0000780e       0xa8 .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
- .debug_line    0x000078b6      0x165 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+ .debug_line    0x00000000      0x7a8 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000007a8      0x3c1 .\CortexM3\ARM_GCC_541\Debug\detector.o
+ .debug_line    0x00000b69      0x333 .\CortexM3\ARM_GCC_541\Debug\cfar.o
+ .debug_line    0x00000e9c      0x2f8 .\CortexM3\ARM_GCC_541\Debug\led.o
+ .debug_line    0x00001194       0x75 .\CortexM3\ARM_GCC_541\Debug\uart.o
+ .debug_line    0x00001209      0x2f9 .\CortexM3\ARM_GCC_541\Debug\dma.o
+ .debug_line    0x00001502      0x270 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+ .debug_line    0x00001772      0x20b .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x0000197d      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00001abe      0x241 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00001cff      0x2e4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+ .debug_line    0x00001fe3      0x816 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+ .debug_line    0x000027f9      0x367 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
+ .debug_line    0x00002b60      0x1e6 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
+ .debug_line    0x00002d46      0x2f1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+ .debug_line    0x00003037      0x1c1 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
+ .debug_line    0x000031f8      0x14b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
+ .debug_line    0x00003343      0x1e3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
+ .debug_line    0x00003526      0x1ef .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
+ .debug_line    0x00003715      0x190 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+ .debug_line    0x000038a5      0x10b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
+ .debug_line    0x000039b0      0x14b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
+ .debug_line    0x00003afb      0x142 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
+ .debug_line    0x00003c3d      0x146 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
+ .debug_line    0x00003d83      0x3e8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+ .debug_line    0x0000416b      0x1ac .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
+ .debug_line    0x00004317      0x180 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
+ .debug_line    0x00004497       0xed .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
+ .debug_line    0x00004584      0x12c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+ .debug_line    0x000046b0       0x96 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
+ .debug_line    0x00004746       0x97 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
+ .debug_line    0x000047dd       0x94 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
+ .debug_line    0x00004871      0x2c4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+ .debug_line    0x00004b35      0x180 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
+ .debug_line    0x00004cb5      0x372 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+ .debug_line    0x00005027       0x87 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
+ .debug_line    0x000050ae       0xb3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+ .debug_line    0x00005161      0x184 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_line    0x000052e5      0x1a4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+ .debug_line    0x00005489       0x88 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+ .debug_line    0x00005511       0x89 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+ .debug_line    0x0000559a      0x181 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
+ .debug_line    0x0000571b       0x89 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+ .debug_line    0x000057a4      0x181 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
+ .debug_line    0x00005925       0x66 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyBootAsmGnu.o)
+ .debug_line    0x0000598b       0xac .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_change_context_isr.o)
+ .debug_line    0x00005a37       0x72 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_irq_stack.o)
+ .debug_line    0x00005aa9       0x9b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_multi_context.o)
+ .debug_line    0x00005b44       0x97 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_gnu_oo.o)
+ .debug_line    0x00005bdb      0x21a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
+ .debug_line    0x00005df5      0x260 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
+ .debug_line    0x00006055      0x169 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
+ .debug_line    0x000061be      0x160 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
+ .debug_line    0x0000631e      0x19a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+ .debug_line    0x000064b8      0x1b7 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+ .debug_line    0x0000666f      0x22f .\source\bsw\fft_application\libfft_application.a(fft_application.o)
+ .debug_line    0x0000689e      0x1ff .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+ .debug_line    0x00006a9d      0x1dd .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+ .debug_line    0x00006c7a      0x2f5 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+ .debug_line    0x00006f6f      0x792 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+ .debug_line    0x00007701      0x17c .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+ .debug_line    0x0000787d       0xa8 .\source\bsw\fft_application\libfft_application.a(arm_bitreversal2.o)
+ .debug_line    0x00007925      0x165 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
 
-.debug_frame    0x00000000     0x2b74
+.debug_frame    0x00000000     0x2b80
  *(.debug_frame)
  .debug_frame   0x00000000      0x240 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_frame   0x00000240       0x88 .\CortexM3\ARM_GCC_541\Debug\detector.o
- .debug_frame   0x000002c8       0x78 .\CortexM3\ARM_GCC_541\Debug\cfar.o
- .debug_frame   0x00000340       0x6c .\CortexM3\ARM_GCC_541\Debug\led.o
- .debug_frame   0x000003ac       0x2c .\CortexM3\ARM_GCC_541\Debug\uart.o
- .debug_frame   0x000003d8       0x4c .\CortexM3\ARM_GCC_541\Debug\dma.o
- .debug_frame   0x00000424       0x74 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
- .debug_frame   0x00000498      0x104 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_frame   0x0000059c       0xb8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_frame   0x00000654      0x1f8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
- .debug_frame   0x0000084c      0x738 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
- .debug_frame   0x00000f84      0x1f8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
- .debug_frame   0x0000117c       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
- .debug_frame   0x000011ac      0x10c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
- .debug_frame   0x000012b8       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
- .debug_frame   0x000012f0       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
- .debug_frame   0x00001310       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
- .debug_frame   0x00001340       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
- .debug_frame   0x00001370       0x58 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
- .debug_frame   0x000013c8       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
- .debug_frame   0x00001404       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
- .debug_frame   0x00001424       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
- .debug_frame   0x00001454       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
- .debug_frame   0x000014e4       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
- .debug_frame   0x00001510       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
- .debug_frame   0x00001540       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
- .debug_frame   0x00001590       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
- .debug_frame   0x000015e0       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
- .debug_frame   0x00001630      0x250 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
- .debug_frame   0x00001880       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
- .debug_frame   0x00001960      0x278 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
- .debug_frame   0x00001bd8       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
- .debug_frame   0x00001c28       0x64 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
- .debug_frame   0x00001c8c       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_frame   0x00001d6c      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
- .debug_frame   0x00001e6c       0x54 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
- .debug_frame   0x00001ec0       0x54 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
- .debug_frame   0x00001f14       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
- .debug_frame   0x00001ff4       0x54 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
- .debug_frame   0x00002048       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
- .debug_frame   0x00002128      0x194 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
- .debug_frame   0x000022bc      0x180 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
- .debug_frame   0x0000243c       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
- .debug_frame   0x00002468       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
- .debug_frame   0x00002494       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
- .debug_frame   0x000024d0       0x5c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
- .debug_frame   0x0000252c       0x38 .\source\bsw\fft_application\libfft_application.a(fft_application.o)
- .debug_frame   0x00002564       0xac .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
- .debug_frame   0x00002610       0x2c .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
- .debug_frame   0x0000263c       0xa0 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
- .debug_frame   0x000026dc       0xa0 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
- .debug_frame   0x0000277c       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-w_pow.o)
- .debug_frame   0x000027c8       0x68 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_pow.o)
- .debug_frame   0x00002830       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_sqrt.o)
- .debug_frame   0x00002860       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
- .debug_frame   0x00002880       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_finite.o)
- .debug_frame   0x000028a0       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_matherr.o)
- .debug_frame   0x000028c0       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_nan.o)
- .debug_frame   0x000028e0       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_rint.o)
- .debug_frame   0x0000291c       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
- .debug_frame   0x0000294c       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
- .debug_frame   0x0000296c       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x0000298c       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x000029b4       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x000029e0       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
- .debug_frame   0x00002a10       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00002a38       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
- .debug_frame   0x00002a58       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x00002a90       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x00002abc       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x00002ae8       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
- .debug_frame   0x00002b18       0x5c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
+ .debug_frame   0x00000240       0x94 .\CortexM3\ARM_GCC_541\Debug\detector.o
+ .debug_frame   0x000002d4       0x78 .\CortexM3\ARM_GCC_541\Debug\cfar.o
+ .debug_frame   0x0000034c       0x6c .\CortexM3\ARM_GCC_541\Debug\led.o
+ .debug_frame   0x000003b8       0x2c .\CortexM3\ARM_GCC_541\Debug\uart.o
+ .debug_frame   0x000003e4       0x4c .\CortexM3\ARM_GCC_541\Debug\dma.o
+ .debug_frame   0x00000430       0x74 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+ .debug_frame   0x000004a4      0x104 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x000005a8       0xb8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_frame   0x00000660      0x1f8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+ .debug_frame   0x00000858      0x738 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+ .debug_frame   0x00000f90      0x1f8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
+ .debug_frame   0x00001188       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
+ .debug_frame   0x000011b8      0x10c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+ .debug_frame   0x000012c4       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
+ .debug_frame   0x000012fc       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
+ .debug_frame   0x0000131c       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
+ .debug_frame   0x0000134c       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
+ .debug_frame   0x0000137c       0x58 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+ .debug_frame   0x000013d4       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
+ .debug_frame   0x00001410       0x20 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
+ .debug_frame   0x00001430       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
+ .debug_frame   0x00001460       0x90 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+ .debug_frame   0x000014f0       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
+ .debug_frame   0x0000151c       0x30 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
+ .debug_frame   0x0000154c       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
+ .debug_frame   0x0000159c       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
+ .debug_frame   0x000015ec       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
+ .debug_frame   0x0000163c      0x250 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+ .debug_frame   0x0000188c       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
+ .debug_frame   0x0000196c      0x278 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+ .debug_frame   0x00001be4       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
+ .debug_frame   0x00001c34       0x64 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+ .debug_frame   0x00001c98       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_frame   0x00001d78      0x100 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+ .debug_frame   0x00001e78       0x54 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+ .debug_frame   0x00001ecc       0x54 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+ .debug_frame   0x00001f20       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
+ .debug_frame   0x00002000       0x54 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+ .debug_frame   0x00002054       0xe0 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
+ .debug_frame   0x00002134      0x194 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
+ .debug_frame   0x000022c8      0x180 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
+ .debug_frame   0x00002448       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
+ .debug_frame   0x00002474       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
+ .debug_frame   0x000024a0       0x3c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+ .debug_frame   0x000024dc       0x5c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+ .debug_frame   0x00002538       0x38 .\source\bsw\fft_application\libfft_application.a(fft_application.o)
+ .debug_frame   0x00002570       0xac .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+ .debug_frame   0x0000261c       0x2c .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+ .debug_frame   0x00002648       0xa0 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+ .debug_frame   0x000026e8       0xa0 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+ .debug_frame   0x00002788       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-w_pow.o)
+ .debug_frame   0x000027d4       0x68 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_pow.o)
+ .debug_frame   0x0000283c       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-e_sqrt.o)
+ .debug_frame   0x0000286c       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x0000288c       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_finite.o)
+ .debug_frame   0x000028ac       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x000028cc       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_nan.o)
+ .debug_frame   0x000028ec       0x3c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_rint.o)
+ .debug_frame   0x00002928       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00002958       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libm.a(lib_a-s_copysign.o)
+ .debug_frame   0x00002978       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00002998       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x000029c0       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000029ec       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-malloc.o)
+ .debug_frame   0x00002a1c       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00002a44       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00002a64       0x38 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x00002a9c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00002ac8       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x00002af4       0x30 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mlock.o)
+ .debug_frame   0x00002b24       0x5c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-reent.o)
 
-.debug_str      0x00000000     0x5bce
+.debug_str      0x00000000     0x5bd1
  *(.debug_str)
- .debug_str     0x00000000      0x674 .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x732 (size before relaxing)
- .debug_str     0x00000674      0x453 .\CortexM3\ARM_GCC_541\Debug\detector.o
-                                0x7e5 (size before relaxing)
- .debug_str     0x00000ac7       0x4a .\CortexM3\ARM_GCC_541\Debug\cfar.o
+ .debug_str     0x00000000      0x67c .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x73a (size before relaxing)
+ .debug_str     0x0000067c      0x47c .\CortexM3\ARM_GCC_541\Debug\detector.o
+                                0x80e (size before relaxing)
+ .debug_str     0x00000af8       0x4a .\CortexM3\ARM_GCC_541\Debug\cfar.o
                                 0x447 (size before relaxing)
- .debug_str     0x00000b11       0xa0 .\CortexM3\ARM_GCC_541\Debug\led.o
+ .debug_str     0x00000b42       0xa0 .\CortexM3\ARM_GCC_541\Debug\led.o
                                 0x53a (size before relaxing)
- .debug_str     0x00000bb1       0x4a .\CortexM3\ARM_GCC_541\Debug\uart.o
+ .debug_str     0x00000be2       0x4a .\CortexM3\ARM_GCC_541\Debug\uart.o
                                 0x3e5 (size before relaxing)
- .debug_str     0x00000bfb      0x145 .\CortexM3\ARM_GCC_541\Debug\dma.o
+ .debug_str     0x00000c2c      0x145 .\CortexM3\ARM_GCC_541\Debug\dma.o
                                 0x69b (size before relaxing)
- .debug_str     0x00000d40       0xc7 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+ .debug_str     0x00000d71       0xc7 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
                                 0x536 (size before relaxing)
- .debug_str     0x00000e07      0x1c3 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x00000e38      0x1c3 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x3b7 (size before relaxing)
- .debug_str     0x00000fca       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000ffb       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                                 0x224 (size before relaxing)
- .debug_str     0x0000103f      0x14f .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_str     0x00001070      0x14f .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
                                 0x35a (size before relaxing)
- .debug_str     0x0000118e      0x303 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+ .debug_str     0x000011bf      0x303 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
                                 0x58a (size before relaxing)
- .debug_str     0x00001491      0x7ea .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+ .debug_str     0x000014c2      0x7e2 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
                                 0xa87 (size before relaxing)
- .debug_str     0x00001c7b      0x365 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
+ .debug_str     0x00001ca4      0x365 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
                                 0x773 (size before relaxing)
- .debug_str     0x00001fe0      0x5be .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
+ .debug_str     0x00002009      0x5be .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
                                 0x845 (size before relaxing)
- .debug_str     0x0000259e      0x25f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+ .debug_str     0x000025c7      0x25f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
                                 0xaa0 (size before relaxing)
- .debug_str     0x000027fd       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
+ .debug_str     0x00002826       0x2c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
                                 0x61d (size before relaxing)
- .debug_str     0x00002829       0x5b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
+ .debug_str     0x00002852       0x5b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
                                 0x58d (size before relaxing)
- .debug_str     0x00002884       0x2a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
+ .debug_str     0x000028ad       0x2a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
                                 0x81d (size before relaxing)
- .debug_str     0x000028ae       0x8d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
+ .debug_str     0x000028d7       0x8d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
                                 0x861 (size before relaxing)
- .debug_str     0x0000293b       0xc8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+ .debug_str     0x00002964       0xc8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
                                 0x6fa (size before relaxing)
- .debug_str     0x00002a03       0x2b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
+ .debug_str     0x00002a2c       0x2b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_lookup.o)
                                 0x4c9 (size before relaxing)
- .debug_str     0x00002a2e       0x8a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
+ .debug_str     0x00002a57       0x8a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
                                 0x53b (size before relaxing)
- .debug_str     0x00002ab8       0x2d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
+ .debug_str     0x00002ae1       0x2d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
                                 0x506 (size before relaxing)
- .debug_str     0x00002ae5       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
+ .debug_str     0x00002b0e       0x38 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
                                 0x540 (size before relaxing)
- .debug_str     0x00002b1d      0x8a8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+ .debug_str     0x00002b46      0x8a8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
                                0x176c (size before relaxing)
- .debug_str     0x000033c5       0x5b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
+ .debug_str     0x000033ee       0x5b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
                                 0x62a (size before relaxing)
- .debug_str     0x00003420       0x71 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
+ .debug_str     0x00003449       0x71 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
                                 0x598 (size before relaxing)
- .debug_str     0x00003491       0x37 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
+ .debug_str     0x000034ba       0x37 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_common_ee_hal_structs.o)
                                 0x4d5 (size before relaxing)
- .debug_str     0x000034c8      0x19d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
-                                0x823 (size before relaxing)
- .debug_str     0x00003665       0x6a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
+ .debug_str     0x000034f1      0x188 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_eecfg.o)
+                                0x80e (size before relaxing)
+ .debug_str     0x00003679       0x6a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
                                 0x236 (size before relaxing)
- .debug_str     0x000036cf       0x63 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
+ .debug_str     0x000036e3       0x63 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
                                 0x23b (size before relaxing)
- .debug_str     0x00003732       0x57 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
+ .debug_str     0x00003746       0x57 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
                                 0x22c (size before relaxing)
- .debug_str     0x00003789      0x2fb .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+ .debug_str     0x0000379d      0x2ea .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
                                 0x531 (size before relaxing)
- .debug_str     0x00003a84      0x1ab .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
+ .debug_str     0x00003a87      0x1ab .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
                                 0x3a6 (size before relaxing)
- .debug_str     0x00003c2f      0x43d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+ .debug_str     0x00003c32      0x43d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
                                 0x728 (size before relaxing)
- .debug_str     0x0000406c       0x68 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
+ .debug_str     0x0000406f       0x68 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_INT.o)
                                 0x223 (size before relaxing)
- .debug_str     0x000040d4       0x7b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+ .debug_str     0x000040d7       0x7b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
                                 0x270 (size before relaxing)
- .debug_str     0x0000414f      0x170 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_str     0x00004152      0x170 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
                                 0x3d6 (size before relaxing)
- .debug_str     0x000042bf      0x1a3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+ .debug_str     0x000042c2      0x1a3 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
                                 0x403 (size before relaxing)
- .debug_str     0x00004462       0x91 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+ .debug_str     0x00004465       0x91 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
                                 0x2c4 (size before relaxing)
- .debug_str     0x000044f3       0x59 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+ .debug_str     0x000044f6       0x59 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
                                 0x2c8 (size before relaxing)
- .debug_str     0x0000454c      0x182 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
+ .debug_str     0x0000454f      0x182 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
                                 0x3b2 (size before relaxing)
- .debug_str     0x000046ce       0x59 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+ .debug_str     0x000046d1       0x59 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
                                 0x2c8 (size before relaxing)
- .debug_str     0x00004727      0x182 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
+ .debug_str     0x0000472a      0x182 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
                                 0x3b2 (size before relaxing)
- .debug_str     0x000048a9       0x6c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
+ .debug_str     0x000048ac       0x6c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
                                 0x400 (size before relaxing)
- .debug_str     0x00004915       0x64 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
+ .debug_str     0x00004918       0x64 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
                                 0x378 (size before relaxing)
- .debug_str     0x00004979       0x56 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
+ .debug_str     0x0000497c       0x56 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tnterm.o)
                                 0x53c (size before relaxing)
- .debug_str     0x000049cf       0x55 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
+ .debug_str     0x000049d2       0x55 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_tstub.o)
                                 0x613 (size before relaxing)
- .debug_str     0x00004a24       0x8a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+ .debug_str     0x00004a27       0x8a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
                                 0x5ca (size before relaxing)
- .debug_str     0x00004aae       0x67 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+ .debug_str     0x00004ab1       0x67 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
                                 0x790 (size before relaxing)
- .debug_str     0x00004b15      0x2af .\source\bsw\fft_application\libfft_application.a(fft_application.o)
+ .debug_str     0x00004b18      0x2af .\source\bsw\fft_application\libfft_application.a(fft_application.o)
                                 0x3d0 (size before relaxing)
- .debug_str     0x00004dc4       0xe6 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+ .debug_str     0x00004dc7       0xe6 .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
                                 0x390 (size before relaxing)
- .debug_str     0x00004eaa      0x132 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+ .debug_str     0x00004ead      0x132 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
                                 0x479 (size before relaxing)
- .debug_str     0x00004fdc       0xd5 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+ .debug_str     0x00004fdf       0xd5 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
                                 0x334 (size before relaxing)
- .debug_str     0x000050b1      0x104 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+ .debug_str     0x000050b4      0x104 .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
                                 0x37c (size before relaxing)
- .debug_str     0x000051b5      0x987 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
+ .debug_str     0x000051b8      0x987 .\source\bsw\fft_application\libfft_application.a(arm_const_structs.o)
                                 0xd0d (size before relaxing)
- .debug_str     0x00005b3c       0x92 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
+ .debug_str     0x00005b3f       0x92 .\source\bsw\fft_application\libfft_application.a(arm_common_tables.o)
                                 0x6f2 (size before relaxing)
 
-.debug_loc      0x00000000     0x742c
+.debug_loc      0x00000000     0x74ce
  *(.debug_loc)
  .debug_loc     0x00000000      0x3b6 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_loc     0x000003b6      0x13d .\CortexM3\ARM_GCC_541\Debug\detector.o
- .debug_loc     0x000004f3      0x269 .\CortexM3\ARM_GCC_541\Debug\cfar.o
- .debug_loc     0x0000075c      0x2bf .\CortexM3\ARM_GCC_541\Debug\led.o
- .debug_loc     0x00000a1b      0x1ab .\CortexM3\ARM_GCC_541\Debug\dma.o
- .debug_loc     0x00000bc6       0x74 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
- .debug_loc     0x00000c3a      0x219 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x00000e53      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_loc     0x00000f97      0xb8e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
- .debug_loc     0x00001b25      0xa11 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
- .debug_loc     0x00002536      0x1e4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
- .debug_loc     0x0000271a      0x12d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
- .debug_loc     0x00002847      0x46c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
- .debug_loc     0x00002cb3       0xbc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
- .debug_loc     0x00002d6f       0xa4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
- .debug_loc     0x00002e13      0x16b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
- .debug_loc     0x00002f7e      0x13f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
- .debug_loc     0x000030bd       0x62 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
- .debug_loc     0x0000311f       0x4a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
- .debug_loc     0x00003169       0x36 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
- .debug_loc     0x0000319f       0x1e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
- .debug_loc     0x000031bd      0x1d8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
- .debug_loc     0x00003395       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
- .debug_loc     0x000033e5       0x13 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
- .debug_loc     0x000033f8       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
- .debug_loc     0x0000343a       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
- .debug_loc     0x0000347c       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
- .debug_loc     0x000034be      0x258 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
- .debug_loc     0x00003716      0x128 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
- .debug_loc     0x0000383e      0x681 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
- .debug_loc     0x00003ebf       0x6c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
- .debug_loc     0x00003f2b      0x12c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_loc     0x00004057      0x14d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
- .debug_loc     0x000041a4       0x84 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
- .debug_loc     0x00004228       0x84 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
- .debug_loc     0x000042ac      0x128 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
- .debug_loc     0x000043d4       0x84 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
- .debug_loc     0x00004458      0x128 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
- .debug_loc     0x00004580      0x3b2 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
- .debug_loc     0x00004932      0x705 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
- .debug_loc     0x00005037       0xc5 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
- .debug_loc     0x000050fc       0xdd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
- .debug_loc     0x000051d9       0xa6 .\source\bsw\fft_application\libfft_application.a(fft_application.o)
- .debug_loc     0x0000527f      0x71b .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
- .debug_loc     0x0000599a      0x244 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
- .debug_loc     0x00005bde      0x4d4 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
- .debug_loc     0x000060b2     0x137a .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
+ .debug_loc     0x000003b6      0x1df .\CortexM3\ARM_GCC_541\Debug\detector.o
+ .debug_loc     0x00000595      0x269 .\CortexM3\ARM_GCC_541\Debug\cfar.o
+ .debug_loc     0x000007fe      0x2bf .\CortexM3\ARM_GCC_541\Debug\led.o
+ .debug_loc     0x00000abd      0x1ab .\CortexM3\ARM_GCC_541\Debug\dma.o
+ .debug_loc     0x00000c68       0x74 .\CortexM3\ARM_GCC_541\Debug\dac_adc.o
+ .debug_loc     0x00000cdc      0x219 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x00000ef5      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_loc     0x00001039      0xb8e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyDmac.o)
+ .debug_loc     0x00001bc7      0xa11 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyLib.o)
+ .debug_loc     0x000025d8      0x1e4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(cyPm.o)
+ .debug_loc     0x000027bc      0x12d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_activate.o)
+ .debug_loc     0x000028e9      0x46c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_altick.o)
+ .debug_loc     0x00002d55       0xbc .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evclear.o)
+ .debug_loc     0x00002e11       0xa4 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evget.o)
+ .debug_loc     0x00002eb5      0x16b .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evset.o)
+ .debug_loc     0x00003020      0x13f .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_evwait.o)
+ .debug_loc     0x0000315f       0x62 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_irqendin.o)
+ .debug_loc     0x000031c1       0x4a .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_exchg.o)
+ .debug_loc     0x0000320b       0x36 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_first.o)
+ .debug_loc     0x00003241       0x1e .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_rq_inser.o)
+ .debug_loc     0x0000325f      0x1d8 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_startos.o)
+ .debug_loc     0x00003437       0x50 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_terminat.o)
+ .debug_loc     0x00003487       0x13 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_utils.o)
+ .debug_loc     0x0000349a       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_green.o)
+ .debug_loc     0x000034dc       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_orange.o)
+ .debug_loc     0x0000351e       0x42 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(LED_red.o)
+ .debug_loc     0x00003560      0x258 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG.o)
+ .debug_loc     0x000037b8      0x128 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(UART_LOG_IntClock.o)
+ .debug_loc     0x000038e0      0x681 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig.o)
+ .debug_loc     0x00003f61       0x6c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_AMux.o)
+ .debug_loc     0x00003fcd      0x12c .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_loc     0x000040f9      0x14d .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ADC_DelSig_theACLK.o)
+ .debug_loc     0x00004246       0x84 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_ADC_MEM_dma.o)
+ .debug_loc     0x000042ca       0x84 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_MEM_UART_dma.o)
+ .debug_loc     0x0000434e      0x128 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_MEM_UART.o)
+ .debug_loc     0x00004476       0x84 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(DMA_FFT_UART_dma.o)
+ .debug_loc     0x000044fa      0x128 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(Clock_DMA_FFT_UART.o)
+ .debug_loc     0x00004622      0x3b2 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CyFlash.o)
+ .debug_loc     0x000049d4      0x705 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(CySpc.o)
+ .debug_loc     0x000050d9       0xc5 .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_cortex_mx_ee_context.o)
+ .debug_loc     0x0000519e       0xdd .\CortexM3\ARM_GCC_541\Debug\RADAR_Movement_Detector.a(ErikaOS_ee_thendin.o)
+ .debug_loc     0x0000527b       0xa6 .\source\bsw\fft_application\libfft_application.a(fft_application.o)
+ .debug_loc     0x00005321      0x71b .\source\bsw\fft_application\libfft_application.a(arm_rfft_q31.o)
+ .debug_loc     0x00005a3c      0x244 .\source\bsw\fft_application\libfft_application.a(arm_rfft_init_q31.o)
+ .debug_loc     0x00005c80      0x4d4 .\source\bsw\fft_application\libfft_application.a(arm_cfft_q31.o)
+ .debug_loc     0x00006154     0x137a .\source\bsw\fft_application\libfft_application.a(arm_cfft_radix4_q31.o)
 
 .debug_macinfo
  *(.debug_macinfo)

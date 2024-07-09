@@ -103,7 +103,6 @@ TASK(tsk_control)
 TASK(tsk_background)
 {
     
-    
     while(1)
     {
 
@@ -142,6 +141,7 @@ ISR2(isr_pushButton){
 
 ISR2(isr_DMA_MEM_UART){
     
+    CyDelay(1000);
     SetEvent(tsk_control, ev_sendFFT);
     
 

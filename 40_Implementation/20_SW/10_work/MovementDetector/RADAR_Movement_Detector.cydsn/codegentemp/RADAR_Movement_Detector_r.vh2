@@ -1,5 +1,5 @@
 -- Project:   RADAR_Movement_Detector
--- Generated: 07/08/2024 21:53:38
+-- Generated: 07/09/2024 14:18:11
 -- PSoC Creator  4.4
 
 ENTITY RADAR_Movement_Detector IS

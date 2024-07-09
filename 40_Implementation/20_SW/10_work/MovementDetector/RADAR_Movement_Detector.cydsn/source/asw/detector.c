@@ -184,16 +184,16 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     
                     DMA_Set(DMA_ADC_TO_MEMORY, DMA_OFF);
-                    DMA_Set(DMA_MEMORY_TO_UART, DMA_ON);
+                    //DMA_Set(DMA_MEMORY_TO_UART, DMA_ON);
                     fft_app(ADCBuffer,fftBuffer,1024); //
                     
                     CFAR_reset_output(&cfarOutput);
                     calculateCFAR(fftBuffer, &cfarInput, &cfarOutput); 
                     if (cfarOutput.numberTargets > 0){
-                        LED_Set(LED_ORANGE, LED_ON);
+                        LED_Set(LED_GREEN, LED_ON);
                     
                     } else {
-                        LED_Set(LED_ORANGE, LED_OFF);
+                        LED_Set(LED_GREEN, LED_OFF);
                     }
                     //DMA_Set(DMA_MEMORY_TO_UART, DMA_ON); //
                     
@@ -204,7 +204,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     detector -> detectorState = UART_TRANSFER;
                     DETECTOR_setLedState(UART_TRANSFER);
-                    #define DMA_2 3
+                    #define DMA_2 0
                     
                     #if DMA_2 == 1
                         DMA_Set(DMA_MEMORY_TO_UART, DMA_ON); //
@@ -241,13 +241,15 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
             case (UART_TRANSFER):
             {
                 if (ev & ev_sendFFT){
+                   //UART_LOG_TX_STS_FIFO_EMPTY
+                   
                     DMA_Set(DMA_MEMORY_TO_UART, DMA_OFF);
                     
-                    #define DMA 1
+                    #define DMA 0
                     
                     #if DMA == 1
                     
-                    fft_app(ADCBuffer,fftBuffer,1024); //
+                    //fft_app(ADCBuffer,fftBuffer,1024); //
                     DMA_Set(DMA_FFT_TO_UART, DMA_ON); //
                     #endif 
                     #if DMA == 0
