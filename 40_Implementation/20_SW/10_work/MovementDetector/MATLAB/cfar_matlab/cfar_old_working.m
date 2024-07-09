@@ -78,6 +78,7 @@ while(flg_data_avai == 0)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % Threshold and target arrays init
         thresholds = zeros(N, 1);
+        targetDetected = zeros(N, 1);
         targets = zeros(N, 1);
 
         % Alpha calculation
@@ -101,6 +102,7 @@ while(flg_data_avai == 0)
             % Target detection
             if rx_data_adc_power(i) > threshold
                 targets(i) = rx_data_adc_power(i); % Target detected
+                targetDetected(i) = 1;
             end
         end
 

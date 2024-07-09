@@ -74,6 +74,7 @@ struct scfarOutput{
     double  thresholds[numberBins]; 
     uint8_t numberTargets;
     uint8_t targetDetected[numberBins];
+    double targetThreshold[numberBins];
 };
 typedef struct scfarOutput CFAR_output_t;
 

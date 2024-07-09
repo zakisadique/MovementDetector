@@ -78,6 +78,8 @@ void CFAR_reset_output(CFAR_output_t* cfarOutput){
         cfarOutput -> fft_psocPower[i] = 0.0;
         cfarOutput -> thresholds[i] = 0.0;
         cfarOutput -> targetDetected[i] = 0; 
+        cfarOutput -> targetThreshold[i] = 0; 
+        
     }
 
 }
@@ -99,8 +101,8 @@ void calculateCFAR(int32 *fftBuffer, CFAR_input_t *input, CFAR_output_t *output)
     for (int i = input -> numberReferenceCells + input -> numberGuardCells + 1; 
         i <= input ->numberofBins  - input -> numberReferenceCells - input -> numberGuardCells; i++) { // Loop through CUT
         // Calculate sum of lagging and leading cells
-        double lagging_sum = 0.0;
-        double leading_sum = 0.0;
+        long double lagging_sum = 0.0;
+        long double leading_sum = 0.0;
         for (int j = 0; j < input -> numberReferenceCells; j++) {
             lagging_sum += output -> fft_psocPower[i - input -> numberReferenceCells - input -> numberGuardCells + j];
             leading_sum += output -> fft_psocPower[i + input -> numberGuardCells + 1 + j];
@@ -119,6 +121,7 @@ void calculateCFAR(int32 *fftBuffer, CFAR_input_t *input, CFAR_output_t *output)
         if (output -> fft_psocPower[i] > threshold) {
             output -> targetDetected[i] = 1; // Set flag for target detected (could be magnitude instead)
             output -> numberTargets = output -> numberTargets + 1;
+            output -> targetThreshold[i] = threshold;
         } 
         
     }
