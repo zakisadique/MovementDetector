@@ -75,7 +75,7 @@ RC_t DETECTOR_init(Detector_t* detector){
     DETECTOR_initDrivers();
     
     detector->detectorState = IDLE;
-    DETECTOR_setLedState(IDLE);
+    //DETECTOR_setLedState(IDLE);
     
     detector->numberOfTransfers = 0;
     detector->samplingFinished = FALSE;
@@ -134,7 +134,7 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     ADC_Set(ADC_ON);
                     
                     detector -> detectorState = SAMPLING;
-                    DETECTOR_setLedState(SAMPLING);
+                    //DETECTOR_setLedState(SAMPLING);
                     
                 }
             }
@@ -188,15 +188,62 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     
                     CFAR_reset_output(&cfarOutput);
                     calculateCFAR(fftBuffer, &cfarInput, &cfarOutput); 
-                    if (cfarOutput.numberTargets > 0){
-                        LED_Set(LED_GREEN, LED_ON);
+//                    if (cfarOutput.numberTargets > 0){
+//                        LED_Set(LED_GREEN, LED_ON);
+//                    
+//                    } else {
+//                        LED_Set(LED_GREEN, LED_OFF);
+//                    }
                     
-                    } else {
-                        LED_Set(LED_GREEN, LED_OFF);
+                    if (cfarOutput.numberTargets > 0){
+                        for (uint16_t i = 0; i < cfarOutput.numberTargets; ++i){
+                            if (cfarOutput.targetDetected[i] >= 0 && cfarOutput.targetDetected[i] < 50){
+                                LED_Set(LED_RED, LED_ON);
+                                LED_Set(LED_ORANGE, LED_OFF);
+                                LED_Set(LED_GREEN, LED_OFF);
+                            }
+                            if (cfarOutput.targetDetected[i] >= 50 && cfarOutput.targetDetected[i] < 100){
+                                LED_Set(LED_RED, LED_ON);
+                                LED_Set(LED_ORANGE, LED_ON);
+                                LED_Set(LED_GREEN, LED_OFF);
+                            }
+                            if (cfarOutput.targetDetected[i] >= 100 && cfarOutput.targetDetected[i] < 511){
+                                LED_Set(LED_RED, LED_ON);
+                                LED_Set(LED_ORANGE, LED_ON);
+                                LED_Set(LED_GREEN, LED_ON);
+                            }                            
+                            
+                            
+                            
+//                            if (i >= 0 && i < 50){
+//                                if (cfarOutput.targetDetected[i] == 1){
+//                                    LED_Set(LED_RED, LED_ON);
+//                                    LED_Set(LED_ORANGE, LED_OFF);
+//                                    LED_Set(LED_GREEN, LED_OFF);
+//                                }
+//                            }
+//                            if (i >= 50 && i < 100){
+//                                if (cfarOutput.targetDetected[i] == 1){
+//                                    LED_Set(LED_RED, LED_ON);
+//                                    LED_Set(LED_ORANGE, LED_ON);
+//                                    LED_Set(LED_GREEN, LED_OFF);
+//                                }
+//                            }
+//                            if (i >= 100 && i < 511){
+//                                if (cfarOutput.targetDetected[i] == 1){
+//                                     LED_Set(LED_RED, LED_ON);
+//                                    LED_Set(LED_ORANGE, LED_ON);
+//                                    LED_Set(LED_GREEN, LED_ON);
+//                                }
+//                            }
+                            
+                        
+                        }
+                    
                     }
                     
                     detector -> detectorState = UART_TRANSFER;
-                    DETECTOR_setLedState(UART_TRANSFER);
+                    //DETECTOR_setLedState(UART_TRANSFER);
                     #define DMA_Samples 1
                     
                     #if DMA_Samples == 1
@@ -276,13 +323,13 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                     detector -> numberOfTransfers += 1;
                     if (detector -> numberOfTransfers < 10){
                         detector -> detectorState = SAMPLING;
-                        DETECTOR_setLedState(SAMPLING);
+                        //DETECTOR_setLedState(SAMPLING);
                         
                         SetEvent(tsk_control, ev_reSample);
                     }
                     else if (detector -> numberOfTransfers == 10){
                         detector -> detectorState = IDLE;
-                        DETECTOR_setLedState(IDLE);
+                        //DETECTOR_setLedState(IDLE);
 
                         //DAC_Set(DAC_OFF);
                         ADC_Set(ADC_OFF);
@@ -297,11 +344,11 @@ RC_t DETECTOR_processEvents(Detector_t* detector, EventMaskType ev){
                 }
                 if (ev & ev_nReceived){
                     //LED_Set(LED_ALL, OFF);
-                    LED_Set(LED_ORANGE, LED_OFF);
+                    //LED_Set(LED_ORANGE, LED_OFF);
                 }
                 if (ev & ev_tReceived){
                     //LED_Set(LED_ALL, ON);
-                    LED_Set(LED_ORANGE, LED_ON);
+                    //LED_Set(LED_ORANGE, LED_ON);
                 }
             }
             break;

@@ -119,8 +119,9 @@ void calculateCFAR(int32 *fftBuffer, CFAR_input_t *input, CFAR_output_t *output)
 
         // Detect target
         if (output -> fft_psocPower[i] > threshold) {
-            output -> targetDetected[i] = 1; // Set flag for target detected (could be magnitude instead)
+            
             output -> numberTargets = output -> numberTargets + 1;
+            output -> targetDetected[output -> numberTargets] = i; // Set flag for target detected (could be magnitude instead)
         } 
         
     }

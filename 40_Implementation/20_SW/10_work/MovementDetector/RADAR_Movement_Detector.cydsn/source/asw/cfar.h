@@ -72,8 +72,8 @@ struct scfarOutput{
     uint16_t numberofBins;
     double fft_psocPower[numberBins];
     double  thresholds[numberBins]; 
-    uint8_t numberTargets;
-    uint8_t targetDetected[numberBins];
+    uint16_t numberTargets;
+    uint16_t targetDetected[numberBins];
 };
 typedef struct scfarOutput CFAR_output_t;
 
