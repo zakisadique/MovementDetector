@@ -77,8 +77,7 @@ void CFAR_reset_output(CFAR_output_t* cfarOutput){
     for (int i = 0; i < cfarOutput -> numberofBins; i++) {
         cfarOutput -> fft_psocPower[i] = 0.0;
         cfarOutput -> thresholds[i] = 0.0;
-        cfarOutput -> targetDetected[i] = 0; 
-        cfarOutput -> targetThreshold[i] = 0; 
+        cfarOutput -> targetDetected[i] = 0;  
         
     }
 
@@ -121,7 +120,6 @@ void calculateCFAR(int32 *fftBuffer, CFAR_input_t *input, CFAR_output_t *output)
         if (output -> fft_psocPower[i] > threshold) {
             output -> targetDetected[i] = 1; // Set flag for target detected (could be magnitude instead)
             output -> numberTargets = output -> numberTargets + 1;
-            output -> targetThreshold[i] = threshold;
         } 
         
     }

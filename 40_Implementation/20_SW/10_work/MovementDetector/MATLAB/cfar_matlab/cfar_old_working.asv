@@ -7,7 +7,7 @@ N  = 1024;   % Sample Size
 NG = 2;     % Guard Cells
 NR = 10;    % Reference Cells
 
-PFA = 0.1; % probablility of false detection
+PFA = 0.08; % probablility of false detection
 
 
 n = 0:(N-1);
@@ -26,7 +26,7 @@ count = 1;
 flg_data_avai = 0;
 fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 while(flg_data_avai == 0)
-    fprintf("Transfer in progress: %i, Bytes Available: %d\n", count, PSoC.BytesAvailable); % Print BytesAvailable
+    %fprintf("Transfer in progress: %i, Bytes Available: %d\n", count, PSoC.BytesAvailable); % Print BytesAvailable
     if PSoC.BytesAvailable >= ADC_bytes + FFT_Bytes
 
         rx_data_adc = fread(PSoC,1024,'uint16');
@@ -43,7 +43,7 @@ while(flg_data_avai == 0)
 
         subplot(4,1,1)
         plot([0:(length(rx_data_adc)-1)],rx_data_adc(1:(length(rx_data_adc))));
-        xlabel 'Sample'
+        xlabel 'No. of samples'
         ylabel 'Amplitude'
         title(['Received Time Domain Data No.:',num2str(count)]);
 
@@ -59,6 +59,8 @@ while(flg_data_avai == 0)
 
         subplot(4,1,3)
         plot([0:1023],fft_magnitude_psoc_db);
+        xlabel 'Frequency bins'
+        ylabel 'Magnitude'
         title('FFT - Array - PSoC');
 
 
@@ -74,47 +76,52 @@ while(flg_data_avai == 0)
         ylabel 'Power'
         title('Spectrum of the signal')
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % Initialize arrays for thresholds and detected targets
+        % Threshold and target arrays init
         thresholds = zeros(N, 1);
+        targetDetected = zeros(N, 1);
         targets = zeros(N, 1);
 
-        % Calculate the scaling factor alpha using PFA
+        % Alpha calculation
         alpha = NR * (PFA^(-1/NR) - 1);
 
-        % Calculate the CA-CFAR threshold for each cell under test
-        for i = NR + NG + 1 : N - NR - NG %setting the range of i, i=CUT
-            %consider cells for lagging &leading window, [x1,x2,x3,CUT,x5,x6,x7]
+        % CA-CFAR calculation under each CUT
+        for i = NR + NG + 1 : N - NR - NG 
 
-            % Reference cells: sum of the reference cells surrounding the CUT
-            lagging_cells = rx_data_adc_power(i - NR - NG : i - NG - 1); %cells behind CUT
-            leading_cells = rx_data_adc_power(i + NG + 1 : i + NG + NR); %cells after CUT
+            % Reference cells
+            lagging_cells = rx_data_adc_power(i - NR - NG : i - NG - 1); 
+            leading_cells = rx_data_adc_power(i + NG + 1 : i + NG + NR);
 
-            % Compute the noise level by avg the reference cells
+            % Compute the noise level by averaging the reference cells
             noise_level = mean([lagging_cells', leading_cells']');
 
-            % calculate CFAR threshold by scaling
+            % calculate CFAR threshold 
             threshold = noise_level * alpha;
 
-            % Store the threshold
             thresholds(i) = threshold;
 
-            % Check if spectra peaks go above the calculated threshold limit
+            % Target detection
             if rx_data_adc_power(i) > threshold
                 targets(i) = rx_data_adc_power(i); % Target detected
+                targetDetected(i) = 1;
             end
         end
 
         num_targets = sum(targets > 0);
-        disp(['Number of targets detected: ', num2str(num_targets)]);
+        %disp(['Number of targets detected: ', num2str(num_targets)]);
+        if (num_targets > 0)
+            fprintf("Target Detected: Yes")
+        end
+        if (num_targets == 0)
+            fwrite("Target Detected: No")
+        end
 
-        %if (count == 10)
         hold on;
         plot(n, thresholds, 'r', 'LineWidth', 1);
         legend('Spectrum', 'Threshold')
         hold off;
-        %end
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
         % Save the received data
         save(strcat('CW_rx_data_adc_',int2str(count),'.mat'),'rx_data_adc');
         count=count+1;
@@ -129,12 +136,14 @@ while(flg_data_avai == 0)
     end
 
     if count == 11
-
+        fwrite(PSoC,'s','uchar') % means send, I am ready to receive
         break;
     end
 
     fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 end
+fwrite(PSoC,'o','uchar') % means send, I am ready to receive
+fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 fclose(PSoC);
 
 fprintf(" Scipt End \n");

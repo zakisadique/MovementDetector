@@ -7,7 +7,7 @@ N  = 1024;   % Sample Size
 NG = 2;     % Guard Cells
 NR = 10;    % Reference Cells
 
-PFA = 0.1; % probablility of false detection
+PFA = 0.08; % probablility of false detection
 
 
 n = 0:(N-1);
@@ -26,7 +26,7 @@ count = 1;
 flg_data_avai = 0;
 fwrite(PSoC,'s','uchar') % means send, I am ready to receive
 while(flg_data_avai == 0)
-    fprintf("Transfer in progress: %i, Bytes Available: %d\n", count, PSoC.BytesAvailable); % Print BytesAvailable
+    %fprintf("Transfer in progress: %i, Bytes Available: %d\n", count, PSoC.BytesAvailable); % Print BytesAvailable
     if PSoC.BytesAvailable >= ADC_bytes + FFT_Bytes
 
         rx_data_adc = fread(PSoC,1024,'uint16');
@@ -95,19 +95,27 @@ while(flg_data_avai == 0)
             noise_level = mean([lagging_cells', leading_cells']');
 
             % calculate CFAR threshold 
-            threshold = noise_level * alpha;
+            threshold = noise_level * alpha + alpha;
 
             thresholds(i) = threshold;
 
             % Target detection
-            if rx_data_adc_power(i) > threshold
-                targets(i) = rx_data_adc_power(i); % Target detected
-                targetDetected(i) = 1;
+            if (i > 100 && i < 170)
+                if rx_data_adc_power(i) > threshold
+                    targets(i) = rx_data_adc_power(i); % Target detected
+                    targetDetected(i) = 1;
+                end
             end
         end
 
         num_targets = sum(targets > 0);
-        disp(['Number of targets detected: ', num2str(num_targets)]);
+        %disp(['Number of targets detected: ', num2str(num_targets)]);
+        if (num_targets > 0)
+            fprintf("Target Detected: Yes\n")
+        end
+        if (num_targets == 0)
+            fprintf("Target Detected: No\n")
+        end
 
         hold on;
         plot(n, thresholds, 'r', 'LineWidth', 1);
